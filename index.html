@@ -4,23 +4,539 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Barbudenge</title>
-  <meta name="description" content="Projetos publicados via GitHub Pages." />
+  <title>Barbudenge | Projetos de Engenharia Mecânica, Simulação e Ensino</title>
+  <meta
+    name="description"
+    content="Projetos de engenharia mecânica, simulação de engrenagens planetárias, conteúdos técnicos e iniciativas ligadas ao ensino, pesquisa e desenvolvimento."
+  />
+  <meta name="robots" content="index, follow" />
+  <meta name="google-adsense-account" content="ca-pub-5777194849710689" />
+  <link rel="canonical" href="https://barbudenge.github.io/" />
 
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5777194849710689"
-      crossorigin="anonymous"
-    ></script>
+  <meta property="og:title" content="Barbudenge | Projetos de Engenharia Mecânica, Simulação e Ensino" />
+  <meta
+    property="og:description"
+    content="Conheça projetos voltados à engenharia mecânica, como o simulador Engrenarium e a página do LASME."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://barbudenge.github.io/" />
 
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5777194849710689"
+     crossorigin="anonymous"></script>
+
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --card: #ffffff;
+      --text: #1a1f26;
+      --muted: #4d5a68;
+      --accent: #1d4f91;
+      --accent-hover: #163d70;
+      --border: #d9e0e7;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      --maxw: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: min(var(--maxw), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, #ffffff 0%, #eef3f8 100%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 18px 0;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      font-weight: 600;
+    }
+
+    .hero {
+      padding: 56px 0 42px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.95fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .hero h1 {
+      margin: 0 0 18px;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15;
+    }
+
+    .hero p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-weight: 700;
+      border: 1px solid var(--accent);
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      text-decoration: none;
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: var(--accent);
+    }
+
+    .btn-secondary:hover {
+      background: #f3f7fc;
+      text-decoration: none;
+    }
+
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+
+    .panel h2,
+    .panel h3 {
+      margin-top: 0;
+    }
+
+    main section {
+      padding: 34px 0;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin: 0 0 16px;
+    }
+
+    .lead {
+      color: var(--muted);
+      max-width: 900px;
+      margin-bottom: 24px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      padding: 24px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 1.35rem;
+    }
+
+    .card p {
+      margin-bottom: 14px;
+      color: var(--muted);
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .feature {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+    }
+
+    .feature h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 1.05rem;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .info-list {
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    .info-list li + li {
+      margin-top: 8px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      background: #ffffff;
+      margin-top: 18px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 24px;
+      padding: 28px 0;
+    }
+
+    .footer-grid h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    .footer-grid p,
+    .footer-grid li {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .footer-grid ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-grid li + li {
+      margin-top: 8px;
+    }
+
+    .copyright {
+      border-top: 1px solid var(--border);
+      padding: 16px 0 28px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .cards,
+      .features,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Barbudenge</h1>
-  <p>Projetos publicados no GitHub Pages.</p>
+  <header>
+    <div class="container topbar">
+      <div class="brand">Barbudenge</div>
+      <nav aria-label="Navegação principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#conteudo">Conteúdo</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
 
-  <ul>
-    <li><a href="/lasmeufsj/">LASME</a></li>
-    <li><a href="/engrenarium/">Engrenarium</a></li>
-  </ul>
+    <div class="container hero">
+      <div class="hero-grid">
+        <div>
+          <h1>Projetos de engenharia mecânica, simulação e conteúdo técnico</h1>
+          <p>
+            Este site reúne projetos voltados ao ensino, à pesquisa e ao desenvolvimento
+            em engenharia mecânica, com ênfase em elementos de máquinas, mecanismos
+            e sistemas de engrenagens.
+          </p>
+          <p>
+            Entre os destaques estão o <strong>Engrenarium</strong>, um simulador interativo
+            de engrenagens planetárias, e a página do <strong>LASME</strong>, com informações
+            ligadas a atividades acadêmicas, técnicas e laboratoriais.
+          </p>
+          <p>
+            O objetivo deste portal é disponibilizar ferramentas, informações e recursos
+            úteis para estudantes, professores, pesquisadores e profissionais que atuam
+            com projeto mecânico, transmissão de potência, análise cinemática e temas correlatos.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://barbudenge.github.io/engrenarium/">Acessar Engrenarium</a>
+            <a class="btn btn-secondary" href="https://barbudenge.github.io/lasmeufsj/">Acessar LASME</a>
+          </div>
+        </div>
+
+        <aside class="panel" aria-label="Resumo do site">
+          <h2>Visão geral</h2>
+          <p class="muted">
+            A página principal existe para apresentar os projetos hospedados neste domínio
+            e oferecer contexto editorial e técnico sobre o conteúdo publicado.
+          </p>
+          <ul class="info-list">
+            <li>Ferramentas aplicadas à engenharia mecânica.</li>
+            <li>Conteúdo original voltado a ensino e pesquisa.</li>
+            <li>Projetos com foco em engrenagens, mecanismos e análise técnica.</li>
+            <li>Recursos para público do Brasil e do exterior.</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="sobre">
+      <div class="container">
+        <h2>Sobre este portal</h2>
+        <p class="lead">
+          A Barbudenge funciona como uma página central para projetos próprios ligados à
+          engenharia mecânica e à divulgação técnica. Em vez de servir apenas como um
+          diretório vazio, esta página apresenta o contexto dos projetos, explica sua finalidade
+          e orienta o visitante até os recursos específicos disponíveis no domínio.
+        </p>
+        <p>
+          O conteúdo aqui reunido busca atender diferentes perfis de usuário. Para quem está
+          em ambiente acadêmico, há materiais e ferramentas úteis para estudo e demonstração
+          de conceitos de elementos de máquinas. Para profissionais e interessados em projeto
+          mecânico, há aplicações voltadas à análise e visualização de sistemas de transmissão.
+          Esse tipo de conteúdo tem valor editorial próprio, pois descreve o escopo, os objetivos
+          e a utilidade prática dos recursos disponibilizados.
+        </p>
+        <p>
+          Ao longo do tempo, este domínio poderá reunir novas páginas, ferramentas e textos
+          relacionados a engrenagens, mecanismos, modelagem, ensino de engenharia e temas
+          adjacentes. Assim, a página principal também cumpre o papel de referência institucional,
+          organizando o acesso ao conteúdo e fornecendo uma apresentação clara do projeto.
+        </p>
+      </div>
+    </section>
+
+    <section id="projetos">
+      <div class="container">
+        <h2>Projetos em destaque</h2>
+        <p class="lead">
+          Abaixo estão os principais projetos atualmente disponíveis neste domínio.
+        </p>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Engrenarium</h3>
+            <p>
+              O Engrenarium é um simulador interativo voltado à modelagem e análise de
+              engrenagens planetárias. A ferramenta foi pensada para aplicações em ensino,
+              estudo e exploração técnica de configurações mecânicas envolvendo trens
+              epicicloidais e múltiplos estágios.
+            </p>
+            <p>
+              Entre suas finalidades estão o cálculo de relações de transmissão, análise de
+              velocidades, estudo de arranjos planetários e apoio visual à compreensão do
+              funcionamento desses sistemas em engenharia mecânica.
+            </p>
+            <p>
+              <a href="https://barbudenge.github.io/engrenarium/">Visitar o Engrenarium</a>
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>LASME</h3>
+            <p>
+              A página do LASME reúne informações associadas a atividades acadêmicas e técnicas
+              ligadas ao laboratório, ao ensino de elementos de máquinas, a mecanismos e a outros
+              temas de interesse em engenharia mecânica.
+            </p>
+            <p>
+              Trata-se de um espaço para apresentar conteúdos, projetos e materiais relacionados
+              ao ambiente de estudo, pesquisa e desenvolvimento, servindo como ponto de apoio
+              para alunos, pesquisadores e interessados na área.
+            </p>
+            <p>
+              <a href="https://barbudenge.github.io/lasmeufsj/">Visitar a página do LASME</a>
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="conteudo">
+      <div class="container">
+        <h2>Áreas de conteúdo</h2>
+        <p class="lead">
+          Os projetos hospedados neste domínio se concentram principalmente em tópicos de
+          engenharia mecânica com aplicação educacional e técnica.
+        </p>
+
+        <div class="features">
+          <div class="feature">
+            <h3>Engrenagens planetárias</h3>
+            <p class="muted">
+              Estudo de sistemas epicicloidais, relações de transmissão, velocidades angulares,
+              configurações compostas e aplicações em redutores e transmissões.
+            </p>
+          </div>
+
+          <div class="feature">
+            <h3>Elementos de máquinas</h3>
+            <p class="muted">
+              Conteúdos ligados a projeto mecânico, componentes de transmissão, análise funcional
+              e apoio didático para disciplinas da área.
+            </p>
+          </div>
+
+          <div class="feature">
+            <h3>Ensino e simulação</h3>
+            <p class="muted">
+              Ferramentas e materiais úteis para demonstrar conceitos de forma visual e aplicada,
+              favorecendo aprendizagem e exploração técnica.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="qualidade">
+      <div class="container">
+        <h2>Propósito editorial e técnico</h2>
+        <p>
+          Esta página principal foi criada para apresentar conteúdo editorial próprio e contextualizar
+          os recursos hospedados no domínio. Ela não serve apenas como uma tela de navegação,
+          mas como uma introdução real aos projetos publicados, descrevendo a natureza do
+          conteúdo e sua utilidade para o visitante.
+        </p>
+        <p>
+          O material aqui referenciado é direcionado a um público interessado em engenharia
+          mecânica, especialmente nos campos de engrenagens, mecanismos, elementos de máquinas
+          e ensino técnico. O conteúdo tem finalidade informativa, educacional e de divulgação
+          de ferramentas originais, oferecendo valor ao usuário antes mesmo do acesso às páginas
+          específicas de cada projeto.
+        </p>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="container">
+        <h2>Contato e informações</h2>
+        <p class="lead">
+          Para informações sobre os projetos, navegue pelas páginas específicas indicadas acima.
+        </p>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Projetos disponíveis</h3>
+            <ul class="info-list">
+              <li><a href="https://barbudenge.github.io/engrenarium/">Engrenarium</a></li>
+              <li><a href="https://barbudenge.github.io/lasmeufsj/">LASME</a></li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Observação</h3>
+            <p>
+              Este domínio é usado para publicação de páginas e ferramentas próprias. Novos
+              conteúdos e recursos podem ser adicionados futuramente conforme o desenvolvimento
+              dos projetos.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <h3>Barbudenge</h3>
+        <p>
+          Portal com projetos ligados à engenharia mecânica, simulação, ensino e divulgação técnica.
+        </p>
+      </div>
+
+      <div>
+        <h3>Links</h3>
+        <ul>
+          <li><a href="https://barbudenge.github.io/">Página inicial</a></li>
+          <li><a href="https://barbudenge.github.io/engrenarium/">Engrenarium</a></li>
+          <li><a href="https://barbudenge.github.io/lasmeufsj/">LASME</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Navegação</h3>
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#conteudo">Conteúdo</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container copyright">
+      © 2026 Barbudenge. Todos os direitos reservados.
+    </div>
+  </footer>
 </body>
 </html>
