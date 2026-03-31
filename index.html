@@ -80,9 +80,8 @@
       margin: 0 auto;
     }
 header {
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
-  color: var(--text);
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
 }
 
     .topbar {
@@ -93,16 +92,17 @@ header {
       gap: 16px;
       flex-wrap: wrap;
     }
+.brand {
+  color: #0f172a !important; /* Azul marinho profundo do LASME */
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
 
-    .brand {
-      font-family: var(--serif);
-      font-size: 1.55rem;
-      font-weight: 700;
-      color: #fff;
-      letter-spacing: 0.02em;
-    }
-
-    .brand span { color: #d7c19a; }
+.brand span {
+  color: #b45309 !important; /* Dourado escuro para contraste no branco */
+}
 
     nav {
       display: flex;
@@ -110,7 +110,16 @@ header {
       flex-wrap: wrap;
       align-items: center;
     }
+    
+nav ul li a {
+  color: #0f172a; 
+  text-decoration: none;
+  font-weight: 500;
+}
 
+nav ul li a:hover {
+  color: #1e40af; /* Azul mais vivo no hover */
+}
     nav a {
       color: rgba(255,255,255,0.92);
       font-weight: 600;
