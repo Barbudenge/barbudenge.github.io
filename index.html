@@ -1,77 +1,77 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Barbudenge | Projetos de Engenharia Mecânica, Simulação e Ensino</title>
-  <meta
-    name="description"
-    content="Projetos de engenharia mecânica, simulação de engrenagens planetárias, conteúdos técnicos e iniciativas ligadas ao ensino, pesquisa e desenvolvimento."
-  />
+  <title>Barbudenge | Engrenagens, Mecanismos e Ferramentas para Engenharia Mecânica</title>
+  <meta name="description" content="Portal com conteúdo técnico sobre engrenagens planetárias, cames, elementos de máquinas, glossário e o simulador Engrenarium." />
   <meta name="robots" content="index, follow" />
   <meta name="google-adsense-account" content="ca-pub-5777194849710689" />
   <link rel="canonical" href="https://barbudenge.github.io/" />
 
-  <meta property="og:title" content="Barbudenge | Projetos de Engenharia Mecânica, Simulação e Ensino" />
-  <meta
-    property="og:description"
-    content="Conheça projetos voltados à engenharia mecânica, como o simulador Engrenarium e a página do LASME."
-  />
+  <meta property="og:title" content="Barbudenge | Engrenagens, Mecanismos e Ferramentas para Engenharia Mecânica" />
+  <meta property="og:description" content="Portal com artigos técnicos, glossário, FAQ do Engrenarium e recursos para estudo de engrenagens planetárias, cames e elementos de máquinas." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://barbudenge.github.io/" />
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FJPKSBEZR2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FJPKSBEZR2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FJPKSBEZR2');
+  </script>
 
-  gtag('config', 'G-FJPKSBEZR2');
-</script>
-
-  
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5777194849710689"
      crossorigin="anonymous"></script>
 
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --bg: #f5f7fa;
-      --card: #ffffff;
-      --text: #1a1f26;
-      --muted: #4d5a68;
-      --accent: #1d4f91;
-      --accent-hover: #163d70;
-      --border: #d9e0e7;
-      --shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-      --maxw: 1100px;
+      --bg: #eef2f7;
+      --surface: #ffffff;
+      --surface-soft: #f5f7fb;
+      --text: #17212f;
+      --muted: #5a6879;
+      --accent: #16365f;
+      --accent-2: #224a80;
+      --accent-3: #c24b1b;
+      --gold: #d7b06a;
+      --border: #d7e0ea;
+      --shadow: 0 6px 22px rgba(0,0,0,0.07);
+      --maxw: 1080px;
+      --serif: 'Crimson Pro', Georgia, serif;
+      --sans: 'Source Sans 3', Helvetica, Arial, sans-serif;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
     body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.65;
+      font-family: var(--sans);
+      font-size: 1rem;
+      line-height: 1.7;
       color: var(--text);
       background: var(--bg);
     }
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; display: block; }
 
     .container {
       width: min(var(--maxw), calc(100% - 32px));
@@ -79,475 +79,914 @@
     }
 
     header {
-      background: linear-gradient(135deg, #ffffff 0%, #eef3f8 100%);
-      border-bottom: 1px solid var(--border);
+      background: var(--accent);
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.18);
     }
 
     .topbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 20px;
-      padding: 18px 0;
+      padding: 14px 0;
+      gap: 16px;
       flex-wrap: wrap;
     }
 
     .brand {
-      font-size: 1.5rem;
+      font-family: var(--serif);
+      font-size: 1.55rem;
       font-weight: 700;
-      color: var(--text);
+      color: #fff;
+      letter-spacing: 0.02em;
     }
+
+    .brand span { color: var(--gold); }
 
     nav {
       display: flex;
-      gap: 18px;
+      gap: 20px;
       flex-wrap: wrap;
+      align-items: center;
     }
 
     nav a {
+      color: rgba(255,255,255,0.9);
       font-weight: 600;
+      font-size: 0.94rem;
+    }
+
+    nav a:hover {
+      color: #fff;
+      text-decoration: none;
     }
 
     .hero {
-      padding: 56px 0 42px;
+      background: linear-gradient(160deg, #16365f 0%, #0f2544 100%);
+      color: #fff;
+      padding: 64px 0 52px;
+      border-top: none;
     }
 
-    .hero-grid {
+    .hero-inner {
       display: grid;
-      grid-template-columns: 1.25fr 0.95fr;
-      gap: 28px;
+      grid-template-columns: 1.4fr 0.85fr;
+      gap: 40px;
       align-items: start;
     }
 
+    .hero-label {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+
     .hero h1 {
-      margin: 0 0 18px;
+      font-family: var(--serif);
       font-size: clamp(2rem, 4vw, 3rem);
-      line-height: 1.15;
+      line-height: 1.18;
+      font-weight: 700;
+      margin-bottom: 18px;
     }
 
     .hero p {
-      margin: 0 0 16px;
-      color: var(--muted);
+      color: rgba(255,255,255,0.88);
       font-size: 1.05rem;
+      margin-bottom: 12px;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 22px;
+      margin-top: 24px;
     }
 
     .btn {
       display: inline-block;
-      padding: 12px 18px;
-      border-radius: 10px;
+      padding: 11px 22px;
+      border-radius: 8px;
       font-weight: 700;
-      border: 1px solid var(--accent);
-      transition: 0.2s ease;
+      font-size: 0.95rem;
+      transition: 0.18s ease;
+      border: 2px solid transparent;
     }
 
     .btn-primary {
-      background: var(--accent);
-      color: #fff;
+      background: var(--gold);
+      color: #1f1f1f;
     }
 
     .btn-primary:hover {
-      background: var(--accent-hover);
+      background: #cda255;
       text-decoration: none;
     }
 
     .btn-secondary {
-      background: #fff;
-      color: var(--accent);
+      background: transparent;
+      color: #fff;
+      border-color: rgba(255,255,255,0.45);
     }
 
     .btn-secondary:hover {
-      background: #f3f7fc;
+      border-color: #fff;
       text-decoration: none;
     }
 
-    .panel {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      box-shadow: var(--shadow);
+    .hero-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 14px;
       padding: 22px;
     }
 
-    .panel h2,
-    .panel h3 {
-      margin-top: 0;
+    .hero-card h3 {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      color: var(--gold);
+      margin-bottom: 10px;
     }
 
-    main section {
-      padding: 34px 0;
+    .hero-card ul {
+      padding-left: 18px;
+      color: rgba(255,255,255,0.84);
+    }
+
+    .hero-card li + li { margin-top: 7px; }
+
+    .hero-card a {
+      color: #cfe0ff;
+    }
+
+    .hero-card a:hover {
+      color: #fff;
+    }
+
+    section { padding: 52px 0; }
+    section + section { border-top: 1px solid var(--border); }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-3);
+      margin-bottom: 8px;
     }
 
     h2 {
-      font-size: 1.8rem;
-      margin: 0 0 16px;
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 3vw, 2.15rem);
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: 14px;
     }
 
     .lead {
       color: var(--muted);
-      max-width: 900px;
+      max-width: 840px;
+      font-size: 1.05rem;
+      margin-bottom: 28px;
+    }
+
+    .article-card,
+    .project-card,
+    .contact-card,
+    details,
+    .glossary-item,
+    .book-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .article-card {
+      padding: 32px 36px;
       margin-bottom: 24px;
     }
 
-    .cards {
+    .article-card h3 {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .article-card h4 {
+      font-family: var(--serif);
+      font-size: 1.16rem;
+      font-weight: 600;
+      margin: 22px 0 8px;
+      color: var(--text);
+    }
+
+    .article-card p {
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .article-card ul,
+    .article-card ol {
+      padding-left: 22px;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .article-card li + li { margin-top: 6px; }
+
+    .equation-box {
+      background: var(--surface-soft);
+      border: 1px solid #c7d7ea;
+      border-left: 4px solid var(--accent);
+      border-radius: 10px;
+      padding: 18px 18px 14px;
+      margin: 18px 0;
+      overflow-x: auto;
+    }
+
+    .equation-caption {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    .symbol-list {
+      margin-top: 10px;
+      padding-left: 22px;
+    }
+
+    .symbol-list li {
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .info-box {
+      background: #eef3fa;
+      border: 1px solid #c5d5ea;
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin: 18px 0;
+      font-size: 0.95rem;
+      color: #2a3f5e;
+    }
+
+    .info-box strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--accent);
+    }
+
+    .figure-row {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin: 20px 0 24px;
+    }
+
+    .figure-row img {
+      max-width: 320px;
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #fff;
+    }
+
+    .figure-single {
+      display: flex;
+      justify-content: center;
+      margin: 18px 0 24px;
+    }
+
+    .figure-single img {
+      max-width: 560px;
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #fff;
+    }
+
+    .figure-came img {
+      max-width: 420px;
+    }
+
+    .projects-grid,
+    .glossary-grid,
+    .books-grid,
+    .contact-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 22px;
     }
 
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      box-shadow: var(--shadow);
+    .project-card,
+    .contact-card,
+    .book-card {
       padding: 24px;
     }
 
-    .card h3 {
-      margin-top: 0;
-      margin-bottom: 12px;
-      font-size: 1.35rem;
-    }
-
-    .card p {
-      margin-bottom: 14px;
-      color: var(--muted);
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .feature {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 18px;
-    }
-
-    .feature h3 {
-      margin-top: 0;
+    .project-card h3,
+    .contact-card h3 {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      color: var(--accent);
       margin-bottom: 10px;
-      font-size: 1.05rem;
     }
 
-    .muted {
+    .project-card p,
+    .contact-card p,
+    .book-info p {
       color: var(--muted);
+      margin-bottom: 12px;
     }
 
-    .info-list {
-      padding-left: 20px;
-      margin: 0;
+    .project-tag,
+    .book-badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 12px;
     }
 
-    .info-list li + li {
-      margin-top: 8px;
+    .project-tag {
+      background: #edf3fb;
+      color: var(--accent);
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 700;
+      color: var(--accent-3);
+      font-size: 0.95rem;
+    }
+
+    .project-link::after { content: '→'; }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    details { padding: 0; }
+
+    summary {
+      cursor: pointer;
+      padding: 16px 20px;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--accent);
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+
+    summary::after {
+      content: '＋';
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    details[open] summary::after {
+      content: '－';
+    }
+
+    .faq-body {
+      padding: 4px 20px 18px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .faq-body p + p { margin-top: 10px; }
+
+    .glossary-item { padding: 16px 20px; }
+
+    .glossary-item dt {
+      font-weight: 700;
+      color: var(--accent);
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+    }
+
+    .glossary-item dd {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .book-card {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+
+    .book-cover-img {
+      width: 112px;
+      flex-shrink: 0;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .book-cover-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .book-info h3 {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .book-badge {
+      background: #fef3e2;
+      color: #a06010;
     }
 
     footer {
-      border-top: 1px solid var(--border);
-      background: #ffffff;
-      margin-top: 18px;
+      background: #12253f;
+      color: rgba(255,255,255,0.75);
+      padding: 36px 0 24px;
+      margin-top: 20px;
     }
 
     .footer-grid {
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 24px;
-      padding: 28px 0;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 28px;
     }
 
-    .footer-grid h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      font-size: 1rem;
+    .footer-brand {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      color: #fff;
+      margin-bottom: 8px;
     }
 
-    .footer-grid p,
-    .footer-grid li {
-      color: var(--muted);
-      font-size: 0.96rem;
+    .footer-brand span { color: var(--gold); }
+
+    footer h4 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 12px;
     }
 
-    .footer-grid ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
+    footer ul { list-style: none; }
+    footer li + li { margin-top: 7px; }
 
-    .footer-grid li + li {
-      margin-top: 8px;
-    }
-
-    .copyright {
-      border-top: 1px solid var(--border);
-      padding: 16px 0 28px;
-      color: var(--muted);
+    footer a {
+      color: rgba(255,255,255,0.78);
       font-size: 0.92rem;
     }
 
-    @media (max-width: 900px) {
-      .hero-grid,
-      .cards,
-      .features,
+    footer a:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 18px;
+      font-size: 0.85rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .footer-bottom a { color: rgba(255,255,255,0.65); }
+    .footer-bottom a:hover { color: #fff; }
+
+    @media (max-width: 860px) {
+      .hero-inner,
+      .projects-grid,
+      .glossary-grid,
+      .books-grid,
+      .contact-grid,
       .footer-grid {
         grid-template-columns: 1fr;
+      }
+
+      .article-card {
+        padding: 22px 20px;
+      }
+
+      .book-card {
+        flex-direction: column;
+      }
+
+      .book-cover-img {
+        width: 140px;
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="container topbar">
-      <div class="brand">Barbudenge</div>
-      <nav aria-label="Navegação principal">
-        <a href="#sobre">Sobre</a>
-        <a href="#projetos">Projetos</a>
-        <a href="#conteudo">Conteúdo</a>
-        <a href="#contato">Contato</a>
-      </nav>
-    </div>
 
-    <div class="container hero">
-      <div class="hero-grid">
-        <div>
-          <h1>Projetos de engenharia mecânica, simulação e conteúdo técnico</h1>
-          <p>
-            Este site reúne projetos voltados ao ensino, à pesquisa e ao desenvolvimento
-            em engenharia mecânica, com ênfase em elementos de máquinas, mecanismos
-            e sistemas de engrenagens.
-          </p>
-          <p>
-            Entre os destaques estão o <strong>Engrenarium</strong>, um simulador interativo
-            de engrenagens planetárias, e a página do <strong>LASME</strong>, com informações
-            ligadas a atividades acadêmicas, técnicas e laboratoriais.
-          </p>
-          <p>
-            O objetivo deste portal é disponibilizar ferramentas, informações e recursos
-            úteis para estudantes, professores, pesquisadores e profissionais que atuam
-            com projeto mecânico, transmissão de potência, análise cinemática e temas correlatos.
-          </p>
+<header>
+  <div class="container topbar">
+    <div class="brand">Barbu<span>denge</span></div>
+    <nav aria-label="Navegação principal">
+      <a href="#artigos">Artigos</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#faq">FAQ</a>
+      <a href="#glossario">Glossário</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
+</header>
 
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="https://barbudenge.github.io/engrenarium/">Acessar Engrenarium</a>
-            <a class="btn btn-secondary" href="https://barbudenge.github.io/lasmeufsj/">Acessar LASME</a>
-          </div>
-        </div>
-
-        <aside class="panel" aria-label="Resumo do site">
-          <h2>Visão geral</h2>
-          <p class="muted">
-            A página principal existe para apresentar os projetos hospedados neste domínio
-            e oferecer contexto editorial e técnico sobre o conteúdo publicado.
-          </p>
-          <ul class="info-list">
-            <li>Ferramentas aplicadas à engenharia mecânica.</li>
-            <li>Conteúdo original voltado a ensino e pesquisa.</li>
-            <li>Projetos com foco em engrenagens, mecanismos e análise técnica.</li>
-            <li>Recursos para público do Brasil e do exterior.</li>
-          </ul>
-        </aside>
+<section class="hero">
+  <div class="container hero-inner">
+    <div>
+      <span class="hero-label">UFSJ · LASME · Engenharia Mecânica</span>
+      <h1>Engrenagens, mecanismos e ferramentas para engenharia mecânica</h1>
+      <p>Portal com conteúdo técnico sobre engrenagens planetárias, cames, elementos de máquinas e ferramentas interativas para ensino e análise.</p>
+      <p>Aqui estão reunidos artigos explicativos, glossário técnico, perguntas frequentes sobre o Engrenarium e páginas ligadas ao LASME/UFSJ.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://barbudenge.github.io/engrenarium/">Abrir Engrenarium</a>
+        <a class="btn btn-secondary" href="https://barbudenge.github.io/lasmeufsj/">Página do LASME</a>
       </div>
     </div>
-  </header>
 
-  <main>
-    <section id="sobre">
-      <div class="container">
-        <h2>Sobre este portal</h2>
-        <p class="lead">
-          A Barbudenge funciona como uma página central para projetos próprios ligados à
-          engenharia mecânica e à divulgação técnica. Em vez de servir apenas como um
-          diretório vazio, esta página apresenta o contexto dos projetos, explica sua finalidade
-          e orienta o visitante até os recursos específicos disponíveis no domínio.
-        </p>
-        <p>
-          O conteúdo aqui reunido busca atender diferentes perfis de usuário. Para quem está
-          em ambiente acadêmico, há materiais e ferramentas úteis para estudo e demonstração
-          de conceitos de elementos de máquinas. Para profissionais e interessados em projeto
-          mecânico, há aplicações voltadas à análise e visualização de sistemas de transmissão.
-          Esse tipo de conteúdo tem valor editorial próprio, pois descreve o escopo, os objetivos
-          e a utilidade prática dos recursos disponibilizados.
-        </p>
-        <p>
-          Ao longo do tempo, este domínio poderá reunir novas páginas, ferramentas e textos
-          relacionados a engrenagens, mecanismos, modelagem, ensino de engenharia e temas
-          adjacentes. Assim, a página principal também cumpre o papel de referência institucional,
-          organizando o acesso ao conteúdo e fornecendo uma apresentação clara do projeto.
-        </p>
+    <aside class="hero-card">
+      <h3>Conteúdo disponível</h3>
+      <ul>
+        <li><a href="#artigo-planetarias">Engrenagens planetárias — caso geral</a></li>
+        <li><a href="#artigo-cames">Cames — síntese e análise</a></li>
+        <li><a href="#faq">FAQ do Engrenarium</a></li>
+        <li><a href="#glossario">Glossário técnico</a></li>
+        <li><a href="#livros">Livros traduzidos</a></li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<main>
+
+<section id="artigos">
+  <div class="container">
+    <span class="section-label">Conteúdo técnico</span>
+    <h2>Artigos e materiais explicativos</h2>
+    <p class="lead">Textos originais voltados ao estudo, ao ensino e à análise de temas centrais de projetos mecânicos, mecanismos e transmissões.</p>
+
+    <article class="article-card" id="artigo-planetarias">
+      <h3>Engrenagens planetárias: caso geral e valor do trem</h3>
+
+      <p>Nos trens epicicloidais, a formulação mais útil é a do caso geral, em que se relacionam as velocidades angulares da primeira engrenagem do trem, da última engrenagem do trem e do braço. Essa forma é mais abrangente do que trabalhar apenas com casos particulares, pois permite interpretar o trem como um todo antes de aplicar as condições específicas de entrada, saída e elemento fixo.</p>
+
+      <div class="figure-row">
+        <img src="figs/planet1.png" alt="Exemplo de trem planetário simples em vista isométrica">
+        <img src="figs/planet2.png" alt="Exemplo de trem planetário com dois conjuntos em vista isométrica">
       </div>
-    </section>
 
-    <section id="projetos">
-      <div class="container">
-        <h2>Projetos em destaque</h2>
-        <p class="lead">
-          Abaixo estão os principais projetos atualmente disponíveis neste domínio.
-        </p>
+      <h4>Equação geral</h4>
+      <p>Para um trem epicicloidal qualquer, pode-se escrever a relação geral:</p>
 
-        <div class="cards">
-          <article class="card">
-            <h3>Engrenarium</h3>
-            <p>
-              O Engrenarium é um simulador interativo voltado à modelagem e análise de
-              engrenagens planetárias. A ferramenta foi pensada para aplicações em ensino,
-              estudo e exploração técnica de configurações mecânicas envolvendo trens
-              epicicloidais e múltiplos estágios.
-            </p>
-            <p>
-              Entre suas finalidades estão o cálculo de relações de transmissão, análise de
-              velocidades, estudo de arranjos planetários e apoio visual à compreensão do
-              funcionamento desses sistemas em engenharia mecânica.
-            </p>
-            <p>
-              <a href="https://barbudenge.github.io/engrenarium/">Visitar o Engrenarium</a>
-            </p>
-          </article>
+      <div class="equation-box">
+        \[
+        \frac{\omega_{ub}}{\omega_{pb}}
+        =
+        \frac{\omega_u-\omega_b}{\omega_p-\omega_b}
+        =
+        e
+        \]
+        <p class="equation-caption">em que \(e\) representa o valor do trem.</p>
+      </div>
 
-          <article class="card">
-            <h3>LASME</h3>
-            <p>
-              A página do LASME reúne informações associadas a atividades acadêmicas e técnicas
-              ligadas ao laboratório, ao ensino de elementos de máquinas, a mecanismos e a outros
-              temas de interesse em engenharia mecânica.
-            </p>
-            <p>
-              Trata-se de um espaço para apresentar conteúdos, projetos e materiais relacionados
-              ao ambiente de estudo, pesquisa e desenvolvimento, servindo como ponto de apoio
-              para alunos, pesquisadores e interessados na área.
-            </p>
-            <p>
-              <a href="https://barbudenge.github.io/lasmeufsj/">Visitar a página do LASME</a>
-            </p>
-          </article>
+      <ul class="symbol-list">
+        <li>\(\omega_u\) — velocidade angular da última engrenagem do trem;</li>
+        <li>\(\omega_p\) — velocidade angular da primeira engrenagem do trem;</li>
+        <li>\(\omega_b\) — velocidade angular do braço.</li>
+      </ul>
+
+      <h4>Interpretação do valor do trem</h4>
+      <p>O valor do trem \(e\) é calculado a partir da cadeia de engrenamentos considerada com o braço fixo. Assim, ele depende apenas da sequência de engrenagens envolvidas, dos seus números de dentes e do tipo de contato entre elas, externo ou interno. Depois de obtido \(e\), a equação geral permite determinar rapidamente a relação entre as velocidades dos elementos do sistema em movimento relativo ao braço.</p>
+
+      <div class="info-box">
+        <strong>Observação</strong>
+        A utilidade dessa forma geral está em separar a análise em duas partes: primeiro calcula-se o valor do trem; depois aplica-se a equação geral às condições específicas do conjunto planetário.
+      </div>
+
+      <h4>Exemplo: trem 1–2–3</h4>
+
+      <div class="figure-single">
+        <img src="figs/exemplo-plan.png" alt="Exemplo esquemático de trem planetário 1-2-3 com braço B">
+      </div>
+
+      <p>Para um trem simples formado pelas engrenagens 1, 2 e 3, com o braço indicado por \(B\), pode-se escrever:</p>
+
+      <div class="equation-box">
+        \[
+        \frac{\omega_{3B}}{\omega_{1B}}
+        =
+        \frac{\omega_3-\omega_B}{\omega_1-\omega_B}
+        =
+        \left(-\frac{N_1}{N_2}\right)
+        \left(\frac{N_2}{N_3}\right)
+        =
+        e
+        \]
+      </div>
+
+      <p>Nessa expressão, \(N_1\), \(N_2\) e \(N_3\) são os números de dentes das engrenagens 1, 2 e 3. O sinal de cada parcela depende do tipo de engrenamento considerado ao longo do trem, e o produto final fornece o valor do trem \(e\).</p>
+
+      <h4>Aplicação prática</h4>
+      <p>Essa formulação é especialmente útil em sistemas planetários compostos e em arranjos com múltiplos engrenamentos, pois evita reduzir o problema a formas simplificadas prematuramente. Em contexto didático, ela também deixa mais claro o papel do braço e o conceito de velocidades relativas.</p>
+
+      <p style="margin-top:18px;">
+        <a href="https://barbudenge.github.io/engrenarium/" style="font-weight:700; color:var(--accent-3);">Experimente o Engrenarium — simulador interativo de engrenagens planetárias →</a>
+      </p>
+    </article>
+
+    <article class="article-card" id="artigo-cames">
+      <h3>Cames: fundamentos de síntese e análise de mecanismos</h3>
+
+      <p>Um came é um elemento de máquina que, ao girar, impõe um movimento específico a um seguidor em contato com seu perfil. Diferentemente das engrenagens, que transmitem rotação contínua, o came permite prescrever leis de movimento conforme a necessidade do projeto, incluindo deslocamento, velocidade e aceleração do seguidor.</p>
+
+      <div class="figure-single figure-came">
+        <img src="figs/came.png" alt="Esquema geométrico de came com indicação do ângulo de pressão alfa">
+      </div>
+
+      <h4>Por que o came é tão versátil?</h4>
+      <p>A principal vantagem do came está na liberdade de projeto do perfil. Essa característica o torna útil em mecanismos que exigem movimentos sincronizados, repetitivos e precisos, como sistemas de válvulas, dispositivos automáticos de alimentação, máquinas de embalagem e diversos mecanismos especiais.</p>
+
+      <h4>Curvas de movimento</h4>
+      <p>A escolha da curva de movimento influencia diretamente o comportamento dinâmico do mecanismo. Entre as leis mais utilizadas estão a curva cicloidal e a curva harmônica, escolhidas conforme a suavidade desejada de aceleração e o regime de operação do sistema.</p>
+
+      <h4>Ângulo de pressão</h4>
+      <p>O ângulo de pressão é um dos critérios mais importantes no projeto de cames. Ele afeta as forças laterais, a eficiência do mecanismo e a exigência sobre guias e mancais. Seu controle adequado é essencial para obter um conjunto funcional e durável.</p>
+
+      <div class="equation-box">
+        \[
+        \tan(\alpha)=\frac{dS/d\theta - e}{R_b + S}
+        \]
+      </div>
+
+      <p>Nessa expressão, \(dS/d\theta\) representa a velocidade do seguidor em relação ao ângulo do came, \(e\) é a excentricidade do seguidor, \(R_b\) é o raio de base e \(S\) é o deslocamento do seguidor.</p>
+
+      <div class="info-box">
+        <strong>Aplicação didática</strong>
+        O estudo de cames é particularmente útil em disciplinas de mecanismos, pois mostra de forma clara como a geometria do perfil influencia o movimento e as forças no sistema.
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="projetos">
+  <div class="container">
+    <span class="section-label">Ferramentas e laboratório</span>
+    <h2>Projetos disponíveis</h2>
+    <p class="lead">Ferramentas interativas e páginas de apoio ao ensino e à análise em engenharia mecânica.</p>
+
+    <div class="projects-grid">
+      <article class="project-card">
+        <span class="project-tag">Simulador web</span>
+        <h3>Engrenarium</h3>
+        <p>Simulador interativo de engrenagens planetárias voltado ao ensino e à análise técnica. Permite configurar trens epicicloidais, visualizar o movimento dos componentes e estudar diferentes arranjos de entrada, saída e fixação.</p>
+        <p>É útil para estudantes, professores e profissionais que desejam explorar visualmente o comportamento de sistemas planetários.</p>
+        <a class="project-link" href="https://barbudenge.github.io/engrenarium/">Acessar o Engrenarium</a>
+      </article>
+
+      <article class="project-card">
+        <span class="project-tag">Laboratório · UFSJ</span>
+        <h3>LASME — Laboratório de Sistemas Mecânicos</h3>
+        <p>Página do Laboratório de Sistemas Mecânicos da Universidade Federal de São João del-Rei. Reúne informações sobre atividades de ensino, pesquisa e desenvolvimento ligadas a mecanismos, transmissões e ferramentas computacionais.</p>
+        <p>Funciona como apoio institucional e técnico para conteúdos e projetos relacionados ao laboratório.</p>
+        <a class="project-link" href="https://barbudenge.github.io/lasmeufsj/">Acessar a página do LASME</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container">
+    <span class="section-label">Dúvidas frequentes</span>
+    <h2>FAQ — perguntas sobre o Engrenarium</h2>
+    <p class="lead">Respostas para dúvidas comuns sobre o simulador de engrenagens planetárias.</p>
+
+    <div class="faq-list">
+      <details>
+        <summary>O que é o Engrenarium e para que ele serve?</summary>
+        <div class="faq-body">
+          <p>O Engrenarium é um simulador web de engrenagens planetárias criado com finalidade educacional e técnica. Ele ajuda a compreender o funcionamento de trens epicicloidais por meio de visualização e análise interativa.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Preciso instalar algum programa para usar o Engrenarium?</summary>
+        <div class="faq-body">
+          <p>Não. O simulador roda diretamente no navegador, sem necessidade de instalação.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>O simulador calcula relações de transmissão?</summary>
+        <div class="faq-body">
+          <p>Sim. Além da visualização do movimento, o simulador permite estudar relações de velocidade e configurações de trens planetários conforme os parâmetros definidos pelo usuário.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Ele pode ser usado em sala de aula?</summary>
+        <div class="faq-body">
+          <p>Sim. O Engrenarium foi pensado justamente como ferramenta de apoio didático para disciplinas ligadas a elementos de máquinas e mecanismos.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Como entrar em contato?</summary>
+        <div class="faq-body">
+          <p>Use o e-mail disponível na seção de contato para dúvidas relacionadas ao simulador ou ao conteúdo técnico do portal.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="glossario">
+  <div class="container">
+    <span class="section-label">Referência técnica</span>
+    <h2>Glossário de termos — engrenagens e mecanismos</h2>
+    <p class="lead">Definições objetivas de termos frequentes no estudo de engrenagens, transmissões e mecanismos.</p>
+
+    <dl class="glossary-grid">
+      <div class="glossary-item">
+        <dt>Módulo (m)</dt>
+        <dd>Parâmetro dimensional que relaciona o diâmetro primitivo ao número de dentes de uma engrenagem.</dd>
+      </div>
+
+      <div class="glossary-item">
+        <dt>Relação de transmissão</dt>
+        <dd>Razão entre a velocidade angular do elemento de entrada e a do elemento de saída.</dd>
+      </div>
+
+      <div class="glossary-item">
+        <dt>Engrenagem solar</dt>
+        <dd>Engrenagem central de dentes externos em um trem planetário.</dd>
+      </div>
+
+      <div class="glossary-item">
+        <dt>Engrenagem satélite</dt>
+        <dd>Engrenagem que engrena com outros elementos do trem planetário e pode girar em torno do próprio eixo e do eixo central do conjunto.</dd>
+      </div>
+
+      <div class="glossary-item">
+        <dt>Coroa</dt>
+        <dd>Engrenagem de dentes internos que circunda o sistema planetário.</dd>
+      </div>
+
+      <div class="glossary-item">
+        <dt>Porta-satélites</dt>
+        <dd>Elemento estrutural que sustenta os eixos dos satélites e gira em torno do eixo central do sistema.</dd>
+      </div>
+
+      <div class="glossary-item">
+        <dt>Ângulo de pressão</dt>
+        <dd>Ângulo geométrico associado à transmissão de força entre elementos em contato, relevante tanto em engrenagens quanto em cames.</dd>
+      </div>
+
+      <div class="glossary-item">
+        <dt>Valor do trem</dt>
+        <dd>Constante \(e\) obtida com o braço fixo, usada na equação geral do trem epicicloidal.</dd>
+      </div>
+
+      <div class="glossary-item">
+        <dt>Folga (backlash)</dt>
+        <dd>Espaço livre entre os flancos dos dentes de duas engrenagens em contato.</dd>
+      </div>
+
+      <div class="glossary-item">
+        <dt>Trem de engrenagens composto</dt>
+        <dd>Arranjo com múltiplos engrenamentos em série, usado para obter relações mais elevadas ou geometrias específicas.</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<section id="livros">
+  <div class="container">
+    <span class="section-label">Publicações</span>
+    <h2>Livros traduzidos</h2>
+    <p class="lead">Obras traduzidas e publicadas na área de mecanismos e movimentos mecânicos.</p>
+
+    <div class="books-grid">
+      <div class="book-card">
+        <div class="book-cover-img">
+          <img src="figs/livro507.jpg" alt="Capa do livro 507 Movimentos Mecânicos">
+        </div>
+        <div class="book-info">
+          <h3>507 Movimentos Mecânicos: Mecanismos e Dispositivos</h3>
+          <p>Tradução de obra clássica com mecanismos ilustrados e descrições de funcionamento em aplicações diversas.</p>
+          <p><em>Editora Blucher, 2019</em></p>
+          <span class="book-badge">Tradução para o português</span>
         </div>
       </div>
-    </section>
 
-    <section id="conteudo">
-      <div class="container">
-        <h2>Áreas de conteúdo</h2>
-        <p class="lead">
-          Os projetos hospedados neste domínio se concentram principalmente em tópicos de
-          engenharia mecânica com aplicação educacional e técnica.
-        </p>
-
-        <div class="features">
-          <div class="feature">
-            <h3>Engrenagens planetárias</h3>
-            <p class="muted">
-              Estudo de sistemas epicicloidais, relações de transmissão, velocidades angulares,
-              configurações compostas e aplicações em redutores e transmissões.
-            </p>
-          </div>
-
-          <div class="feature">
-            <h3>Elementos de máquinas</h3>
-            <p class="muted">
-              Conteúdos ligados a projeto mecânico, componentes de transmissão, análise funcional
-              e apoio didático para disciplinas da área.
-            </p>
-          </div>
-
-          <div class="feature">
-            <h3>Ensino e simulação</h3>
-            <p class="muted">
-              Ferramentas e materiais úteis para demonstrar conceitos de forma visual e aplicada,
-              favorecendo aprendizagem e exploração técnica.
-            </p>
-          </div>
+      <div class="book-card">
+        <div class="book-cover-img">
+          <img src="figs/livro1800.jpg" alt="Capa do livro 1800 Movimentos Mecânicos">
+        </div>
+        <div class="book-info">
+          <h3>1800 Movimentos Mecânicos, Dispositivos e Componentes</h3>
+          <p>Compêndio traduzido com ampla variedade de mecanismos, dispositivos e soluções mecânicas clássicas.</p>
+          <p><em>Barbudenge, 2025</em></p>
+          <span class="book-badge">Tradução para o português</span>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section id="qualidade">
-      <div class="container">
-        <h2>Propósito editorial e técnico</h2>
-        <p>
-          Esta página principal foi criada para apresentar conteúdo editorial próprio e contextualizar
-          os recursos hospedados no domínio. Ela não serve apenas como uma tela de navegação,
-          mas como uma introdução real aos projetos publicados, descrevendo a natureza do
-          conteúdo e sua utilidade para o visitante.
-        </p>
-        <p>
-          O material aqui referenciado é direcionado a um público interessado em engenharia
-          mecânica, especialmente nos campos de engrenagens, mecanismos, elementos de máquinas
-          e ensino técnico. O conteúdo tem finalidade informativa, educacional e de divulgação
-          de ferramentas originais, oferecendo valor ao usuário antes mesmo do acesso às páginas
-          específicas de cada projeto.
-        </p>
+<section id="contato">
+  <div class="container">
+    <span class="section-label">Contato</span>
+    <h2>Informações de contato</h2>
+    <p class="lead">Para dúvidas sobre o Engrenarium, sobre o conteúdo técnico publicado neste portal ou sobre o LASME/UFSJ, utilize os contatos abaixo.</p>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>E-mail</h3>
+        <p>Para assuntos relacionados ao simulador, ao conteúdo técnico ou a questões acadêmicas ligadas a mecanismos e engrenagens.</p>
+        <p>📧 <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
       </div>
-    </section>
 
-    <section id="contato">
-      <div class="container">
-        <h2>Contato e informações</h2>
-        <p class="lead">
-          Para informações sobre os projetos, navegue pelas páginas específicas indicadas acima.
-        </p>
-
-        <div class="cards">
-          <article class="card">
-            <h3>Projetos disponíveis</h3>
-            <ul class="info-list">
-              <li><a href="https://barbudenge.github.io/engrenarium/">Engrenarium</a></li>
-              <li><a href="https://barbudenge.github.io/lasmeufsj/">LASME</a></li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <h3>Observação</h3>
-            <p>
-              Este domínio é usado para publicação de páginas e ferramentas próprias. Novos
-              conteúdos e recursos podem ser adicionados futuramente conforme o desenvolvimento
-              dos projetos.
-            </p>
-          </article>
-        </div>
+      <div class="contact-card">
+        <h3>Links úteis</h3>
+        <p><a href="https://barbudenge.github.io/engrenarium/">Engrenarium — simulador</a></p>
+        <p><a href="https://barbudenge.github.io/lasmeufsj/">Página do LASME/UFSJ</a></p>
+        <p><a href="https://github.com/Barbudenge">GitHub — código-fonte</a></p>
+        <p><a href="privacy.html">Política de Privacidade</a></p>
       </div>
-    </section>
-  </main>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    <div class="container footer-grid">
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
       <div>
-        <h3>Barbudenge</h3>
-        <p>
-          Portal com projetos ligados à engenharia mecânica, simulação, ensino e divulgação técnica.
-        </p>
+        <div class="footer-brand">Barbu<span>denge</span></div>
+        <p>Portal com ferramentas e conteúdo técnico sobre engrenagens, mecanismos e elementos de máquinas.</p>
       </div>
 
       <div>
-        <h3>Links</h3>
+        <h4>Projetos</h4>
         <ul>
-          <li><a href="https://barbudenge.github.io/">Página inicial</a></li>
           <li><a href="https://barbudenge.github.io/engrenarium/">Engrenarium</a></li>
-          <li><a href="https://barbudenge.github.io/lasmeufsj/">LASME</a></li>
+          <li><a href="https://barbudenge.github.io/lasmeufsj/">LASME/UFSJ</a></li>
+          <li><a href="https://github.com/Barbudenge">GitHub</a></li>
         </ul>
       </div>
 
       <div>
-        <h3>Navegação</h3>
+        <h4>Conteúdo</h4>
         <ul>
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#projetos">Projetos</a></li>
-          <li><a href="#conteudo">Conteúdo</a></li>
-          <li><a href="#contato">Contato</a></li>
+          <li><a href="#artigo-planetarias">Engrenagens planetárias</a></li>
+          <li><a href="#artigo-cames">Cames</a></li>
+          <li><a href="#faq">FAQ Engrenarium</a></li>
+          <li><a href="#glossario">Glossário</a></li>
+          <li><a href="privacy.html">Política de Privacidade</a></li>
         </ul>
       </div>
     </div>
 
-    <div class="container copyright">
-      © 2026 Barbudenge. Todos os direitos reservados.
+    <div class="footer-bottom">
+      <span>© 2025–2026 Barbudenge. Todos os direitos reservados.</span>
+      <span><a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a> · <a href="privacy.html">Privacidade</a></span>
     </div>
-  </footer>
+  </div>
+</footer>
+
 </body>
 </html>
