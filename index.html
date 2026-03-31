@@ -42,17 +42,18 @@
 
   <style>
     :root {
-      --bg: #eef2f7;
-      --surface: #ffffff;
-      --surface-soft: #f5f7fb;
-      --text: #17212f;
-      --muted: #5a6879;
-      --accent: #16365f;
-      --accent-2: #224a80;
-      --accent-3: #c24b1b;
-      --gold: #d7b06a;
-      --border: #d7e0ea;
-      --shadow: 0 6px 22px rgba(0,0,0,0.07);
+      --bg: #eceff3;
+      --surface: #f7f8fa;
+      --surface-2: #eef1f5;
+      --surface-soft: #e8edf3;
+      --text: #1f2730;
+      --muted: #626d79;
+      --accent: #3c4652;
+      --accent-2: #596472;
+      --accent-3: #8a4d2f;
+      --gold: #c8ab73;
+      --border: #cfd6de;
+      --shadow: 0 4px 14px rgba(0,0,0,0.05);
       --maxw: 1080px;
       --serif: 'Crimson Pro', Georgia, serif;
       --sans: 'Source Sans 3', Helvetica, Arial, sans-serif;
@@ -79,12 +80,12 @@
     }
 
     header {
-      background: var(--accent);
+      background: #5a6470;
       color: #fff;
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
     }
 
     .topbar {
@@ -104,7 +105,7 @@
       letter-spacing: 0.02em;
     }
 
-    .brand span { color: var(--gold); }
+    .brand span { color: #d7c19a; }
 
     nav {
       display: flex;
@@ -114,7 +115,7 @@
     }
 
     nav a {
-      color: rgba(255,255,255,0.9);
+      color: rgba(255,255,255,0.92);
       font-weight: 600;
       font-size: 0.94rem;
     }
@@ -125,16 +126,17 @@
     }
 
     .hero {
-      background: linear-gradient(160deg, #16365f 0%, #0f2544 100%);
-      color: #fff;
-      padding: 64px 0 52px;
-      border-top: none;
+      background: linear-gradient(180deg, #dfe4ea 0%, #cfd6de 100%);
+      color: var(--text);
+      padding: 56px 0 44px;
+      border-top: 1px solid #bcc5cf;
+      border-bottom: 1px solid #c4ccd5;
     }
 
     .hero-inner {
       display: grid;
       grid-template-columns: 1.4fr 0.85fr;
-      gap: 40px;
+      gap: 32px;
       align-items: start;
     }
 
@@ -144,7 +146,7 @@
       font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: #7a6950;
       margin-bottom: 14px;
     }
 
@@ -154,10 +156,11 @@
       line-height: 1.18;
       font-weight: 700;
       margin-bottom: 18px;
+      color: #2e3844;
     }
 
     .hero p {
-      color: rgba(255,255,255,0.88);
+      color: #55606c;
       font-size: 1.05rem;
       margin-bottom: 12px;
     }
@@ -176,57 +179,58 @@
       font-weight: 700;
       font-size: 0.95rem;
       transition: 0.18s ease;
-      border: 2px solid transparent;
+      border: 1px solid transparent;
     }
 
     .btn-primary {
-      background: var(--gold);
-      color: #1f1f1f;
+      background: #636d79;
+      color: #fff;
     }
 
     .btn-primary:hover {
-      background: #cda255;
+      background: #505965;
       text-decoration: none;
     }
 
     .btn-secondary {
-      background: transparent;
-      color: #fff;
-      border-color: rgba(255,255,255,0.45);
+      background: #f4f6f8;
+      color: #3f4a57;
+      border-color: #bcc5cf;
     }
 
     .btn-secondary:hover {
-      border-color: #fff;
+      background: #e9edf1;
       text-decoration: none;
     }
 
     .hero-card {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.55);
+      border: 1px solid #c7ced6;
       border-radius: 14px;
       padding: 22px;
+      box-shadow: var(--shadow);
     }
 
     .hero-card h3 {
       font-family: var(--serif);
       font-size: 1.15rem;
-      color: var(--gold);
+      color: #3f4a57;
       margin-bottom: 10px;
     }
 
     .hero-card ul {
       padding-left: 18px;
-      color: rgba(255,255,255,0.84);
+      color: #5f6a77;
     }
 
     .hero-card li + li { margin-top: 7px; }
 
     .hero-card a {
-      color: #cfe0ff;
+      color: #4a5562;
     }
 
     .hero-card a:hover {
-      color: #fff;
+      color: #202831;
     }
 
     section { padding: 52px 0; }
@@ -238,7 +242,7 @@
       font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--accent-3);
+      color: #8a4d2f;
       margin-bottom: 8px;
     }
 
@@ -246,7 +250,7 @@
       font-family: var(--serif);
       font-size: clamp(1.6rem, 3vw, 2.15rem);
       font-weight: 700;
-      color: var(--text);
+      color: #2f3945;
       line-height: 1.2;
       margin-bottom: 14px;
     }
@@ -279,7 +283,7 @@
       font-family: var(--serif);
       font-size: 1.6rem;
       font-weight: 700;
-      color: var(--accent);
+      color: #3e4955;
       margin-bottom: 16px;
     }
 
@@ -288,7 +292,7 @@
       font-size: 1.16rem;
       font-weight: 600;
       margin: 22px 0 8px;
-      color: var(--text);
+      color: #2f3945;
     }
 
     .article-card p {
@@ -307,8 +311,8 @@
 
     .equation-box {
       background: var(--surface-soft);
-      border: 1px solid #c7d7ea;
-      border-left: 4px solid var(--accent);
+      border: 1px solid #c9d1da;
+      border-left: 4px solid #5b6774;
       border-radius: 10px;
       padding: 18px 18px 14px;
       margin: 18px 0;
@@ -332,36 +336,46 @@
     }
 
     .info-box {
-      background: #eef3fa;
-      border: 1px solid #c5d5ea;
+      background: #e8edf2;
+      border: 1px solid #c8d0d8;
       border-radius: 10px;
       padding: 14px 18px;
       margin: 18px 0;
       font-size: 0.95rem;
-      color: #2a3f5e;
+      color: #4f5c69;
     }
 
     .info-box strong {
       display: block;
       margin-bottom: 4px;
-      color: var(--accent);
+      color: #3d4753;
     }
 
     .figure-row {
       display: flex;
       justify-content: center;
-      align-items: flex-start;
+      align-items: stretch;
       gap: 24px;
       flex-wrap: wrap;
       margin: 20px 0 24px;
     }
 
-    .figure-row img {
-      max-width: 320px;
-      width: 100%;
-      height: auto;
+    .figure-equal {
+      width: 320px;
+      height: 320px;
       border: 1px solid var(--border);
       border-radius: 10px;
+      background: #fff;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .figure-equal img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
       background: #fff;
     }
 
@@ -372,16 +386,21 @@
     }
 
     .figure-single img {
-      max-width: 560px;
-      width: 100%;
-      height: auto;
       border: 1px solid var(--border);
       border-radius: 10px;
       background: #fff;
     }
 
+    .figure-example img {
+      max-width: 280px;
+      width: 100%;
+      height: auto;
+    }
+
     .figure-came img {
       max-width: 420px;
+      width: 100%;
+      height: auto;
     }
 
     .projects-grid,
@@ -403,7 +422,7 @@
     .contact-card h3 {
       font-family: var(--serif);
       font-size: 1.25rem;
-      color: var(--accent);
+      color: #3e4955;
       margin-bottom: 10px;
     }
 
@@ -425,8 +444,8 @@
     }
 
     .project-tag {
-      background: #edf3fb;
-      color: var(--accent);
+      background: #e7ebef;
+      color: #4e5966;
     }
 
     .project-link {
@@ -434,7 +453,7 @@
       align-items: center;
       gap: 6px;
       font-weight: 700;
-      color: var(--accent-3);
+      color: #8a4d2f;
       font-size: 0.95rem;
     }
 
@@ -453,7 +472,7 @@
       padding: 16px 20px;
       font-weight: 700;
       font-size: 1rem;
-      color: var(--accent);
+      color: #434e5a;
       list-style: none;
       display: flex;
       justify-content: space-between;
@@ -483,7 +502,7 @@
 
     .glossary-item dt {
       font-weight: 700;
-      color: var(--accent);
+      color: #3e4955;
       font-family: var(--serif);
       font-size: 1.05rem;
       margin-bottom: 4px;
@@ -518,18 +537,22 @@
     .book-info h3 {
       font-family: var(--serif);
       font-size: 1.1rem;
-      color: var(--text);
+      color: #2f3945;
       margin-bottom: 6px;
     }
 
+    .book-info h3 a {
+      color: inherit;
+    }
+
     .book-badge {
-      background: #fef3e2;
-      color: #a06010;
+      background: #eee5d8;
+      color: #7d5b2f;
     }
 
     footer {
-      background: #12253f;
-      color: rgba(255,255,255,0.75);
+      background: #5a6470;
+      color: rgba(255,255,255,0.82);
       padding: 36px 0 24px;
       margin-top: 20px;
     }
@@ -548,14 +571,14 @@
       margin-bottom: 8px;
     }
 
-    .footer-brand span { color: var(--gold); }
+    .footer-brand span { color: #d7c19a; }
 
     footer h4 {
       font-size: 0.85rem;
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.55);
+      color: rgba(255,255,255,0.62);
       margin-bottom: 12px;
     }
 
@@ -563,7 +586,7 @@
     footer li + li { margin-top: 7px; }
 
     footer a {
-      color: rgba(255,255,255,0.78);
+      color: rgba(255,255,255,0.88);
       font-size: 0.92rem;
     }
 
@@ -573,7 +596,7 @@
     }
 
     .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.1);
+      border-top: 1px solid rgba(255,255,255,0.12);
       padding-top: 18px;
       font-size: 0.85rem;
       display: flex;
@@ -582,7 +605,7 @@
       gap: 8px;
     }
 
-    .footer-bottom a { color: rgba(255,255,255,0.65); }
+    .footer-bottom a { color: rgba(255,255,255,0.78); }
     .footer-bottom a:hover { color: #fff; }
 
     @media (max-width: 860px) {
@@ -605,6 +628,12 @@
 
       .book-cover-img {
         width: 140px;
+      }
+
+      .figure-equal {
+        width: 100%;
+        max-width: 320px;
+        height: 320px;
       }
     }
   </style>
@@ -664,8 +693,12 @@
       <p>Nos trens epicicloidais, a formulação mais útil é a do caso geral, em que se relacionam as velocidades angulares da primeira engrenagem do trem, da última engrenagem do trem e do braço. Essa forma é mais abrangente do que trabalhar apenas com casos particulares, pois permite interpretar o trem como um todo antes de aplicar as condições específicas de entrada, saída e elemento fixo.</p>
 
       <div class="figure-row">
-        <img src="figs/planet1.png" alt="Exemplo de trem planetário simples em vista isométrica">
-        <img src="figs/planet2.png" alt="Exemplo de trem planetário com dois conjuntos em vista isométrica">
+        <div class="figure-equal">
+          <img src="figs/planet1.png" alt="Exemplo de trem planetário simples em vista isométrica">
+        </div>
+        <div class="figure-equal">
+          <img src="figs/planet2.png" alt="Exemplo de trem planetário com dois conjuntos em vista isométrica">
+        </div>
       </div>
 
       <h4>Equação geral</h4>
@@ -698,7 +731,7 @@
 
       <h4>Exemplo: trem 1–2–3</h4>
 
-      <div class="figure-single">
+      <div class="figure-single figure-example">
         <img src="figs/exemplo-plan.png" alt="Exemplo esquemático de trem planetário 1-2-3 com braço B">
       </div>
 
@@ -723,7 +756,7 @@
       <p>Essa formulação é especialmente útil em sistemas planetários compostos e em arranjos com múltiplos engrenamentos, pois evita reduzir o problema a formas simplificadas prematuramente. Em contexto didático, ela também deixa mais claro o papel do braço e o conceito de velocidades relativas.</p>
 
       <p style="margin-top:18px;">
-        <a href="https://barbudenge.github.io/engrenarium/" style="font-weight:700; color:var(--accent-3);">Experimente o Engrenarium — simulador interativo de engrenagens planetárias →</a>
+        <a href="https://barbudenge.github.io/engrenarium/" style="font-weight:700; color:#8a4d2f;">Experimente o Engrenarium — simulador interativo de engrenagens planetárias →</a>
       </p>
     </article>
 
@@ -901,10 +934,16 @@
     <div class="books-grid">
       <div class="book-card">
         <div class="book-cover-img">
-          <img src="figs/livro507.jpg" alt="Capa do livro 507 Movimentos Mecânicos">
+          <a href="https://amzn.to/3Ocyd1q" target="_blank" rel="noopener noreferrer">
+            <img src="figs/livro507.jpg" alt="Capa do livro 507 Movimentos Mecânicos">
+          </a>
         </div>
         <div class="book-info">
-          <h3>507 Movimentos Mecânicos: Mecanismos e Dispositivos</h3>
+          <h3>
+            <a href="https://amzn.to/3Ocyd1q" target="_blank" rel="noopener noreferrer">
+              507 Movimentos Mecânicos: Mecanismos e Dispositivos
+            </a>
+          </h3>
           <p>Tradução de obra clássica com mecanismos ilustrados e descrições de funcionamento em aplicações diversas.</p>
           <p><em>Editora Blucher, 2019</em></p>
           <span class="book-badge">Tradução para o português</span>
@@ -913,10 +952,16 @@
 
       <div class="book-card">
         <div class="book-cover-img">
-          <img src="figs/livro1800.jpg" alt="Capa do livro 1800 Movimentos Mecânicos">
+          <a href="https://amzn.to/47THGl9" target="_blank" rel="noopener noreferrer">
+            <img src="figs/livro1800.jpg" alt="Capa do livro 1800 Movimentos Mecânicos">
+          </a>
         </div>
         <div class="book-info">
-          <h3>1800 Movimentos Mecânicos, Dispositivos e Componentes</h3>
+          <h3>
+            <a href="https://amzn.to/47THGl9" target="_blank" rel="noopener noreferrer">
+              1800 Movimentos Mecânicos, Dispositivos e Componentes
+            </a>
+          </h3>
           <p>Compêndio traduzido com ampla variedade de mecanismos, dispositivos e soluções mecânicas clássicas.</p>
           <p><em>Barbudenge, 2025</em></p>
           <span class="book-badge">Tradução para o português</span>
