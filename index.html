@@ -42,18 +42,19 @@
 
   <style>
 :root {
-  --bg: #0f172a;           /* Fundo escuro profundo (estilo LASME) */
-  --surface: #1e293b;      /* Superfície dos cards */
-  --surface-2: #334155;    /* Superfície de hover/destaque */
-  --surface-soft: #1e293b;
-  --text: #f1f5f9;         /* Texto claro para leitura no escuro */
-  --muted: #94a3b8;        /* Texto secundário/suave */
-  --accent: #38bdf8;       /* Azul brilhante para links/botões */
-  --accent-2: #7dd3fc;
-  --accent-3: #f0b860;     /* Ouro do LASME para detalhes */
-  --gold: #f0b860;
-  --border: #334155;
-  --shadow: 0 4px 14px rgba(0,0,0,0.3);
+  /* Cores extraídas do tema light do LASME */
+  --bg: #f8fafc;           /* Fundo levemente acinzentado */
+  --surface: #ffffff;      /* Branco puro para cards */
+  --surface-2: #f1f5f9;    /* Cinza claro para hover */
+  --surface-soft: #f8fafc;
+  --text: #0f172a;         /* Azul marinho quase preto para legibilidade */
+  --muted: #64748b;        /* Cinza azulado para textos secundários */
+  --accent: #1e40af;       /* Azul royal para links e botões */
+  --accent-2: #3b82f6;
+  --accent-3: #d97706;     /* Dourado/Âmbar para destaques */
+  --gold: #b45309;         /* Tom de ouro para o logo */
+  --border: #e2e8f0;       /* Bordas sutis */
+  --shadow: 0 1px 3px rgba(0,0,0,0.1);
   --maxw: 1080px;
   --serif: 'Crimson Pro', Georgia, serif;
   --sans: 'Source Sans 3', Helvetica, Arial, sans-serif;
@@ -78,16 +79,11 @@
       width: min(var(--maxw), calc(100% - 32px));
       margin: 0 auto;
     }
-
-    header {
-      background: #0f172a;
-      border-bottom: 1px solid var(--border);
-      color: #fff;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-    }
+header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
 
     .topbar {
       display: flex;
