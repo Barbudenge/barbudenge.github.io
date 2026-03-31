@@ -80,9 +80,9 @@
       margin: 0 auto;
     }
 header {
-  background: var(--surface);
+  background: var(--surface); /* Fundo branco */
   border-bottom: 1px solid var(--border);
-  color: var(--text);
+  color: var(--text); /* Texto azul marinho escuro */
 }
 
     .topbar {
@@ -94,15 +94,17 @@ header {
       flex-wrap: wrap;
     }
 
-    .brand {
-      font-family: var(--serif);
-      font-size: 1.55rem;
-      font-weight: 700;
-      color: #fff;
-      letter-spacing: 0.02em;
-    }
+.brand {
+  font-family: var(--serif);
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: var(--text); /* Garante que o "Barbu" fique legível no fundo claro */
+  letter-spacing: 0.02em;
+}
 
-    .brand span { color: #d7c19a; }
+.brand span { 
+  color: var(--gold); /* Usa o tom de ouro definido nas variáveis para o "denge" */
+}
 
     nav {
       display: flex;
@@ -111,22 +113,22 @@ header {
       align-items: center;
     }
 
-    nav a {
-      color: rgba(255,255,255,0.92);
-      font-weight: 600;
-      font-size: 0.94rem;
-    }
+nav a {
+  color: var(--muted); /* Cinza azulado para os links do menu */
+  font-weight: 600;
+  font-size: 0.94rem;
+}
 
-    nav a:hover {
-      color: #fff;
-      text-decoration: none;
-    }
+nav a:hover {
+  color: var(--accent); /* Azul royal ao passar o mouse */
+  text-decoration: none;
+}
 
-    .hero {
-      background: #1e293b;
-      color: var(--text);
-      border-bottom: 1px solid var(--border);
-    }
+.hero {
+  background: #1e293b; /* Fundo escuro do hero */
+  color: #ffffff; /* Garante cor padrão branca para textos gerais aqui dentro */
+  border-bottom: 1px solid var(--border);
+}
 
     .hero-inner {
       display: grid;
@@ -135,30 +137,30 @@ header {
       align-items: start;
     }
 
-    .hero-label {
-      display: inline-block;
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #7a6950;
-      margin-bottom: 14px;
-    }
+.hero-label {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #e2e8f0; /* Cor clara para a etiqueta UFSJ / LASME */
+  margin-bottom: 14px;
+}
 
-    .hero h1 {
-      font-family: var(--serif);
-      font-size: clamp(2rem, 4vw, 3rem);
-      line-height: 1.18;
-      font-weight: 700;
-      margin-bottom: 18px;
-      color: #2e3844;
-    }
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.18;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: #f8fafc; /* Um branco levemente acinzentado para o título principal */
+}
 
-    .hero p {
-      color: #55606c;
-      font-size: 1.05rem;
-      margin-bottom: 12px;
-    }
+.hero p {
+  color: #cbd5e1; /* Um cinza claro para boa leitura no fundo escuro */
+  font-size: 1.05rem;
+  margin-bottom: 12px;
+}
 
     .hero-actions {
       display: flex;
