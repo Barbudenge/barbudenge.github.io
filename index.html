@@ -42,14 +42,24 @@
 
   <style>
 :root {
-  --bg: #f8fafc;
-  --surface: #ffffff;
-  --text: #0f172a;      /* Cor principal do texto (Escuro) */
-  --muted: #64748b;     /* Texto secundário */
-  --accent: #1e40af;    /* Azul para botões/links */
-  --accent-3: #b45309;  /* Ouro do LASME Light */
-  --border: #e2e8f0;
+  /* Cores extraídas do tema light do LASME */
+  --bg: #f8fafc;           /* Fundo levemente acinzentado */
+  --surface: #ffffff;      /* Branco puro para cards */
+  --surface-2: #f1f5f9;    /* Cinza claro para hover */
+  --surface-soft: #f8fafc;
+  --text: #0f172a;         /* Azul marinho quase preto para legibilidade */
+  --muted: #64748b;        /* Cinza azulado para textos secundários */
+  --accent: #1e40af;       /* Azul royal para links e botões */
+  --accent-2: #3b82f6;
+  --accent-3: #d97706;     /* Dourado/Âmbar para destaques */
+  --gold: #b45309;         /* Tom de ouro para o logo */
+  --border: #e2e8f0;       /* Bordas sutis */
+  --shadow: 0 1px 3px rgba(0,0,0,0.1);
+  --maxw: 1080px;
+  --serif: 'Crimson Pro', Georgia, serif;
+  --sans: 'Source Sans 3', Helvetica, Arial, sans-serif;
 }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
 
@@ -70,8 +80,9 @@
       margin: 0 auto;
     }
 header {
-  background: #ffffff;
-  border-bottom: 1px solid #e2e8f0;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
 }
 
     .topbar {
@@ -82,17 +93,16 @@ header {
       gap: 16px;
       flex-wrap: wrap;
     }
-.brand {
-  color: #0f172a !important; /* Azul marinho profundo do LASME */
-  font-family: var(--serif);
-  font-weight: 700;
-  font-size: 1.5rem;
-  text-decoration: none;
-}
 
-.brand span {
-  color: #b45309 !important; /* Dourado escuro para contraste no branco */
-}
+    .brand {
+      font-family: var(--serif);
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.02em;
+    }
+
+    .brand span { color: #d7c19a; }
 
     nav {
       display: flex;
@@ -100,16 +110,7 @@ header {
       flex-wrap: wrap;
       align-items: center;
     }
-    
-nav ul li a {
-  color: #0f172a; 
-  text-decoration: none;
-  font-weight: 500;
-}
 
-nav ul li a:hover {
-  color: #1e40af; /* Azul mais vivo no hover */
-}
     nav a {
       color: rgba(255,255,255,0.92);
       font-weight: 600;
