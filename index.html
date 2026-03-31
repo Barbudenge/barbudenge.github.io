@@ -41,23 +41,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --bg: #eceff3;
-      --surface: #f7f8fa;
-      --surface-2: #eef1f5;
-      --surface-soft: #e8edf3;
-      --text: #1f2730;
-      --muted: #626d79;
-      --accent: #3c4652;
-      --accent-2: #596472;
-      --accent-3: #8a4d2f;
-      --gold: #c8ab73;
-      --border: #cfd6de;
-      --shadow: 0 4px 14px rgba(0,0,0,0.05);
-      --maxw: 1080px;
-      --serif: 'Crimson Pro', Georgia, serif;
-      --sans: 'Source Sans 3', Helvetica, Arial, sans-serif;
-    }
+:root {
+  --bg: #0f172a;           /* Fundo escuro profundo (estilo LASME) */
+  --surface: #1e293b;      /* Superfície dos cards */
+  --surface-2: #334155;    /* Superfície de hover/destaque */
+  --surface-soft: #1e293b;
+  --text: #f1f5f9;         /* Texto claro para leitura no escuro */
+  --muted: #94a3b8;        /* Texto secundário/suave */
+  --accent: #38bdf8;       /* Azul brilhante para links/botões */
+  --accent-2: #7dd3fc;
+  --accent-3: #f0b860;     /* Ouro do LASME para detalhes */
+  --gold: #f0b860;
+  --border: #334155;
+  --shadow: 0 4px 14px rgba(0,0,0,0.3);
+  --maxw: 1080px;
+  --serif: 'Crimson Pro', Georgia, serif;
+  --sans: 'Source Sans 3', Helvetica, Arial, sans-serif;
+}
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -80,7 +80,8 @@
     }
 
     header {
-      background: #5a6470;
+      background: #0f172a;
+      border-bottom: 1px solid var(--border);
       color: #fff;
       position: sticky;
       top: 0;
@@ -126,11 +127,9 @@
     }
 
     .hero {
-      background: linear-gradient(180deg, #dfe4ea 0%, #cfd6de 100%);
+      background: #1e293b;
       color: var(--text);
-      padding: 56px 0 44px;
-      border-top: 1px solid #bcc5cf;
-      border-bottom: 1px solid #c4ccd5;
+      border-bottom: 1px solid var(--border);
     }
 
     .hero-inner {
