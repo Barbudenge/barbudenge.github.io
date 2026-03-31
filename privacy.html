@@ -14,12 +14,12 @@
 
   <style>
 :root {
-  --bg: #0f172a; 
-  --card: #1e293b; 
-  --text: #f1f5f9; 
-  --muted: #94a3b8;
-  --accent: #38bdf8; 
-  --border: #334155;
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --accent: #1e40af;
+  --border: #e2e8f0;
   --serif: 'Crimson Pro', Georgia, serif;
   --sans: 'Source Sans 3', Helvetica, Arial, sans-serif;
 }
@@ -32,7 +32,9 @@
     }
     .topbar { display: flex; justify-content: space-between; align-items: center; }
     .brand { font-family: var(--serif); font-size: 1.4rem; font-weight: 700; color: #fff; }
-    .brand span { color: #f0b860; }
+.brand span, .footer-brand span {
+  color: #b45309; /* Ouro escuro para o modo claro */
+}
     header a { color: rgba(255,255,255,0.85); font-size: 0.92rem; font-weight: 600; }
     .page-hero { background: var(--accent); color: #fff; padding: 36px 0 32px; }
     .page-hero h1 { font-family: var(--serif); font-size: 2rem; margin-bottom: 8px; }
