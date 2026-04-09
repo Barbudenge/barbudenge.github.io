@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Engrenagens planetárias: caso geral e valor do trem | Barbudenge</title>
+  <meta name="description" content="Artigo técnico sobre a formulação geral de trens epicicloidais, interpretação do valor do trem e leitura didática de velocidades relativas em engrenagens planetárias." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Artur Henrique de Freitas Avelar" />
+  <link rel="canonical" href="https://barbudenge.github.io/artigos/engrenagens-planetarias.html" />
+
+  <meta property="og:title" content="Engrenagens planetárias: caso geral e valor do trem" />
+  <meta property="og:description" content="Texto técnico sobre velocidades relativas, braço e valor do trem em sistemas planetários." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://barbudenge.github.io/artigos/engrenagens-planetarias.html" />
+
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --surface-soft: #eef3f8;
+      --text: #0f172a;
+      --muted: #64748b;
+      --accent: #1e40af;
+      --accent-2: #8a4d2f;
+      --border: #e2e8f0;
+      --shadow: 0 1px 3px rgba(0,0,0,0.08);
+      --maxw: 1040px;
+      --serif: 'Crimson Pro', Georgia, serif;
+      --sans: 'Source Sans 3', Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--sans); color: var(--text); background: var(--bg); line-height: 1.75; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(var(--maxw), calc(100% - 32px)); margin: 0 auto; }
+
+    header { background: var(--surface); border-bottom: 1px solid var(--border); }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 14px 0;
+      flex-wrap: wrap;
+    }
+    .brand {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .brand span { color: #b45309; }
+    nav { display: flex; gap: 18px; flex-wrap: wrap; }
+    nav a { color: var(--muted); font-weight: 600; font-size: 0.95rem; }
+
+    .hero {
+      background: #1e293b;
+      color: #fff;
+      padding: 56px 0 44px;
+    }
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #e2e8f0;
+      margin-bottom: 10px;
+    }
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.12;
+      max-width: 900px;
+      margin-bottom: 14px;
+    }
+    .hero p { color: #cbd5e1; max-width: 760px; }
+
+    .article-layout {
+      display: grid;
+      grid-template-columns: 1.35fr 0.65fr;
+      gap: 22px;
+      padding: 44px 0 60px;
+      align-items: start;
+    }
+
+    article,
+    aside .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+    }
+    article { padding: 32px 34px; }
+    aside .card { padding: 22px; }
+    aside .card + .card { margin-top: 22px; }
+
+    h2 {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      color: #2f3945;
+      margin: 26px 0 12px;
+    }
+    h2:first-child { margin-top: 0; }
+    h3 {
+      font-family: var(--serif);
+      font-size: 1.18rem;
+      color: #2f3945;
+      margin: 22px 0 8px;
+    }
+    p { color: var(--muted); margin-bottom: 14px; }
+    ul, ol { color: var(--muted); padding-left: 22px; margin-bottom: 14px; }
+    li + li { margin-top: 7px; }
+
+    .byline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      font-size: 0.95rem;
+      color: #dbe4ee;
+      margin-top: 14px;
+    }
+
+    .figure-row {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 20px 0 24px;
+    }
+    .figure-equal {
+      width: 320px;
+      height: 320px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .figure-equal img,
+    .figure-single img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #fff;
+    }
+    .figure-single {
+      max-width: 320px;
+      margin: 18px auto 24px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .equation-box {
+      background: var(--surface-soft);
+      border: 1px solid #c9d1da;
+      border-left: 4px solid #5b6774;
+      border-radius: 10px;
+      padding: 18px 18px 14px;
+      margin: 18px 0;
+      overflow-x: auto;
+    }
+    .equation-caption { font-size: 0.92rem; color: var(--muted); margin-top: 10px; }
+
+    .note {
+      background: #eef2f7;
+      border: 1px solid #d7dee7;
+      border-radius: 10px;
+      padding: 14px 16px;
+      color: #475569;
+      margin: 18px 0;
+    }
+
+    .meta-list { list-style: none; padding-left: 0; margin-bottom: 0; }
+    .meta-list li { padding: 10px 0; border-top: 1px solid var(--border); color: var(--muted); }
+    .meta-list li:first-child { border-top: 0; padding-top: 0; }
+
+    footer {
+      background: #12253f;
+      color: rgba(255,255,255,0.72);
+      padding: 26px 0;
+      font-size: 0.9rem;
+    }
+    footer a { color: rgba(255,255,255,0.86); }
+
+    @media (max-width: 900px) {
+      .article-layout { grid-template-columns: 1fr; }
+      article { padding: 24px 20px; }
+      .figure-equal { width: 100%; max-width: 320px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container topbar">
+    <a href="../index.html" style="text-decoration:none;"><div class="brand">Barbu<span>denge</span></div></a>
+    <nav aria-label="Navegação principal">
+      <a href="../index.html">Início</a>
+      <a href="../sobre.html">Sobre</a>
+      <a href="../engrenarium.html">Engrenarium</a>
+      <a href="../privacy.html">Privacidade</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow">Artigo técnico</span>
+    <h1>Engrenagens planetárias: caso geral e interpretação do valor do trem</h1>
+    <p>Uma formulação útil para analisar trens epicicloidais é a do caso geral, em que as velocidades da primeira engrenagem, da última engrenagem e do braço são relacionadas numa mesma expressão. Essa forma evita confundir casos particulares com a estrutura cinemática do problema.</p>
+    <div class="byline">
+      <span>Por Artur Henrique de Freitas Avelar</span>
+      <span>Atualizado em abril de 2026</span>
+      <span>Categoria: engrenagens e mecanismos</span>
+    </div>
+  </div>
+</section>
+
+<main class="container article-layout">
+  <article>
+    <h2>Por que vale a pena começar pelo caso geral</h2>
+    <p>Em exercícios introdutórios, é comum resolver cada arranjo planetário como um caso isolado: um problema com coroa fixa, outro com braço fixo, outro com entrada na solar, e assim por diante. Isso funciona em situações simples, mas frequentemente atrapalha a formação do raciocínio. O estudante aprende procedimentos separados e depois encontra dificuldade quando precisa interpretar um trem menos familiar.</p>
+    <p>A formulação geral é mais útil porque obriga a olhar primeiro para a estrutura do conjunto. Antes de decidir qual elemento está travado ou qual velocidade é conhecida, descreve-se o trem como sistema cinemático. Essa mudança de perspectiva costuma tornar o problema mais claro, especialmente em aulas e em situações com múltiplos engrenamentos.</p>
+
+    <div class="figure-row">
+      <div class="figure-equal">
+        <img src="../figs/planet1.png" alt="Exemplo de trem planetário simples em vista isométrica">
+      </div>
+      <div class="figure-equal">
+        <img src="../figs/planet2.png" alt="Exemplo de trem planetário com dois conjuntos em vista isométrica">
+      </div>
+    </div>
+
+    <h2>Equação geral</h2>
+    <p>Para um trem epicicloidal qualquer, pode-se escrever a relação:</p>
+
+    <div class="equation-box">
+      \[
+      \frac{\omega_{ub}}{\omega_{pb}}
+      =
+      \frac{\omega_u-\omega_b}{\omega_p-\omega_b}
+      =
+      e
+      \]
+      <p class="equation-caption">O parâmetro \(e\) representa o valor do trem calculado com o braço fixo.</p>
+    </div>
+
+    <ul>
+      <li>\(\omega_u\): velocidade angular da última engrenagem do trem;</li>
+      <li>\(\omega_p\): velocidade angular da primeira engrenagem do trem;</li>
+      <li>\(\omega_b\): velocidade angular do braço.</li>
+    </ul>
+
+    <p>O ponto decisivo aqui é que a equação não descreve um caso especial. Ela descreve o comportamento relativo do trem em relação ao braço. Depois que isso é entendido, as condições particulares entram apenas como restrições adicionais.</p>
+
+    <h2>O que significa o valor do trem</h2>
+    <p>O valor do trem \(e\) é obtido considerando a cadeia de engrenamentos com o braço fixo. Em termos didáticos, isso equivale a “desligar” momentaneamente o movimento do porta-satélites para calcular como a sequência de engrenamentos transforma rotação entre o primeiro e o último elemento do trem.</p>
+    <p>Esse número depende da topologia do conjunto, dos números de dentes e do tipo de contato entre as engrenagens, externo ou interno. Uma vez obtido, ele passa a condensar a estrutura do problema numa constante que pode ser usada na equação geral.</p>
+
+    <div class="note">Separar a análise em duas etapas costuma evitar erro conceitual: primeiro calcula-se o valor do trem com o braço fixo; depois aplica-se a relação geral às condições reais de movimento do conjunto.</div>
+
+    <h2>Exemplo simples: trem 1-2-3</h2>
+    <div class="figure-single">
+      <img src="../figs/exemplo-plan.png" alt="Exemplo esquemático de trem planetário 1-2-3 com braço B">
+    </div>
+    <p>Para um trem formado pelas engrenagens 1, 2 e 3, com o braço indicado por \(B\), pode-se escrever:</p>
+
+    <div class="equation-box">
+      \[
+      \frac{\omega_{3B}}{\omega_{1B}}
+      =
+      \frac{\omega_3-\omega_B}{\omega_1-\omega_B}
+      =
+      \left(-\frac{N_1}{N_2}\right)
+      \left(\frac{N_2}{N_3}\right)
+      =
+      e
+      \]
+    </div>
+
+    <p>Nessa expressão, \(N_1\), \(N_2\) e \(N_3\) são os números de dentes das engrenagens envolvidas. O sinal de cada parcela depende do tipo de engrenamento ao longo da cadeia. O produto final fornece o valor do trem, que depois pode ser usado em qualquer situação operacional coerente com o mesmo arranjo geométrico.</p>
+
+    <h2>Como interpretar a fórmula sem cair em automatismos</h2>
+    <p>Um erro frequente é tentar “encaixar” a equação em tabelas decoradas sem pensar no significado físico de cada termo. Em trens planetários, isso costuma gerar trocas entre braço e elemento fixo, ou confusão entre a observação do sistema em movimento real e a observação do conjunto com braço fixo.</p>
+    <p>Uma leitura mais robusta é seguir esta sequência:</p>
+    <ol>
+      <li>identificar qual cadeia de engrenamentos define o trem;</li>
+      <li>calcular o valor \(e\) com o braço fixo;</li>
+      <li>definir entrada, saída e elemento fixo no problema real;</li>
+      <li>substituir as condições conhecidas na relação geral.</li>
+    </ol>
+    <p>Essa ordem reduz o número de atalhos mentais e torna mais fácil explicar o raciocínio em sala de aula ou em relatório técnico.</p>
+
+    <h2>Onde essa formulação é mais útil</h2>
+    <p>A forma geral é particularmente vantajosa quando o arranjo deixa de ser elementar. Em sistemas compostos, em cadeias com vários engrenamentos ou em problemas em que se deseja comparar diferentes escolhas de entrada e saída, a formulação ajuda a manter a coerência do raciocínio. Em vez de reconstruir tudo do zero para cada cenário, trabalha-se sobre uma mesma base cinemática.</p>
+    <p>Por isso, ela também conversa bem com ferramentas visuais como o Engrenarium. O simulador pode ajudar a enxergar o arranjo; a formulação geral ajuda a organizar a interpretação matemática do que está sendo observado.</p>
+
+    <p style="margin-top:18px; font-weight:700;"><a href="../engrenarium.html">Leia também: guia do Engrenarium e aplicações didáticas do simulador →</a></p>
+  </article>
+
+  <aside>
+    <div class="card">
+      <h3>Resumo da página</h3>
+      <ul class="meta-list">
+        <li>Explica a equação geral de trens epicicloidais.</li>
+        <li>Define o papel do braço e do valor do trem.</li>
+        <li>Mostra por que separar estrutura e condição de operação ajuda na análise.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Leituras relacionadas</h3>
+      <ul class="meta-list">
+        <li><a href="cames.html">Cames: fundamentos de síntese e análise</a></li>
+        <li><a href="../engrenarium.html">Guia do Engrenarium</a></li>
+        <li><a href="../sobre.html">Sobre o portal</a></li>
+        <li><a href="../privacy.html">Política de Privacidade</a></li>
+      </ul>
+    </div>
+  </aside>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Barbudenge · <a href="../index.html">Página inicial</a> · <a href="../sobre.html">Sobre</a> · <a href="../privacy.html">Privacidade</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

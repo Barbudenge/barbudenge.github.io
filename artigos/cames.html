@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cames: fundamentos de síntese e análise | Barbudenge</title>
+  <meta name="description" content="Artigo técnico sobre o papel dos cames, leis de movimento, ângulo de pressão e critérios de análise em mecanismos comandados por perfil." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Artur Henrique de Freitas Avelar" />
+  <link rel="canonical" href="https://barbudenge.github.io/artigos/cames.html" />
+
+  <meta property="og:title" content="Cames: fundamentos de síntese e análise" />
+  <meta property="og:description" content="Texto técnico sobre síntese de movimento, ângulo de pressão e escolhas de projeto em mecanismos de came." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://barbudenge.github.io/artigos/cames.html" />
+
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --surface-soft: #eef3f8;
+      --text: #0f172a;
+      --muted: #64748b;
+      --accent: #1e40af;
+      --accent-2: #8a4d2f;
+      --border: #e2e8f0;
+      --shadow: 0 1px 3px rgba(0,0,0,0.08);
+      --maxw: 1040px;
+      --serif: 'Crimson Pro', Georgia, serif;
+      --sans: 'Source Sans 3', Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--sans); color: var(--text); background: var(--bg); line-height: 1.75; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(var(--maxw), calc(100% - 32px)); margin: 0 auto; }
+
+    header { background: var(--surface); border-bottom: 1px solid var(--border); }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 14px 0;
+      flex-wrap: wrap;
+    }
+    .brand {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .brand span { color: #b45309; }
+    nav { display: flex; gap: 18px; flex-wrap: wrap; }
+    nav a { color: var(--muted); font-weight: 600; font-size: 0.95rem; }
+
+    .hero {
+      background: #1e293b;
+      color: #fff;
+      padding: 56px 0 44px;
+    }
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #e2e8f0;
+      margin-bottom: 10px;
+    }
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.12;
+      max-width: 900px;
+      margin-bottom: 14px;
+    }
+    .hero p { color: #cbd5e1; max-width: 760px; }
+
+    .article-layout {
+      display: grid;
+      grid-template-columns: 1.35fr 0.65fr;
+      gap: 22px;
+      padding: 44px 0 60px;
+      align-items: start;
+    }
+
+    article,
+    aside .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+    }
+    article { padding: 32px 34px; }
+    aside .card { padding: 22px; }
+    aside .card + .card { margin-top: 22px; }
+
+    h2 {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      color: #2f3945;
+      margin: 26px 0 12px;
+    }
+    h2:first-child { margin-top: 0; }
+    p { color: var(--muted); margin-bottom: 14px; }
+    ul, ol { color: var(--muted); padding-left: 22px; margin-bottom: 14px; }
+    li + li { margin-top: 7px; }
+
+    .byline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      font-size: 0.95rem;
+      color: #dbe4ee;
+      margin-top: 14px;
+    }
+
+    .figure-single {
+      max-width: 420px;
+      margin: 18px auto 24px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .equation-box {
+      background: var(--surface-soft);
+      border: 1px solid #c9d1da;
+      border-left: 4px solid #5b6774;
+      border-radius: 10px;
+      padding: 18px 18px 14px;
+      margin: 18px 0;
+      overflow-x: auto;
+    }
+
+    .note {
+      background: #eef2f7;
+      border: 1px solid #d7dee7;
+      border-radius: 10px;
+      padding: 14px 16px;
+      color: #475569;
+      margin: 18px 0;
+    }
+
+    .meta-list { list-style: none; padding-left: 0; margin-bottom: 0; }
+    .meta-list li { padding: 10px 0; border-top: 1px solid var(--border); color: var(--muted); }
+    .meta-list li:first-child { border-top: 0; padding-top: 0; }
+
+    footer {
+      background: #12253f;
+      color: rgba(255,255,255,0.72);
+      padding: 26px 0;
+      font-size: 0.9rem;
+    }
+    footer a { color: rgba(255,255,255,0.86); }
+
+    @media (max-width: 900px) {
+      .article-layout { grid-template-columns: 1fr; }
+      article { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container topbar">
+    <a href="../index.html" style="text-decoration:none;"><div class="brand">Barbu<span>denge</span></div></a>
+    <nav aria-label="Navegação principal">
+      <a href="../index.html">Início</a>
+      <a href="../sobre.html">Sobre</a>
+      <a href="../engrenarium.html">Engrenarium</a>
+      <a href="../privacy.html">Privacidade</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow">Artigo técnico</span>
+    <h1>Cames: fundamentos de síntese, movimento e análise de mecanismos</h1>
+    <p>O came é um elemento de máquina projetado para impor ao seguidor um movimento específico. Seu interesse técnico está na liberdade de definir deslocamento, velocidade e aceleração por meio do perfil, o que o torna especialmente útil em mecanismos de comando e sincronização.</p>
+    <div class="byline">
+      <span>Por Artur Henrique de Freitas Avelar</span>
+      <span>Atualizado em abril de 2026</span>
+      <span>Categoria: mecanismos</span>
+    </div>
+  </div>
+</section>
+
+<main class="container article-layout">
+  <article>
+    <h2>Por que o estudo de cames continua relevante</h2>
+    <p>Mesmo em contextos com acionamentos eletrônicos e sistemas de controle mais sofisticados, mecanismos por came continuam sendo exemplos clássicos de síntese de movimento. Eles mostram com clareza como a geometria pode ser usada para impor leis de deslocamento previamente definidas, transformando rotação em movimento prescrito do seguidor.</p>
+    <p>Do ponto de vista didático, o came é um tema particularmente rico porque reúne geometria, cinemática, critérios funcionais e consequências dinâmicas num mesmo problema. Alterar a curva de movimento ou o raio de base, por exemplo, muda diretamente o comportamento do sistema.</p>
+
+    <div class="figure-single">
+      <img src="../figs/came.png" alt="Esquema geométrico de came com indicação do ângulo de pressão alfa">
+    </div>
+
+    <h2>O que torna um came versátil</h2>
+    <p>Diferentemente de mecanismos de relação geométrica fixa, o came permite prescrever o deslocamento do seguidor ao longo da rotação do elemento motriz. Isso abre espaço para obter avanços, retornos, repousos e transições suaves conforme a necessidade do projeto.</p>
+    <p>Na prática, essa versatilidade é importante em máquinas que exigem ciclos repetitivos, sincronização entre etapas e controle geométrico do movimento. Sistemas de válvulas, mecanismos de alimentação, máquinas de embalagem e dispositivos automáticos são exemplos típicos.</p>
+
+    <h2>Curva de movimento e comportamento do mecanismo</h2>
+    <p>A escolha da lei de movimento não é detalhe secundário. Ela determina não apenas o deslocamento, mas também os perfis de velocidade e aceleração do seguidor. Em muitos casos, o problema real de projeto não é simplesmente fazer o seguidor subir e descer, mas fazê-lo com níveis aceitáveis de suavidade, esforço e estabilidade.</p>
+    <p>Curvas como a harmônica e a cicloidal aparecem com frequência porque oferecem referências didáticas claras para comparar transições mais suaves ou mais severas. Em contexto de ensino, esse ponto é importante: o perfil do came não é desenhado de forma arbitrária; ele traduz uma decisão sobre o movimento desejado.</p>
+
+    <div class="note">Em mecanismos de came, a geometria do perfil deve ser lida como consequência de uma lei de movimento escolhida, e não como mero contorno gráfico.</div>
+
+    <h2>Ângulo de pressão</h2>
+    <p>O ângulo de pressão é um dos critérios mais importantes na análise do mecanismo. Ele influencia forças laterais, exigência sobre guias, contato entre os elementos e eficiência funcional do conjunto. Um perfil que gera ângulo de pressão excessivo pode conduzir a esforço lateral elevado e comportamento menos favorável do seguidor.</p>
+    <p>Uma expressão recorrente para esse critério é:</p>
+
+    <div class="equation-box">
+      \[
+      \tan(\alpha)=\frac{dS/d\theta - e}{R_b + S}
+      \]
+    </div>
+
+    <p>Nessa forma, \(dS/d\theta\) representa a taxa de variação do deslocamento do seguidor em relação ao ângulo do came, \(e\) é a excentricidade do seguidor, \(R_b\) é o raio de base e \(S\) é o deslocamento instantâneo. A equação mostra que o ângulo de pressão não depende de um único parâmetro isolado, mas do acoplamento entre geometria e lei de movimento.</p>
+
+    <h2>Uma sequência útil para análise</h2>
+    <ol>
+      <li>definir o ciclo desejado do seguidor, incluindo elevação, repouso e retorno;</li>
+      <li>escolher a lei de movimento compatível com a aplicação;</li>
+      <li>avaliar a influência de raio de base, excentricidade e curso sobre o ângulo de pressão;</li>
+      <li>verificar se o perfil resultante é coerente com a fabricação, o contato e o uso pretendido.</li>
+    </ol>
+    <p>Essa ordem é valiosa porque evita tratar o problema apenas como desenho geométrico. A síntese do came nasce da função desejada e depois se converte em perfil.</p>
+
+    <h2>Aplicação didática</h2>
+    <p>No ensino de mecanismos, o came tem um papel especial: ele mostra que projetar não é apenas selecionar componentes, mas especificar comportamento. Quando o aluno percebe que o perfil do came codifica uma decisão de movimento, passa a enxergar com mais clareza a relação entre requisito funcional e solução geométrica.</p>
+    <p>Por isso, esse tema costuma funcionar muito bem em disciplinas de mecanismos, elementos de máquinas e projeto mecânico. Ele conecta análise cinemática, critérios funcionais e leitura física do problema de forma bastante direta.</p>
+  </article>
+
+  <aside>
+    <div class="card">
+      <h3>Resumo da página</h3>
+      <ul class="meta-list">
+        <li>Explica por que o came é um mecanismo de síntese de movimento.</li>
+        <li>Discute leis de movimento, ângulo de pressão e critérios de análise.</li>
+        <li>Relaciona o tema ao ensino de mecanismos e projeto mecânico.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Leituras relacionadas</h3>
+      <ul class="meta-list">
+        <li><a href="engrenagens-planetarias.html">Engrenagens planetárias: caso geral e valor do trem</a></li>
+        <li><a href="../engrenarium.html">Guia do Engrenarium</a></li>
+        <li><a href="../sobre.html">Sobre o portal</a></li>
+        <li><a href="../privacy.html">Política de Privacidade</a></li>
+      </ul>
+    </div>
+  </aside>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Barbudenge · <a href="../index.html">Página inicial</a> · <a href="../sobre.html">Sobre</a> · <a href="../privacy.html">Privacidade</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

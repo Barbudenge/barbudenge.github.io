@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sobre o Barbudenge | Autoria, escopo editorial e contato</title>
+  <meta name="description" content="Saiba quem mantém o Barbudenge, qual é o foco editorial do portal e como o conteúdo técnico sobre engrenagens, mecanismos e ferramentas didáticas é produzido." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Artur Henrique de Freitas Avelar" />
+  <link rel="canonical" href="https://barbudenge.github.io/sobre.html" />
+
+  <meta property="og:title" content="Sobre o Barbudenge" />
+  <meta property="og:description" content="Autoria, foco editorial e contexto acadêmico do portal Barbudenge." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://barbudenge.github.io/sobre.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --surface-soft: #eef3f8;
+      --text: #0f172a;
+      --muted: #64748b;
+      --accent: #1e40af;
+      --accent-2: #8a4d2f;
+      --border: #e2e8f0;
+      --shadow: 0 1px 3px rgba(0,0,0,0.08);
+      --maxw: 980px;
+      --serif: 'Crimson Pro', Georgia, serif;
+      --sans: 'Source Sans 3', Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--sans);
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.75;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(var(--maxw), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 14px 0;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .brand span { color: #b45309; }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      background: #1e293b;
+      color: #fff;
+      padding: 56px 0 42px;
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      color: #cbd5e1;
+      max-width: 760px;
+      font-size: 1.05rem;
+    }
+
+    main { padding: 44px 0 60px; }
+
+    .intro-grid,
+    .cards,
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .card,
+    .section-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .card {
+      padding: 24px;
+    }
+
+    .section-card {
+      padding: 30px 32px;
+      margin-top: 22px;
+    }
+
+    h2 {
+      font-family: var(--serif);
+      color: #2f3945;
+      font-size: 1.7rem;
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      font-family: var(--serif);
+      color: #2f3945;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+
+    p { color: var(--muted); margin-bottom: 14px; }
+    ul { color: var(--muted); padding-left: 22px; }
+    li + li { margin-top: 7px; }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      margin-bottom: 8px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--surface-soft);
+      color: #475569;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .meta .card p:last-child,
+    .links-grid .card p:last-child { margin-bottom: 0; }
+
+    footer {
+      background: #12253f;
+      color: rgba(255,255,255,0.72);
+      padding: 26px 0;
+      font-size: 0.9rem;
+    }
+
+    footer a { color: rgba(255,255,255,0.86); }
+
+    @media (max-width: 820px) {
+      .intro-grid,
+      .cards,
+      .links-grid,
+      .meta {
+        grid-template-columns: 1fr;
+      }
+
+      .section-card {
+        padding: 24px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container topbar">
+    <a href="index.html" style="text-decoration:none;"><div class="brand">Barbu<span>denge</span></div></a>
+    <nav aria-label="Navegação principal">
+      <a href="index.html">Início</a>
+      <a href="artigos/engrenagens-planetarias.html">Artigos</a>
+      <a href="engrenarium.html">Engrenarium</a>
+      <a href="privacy.html">Privacidade</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow" style="color:#e2e8f0;">Autoria e escopo</span>
+    <h1>Sobre o Barbudenge</h1>
+    <p>O Barbudenge é um portal editorial voltado a engrenagens, mecanismos, elementos de máquinas e ferramentas didáticas de engenharia mecânica. Esta página explica quem publica o conteúdo, qual é o foco do site e como os materiais são organizados.</p>
+  </div>
+</section>
+
+<main>
+  <div class="container">
+    <div class="intro-grid">
+      <div class="card">
+        <span class="badge">Quem publica</span>
+        <h3>Artur Henrique de Freitas Avelar</h3>
+        <p>Professor Adjunto da Universidade Federal de São João del-Rei (UFSJ), com atuação em ensino, modelagem, mecanismos, transmissões mecânicas e desenvolvimento de ferramentas computacionais para apoio didático.</p>
+        <p>O portal foi criado para concentrar material técnico original, notas explicativas e páginas de apoio ligadas a projetos acadêmicos e educacionais.</p>
+      </div>
+
+      <div class="card">
+        <span class="badge">Objetivo do portal</span>
+        <h3>Conteúdo técnico com utilidade prática</h3>
+        <p>O foco deste site não é funcionar como catálogo de links. A proposta é reunir explicações próprias, contexto técnico, material de referência e guias de uso que ajudem estudantes, docentes e profissionais a entender melhor determinados temas da engenharia mecânica.</p>
+        <p>Os textos publicados aqui priorizam clareza conceitual, aplicação didática e ligação direta com problemas reais de análise e projeto.</p>
+      </div>
+    </div>
+
+    <section class="section-card">
+      <span class="eyebrow">Escopo editorial</span>
+      <h2>O que você encontra aqui</h2>
+      <p>O conteúdo do Barbudenge está organizado em torno de quatro frentes principais:</p>
+      <ul>
+        <li>artigos técnicos originais sobre engrenagens planetárias, cames e mecanismos;</li>
+        <li>guias de uso para ferramentas e projetos ligados ao portal, como o Engrenarium;</li>
+        <li>material de referência rápida, como glossários e perguntas frequentes;</li>
+        <li>contexto institucional para projetos ligados ao LASME/UFSJ.</li>
+      </ul>
+      <p>Quando uma página aponta para um software, laboratório ou repositório externo, ela é acompanhada por explicações editoriais que justificam por que aquele recurso existe e como ele pode ser usado. A intenção é que cada URL tenha valor próprio, mesmo quando contém links para outros recursos do mesmo ecossistema.</p>
+    </section>
+
+    <section class="section-card">
+      <span class="eyebrow">Como o conteúdo é produzido</span>
+      <h2>Critérios de publicação</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Conteúdo original</h3>
+          <p>Os textos são escritos especificamente para este portal. Quando há referência a livros, ferramentas ou páginas externas, o objetivo é contextualizar ou complementar o material, não reproduzir descrições genéricas ou trechos de terceiros.</p>
+        </div>
+        <div class="card">
+          <h3>Ênfase didática</h3>
+          <p>As páginas procuram explicar conceitos, mostrar relações entre variáveis, indicar usos práticos e apontar limitações. O foco é ajudar o leitor a aprender alguma coisa concreta, não apenas levá-lo para outro site.</p>
+        </div>
+        <div class="card">
+          <h3>Atualização gradual</h3>
+          <p>O portal é atualizado progressivamente. Novos artigos, páginas explicativas e materiais de apoio são adicionados conforme amadurecem em sala de aula, pesquisa e desenvolvimento de software.</p>
+        </div>
+        <div class="card">
+          <h3>Transparência</h3>
+          <p>Informações institucionais, contato e política de privacidade ficam disponíveis de forma pública. O objetivo é deixar claro quem mantém o site, qual é a sua finalidade e como o visitante pode entrar em contato.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card">
+      <span class="eyebrow">Projetos relacionados</span>
+      <h2>Como o portal se conecta aos outros recursos</h2>
+      <p>O Barbudenge também serve como ponto de apoio para projetos externos do mesmo ecossistema, mas cada um deles possui função distinta:</p>
+      <ul>
+        <li><strong>Engrenarium:</strong> software e simulador voltado à visualização e análise de engrenagens planetárias. No portal, ele é acompanhado por uma página explicativa dedicada.</li>
+        <li><strong>LASME/UFSJ:</strong> página institucional do laboratório, usada para apresentar contexto acadêmico e vínculos com ensino, pesquisa e desenvolvimento.</li>
+        <li><strong>GitHub:</strong> repositórios e código-fonte relacionados a projetos publicados ou mantidos pelo autor.</li>
+      </ul>
+      <p>Essa distinção é importante: o portal editorial não substitui o software, o laboratório ou o repositório. Ele fornece o contexto e a explicação que ajudam o visitante a entender o propósito desses recursos.</p>
+    </section>
+
+    <section class="section-card">
+      <span class="eyebrow">Contato</span>
+      <h2>Informações públicas de contato</h2>
+      <div class="links-grid">
+        <div class="card">
+          <h3>E-mail</h3>
+          <p><a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
+          <p>Canal para dúvidas sobre o conteúdo técnico, sobre o Engrenarium e sobre páginas ligadas ao portal.</p>
+        </div>
+        <div class="card">
+          <h3>Links principais</h3>
+          <p><a href="engrenarium.html">Guia do Engrenarium</a></p>
+          <p><a href="https://barbudenge.github.io/lasmeufsj/">LASME/UFSJ</a></p>
+          <p><a href="https://github.com/Barbudenge">GitHub</a></p>
+          <p><a href="privacy.html">Política de Privacidade</a></p>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Barbudenge · <a href="index.html">Página inicial</a> · <a href="privacy.html">Privacidade</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

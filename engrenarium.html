@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Engrenarium | Guia de uso do simulador de engrenagens planetárias</title>
+  <meta name="description" content="Entenda o que é o Engrenarium, para quem ele serve, como usar o simulador em contexto didático e quais perguntas ele ajuda a responder." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Artur Henrique de Freitas Avelar" />
+  <link rel="canonical" href="https://barbudenge.github.io/engrenarium.html" />
+
+  <meta property="og:title" content="Engrenarium | Guia de uso" />
+  <meta property="og:description" content="Página explicativa sobre o Engrenarium, um simulador voltado ao estudo de trens planetários." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://barbudenge.github.io/engrenarium.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --surface-soft: #eef3f8;
+      --text: #0f172a;
+      --muted: #64748b;
+      --accent: #1e40af;
+      --accent-2: #8a4d2f;
+      --border: #e2e8f0;
+      --shadow: 0 1px 3px rgba(0,0,0,0.08);
+      --maxw: 1000px;
+      --serif: 'Crimson Pro', Georgia, serif;
+      --sans: 'Source Sans 3', Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--sans); color: var(--text); background: var(--bg); line-height: 1.75; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; display: block; }
+
+    .container { width: min(var(--maxw), calc(100% - 32px)); margin: 0 auto; }
+
+    header { background: var(--surface); border-bottom: 1px solid var(--border); }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 14px 0;
+      flex-wrap: wrap;
+    }
+    .brand {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .brand span { color: #b45309; }
+    nav { display: flex; gap: 18px; flex-wrap: wrap; }
+    nav a { color: var(--muted); font-weight: 600; font-size: 0.95rem; }
+
+    .hero {
+      background: #1e293b;
+      color: #fff;
+      padding: 56px 0 44px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.85fr;
+      gap: 28px;
+      align-items: start;
+    }
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #e2e8f0;
+      margin-bottom: 8px;
+    }
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+    .hero p { color: #cbd5e1; margin-bottom: 12px; }
+    .hero-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 14px;
+      padding: 22px;
+    }
+    .hero-card h3 {
+      font-family: var(--serif);
+      margin-bottom: 10px;
+      font-size: 1.15rem;
+    }
+    .hero-card ul { padding-left: 20px; color: #e2e8f0; }
+    .hero-card li + li { margin-top: 8px; }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 11px 18px;
+      border-radius: 8px;
+      font-weight: 700;
+      border: 1px solid transparent;
+    }
+    .btn-primary { background: #f4f6f8; color: #243243; }
+    .btn-secondary { background: transparent; color: #fff; border-color: rgba(255,255,255,0.35); }
+
+    main { padding: 44px 0 60px; }
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 22px;
+      align-items: start;
+    }
+    .card,
+    .sidebar-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+    }
+    .card { padding: 30px 32px; }
+    .sidebar-card { padding: 22px; }
+    .card + .card { margin-top: 22px; }
+
+    h2 {
+      font-family: var(--serif);
+      font-size: 1.7rem;
+      color: #2f3945;
+      margin-bottom: 12px;
+    }
+    h3 {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      color: #2f3945;
+      margin-bottom: 8px;
+    }
+    p { color: var(--muted); margin-bottom: 14px; }
+    ul, ol { color: var(--muted); padding-left: 22px; margin-bottom: 14px; }
+    li + li { margin-top: 7px; }
+
+    .meta-list { list-style: none; padding-left: 0; margin-bottom: 0; }
+    .meta-list li { padding: 10px 0; border-top: 1px solid var(--border); color: var(--muted); }
+    .meta-list li:first-child { border-top: 0; padding-top: 0; }
+
+    .callout {
+      border-left: 4px solid var(--accent-2);
+      background: var(--surface-soft);
+      padding: 14px 16px;
+      border-radius: 10px;
+      color: #475569;
+      margin: 18px 0;
+    }
+
+    footer {
+      background: #12253f;
+      color: rgba(255,255,255,0.72);
+      padding: 26px 0;
+      font-size: 0.9rem;
+    }
+    footer a { color: rgba(255,255,255,0.86); }
+
+    @media (max-width: 880px) {
+      .hero-grid,
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+      .card { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container topbar">
+    <a href="index.html" style="text-decoration:none;"><div class="brand">Barbu<span>denge</span></div></a>
+    <nav aria-label="Navegação principal">
+      <a href="index.html">Início</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="artigos/engrenagens-planetarias.html">Artigos</a>
+      <a href="privacy.html">Privacidade</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">Ferramenta didática</span>
+      <h1>Engrenarium: o que o simulador faz e como usá-lo</h1>
+      <p>O Engrenarium é um recurso voltado ao estudo de engrenagens planetárias. A proposta não é apenas mostrar animações, mas ajudar o usuário a entender relações entre entrada, saída, elemento fixo, braço e valor do trem em diferentes arranjos epicicloidais.</p>
+      <p>Esta página reúne o contexto que normalmente falta quando alguém cai diretamente no simulador: para que ele serve, para quem foi pensado e que tipo de pergunta técnica ou didática ele ajuda a responder.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://barbudenge.github.io/engrenarium/">Abrir o Engrenarium</a>
+        <a class="btn btn-secondary" href="artigos/engrenagens-planetarias.html">Ler o artigo sobre trens planetários</a>
+      </div>
+    </div>
+
+    <aside class="hero-card">
+      <h3>Resumo rápido</h3>
+      <ul>
+        <li>Simulador com foco em engrenagens planetárias.</li>
+        <li>Útil em ensino, estudo individual e apoio à análise conceitual.</li>
+        <li>Complementa o artigo técnico do portal, não o substitui.</li>
+        <li>Voltado a quem precisa visualizar arranjos e discutir relações cinemáticas.</li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<main>
+  <div class="container content-grid">
+    <div>
+      <article class="card">
+        <h2>Qual é a função do Engrenarium</h2>
+        <p>Em muitos cursos, a maior dificuldade no estudo de trens planetários não está na álgebra isoladamente, mas em relacionar a equação com a topologia do sistema. O estudante vê a fórmula, mas não consegue identificar com segurança quem é o braço, qual elemento está fixo, quais engrenagens formam o trem e como a escolha da entrada altera a interpretação do problema.</p>
+        <p>O Engrenarium foi pensado para atacar justamente esse ponto. Ele funciona como uma ponte entre a descrição geométrica do conjunto e a leitura cinemática do sistema. Em vez de tratar o trem epicicloidal apenas como um exercício simbólico, o usuário consegue observar a configuração, comparar cenários e discutir o comportamento do conjunto com mais clareza.</p>
+        <div class="callout">Valor principal: a ferramenta ajuda a transformar uma relação abstrata entre velocidades angulares em uma situação visualizável e didaticamente discutível.</div>
+      </article>
+
+      <article class="card">
+        <h2>Para quem a ferramenta é útil</h2>
+        <ul>
+          <li><strong>Estudantes</strong> que estão vendo mecanismos e elementos de máquinas pela primeira vez e ainda têm dificuldade em interpretar conjuntos planetários.</li>
+          <li><strong>Docentes</strong> que desejam usar uma visualização complementar durante aulas, monitorias, listas e demonstrações.</li>
+          <li><strong>Profissionais</strong> que precisam revisar conceitos de arranjo, leitura de movimento relativo e raciocínio cinemático antes de avançar para análises mais detalhadas.</li>
+        </ul>
+        <p>Ele não substitui bibliografia técnica nem etapas posteriores de projeto. O papel do simulador é organizar o entendimento inicial e tornar as relações entre os elementos do trem mais visíveis.</p>
+      </article>
+
+      <article class="card">
+        <h2>Como usar o Engrenarium de forma produtiva</h2>
+        <ol>
+          <li>Identifique o arranjo do trem e os elementos principais do conjunto.</li>
+          <li>Defina mentalmente ou na aula qual componente será tratado como entrada, qual será a saída e qual estará fixo.</li>
+          <li>Observe como o braço participa do movimento relativo e compare a interpretação visual com a equação do caso geral.</li>
+          <li>Use o resultado como apoio para discutir relações de transmissão, sentidos de rotação e dependência entre velocidades.</li>
+        </ol>
+        <p>Esse uso orientado é importante. Quando o simulador é tratado apenas como animação, ele perde parte do valor didático. Quando é usado em conjunto com a formulação teórica, passa a funcionar como ferramenta de compreensão.</p>
+      </article>
+
+      <article class="card">
+        <h2>Perguntas que o simulador ajuda a responder</h2>
+        <ul>
+          <li>O que muda quando o elemento fixo deixa de ser a coroa e passa a ser o porta-satélites?</li>
+          <li>Como interpretar a velocidade relativa ao braço em um problema planetário?</li>
+          <li>Por que duas configurações visualmente parecidas podem gerar comportamentos cinemáticos diferentes?</li>
+          <li>Como explicar, em aula, a diferença entre observar o trem com braço fixo e observar o sistema em movimento real?</li>
+        </ul>
+        <p>Essas perguntas são úteis porque deslocam a ferramenta do campo do "ver funcionando" para o campo do "entender por que funciona assim".</p>
+      </article>
+
+      <article class="card">
+        <h2>Escopo e limitações</h2>
+        <p>O Engrenarium é uma ferramenta de apoio didático e conceitual. Isso significa que o seu valor está na clareza da visualização, na interpretação do arranjo e no raciocínio sobre relações cinemáticas. Não deve ser lido como substituto universal de bibliografia, cálculo detalhado de esforços, análise estrutural ou projeto completo de transmissão.</p>
+        <p>Em termos práticos, ele é mais forte quando usado para explicar conceitos, testar leituras de configuração e apoiar discussões entre professor e aluno. Para uso profissional mais aprofundado, o simulador funciona melhor como etapa de entendimento e comunicação do problema.</p>
+      </article>
+    </div>
+
+    <aside>
+      <div class="sidebar-card">
+        <h3>Dados da página</h3>
+        <ul class="meta-list">
+          <li><strong>Autor:</strong> Artur Henrique de Freitas Avelar</li>
+          <li><strong>Última atualização:</strong> abril de 2026</li>
+          <li><strong>Categoria:</strong> guia de ferramenta didática</li>
+          <li><strong>Contato:</strong> <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card" style="margin-top:22px;">
+        <h3>Leituras relacionadas</h3>
+        <ul class="meta-list">
+          <li><a href="artigos/engrenagens-planetarias.html">Engrenagens planetárias: caso geral e valor do trem</a></li>
+          <li><a href="artigos/cames.html">Cames: fundamentos de síntese e análise</a></li>
+          <li><a href="sobre.html">Sobre o portal</a></li>
+          <li><a href="privacy.html">Política de Privacidade</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card" style="margin-top:22px;">
+        <h3>Links externos</h3>
+        <ul class="meta-list">
+          <li><a href="https://barbudenge.github.io/engrenarium/">Abrir o simulador web</a></li>
+          <li><a href="https://barbudenge.github.io/lasmeufsj/">LASME/UFSJ</a></li>
+          <li><a href="https://github.com/Barbudenge">GitHub</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Barbudenge · <a href="index.html">Página inicial</a> · <a href="sobre.html">Sobre</a> · <a href="privacy.html">Privacidade</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
