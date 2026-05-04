@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projeto analítico de cames | Barbudenge</title>
+  <meta name="description" content="Artigo sobre projeto analítico de cames com seguidor plano e de rolete, raio de base, ângulo de pressão, curvatura e risco de pontas." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Artur Henrique de Freitas Avelar" />
+  <meta name="google-adsense-account" content="ca-pub-5777194849710689" />
+  <link rel="canonical" href="https://barbudenge.github.io/artigos/cames-projeto-analitico.html" />
+
+  <meta property="og:title" content="Projeto analítico de cames" />
+  <meta property="og:description" content="Como raio de base, ângulo de pressão e curvatura entram no dimensionamento analítico de cames." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://barbudenge.github.io/artigos/cames-projeto-analitico.html" />
+
+  <script>
+    window.MathJax = { tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] }, svg: { fontCache: 'global' } };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5777194849710689" crossorigin="anonymous"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="artigo.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container topbar">
+    <a href="../index.html" style="text-decoration:none;"><div class="brand">Barbu<span>denge</span></div></a>
+    <nav aria-label="Navegação principal">
+      <a href="../index.html">Início</a>
+      <a href="index.html">Artigos</a>
+      <a href="../engrenarium.html">Engrenarium</a>
+      <a href="../sobre.html">Sobre</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow">Artigo técnico</span>
+    <h1>Projeto analítico de cames: raio de base, pressão e curvatura</h1>
+    <p>Depois de escolher a curva de deslocamento, o projeto analítico verifica se o perfil pode ser construído com dimensões aceitáveis, sem ângulo de pressão excessivo e sem formação de pontas.</p>
+    <div class="byline">
+      <span>Por Artur Henrique de Freitas Avelar</span>
+      <span>Atualizado em maio de 2026</span>
+      <span>Categoria: projeto de cames</span>
+    </div>
+  </div>
+</section>
+
+<main class="container article-layout">
+  <article class="article-body">
+    <p class="lead">O projeto analítico de cames transforma a lei de movimento em geometria. A pergunta deixa de ser apenas qual deslocamento se deseja e passa a incluir: qual raio de base é necessário, qual será o ângulo de pressão e se o perfil resultante é fisicamente fabricável.</p>
+
+    <h2>Seguidor plano</h2>
+    <p>No came com seguidor de face plana, o contato ocorre em uma superfície plana do seguidor. A geometria pode ser construída a partir do deslocamento prescrito, mas é preciso garantir que o perfil não gere pontas e que a largura do seguidor seja suficiente para manter contato durante todo o ciclo.</p>
+
+    <p>Quando o raio de base é pequeno em relação ao curso e à variação da curva, o came pode desenvolver regiões agudas. Essas regiões são indesejáveis porque dificultam fabricação, concentram tensão e prejudicam o contato.</p>
+
+    <figure class="article-figure">
+      <img src="../figs/aulas/cames-seguidor-plano-raio-base.png" alt="Construção geométrica de came com seguidor de face plana">
+      <figcaption>Para seguidor de face plana, a construção geométrica relaciona o raio de base, a posição angular e a reta de contato do seguidor.</figcaption>
+    </figure>
+
+    <h2>Seguidor de rolete</h2>
+    <p>No seguidor de rolete, costuma-se trabalhar primeiro com a curva primitiva, que representa o caminho do centro do rolete. O perfil real do came é obtido deslocando essa curva pela geometria do rolete. Isso melhora o contato, mas adiciona a restrição de que o raio do rolete não pode ser escolhido sem verificar curvatura.</p>
+
+    <p>Se o rolete for grande demais para a curvatura local da curva primitiva, o perfil pode sofrer interferência ou gerar contornos inviáveis. Por isso a escolha de \(R_r\) depende da lei de movimento e do raio primitivo, não apenas de disponibilidade de componente.</p>
+
+    <h2>Ângulo de pressão</h2>
+    <p>O ângulo de pressão mede o desvio entre a direção de transmissão da força e a direção de movimento desejada do seguidor. Valores altos aumentam componentes laterais, atrito, carregamento em guias e risco de funcionamento ruim. Em muitos projetos didáticos, usa-se como referência manter o ângulo máximo abaixo de cerca de 30 graus.</p>
+
+    <div class="equation-box">
+      \[
+      \tan(\alpha)=\frac{dS/d\theta - e}{R_b + S}
+      \]
+    </div>
+
+    <p>A expressão mostra duas formas gerais de reduzir o ângulo: aumentar dimensões como o raio de base ou alterar a curva de deslocamento para reduzir picos de \(dS/d\theta\). A excentricidade \(e\) também pode ser usada como recurso de projeto, mas precisa ser avaliada nos dois sentidos de movimento.</p>
+
+    <h2>Raio de base</h2>
+    <p>Aumentar o raio de base tende a reduzir o ângulo de pressão e suavizar o perfil, mas aumenta o tamanho do mecanismo. Diminuir o raio compacta o came, porém pode gerar pressão elevada e curvatura desfavorável. O projeto é, portanto, um compromisso entre espaço, contato, forças e fabricação.</p>
+
+    <div class="note">Um came pequeno pode parecer atraente no layout, mas o perfil só é aceitável se o seguidor conseguir acompanhar a curva sem esforço lateral excessivo e sem perda de contato.</div>
+
+    <h2>Curvatura e risco de pontas</h2>
+    <p>A curvatura indica quão rapidamente a direção da curva muda. Em regiões de curvatura severa, o perfil pode ficar pontudo ou incompatível com o rolete. A verificação de raio de curvatura mínimo é uma etapa essencial depois de escolher \(S(\theta)\), \(R_0\) e \(R_r\).</p>
+
+    <p>Para o seguidor de rolete, a ideia central é comparar a curvatura da curva primitiva com o raio do rolete. Se a superfície real do came exigir uma curvatura menor do que a permitida pelo rolete, haverá problema geométrico.</p>
+
+    <figure class="article-figure">
+      <img src="../figs/aulas/cames-curvatura-rolete.png" alt="Comparação entre raio de curvatura da curva primitiva e raio do seguidor de rolete">
+      <figcaption>Quando o raio de curvatura da curva primitiva fica incompatível com o rolete, o perfil pode gerar vértices ou material faltante.</figcaption>
+    </figure>
+
+    <h2>Sequência de verificação</h2>
+    <ol>
+      <li>defina o ciclo e a curva de deslocamento por trechos;</li>
+      <li>calcule deslocamento e derivadas relevantes;</li>
+      <li>escolha um raio de base inicial ou raio primitivo inicial;</li>
+      <li>avalie o ângulo de pressão máximo;</li>
+      <li>verifique curvatura e risco de pontas;</li>
+      <li>ajuste raio, rolete, excentricidade ou lei de movimento se necessário.</li>
+    </ol>
+
+    <p>O projeto analítico não substitui julgamento mecânico. Ele organiza as verificações para que a forma final do came seja consequência de requisitos mensuráveis, não apenas de uma curva desenhada visualmente.</p>
+  </article>
+
+  <aside>
+    <div class="sidebar-card">
+      <h3>Resumo da página</h3>
+      <ul class="meta-list">
+        <li>O projeto analítico converte \(S(\theta)\) em geometria verificável.</li>
+        <li>Raio de base influencia pressão, tamanho e curvatura.</li>
+        <li>Rolete e curvatura precisam ser compatíveis para evitar pontas.</li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h3>Continuar estudando</h3>
+      <ul>
+        <li><a href="cames-curvas-deslocamento.html">Curvas de deslocamento</a></li>
+        <li><a href="cames-nomenclatura-seguidores.html">Nomenclatura e seguidores</a></li>
+        <li><a href="cames.html">Fundamentos de cames</a></li>
+      </ul>
+    </div>
+  </aside>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Barbudenge · <a href="../index.html">Página inicial</a> · <a href="../sobre.html">Sobre</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

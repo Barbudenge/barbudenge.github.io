@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trens de engrenagens simples e compostos | Barbudenge</title>
+  <meta name="description" content="Artigo sobre trens de engrenagens simples e compostos, valor do trem, engrenagens intermediárias, sentidos de rotação e relações de transmissão." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Artur Henrique de Freitas Avelar" />
+  <meta name="google-adsense-account" content="ca-pub-5777194849710689" />
+  <link rel="canonical" href="https://barbudenge.github.io/artigos/trens-engrenagens-simples-compostos.html" />
+
+  <meta property="og:title" content="Trens de engrenagens simples e compostos" />
+  <meta property="og:description" content="Como calcular relações de transmissão e interpretar o valor do trem em arranjos com várias engrenagens." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://barbudenge.github.io/artigos/trens-engrenagens-simples-compostos.html" />
+
+  <script>
+    window.MathJax = { tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] }, svg: { fontCache: 'global' } };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5777194849710689" crossorigin="anonymous"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="artigo.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container topbar">
+    <a href="../index.html" style="text-decoration:none;"><div class="brand">Barbu<span>denge</span></div></a>
+    <nav aria-label="Navegação principal">
+      <a href="../index.html">Início</a>
+      <a href="index.html">Artigos</a>
+      <a href="../engrenarium.html">Engrenarium</a>
+      <a href="../sobre.html">Sobre</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow">Artigo técnico</span>
+    <h1>Trens de engrenagens simples e compostos</h1>
+    <p>Um trem de engrenagens organiza vários pares em sequência para obter reduções, ampliações ou mudanças de sentido que seriam pouco práticas com apenas duas engrenagens.</p>
+    <div class="byline">
+      <span>Por Artur Henrique de Freitas Avelar</span>
+      <span>Atualizado em maio de 2026</span>
+      <span>Categoria: trens de engrenagens</span>
+    </div>
+  </div>
+</section>
+
+<main class="container article-layout">
+  <article class="article-body">
+    <p class="lead">Trens de engrenagens aparecem quando um único par não entrega a relação desejada, quando a distância entre eixos precisa ser vencida ou quando se quer selecionar diferentes saídas dentro de uma mesma arquitetura. O ponto central é separar duas perguntas: quais engrenagens engrenam entre si e quais engrenagens estão rigidamente presas ao mesmo eixo.</p>
+
+    <h2>Relação de um par</h2>
+    <p>Para duas engrenagens externas, a relação entre as velocidades angulares é dada pela razão inversa dos números de dentes. O sinal negativo indica que os sentidos de rotação são opostos.</p>
+
+    <div class="equation-box">
+      \[
+      \frac{\omega_2}{\omega_1} = -\frac{N_1}{N_2}
+      \]
+    </div>
+
+    <p>Quando uma engrenagem externa engrena com uma interna, o sentido não se inverte e o sinal passa a ser positivo. Essa convenção é útil porque obriga a registrar a natureza de cada contato, em vez de calcular apenas módulos de velocidade.</p>
+
+    <h2>Trem simples</h2>
+    <p>No trem simples, cada eixo possui uma única engrenagem relevante para a cadeia de transmissão. As engrenagens intermediárias alteram o sentido de rotação e permitem espaçar os eixos, mas não mudam o módulo da relação final entre a primeira e a última engrenagem quando todas são externas e apenas intermediárias.</p>
+
+    <p>Isso costuma surpreender no começo. Se a engrenagem 1 aciona a 2, a 2 aciona a 3 e a 3 aciona a 4, os dentes das intermediárias aparecem no produto e depois se cancelam. O resultado final depende da primeira e da última, enquanto o número de engrenamentos define o sentido.</p>
+
+    <figure class="article-figure">
+      <img src="../figs/aulas/trem-engrenagens-simples.png" alt="Trem de engrenagens simples com quatro engrenagens externas numeradas">
+      <figcaption>Em um trem simples, as engrenagens intermediárias afetam o sentido e a posição dos eixos; a magnitude da relação final pode depender apenas da primeira e da última engrenagem.</figcaption>
+    </figure>
+
+    <div class="note">Engrenagem intermediária não é engrenagem inútil. Ela pode ser essencial para distância, layout, sentido de saída e montagem, mesmo quando não muda a magnitude da relação final.</div>
+
+    <h2>Trem composto</h2>
+    <p>No trem composto, duas ou mais engrenagens giram solidárias no mesmo eixo. Nesse caso, a relação de transmissão não se reduz apenas à primeira e à última. Cada par ativo contribui para o produto total, enquanto as engrenagens acopladas compartilham a mesma velocidade angular.</p>
+
+    <div class="equation-box">
+      \[
+      \frac{\omega_s}{\omega_e} =
+      \left(\pm\frac{N_1}{N_2}\right)
+      \left(\pm\frac{N_3}{N_4}\right)
+      \left(\pm\frac{N_5}{N_6}\right)
+      \]
+    </div>
+
+    <p>A leitura correta é topológica. Primeiro identificam-se os pares que realmente engrenam. Depois, registram-se os eixos comuns. Só então a relação é multiplicada. Tentar começar diretamente pelos dentes, sem entender a montagem, é uma forma comum de misturar engrenagens que não pertencem ao mesmo caminho de potência.</p>
+
+    <h2>Valor do trem</h2>
+    <p>O valor do trem é uma forma compacta de representar a relação entre saída e entrada. Em muitos cursos, ele aparece como a razão entre a velocidade da última engrenagem e a velocidade da primeira, com o sinal carregando a informação de sentido. O nome é simples, mas o conceito fica poderoso quando usado com disciplina.</p>
+
+    <p>Em trens comuns, o valor do trem resume uma cadeia fixa. Em trens planetários, a ideia será reaproveitada em velocidades relativas ao braço. Essa continuidade é didaticamente importante: planetárias não exigem abandonar a noção de relação de transmissão, mas aplicá-la em um referencial móvel.</p>
+
+    <h2>Sequência de análise</h2>
+    <ol>
+      <li>nomeie as engrenagens e identifique os dentes de cada uma;</li>
+      <li>marque os pares em contato e indique se são externos ou internos;</li>
+      <li>marque quais engrenagens estão presas ao mesmo eixo;</li>
+      <li>multiplique as relações dos pares ativos;</li>
+      <li>verifique o sentido final pelo número de inversões ou pelos sinais adotados.</li>
+    </ol>
+
+    <p>Essa sequência evita tratar todos os desenhos como variações de uma mesma fórmula. Em mecanismos reais, a diferença entre um trem simples e um composto está justamente na arquitetura dos eixos.</p>
+  </article>
+
+  <aside>
+    <div class="sidebar-card">
+      <h3>Resumo da página</h3>
+      <ul class="meta-list">
+        <li>Trens simples usam uma engrenagem relevante por eixo.</li>
+        <li>Trens compostos dependem dos pares e dos acoplamentos de eixo.</li>
+        <li>O valor do trem resume saída, entrada e sentido.</li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h3>Continuar estudando</h3>
+      <ul>
+        <li><a href="cambio-manual-trens-engrenagens.html">Câmbio manual</a></li>
+        <li><a href="engrenagens-planetarias.html">Caso geral das planetárias</a></li>
+        <li><a href="index.html">Índice de artigos</a></li>
+      </ul>
+    </div>
+  </aside>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Barbudenge · <a href="../index.html">Página inicial</a> · <a href="../sobre.html">Sobre</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

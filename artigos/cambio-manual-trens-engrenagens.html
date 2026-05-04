@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Câmbio manual como trem de engrenagens | Barbudenge</title>
+  <meta name="description" content="Leitura didática do câmbio manual como trem de engrenagens com eixo primário, contraeixo, eixo de saída, marchas selecionadas, marcha direta e ré." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Artur Henrique de Freitas Avelar" />
+  <meta name="google-adsense-account" content="ca-pub-5777194849710689" />
+  <link rel="canonical" href="https://barbudenge.github.io/artigos/cambio-manual-trens-engrenagens.html" />
+
+  <meta property="og:title" content="Câmbio manual como trem de engrenagens" />
+  <meta property="og:description" content="Como marchas diferentes selecionam caminhos diferentes de potência em uma transmissão manual." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://barbudenge.github.io/artigos/cambio-manual-trens-engrenagens.html" />
+
+  <script>
+    window.MathJax = { tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] }, svg: { fontCache: 'global' } };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5777194849710689" crossorigin="anonymous"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="artigo.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container topbar">
+    <a href="../index.html" style="text-decoration:none;"><div class="brand">Barbu<span>denge</span></div></a>
+    <nav aria-label="Navegação principal">
+      <a href="../index.html">Início</a>
+      <a href="index.html">Artigos</a>
+      <a href="../engrenarium.html">Engrenarium</a>
+      <a href="../sobre.html">Sobre</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow">Artigo técnico</span>
+    <h1>Câmbio manual como trem de engrenagens</h1>
+    <p>Uma caixa de marchas manual é um excelente exemplo de trem de engrenagens porque mostra, em um mesmo sistema, redução, marcha direta, ponto morto e inversão de sentido.</p>
+    <div class="byline">
+      <span>Por Artur Henrique de Freitas Avelar</span>
+      <span>Atualizado em maio de 2026</span>
+      <span>Categoria: transmissões</span>
+    </div>
+  </div>
+</section>
+
+<main class="container article-layout">
+  <article class="article-body">
+    <p class="lead">O câmbio manual transforma a análise de engrenagens em um problema de seleção de caminho. As engrenagens podem estar fisicamente presentes e girando, mas apenas algumas participam da transmissão efetiva de torque em cada marcha.</p>
+
+    <h2>Arquitetura básica</h2>
+    <p>Em uma transmissão manual típica, há um eixo de entrada ligado ao motor, um contraeixo e um eixo de saída. Um par inicial costuma transferir movimento do eixo de entrada para o contraeixo. Depois, cada marcha seleciona um par específico entre contraeixo e eixo de saída.</p>
+
+    <p>Essa descrição já separa duas coisas: engrenagens que estão permanentemente engrenadas e engrenagens que estão efetivamente travadas ao eixo de saída naquele instante. O sincronizador não cria uma nova relação geométrica; ele escolhe qual engrenagem passa a girar solidária ao eixo.</p>
+
+    <h2>Marchas baixas</h2>
+    <p>Nas marchas baixas, a relação de transmissão produz grande redução de velocidade e maior torque disponível nas rodas. Isso é útil na arrancada, em aclives ou em situações de carga. A consequência é que o motor gira mais vezes para cada volta da saída.</p>
+
+    <div class="equation-box">
+      \[
+      i = \frac{\omega_{entrada}}{\omega_{saida}}
+      \]
+    </div>
+
+    <p>Quando \(i\) é alto, a saída gira mais devagar que a entrada. A potência não aumenta idealmente; o sistema troca rotação por torque. Essa leitura ajuda a entender por que uma primeira marcha é forte, mas limitada em velocidade.</p>
+
+    <h2>Marcha direta</h2>
+    <p>Em muitas caixas, uma das marchas aproxima ou iguala a velocidade de entrada e saída. Essa é a ideia da marcha direta: a transmissão deixa de usar uma grande redução intermediária e passa a transmitir com relação próxima de 1:1. O resultado é menor multiplicação de torque, mas melhor adequação para velocidade constante.</p>
+
+    <p>Do ponto de vista de análise, a marcha direta ensina uma lição importante: nem toda transmissão trabalha sempre como uma cascata longa de pares. O caminho de potência muda conforme a marcha selecionada.</p>
+
+    <h2>Marcha a ré</h2>
+    <p>A ré exige inverter o sentido de rotação da saída em relação ao avanço. Para isso, usa-se uma engrenagem intermediária adicional. A função dessa engrenagem é mudar o sentido final, não necessariamente alterar de forma dominante a magnitude da relação.</p>
+
+    <div class="note">Em um trem simples, a engrenagem intermediária pode não mudar a razão final de velocidades, mas muda o sentido. Na marcha a ré, essa diferença de sentido é exatamente a função desejada.</div>
+
+    <h2>Ponto morto e engrenagens girando sem transmitir torque</h2>
+    <p>Um aspecto didático importante é o ponto morto. Algumas engrenagens podem continuar girando por estarem em contato com outras, mas nenhuma delas está travada de modo a conduzir torque até a saída. O mecanismo existe, mas o caminho de potência não está fechado.</p>
+
+    <p>Isso mostra por que a análise de uma caixa de câmbio não deve se limitar ao desenho dos dentes. É necessário saber quais elementos estão solidários aos eixos, quais estão livres e qual acoplamento está selecionado.</p>
+
+    <h2>Como analisar uma marcha</h2>
+    <ol>
+      <li>identifique a entrada, o contraeixo e a saída;</li>
+      <li>marque o par inicial que aciona o contraeixo;</li>
+      <li>descubra qual engrenagem está acoplada ao eixo de saída;</li>
+      <li>multiplique apenas as relações dos pares que pertencem ao caminho ativo;</li>
+      <li>verifique o sentido final, especialmente na ré.</li>
+    </ol>
+
+    <p>Com essa sequência, o câmbio deixa de parecer um conjunto confuso de rodas dentadas e passa a ser uma escolha controlada de trens de engrenagens.</p>
+  </article>
+
+  <aside>
+    <div class="sidebar-card">
+      <h3>Resumo da página</h3>
+      <ul class="meta-list">
+        <li>Cada marcha seleciona um caminho de potência.</li>
+        <li>Marchas baixas aumentam torque por redução de velocidade.</li>
+        <li>A ré usa inversão de sentido por engrenagem intermediária.</li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h3>Continuar estudando</h3>
+      <ul>
+        <li><a href="trens-engrenagens-simples-compostos.html">Trens simples e compostos</a></li>
+        <li><a href="aplicacoes-engrenagens-planetarias.html">Aplicações planetárias</a></li>
+        <li><a href="index.html">Índice de artigos</a></li>
+      </ul>
+    </div>
+  </aside>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Barbudenge · <a href="../index.html">Página inicial</a> · <a href="../sobre.html">Sobre</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

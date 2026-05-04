@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Barbudenge | Engenharia mecânica, engrenagens, mecanismos e ferramentas didáticas</title>
-  <meta name="description" content="Portal editorial com artigos originais sobre engrenagens planetárias, cames, mecanismos e ferramentas didáticas como o Engrenarium." />
+  <title>Barbudenge | Engrenagens, cames, mecanismos e ferramentas didáticas</title>
+  <meta name="description" content="Artigos técnicos sobre engrenagens, trens planetários, cames, mecanismos e ferramentas didáticas como o Engrenarium." />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Artur Henrique de Freitas Avelar" />
   <meta name="google-adsense-account" content="ca-pub-5777194849710689" />
   <link rel="canonical" href="https://barbudenge.github.io/" />
 
   <meta property="og:title" content="Barbudenge | Engenharia mecânica, engrenagens e mecanismos" />
-  <meta property="og:description" content="Portal com artigos técnicos, páginas editoriais e guias de ferramentas para ensino e análise em engenharia mecânica." />
+  <meta property="og:description" content="Artigos e ferramentas para estudar engrenagens, cames, transmissões mecânicas e análise de mecanismos." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://barbudenge.github.io/" />
 
@@ -186,6 +186,142 @@
       background: rgba(255,255,255,0.08);
       text-decoration: none;
     }
+
+    .article-nav-toggle {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 40;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(255,255,255,0.28);
+      background: #243243;
+      color: #fff;
+      border-radius: 999px;
+      padding: 10px 15px;
+      box-shadow: 0 10px 24px rgba(15,23,42,0.2);
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .article-nav-toggle:hover { background: #1e293b; }
+
+    .article-nav-toggle .icon {
+      font-size: 1.05rem;
+      line-height: 1;
+    }
+
+    .article-sidebar-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 48;
+      background: rgba(15,23,42,0.36);
+    }
+
+    .article-sidebar {
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 49;
+      width: min(420px, 100%);
+      height: 100vh;
+      background: var(--surface);
+      border-left: 1px solid var(--border);
+      box-shadow: -18px 0 42px rgba(15,23,42,0.24);
+      transform: translateX(100%);
+      transition: transform 0.2s ease;
+      overflow-y: auto;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .article-sidebar.is-open {
+      transform: translateX(0);
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .article-sidebar-header {
+      position: sticky;
+      top: 0;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .article-sidebar-header h2 {
+      font-size: 1.32rem;
+      margin-bottom: 4px;
+    }
+
+    .article-sidebar-header p {
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.45;
+    }
+
+    .article-sidebar-close {
+      border: 1px solid var(--border);
+      background: var(--surface-2);
+      color: var(--text);
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .article-sidebar-close:hover { background: #e2e8f0; }
+
+    .article-sidebar-content { padding: 18px 20px 26px; }
+
+    .article-group + .article-group {
+      margin-top: 20px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+    }
+
+    .article-group h3 {
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      margin-bottom: 10px;
+    }
+
+    .article-sidebar-list {
+      list-style: none;
+      display: grid;
+      gap: 8px;
+    }
+
+    .article-sidebar-list a {
+      display: block;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: #334155;
+      font-weight: 700;
+      line-height: 1.35;
+      background: #fbfdff;
+    }
+
+    .article-sidebar-list a:hover {
+      text-decoration: none;
+      border-color: #cbd5e1;
+      background: var(--surface-soft);
+    }
+
+    body.sidebar-open { overflow: hidden; }
 
     .hero-card,
     .portal-box,
@@ -450,6 +586,8 @@
 
       .book-card { flex-direction: column; }
       .book-cover-img { width: 140px; }
+      .article-nav-toggle { right: 14px; bottom: 14px; }
+      .article-sidebar { width: 100%; }
     }
   </style>
 </head>
@@ -469,15 +607,64 @@
   </div>
 </header>
 
+<button class="article-nav-toggle" type="button" aria-expanded="false" aria-controls="article-sidebar">
+  <span class="icon" aria-hidden="true">☰</span>
+  <span>Artigos</span>
+</button>
+
+<div class="article-sidebar-backdrop" hidden></div>
+
+<aside class="article-sidebar" id="article-sidebar" aria-label="Todos os artigos" aria-hidden="true">
+  <div class="article-sidebar-header">
+    <div>
+      <h2>Todos os artigos</h2>
+      <p>Use a lista para ir direto a engrenagens, planetárias, diferenciais ou cames.</p>
+    </div>
+    <button class="article-sidebar-close" type="button" aria-label="Fechar lista de artigos">×</button>
+  </div>
+
+  <div class="article-sidebar-content">
+    <div class="article-group">
+      <h3>Engrenagens e trens</h3>
+      <ul class="article-sidebar-list">
+        <li><a href="artigos/engrenagens-funcoes-perfil-nomenclatura.html">Engrenagens: funções, perfil e nomenclatura</a></li>
+        <li><a href="artigos/trens-engrenagens-simples-compostos.html">Trens de engrenagens simples e compostos</a></li>
+        <li><a href="artigos/cambio-manual-trens-engrenagens.html">Câmbio manual como trem de engrenagens</a></li>
+        <li><a href="artigos/engrenagens-conicas-helicoidais-sem-fim.html">Engrenagens cônicas, helicoidais e sem-fim</a></li>
+      </ul>
+    </div>
+
+    <div class="article-group">
+      <h3>Planetárias e diferenciais</h3>
+      <ul class="article-sidebar-list">
+        <li><a href="artigos/engrenagens-planetarias.html">Engrenagens planetárias: caso geral e valor do trem</a></li>
+        <li><a href="artigos/aplicacoes-engrenagens-planetarias.html">Aplicações de engrenagens planetárias</a></li>
+        <li><a href="artigos/planetarias-compostas-diferenciais.html">Planetárias compostas e diferenciais</a></li>
+      </ul>
+    </div>
+
+    <div class="article-group">
+      <h3>Cames</h3>
+      <ul class="article-sidebar-list">
+        <li><a href="artigos/cames.html">Cames: fundamentos de síntese e análise</a></li>
+        <li><a href="artigos/cames-nomenclatura-seguidores.html">Cames: nomenclatura, seguidores e roteiro de projeto</a></li>
+        <li><a href="artigos/cames-curvas-deslocamento.html">Curvas de deslocamento em cames</a></li>
+        <li><a href="artigos/cames-projeto-analitico.html">Projeto analítico de cames</a></li>
+      </ul>
+    </div>
+  </div>
+</aside>
+
 <section class="hero">
   <div class="container hero-inner">
     <div>
       <span class="hero-label">UFSJ · LASME · Engenharia Mecânica</span>
       <h1>Conteúdo técnico original sobre engrenagens, mecanismos e ferramentas didáticas</h1>
-      <p>O Barbudenge reúne artigos explicativos, páginas editoriais e guias de apoio ao ensino e à análise em engenharia mecânica, com foco em engrenagens planetárias, cames, elementos de máquinas e recursos computacionais.</p>
-      <p>Em vez de funcionar apenas como diretório de links, o portal organiza contexto técnico próprio para cada tema e para cada ferramenta ligada ao ecossistema do site.</p>
+      <p>O Barbudenge reúne materiais de estudo sobre transmissões mecânicas, começando por engrenagens cilíndricas, relações de transmissão e trens compostos, e avançando para planetárias, diferenciais e cames.</p>
+      <p>Os textos combinam explicações conceituais, equações, exemplos de aula e figuras técnicas para apoiar estudantes e profissionais que precisam interpretar mecanismos antes de partir para o cálculo.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="#artigos">Ler artigos</a>
+        <a class="btn btn-secondary" href="artigos/index.html">Ver todos os artigos</a>
         <a class="btn btn-secondary" href="engrenarium.html">Conhecer o Engrenarium</a>
       </div>
     </div>
@@ -485,10 +672,12 @@
     <aside class="hero-card">
       <h3>Nesta página</h3>
       <ul>
-        <li><a href="artigos/engrenagens-planetarias.html">Artigo sobre engrenagens planetárias</a></li>
-        <li><a href="artigos/cames.html">Artigo sobre cames</a></li>
+        <li><a href="artigos/index.html">Índice de artigos técnicos</a></li>
+        <li><a href="artigos/trens-engrenagens-simples-compostos.html">Trens de engrenagens simples e compostos</a></li>
+        <li><a href="artigos/engrenagens-planetarias.html">Caso geral de engrenagens planetárias</a></li>
+        <li><a href="artigos/cames-projeto-analitico.html">Projeto analítico de cames</a></li>
         <li><a href="engrenarium.html">Guia do Engrenarium</a></li>
-        <li><a href="sobre.html">Autoria e escopo editorial</a></li>
+        <li><a href="sobre.html">Autoria e contato</a></li>
       </ul>
     </aside>
   </div>
@@ -499,20 +688,20 @@
 <section id="portal">
   <div class="container">
     <span class="section-label">Sobre o portal</span>
-    <h2>Quem publica e por que este site existe</h2>
-    <p class="lead">O Barbudenge é mantido por Artur Henrique de Freitas Avelar, professor da UFSJ, como um portal editorial para reunir material técnico original, contexto didático e páginas de apoio ligadas a projetos de ensino e desenvolvimento.</p>
+    <h2>Um roteiro de estudo para mecanismos</h2>
+    <p class="lead">O site é mantido por Artur Henrique de Freitas Avelar, professor da UFSJ, e organiza temas que aparecem em disciplinas de mecanismos e elementos de máquinas: dentes de engrenagens, trens de transmissão, planetárias, cames e ferramentas de visualização.</p>
 
     <div class="portal-box">
       <div>
-        <span class="author-badge">Autoria identificada</span>
-        <h3>Escopo editorial claro</h3>
-        <p>O foco do site é publicar conteúdo que ajude o leitor a entender problemas de mecanismos, transmissões e elementos de máquinas com mais clareza. Quando uma página aponta para um software, para um laboratório ou para um repositório, ela é acompanhada por contexto próprio, e não apenas por um link de saída.</p>
-        <p>Isso torna cada URL do portal útil por si mesma: o visitante encontra explicação, definição, interpretação e ligação com aplicações didáticas ou técnicas.</p>
+        <span class="author-badge">Sequência de estudo</span>
+        <h3>Do par de engrenagens ao sistema completo</h3>
+        <p>A leitura começa com grandezas básicas como módulo, número de dentes e diâmetro primitivo. Depois passa por trens simples e compostos, onde entram acoplamentos de eixo, sentido de rotação e valor do trem.</p>
+        <p>Essa base prepara o estudo de planetárias e diferenciais, em que o braço móvel exige trabalhar com velocidades relativas antes de interpretar a velocidade absoluta dos elementos.</p>
       </div>
       <div>
-        <span class="author-badge">Página dedicada</span>
-        <h3>Transparência e contato</h3>
-        <p>Há uma página específica com autoria, finalidade do site, critérios editoriais, contexto institucional e informações públicas de contato.</p>
+        <span class="author-badge">Cames e movimento</span>
+        <h3>Da curva SVAJ ao perfil do came</h3>
+        <p>Os artigos de cames discutem seguidores, curvas de deslocamento, velocidade, aceleração, ângulo de pressão, raio de base e curvatura. A ideia é ligar a lei de movimento ao perfil físico que será fabricado.</p>
         <p><a class="card-link" href="sobre.html">Ler a página Sobre</a></p>
       </div>
     </div>
@@ -523,23 +712,39 @@
   <div class="container">
     <span class="section-label">Conteúdo técnico</span>
     <h2>Artigos e páginas explicativas</h2>
-    <p class="lead">As páginas abaixo foram separadas em URLs próprias para que cada tema tenha contexto, leitura completa e links internos coerentes, em vez de ficar comprimido numa única landing page.</p>
+    <p class="lead">Os artigos estão organizados como uma sequência de estudo. Primeiro vêm conceitos de engrenagens e trens de transmissão; depois, aplicações com planetárias e diferenciais; por fim, cames, curvas de movimento e projeto analítico.</p>
 
     <div class="article-grid">
       <article class="article-card">
-        <span class="author-badge">Artigo técnico</span>
-        <h3>Engrenagens planetárias: caso geral e valor do trem</h3>
-        <p>Texto dedicado à formulação geral de trens epicicloidais, com ênfase em velocidades relativas, interpretação do braço e significado do valor do trem.</p>
-        <p>O artigo explica por que a leitura do caso geral ajuda mais do que decorar casos particulares e mostra uma sequência útil para análise cinemática.</p>
-        <a class="card-link" href="artigos/engrenagens-planetarias.html">Ler artigo completo</a>
+        <span class="author-badge">Mapa de leitura</span>
+        <h3>Todos os artigos técnicos</h3>
+        <p>O índice reúne os textos por assunto: engrenagens e trens, planetárias e diferenciais, cames e projeto. Ele ajuda a escolher entre uma revisão conceitual rápida e uma leitura mais aprofundada.</p>
+        <p>Use-o quando quiser comparar temas próximos, como trem composto e planetária composta, ou curva de deslocamento e projeto analítico de came.</p>
+        <a class="card-link" href="artigos/index.html">Abrir índice de artigos</a>
       </article>
 
       <article class="article-card">
-        <span class="author-badge">Artigo técnico</span>
-        <h3>Cames: fundamentos de síntese e análise de mecanismos</h3>
-        <p>Página própria sobre o papel dos cames na síntese de movimento, incluindo leis de deslocamento, relevância do ângulo de pressão e implicações didáticas.</p>
-        <p>O foco está em explicar como decisões geométricas se conectam ao comportamento do mecanismo e aos critérios de projeto.</p>
-        <a class="card-link" href="artigos/cames.html">Ler artigo completo</a>
+        <span class="author-badge">Trilha de estudo</span>
+        <h3>Engrenagens e trens de engrenagens</h3>
+        <p>Textos sobre nomenclatura, perfil evolvente, módulo, trens simples, trens compostos, relação de transmissão, câmbio manual e engrenagens especiais.</p>
+        <p>Essas páginas criam a base para entender aplicações mais avançadas e a análise de planetárias.</p>
+        <a class="card-link" href="artigos/engrenagens-funcoes-perfil-nomenclatura.html">Começar pela introdução</a>
+      </article>
+
+      <article class="article-card">
+        <span class="author-badge">Trilha de estudo</span>
+        <h3>Engrenagens planetárias e diferenciais</h3>
+        <p>Artigos sobre caso geral, valor do trem, aplicações em transmissões automáticas, redutores compactos, planetárias compostas e diferenciais.</p>
+        <p>A trilha também se conecta ao Engrenarium, que permite visualizar como entrada, saída, elemento fixo e braço alteram a velocidade em arranjos epicicloidais.</p>
+        <a class="card-link" href="artigos/engrenagens-planetarias.html">Ler sobre o caso geral</a>
+      </article>
+
+      <article class="article-card">
+        <span class="author-badge">Trilha de estudo</span>
+        <h3>Cames, curvas de movimento e projeto</h3>
+        <p>Conjunto de textos sobre nomenclatura, seguidores, curvas cicloidais, harmônicas, polinomiais, ângulo de pressão, raio de base e curvatura.</p>
+        <p>O objetivo é mostrar como um perfil de came nasce de uma especificação de movimento e de verificações geométricas.</p>
+        <a class="card-link" href="artigos/cames.html">Ler fundamentos de cames</a>
       </article>
     </div>
   </div>
@@ -549,7 +754,7 @@
   <div class="container">
     <span class="section-label">Ferramentas e laboratório</span>
     <h2>Projetos disponíveis</h2>
-    <p class="lead">Os projetos abaixo aparecem com contexto próprio. A navegação privilegia primeiro a explicação editorial dentro do portal e, depois, o acesso ao recurso externo quando isso faz sentido.</p>
+    <p class="lead">Além dos artigos, o site aponta para ferramentas e ambientes ligados ao estudo de mecanismos. O Engrenarium complementa os textos de planetárias com visualização interativa, enquanto o LASME reúne atividades de ensino, pesquisa e desenvolvimento.</p>
 
     <div class="projects-grid">
       <article class="project-card">
@@ -594,7 +799,7 @@
       <details>
         <summary>O portal depende apenas do simulador?</summary>
         <div class="faq-body">
-          <p>Não. O site também reúne artigos técnicos, glossário, material explicativo e páginas editoriais de apoio. O simulador é uma das frentes do portal, não a única.</p>
+          <p>Não. Além do simulador, há artigos sobre engrenagens, trens compostos, diferenciais, cames e curvas de movimento. O Engrenarium complementa esses textos quando a visualização do trem planetário ajuda a entender o cálculo.</p>
         </div>
       </details>
 
@@ -662,7 +867,7 @@
   <div class="container">
     <span class="section-label">Publicações</span>
     <h2>Livros traduzidos ligados ao trabalho do autor</h2>
-    <p class="lead">Esta seção funciona como referência bibliográfica e editorial. Nesta página, os títulos aparecem sem links comerciais, para que o foco permaneça no conteúdo técnico e na trajetória de trabalho associada ao portal.</p>
+    <p class="lead">Os livros abaixo reúnem mecanismos clássicos, dispositivos e soluções de movimento. Eles dialogam com os temas do site porque mostram como pares de engrenagens, cames, alavancas e transmissões aparecem em aplicações reais.</p>
 
     <div class="books-grid">
       <div class="book-card">
@@ -684,7 +889,7 @@
         <div class="book-info">
           <span class="book-badge">Tradução para o português</span>
           <h3>1800 Movimentos Mecânicos, Dispositivos e Componentes</h3>
-          <p>Compêndio traduzido com ampla variedade de mecanismos, dispositivos e soluções mecânicas clássicas, apresentado aqui como parte da trajetória editorial vinculada ao portal.</p>
+          <p>Compêndio traduzido com ampla variedade de mecanismos, dispositivos e soluções mecânicas clássicas, útil para consultar alternativas de transmissão, guia, comando e transformação de movimento.</p>
           <p><em>Barbudenge, 2025</em></p>
         </div>
       </div>
@@ -696,12 +901,12 @@
   <div class="container">
     <span class="section-label">Contato</span>
     <h2>Informações de contato</h2>
-    <p class="lead">Para dúvidas sobre conteúdo técnico, sobre o Engrenarium ou sobre o contexto acadêmico ligado ao portal, utilize os contatos e páginas abaixo.</p>
+    <p class="lead">Para dúvidas sobre engrenagens, cames, mecanismos, Engrenarium ou materiais didáticos ligados à UFSJ, utilize os contatos e links abaixo.</p>
 
     <div class="contact-grid">
       <div class="contact-card">
         <h3>E-mail</h3>
-        <p>Canal para dúvidas sobre o simulador, os artigos publicados e o conteúdo editorial deste portal.</p>
+        <p>Canal para dúvidas sobre o simulador, os artigos publicados e os temas de mecanismos tratados no site.</p>
         <p><a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
       </div>
 
@@ -724,7 +929,7 @@
     <div class="footer-grid">
       <div>
         <div class="footer-brand">Barbu<span>denge</span></div>
-        <p>Portal editorial com ferramentas e conteúdo técnico sobre engrenagens, mecanismos e elementos de máquinas.</p>
+        <p>Ferramentas e conteúdo técnico sobre engrenagens, mecanismos, cames e elementos de máquinas.</p>
       </div>
 
       <div>
@@ -739,6 +944,8 @@
       <div>
         <h4>Conteúdo</h4>
         <ul>
+          <li><a href="artigos/index.html">Índice de artigos</a></li>
+          <li><a href="artigos/trens-engrenagens-simples-compostos.html">Trens de engrenagens</a></li>
           <li><a href="artigos/engrenagens-planetarias.html">Engrenagens planetárias</a></li>
           <li><a href="artigos/cames.html">Cames</a></li>
           <li><a href="#faq">FAQ</a></li>
@@ -753,6 +960,34 @@
     </div>
   </div>
 </footer>
+
+<script>
+  const articleToggle = document.querySelector('.article-nav-toggle');
+  const articleSidebar = document.querySelector('#article-sidebar');
+  const articleBackdrop = document.querySelector('.article-sidebar-backdrop');
+  const articleClose = document.querySelector('.article-sidebar-close');
+  const articleLinks = document.querySelectorAll('.article-sidebar-list a');
+
+  function setArticleSidebar(open) {
+    articleSidebar.classList.toggle('is-open', open);
+    articleSidebar.setAttribute('aria-hidden', String(!open));
+    articleToggle.setAttribute('aria-expanded', String(open));
+    articleBackdrop.hidden = !open;
+    document.body.classList.toggle('sidebar-open', open);
+  }
+
+  articleToggle.addEventListener('click', () => {
+    setArticleSidebar(!articleSidebar.classList.contains('is-open'));
+  });
+
+  articleClose.addEventListener('click', () => setArticleSidebar(false));
+  articleBackdrop.addEventListener('click', () => setArticleSidebar(false));
+  articleLinks.forEach((link) => link.addEventListener('click', () => setArticleSidebar(false)));
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') setArticleSidebar(false);
+  });
+</script>
 
 </body>
 </html>

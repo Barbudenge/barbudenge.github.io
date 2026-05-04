@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Engrenagens: funções, perfil e nomenclatura | Barbudenge</title>
+  <meta name="description" content="Artigo introdutório sobre funções das engrenagens, perfil evolvente, módulo, número de dentes, diâmetro primitivo e nomenclatura básica." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Artur Henrique de Freitas Avelar" />
+  <meta name="google-adsense-account" content="ca-pub-5777194849710689" />
+  <link rel="canonical" href="https://barbudenge.github.io/artigos/engrenagens-funcoes-perfil-nomenclatura.html" />
+
+  <meta property="og:title" content="Engrenagens: funções, perfil e nomenclatura" />
+  <meta property="og:description" content="Como engrenagens transmitem potência, alteram velocidade e dependem de uma geometria compatível de dentes." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://barbudenge.github.io/artigos/engrenagens-funcoes-perfil-nomenclatura.html" />
+
+  <script>
+    window.MathJax = { tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] }, svg: { fontCache: 'global' } };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5777194849710689" crossorigin="anonymous"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="artigo.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container topbar">
+    <a href="../index.html" style="text-decoration:none;"><div class="brand">Barbu<span>denge</span></div></a>
+    <nav aria-label="Navegação principal">
+      <a href="../index.html">Início</a>
+      <a href="index.html">Artigos</a>
+      <a href="../engrenarium.html">Engrenarium</a>
+      <a href="../sobre.html">Sobre</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow">Artigo técnico</span>
+    <h1>Engrenagens: funções, perfil e nomenclatura essencial</h1>
+    <p>Antes de calcular um trem de engrenagens, é preciso entender o que uma engrenagem faz, que grandezas descrevem sua geometria e por que o perfil do dente não é um detalhe decorativo.</p>
+    <div class="byline">
+      <span>Por Artur Henrique de Freitas Avelar</span>
+      <span>Atualizado em maio de 2026</span>
+      <span>Categoria: engrenagens</span>
+    </div>
+  </div>
+</section>
+
+<main class="container article-layout">
+  <article class="article-body">
+    <p class="lead">Engrenagens são elementos usados para transmitir potência e impor uma relação cinemática entre eixos. A mesma peça que reduz velocidade pode aumentar torque, mudar o sentido do movimento ou servir como parte de uma arquitetura mais complexa, como uma caixa de câmbio ou um trem planetário.</p>
+
+    <h2>Função mecânica</h2>
+    <p>Em uma transmissão ideal, a potência mecânica que entra no par de engrenagens é aproximadamente a potência que sai. Como potência rotativa é o produto entre torque e velocidade angular, a redução de velocidade vem acompanhada de aumento de torque, descontadas as perdas por atrito, deformação, lubrificação e contato.</p>
+
+    <div class="equation-box">
+      \[
+      P = T\omega
+      \]
+    </div>
+
+    <p>Essa expressão simples ajuda a evitar uma interpretação incompleta: a engrenagem não "cria" potência. Ela troca velocidade por torque dentro das limitações do sistema. Por isso a relação de transmissão precisa ser lida junto com esforço, rotação admissível, montagem dos eixos e aplicação final.</p>
+
+    <h2>Perfil do dente</h2>
+    <p>O perfil mais comum em engrenagens cilíndricas é o evolvente, também chamado de involuta. Seu uso é amplo porque permite transmitir movimento com razão de velocidades praticamente constante mesmo quando há pequenas variações na distância entre centros. Isso é essencial em máquinas reais, nas quais montagem, desgaste e fabricação nunca são perfeitamente ideais.</p>
+
+    <p>Perfis cicloidais também aparecem em aplicações específicas, especialmente quando o interesse está em precisão e baixa carga, como em alguns mecanismos de relojoaria. Em máquinas industriais, porém, a robustez e a padronização do perfil evolvente tornam sua presença dominante.</p>
+
+    <figure class="article-figure">
+      <img src="../figs/exemplo-plan.png" alt="Conjunto de engrenagens planetárias com engrenagem solar, planetárias, braço e anelar">
+      <figcaption>Mesmo em conjuntos planetários, a leitura começa pela geometria básica dos dentes e pelo número de dentes de cada engrenagem.</figcaption>
+    </figure>
+
+    <h2>Número de dentes, diâmetro primitivo e módulo</h2>
+    <p>Três grandezas aparecem o tempo todo: número de dentes \(N\), diâmetro primitivo \(D\) e módulo \(m\). O diâmetro primitivo não é a borda externa da engrenagem; ele representa a circunferência teórica usada para descrever a transmissão de movimento. O módulo relaciona essa dimensão com a quantidade de dentes:</p>
+
+    <div class="equation-box">
+      \[
+      m = \frac{D}{N}
+      \]
+    </div>
+
+    <p>Duas engrenagens só engrenam corretamente quando têm dentes compatíveis. Na prática, isso significa respeitar módulo, ângulo de pressão, largura de face e demais parâmetros de fabricação. A relação \(D/N\) é útil porque mostra que não basta escolher dentes ao acaso: ao aumentar o número de dentes mantendo o mesmo módulo, o diâmetro primitivo também aumenta.</p>
+
+    <figure class="article-figure">
+      <img src="../figs/aulas/engrenagem-padronizacao.png" alt="Engrenagem esquemática usada para discutir número de dentes e diâmetro primitivo">
+      <figcaption>Figura de apoio das aulas: número de dentes e dimensão primitiva precisam ser lidos em conjunto, porque a padronização geométrica controla a compatibilidade entre engrenagens.</figcaption>
+    </figure>
+
+    <h2>Engrenagem externa, interna e cremalheira</h2>
+    <p>Em uma engrenagem externa comum, os dentes ficam voltados para fora. Quando duas engrenagens externas engrenam, seus sentidos de rotação são opostos. Na engrenagem interna, os dentes ficam voltados para dentro; nesse caso, uma engrenagem externa que engrena com ela gira no mesmo sentido. Essa diferença de sentido se torna importante ao analisar trens com vários pares.</p>
+
+    <p>A cremalheira pode ser entendida como uma engrenagem de raio infinito. Ela transforma rotação em translação e aparece em direções, guias, atuadores e mecanismos em que o interesse é converter movimento angular em deslocamento linear.</p>
+
+    <div class="note">Uma boa análise de engrenagens começa pela identificação dos elementos: quais dentes se tocam, quais eixos são fixos, quais engrenagens estão rigidamente acopladas e qual grandeza representa a entrada.</div>
+
+    <h2>Por que a nomenclatura importa</h2>
+    <p>Grande parte dos erros em exercícios de engrenagens não nasce da álgebra, mas de uma leitura inicial fraca. Confundir diâmetro externo com diâmetro primitivo, esquecer uma engrenagem intermediária ou tratar engrenagens acopladas como independentes muda todo o resultado.</p>
+
+    <p>Por isso, antes de calcular uma relação de transmissão, vale registrar a topologia do mecanismo. Quem aciona quem? O par é externo ou interno? Existe eixo comum? Há uma cremalheira? Algum elemento está travado? Essas perguntas formam a ponte entre a geometria do desenho e a equação que será usada.</p>
+  </article>
+
+  <aside>
+    <div class="sidebar-card">
+      <h3>Resumo da página</h3>
+      <ul class="meta-list">
+        <li>Engrenagens transmitem potência e alteram torque, velocidade e sentido.</li>
+        <li>O perfil evolvente é o padrão mais comum em máquinas.</li>
+        <li>Módulo, número de dentes e diâmetro primitivo precisam ser compatíveis.</li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h3>Continuar estudando</h3>
+      <ul>
+        <li><a href="trens-engrenagens-simples-compostos.html">Trens simples e compostos</a></li>
+        <li><a href="engrenagens-planetarias.html">Engrenagens planetárias</a></li>
+        <li><a href="index.html">Índice de artigos</a></li>
+      </ul>
+    </div>
+  </aside>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Barbudenge · <a href="../index.html">Página inicial</a> · <a href="../sobre.html">Sobre</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cames: nomenclatura, seguidores e roteiro de projeto | Barbudenge</title>
+  <meta name="description" content="Artigo sobre nomenclatura de cames, tipos de seguidores, raio de base, curso, ângulo de pressão, posições críticas e roteiro inicial de projeto." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Artur Henrique de Freitas Avelar" />
+  <meta name="google-adsense-account" content="ca-pub-5777194849710689" />
+  <link rel="canonical" href="https://barbudenge.github.io/artigos/cames-nomenclatura-seguidores.html" />
+
+  <meta property="og:title" content="Cames: nomenclatura, seguidores e roteiro de projeto" />
+  <meta property="og:description" content="Como organizar os termos e decisões iniciais antes de sintetizar o perfil de um came." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://barbudenge.github.io/artigos/cames-nomenclatura-seguidores.html" />
+
+  <script>
+    window.MathJax = { tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] }, svg: { fontCache: 'global' } };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5777194849710689" crossorigin="anonymous"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="artigo.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container topbar">
+    <a href="../index.html" style="text-decoration:none;"><div class="brand">Barbu<span>denge</span></div></a>
+    <nav aria-label="Navegação principal">
+      <a href="../index.html">Início</a>
+      <a href="index.html">Artigos</a>
+      <a href="../engrenarium.html">Engrenarium</a>
+      <a href="../sobre.html">Sobre</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow">Artigo técnico</span>
+    <h1>Cames: nomenclatura, seguidores e roteiro de projeto</h1>
+    <p>Projetar um came não começa pelo desenho do contorno. Começa pela especificação do movimento do seguidor, pela escolha do tipo de contato e pela leitura correta dos parâmetros geométricos.</p>
+    <div class="byline">
+      <span>Por Artur Henrique de Freitas Avelar</span>
+      <span>Atualizado em maio de 2026</span>
+      <span>Categoria: cames</span>
+    </div>
+  </div>
+</section>
+
+<main class="container article-layout">
+  <article class="article-body">
+    <p class="lead">Um came é um elemento mecânico cujo perfil impõe movimento a um seguidor. Essa definição é curta, mas carrega uma ideia importante: o perfil é consequência de uma lei de movimento desejada, não um desenho arbitrário.</p>
+
+    <figure class="article-figure">
+      <img src="../figs/came.png" alt="Esquema de came com seguidor e ângulo de pressão">
+      <figcaption>Em cames, o perfil deve ser lido junto com raio de base, curso, seguidor e ângulo de pressão.</figcaption>
+    </figure>
+
+    <h2>Quando usar cames</h2>
+    <p>Cames aparecem em motores, máquinas de embalagem, prensas, linhas de produção e dispositivos automáticos. Eles são úteis quando uma rotação precisa gerar uma sequência bem definida de deslocamentos, repousos e retornos.</p>
+
+    <p>A vantagem é a compacidade e a liberdade de especificar movimentos diferentes. A desvantagem é que fabricação, desgaste e ruído podem afetar diretamente a resposta. Pequenas imprecisões no perfil podem alterar deslocamento, velocidade e aceleração do seguidor.</p>
+
+    <h2>Termos essenciais</h2>
+    <p>Alguns termos aparecem em praticamente qualquer projeto de came. O raio de base \(C\) representa a menor circunferência associada ao corpo do came. O raio primitivo \(R_0\) é usado na construção do perfil primitivo, especialmente quando o seguidor possui rolete. O raio do rolete \(R_r\), o curso \(L\), o deslocamento \(S\), o ângulo de rotação \(\theta\) e o ângulo de pressão \(\alpha\) completam a leitura inicial.</p>
+
+    <p>O curso não deve ser confundido com o deslocamento instantâneo. O curso é a variação total desejada; o deslocamento é o valor em cada posição angular. Essa diferença parece simples, mas é decisiva quando o movimento é dividido em trechos de subida, repouso e descida.</p>
+
+    <h2>Tipos de seguidores</h2>
+    <p>Seguidores podem ser de face plana, de rolete, de ponta ou oscilantes. O seguidor de rolete reduz deslizamento no contato, mas adiciona o raio do rolete ao problema geométrico. O seguidor de face plana pode simplificar algumas construções, mas exige verificar a largura necessária e o risco de formação de pontas no perfil.</p>
+
+    <p>A escolha também depende da carga, velocidade, lubrificação e precisão. Em uma aplicação didática, o tipo de seguidor muda as equações e o procedimento de desenho. Em uma aplicação real, muda desgaste, ruído, custo e robustez.</p>
+
+    <h2>Posições e percurso crítico</h2>
+    <p>Um projeto bem especificado identifica as posições extremas críticas e o percurso de movimento crítico. As posições extremas definem onde o seguidor começa e termina trechos importantes. O percurso de movimento define como ele se desloca entre essas posições: com repouso, velocidade constante, movimento cicloidal, harmônico ou outra lei.</p>
+
+    <div class="note">A pergunta correta não é apenas "qual será o formato do came?", mas "qual movimento o seguidor precisa executar ao longo de uma volta?".</div>
+
+    <h2>Roteiro inicial de projeto</h2>
+    <ol>
+      <li>defina o ciclo completo em graus ou em tempo;</li>
+      <li>separe trechos de subida, repouso, descida e eventuais movimentos intermediários;</li>
+      <li>escolha o tipo de seguidor e suas restrições geométricas;</li>
+      <li>selecione leis de movimento compatíveis com continuidade de velocidade e aceleração;</li>
+      <li>verifique ângulo de pressão, curvatura e dimensões mínimas.</li>
+    </ol>
+
+    <p>Esse roteiro evita começar pela geometria final. O perfil do came deve ser o último resultado de uma cadeia de decisões: função, movimento, contato e verificação.</p>
+  </article>
+
+  <aside>
+    <div class="sidebar-card">
+      <h3>Resumo da página</h3>
+      <ul class="meta-list">
+        <li>Cames impõem movimentos prescritos a seguidores.</li>
+        <li>O tipo de seguidor altera contato, desgaste e geometria.</li>
+        <li>O projeto começa pelo ciclo de movimento, não pelo contorno.</li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h3>Continuar estudando</h3>
+      <ul>
+        <li><a href="cames.html">Fundamentos de cames</a></li>
+        <li><a href="cames-curvas-deslocamento.html">Curvas de deslocamento</a></li>
+        <li><a href="cames-projeto-analitico.html">Projeto analítico</a></li>
+      </ul>
+    </div>
+  </aside>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Barbudenge · <a href="../index.html">Página inicial</a> · <a href="../sobre.html">Sobre</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
