@@ -186,6 +186,18 @@ li + li { margin-top: 7px; }
   max-width: 260px;
 }
 
+.figure-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 22px 0 26px;
+}
+
+.figure-grid .article-figure {
+  margin: 0;
+  max-width: none;
+}
+
 .video-embed {
   position: relative;
   width: 100%;
@@ -322,4 +334,5 @@ footer a { color: rgba(255,255,255,0.86); }
   .article-body { padding: 24px 20px; }
   .index-grid { grid-template-columns: 1fr; }
   .index-card { min-height: 0; }
+  .figure-grid { grid-template-columns: 1fr; }
 }

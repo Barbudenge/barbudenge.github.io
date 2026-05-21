@@ -4,14 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Transmissão do Ford Modelo T: duas marchas e ré | Barbudenge</title>
-  <meta name="description" content="Artigo técnico sobre a transmissão do Ford Modelo T, com duas marchas à frente, marcha ré, relações de transmissão e leitura cinemática dos elementos planetários." />
+  <meta name="description" content="Artigo técnico sobre como montar no Engrenarium a transmissão planetária do Ford Modelo T, com números de dentes, relações de transmissão e leitura cinemática." />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Artur Henrique de Freitas Avelar" />
   <meta name="google-adsense-account" content="ca-pub-5777194849710689" />
   <link rel="canonical" href="https://barbudenge.github.io/artigos/transmissao-ford-modelo-t.html" />
 
   <meta property="og:title" content="Transmissão do Ford Modelo T: duas marchas e ré" />
-  <meta property="og:description" content="Leitura didática da transmissão planetária do Ford Modelo T a partir das relações de marcha do vídeo." />
+  <meta property="og:description" content="Montagem e leitura didática da transmissão planetária do Ford Modelo T no Engrenarium." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://barbudenge.github.io/artigos/transmissao-ford-modelo-t.html" />
 
@@ -55,16 +55,20 @@
 
 <main class="container article-layout">
   <article class="article-body">
-    <p class="lead">Este artigo acompanha a sequência do vídeo sobre a transmissão do Ford Modelo T. O objetivo é transformar as figuras, textos e equações da animação em uma leitura técnica em português, destacando as três relações principais: primeira marcha, segunda marcha e marcha ré.</p>
+    <p class="lead">Este artigo mostra como montar no Engrenarium um modelo didático da transmissão do Ford Modelo T e como interpretar seu funcionamento. A montagem usa três conjuntos planetários e muda as restrições para obter primeira marcha, segunda marcha e marcha ré.</p>
 
     <div class="video-embed">
       <iframe src="https://www.youtube.com/embed/ZG0Zmb6X4Wc?start=2" title="Transmissão do Ford Modelo T" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
 
+    <div class="note">
+      <strong>Montagem no Engrenarium:</strong> o mecanismo pode ser reproduzido no <a href="https://barbudenge.github.io/lasmeufsj/engrenarium/">Engrenarium software</a> ou no <a href="https://barbudenge.github.io/engrenarium/">Engrenarium web</a>. Use os números de dentes abaixo para criar os conjuntos planetários e altere apenas os vínculos de cada marcha.
+    </div>
+
     <h2>Contexto do mecanismo</h2>
     <p>O Ford Modelo T foi produzido entre 1908 e 1927 e se tornou um dos automóveis mais influentes da história por combinar baixo custo, robustez e facilidade de manutenção. Um dos pontos interessantes para estudo de mecanismos é a sua transmissão, que não segue a forma visual de uma caixa manual moderna com engrenagens deslizantes.</p>
 
-    <p>No vídeo, a transmissão é apresentada com três relações de operação:</p>
+    <p>Para o modelo didático, a transmissão é organizada em três relações de operação:</p>
 
     <table class="data-table">
       <thead>
@@ -91,9 +95,51 @@
 
     <p>O sinal negativo da marcha ré representa inversão de sentido da saída em relação à entrada. Já a segunda marcha com relação \(1,0\) representa uma condição direta, em que entrada e saída giram com a mesma velocidade angular.</p>
 
+    <h2>Dados para montagem no Engrenarium</h2>
+    <p>A descrição do vídeo informa os números de dentes das solares e dos planetas dos três sistemas planetários. Esses valores formam a base da montagem no Engrenarium:</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Conjunto</th>
+          <th>Solar</th>
+          <th>Planeta</th>
+          <th>Anelar interna calculada</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Planetária 1</td>
+          <td>\(N_{sun}=27\)</td>
+          <td>\(N_{planet}=27\)</td>
+          <td>\(N_{ring}=81\)</td>
+        </tr>
+        <tr>
+          <td>Planetária 2</td>
+          <td>\(N_{sun}=21\)</td>
+          <td>\(N_{planet}=33\)</td>
+          <td>\(N_{ring}=87\)</td>
+        </tr>
+        <tr>
+          <td>Planetária 3</td>
+          <td>\(N_{sun}=30\)</td>
+          <td>\(N_{planet}=24\)</td>
+          <td>\(N_{ring}=78\)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Os valores da anelar interna acima são obtidos pela condição geométrica de uma planetária simples com mesmo módulo:</p>
+
+    <div class="equation-box">
+      \[
+      N_{ring}=N_{sun}+2N_{planet}
+      \]
+    </div>
+
     <figure class="article-figure figure-wide">
       <img src="../figs/aulas/ford-modelo-t-patente-conjunto.png" alt="Figuras da patente original do Ford Modelo T com conjunto da transmissão e chassi">
-      <figcaption>Figuras da patente original usadas no vídeo para contextualizar a posição do conjunto de transmissão no veículo.</figcaption>
+      <figcaption>Figuras da patente original ajudam a contextualizar a posição do conjunto de transmissão no veículo.</figcaption>
     </figure>
 
     <h2>Conjunto de transmissão</h2>
@@ -104,7 +150,7 @@
       <figcaption>Corte da transmissão na figura de patente. O interesse didático está na leitura dos elementos que mudam de condição entre as marchas.</figcaption>
     </figure>
 
-    <p>Na convenção usada no vídeo, a relação geral é escrita como a razão entre velocidade angular de entrada e velocidade angular de saída:</p>
+    <p>Na montagem do Engrenarium, a relação geral é escrita como a razão entre velocidade angular de entrada e velocidade angular de saída:</p>
 
     <div class="equation-box">
       \[
@@ -116,8 +162,11 @@
 
     <p>Essa forma deixa claro que a marcha não é apenas um número: ela é consequência da condição cinemática aplicada aos elementos do trem planetário.</p>
 
+    <h2>Montagem das marchas</h2>
+    <p>Depois de criar os três conjuntos planetários, mantenha a mesma geometria e salve uma configuração de vínculos para cada marcha. A entrada, a saída e os elementos travados ou acoplados é que definem a relação final.</p>
+
     <h2>Primeira marcha</h2>
-    <p>Na primeira marcha, a condição destacada no vídeo é o travamento da <em>sun 2</em>:</p>
+    <p>Na primeira marcha, a condição aplicada é o travamento da <em>sun 2</em>:</p>
 
     <div class="equation-box">
       \[
@@ -125,10 +174,10 @@
       \]
     </div>
 
-    <p>Quando um elemento do trem é travado, as velocidades relativas internas deixam de ser livres e a saída passa a ocorrer com redução. No caso mostrado no vídeo, a primeira marcha corresponde à relação \(2,75\), ou seja, a entrada gira mais vezes que a saída para produzir maior capacidade de tração em baixa velocidade.</p>
+    <p>Quando um elemento do trem é travado, as velocidades relativas internas deixam de ser livres e a saída passa a ocorrer com redução. Com os dentes e vínculos acima, a primeira marcha corresponde à relação \(2,75\), ou seja, a entrada gira mais vezes que a saída para produzir maior capacidade de tração em baixa velocidade.</p>
 
     <h2>Segunda marcha</h2>
-    <p>A segunda marcha é apresentada como uma condição direta. O vídeo destaca a igualdade entre o carrier 1 e a sun 1:</p>
+    <p>A segunda marcha é uma condição direta. Para isso, aplique a igualdade entre o carrier 1 e a sun 1:</p>
 
     <div class="equation-box">
       \[
@@ -139,7 +188,7 @@
     <p>Substituindo essa igualdade na relação geral, obtém-se \(i=1,0\). Isso significa que a velocidade angular de entrada e a velocidade angular de saída são iguais. Em termos de condução, é a marcha de avanço direto.</p>
 
     <h2>Marcha ré</h2>
-    <p>Na marcha ré, o vídeo usa outra condição de travamento:</p>
+    <p>Na marcha ré, aplica-se outra condição de travamento:</p>
 
     <div class="equation-box">
       \[
@@ -170,9 +219,17 @@
       <h3>Resumo da página</h3>
       <ul class="meta-list">
         <li>Data: 11 de maio de 2026.</li>
+        <li>3 conjuntos planetários.</li>
         <li>Primeira marcha: \(2,75\).</li>
         <li>Segunda marcha: \(1,0\).</li>
         <li>Marcha ré: \(-4,0\).</li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h3>Abrir no Engrenarium</h3>
+      <ul>
+        <li><a href="https://barbudenge.github.io/lasmeufsj/engrenarium/">Engrenarium software</a></li>
+        <li><a href="https://barbudenge.github.io/engrenarium/">Engrenarium web</a></li>
       </ul>
     </div>
     <div class="sidebar-card">
