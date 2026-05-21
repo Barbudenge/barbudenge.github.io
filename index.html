@@ -442,6 +442,49 @@
       gap: 4px;
     }
 
+    .article-thumb {
+      display: block;
+      width: 70%;
+      aspect-ratio: 16 / 9;
+      margin: 0 auto 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .article-thumb:hover {
+      border-color: #cbd5e1;
+      text-decoration: none;
+    }
+
+    .article-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #fff;
+    }
+
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .article-meta .author-badge { margin-bottom: 0; }
+
+    .article-date {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #526071;
+      background: var(--surface-2);
+      border-radius: 20px;
+      padding: 3px 10px;
+    }
+
     .card-link,
     .project-link {
       display: inline-flex;
@@ -618,7 +661,7 @@
   <div class="article-sidebar-header">
     <div>
       <h2>Todos os artigos</h2>
-      <p>Use a lista para ir direto a engrenagens, planetárias, diferenciais ou cames.</p>
+      <p>Use a lista para ir direto a engrenagens, planetárias, CVT, diferenciais ou cames.</p>
     </div>
     <button class="article-sidebar-close" type="button" aria-label="Fechar lista de artigos">×</button>
   </div>
@@ -639,6 +682,8 @@
       <ul class="article-sidebar-list">
         <li><a href="artigos/engrenagens-planetarias.html">Engrenagens planetárias: caso geral e valor do trem</a></li>
         <li><a href="artigos/aplicacoes-engrenagens-planetarias.html">Aplicações de engrenagens planetárias</a></li>
+        <li><a href="artigos/planetaria-composta-engrenarium.html">Como montar uma planetária composta no Engrenarium</a></li>
+        <li><a href="artigos/transmissao-cvt-engrenarium.html">Como montar uma transmissão CVT no Engrenarium</a></li>
         <li><a href="artigos/planetarias-compostas-diferenciais.html">Planetárias compostas e diferenciais</a></li>
       </ul>
     </div>
@@ -673,6 +718,8 @@
       <h3>Nesta página</h3>
       <ul>
         <li><a href="artigos/index.html">Índice de artigos técnicos</a></li>
+        <li><a href="artigos/planetaria-composta-engrenarium.html">Planetária composta no Engrenarium</a></li>
+        <li><a href="artigos/transmissao-cvt-engrenarium.html">Transmissão CVT no Engrenarium</a></li>
         <li><a href="artigos/trens-engrenagens-simples-compostos.html">Trens de engrenagens simples e compostos</a></li>
         <li><a href="artigos/engrenagens-planetarias.html">Caso geral de engrenagens planetárias</a></li>
         <li><a href="artigos/cames-projeto-analitico.html">Projeto analítico de cames</a></li>
@@ -708,6 +755,69 @@
   </div>
 </section>
 
+<section id="recentes">
+  <div class="container">
+    <span class="section-label">Artigos recentes</span>
+    <h2>Publicações recentes em engenharia mecânica</h2>
+    <p class="lead">Novos artigos do portal sobre mecanismos, transmissões, engrenagens, cames e outros temas de engenharia mecânica aplicada. Esta área destaca os textos mais recentes à medida que forem publicados.</p>
+
+    <div class="article-grid">
+      <article class="article-card">
+        <a class="article-thumb" href="artigos/planetaria-composta-engrenarium.html">
+          <img src="figs/aulas/planetaria-composta-dois-estagios-engrenarium.png" alt="Montagem de planetária composta de dois estágios no Engrenarium">
+        </a>
+        <div class="article-meta">
+          <span class="author-badge">Planetárias</span>
+          <time class="article-date" datetime="2026-05-08">8 maio 2026</time>
+        </div>
+        <h3>Como montar uma planetária composta no Engrenarium</h3>
+        <p>Montagem de dois estágios com acoplamento entre braços e planetas, incluindo equações e resultados esperados.</p>
+        <a class="card-link" href="artigos/planetaria-composta-engrenarium.html">Ler artigo</a>
+      </article>
+
+      <article class="article-card">
+        <a class="article-thumb" href="artigos/transmissao-cvt-engrenarium.html">
+          <img src="figs/aulas/cvt-marcha-frente-engrenarium.png" alt="Montagem da transmissão CVT no Engrenarium">
+        </a>
+        <div class="article-meta">
+          <span class="author-badge">CVT</span>
+          <time class="article-date" datetime="2026-05-07">7 maio 2026</time>
+        </div>
+        <h3>Como montar uma transmissão CVT no Engrenarium</h3>
+        <p>Passo a passo técnico para montar um mecanismo didático de CVT com solar, anelar, planetas e saída pelo braço.</p>
+        <a class="card-link" href="artigos/transmissao-cvt-engrenarium.html">Ler artigo</a>
+      </article>
+
+      <article class="article-card">
+        <a class="article-thumb" href="artigos/cames-projeto-analitico.html">
+          <img src="figs/aulas/cames-seguidor-plano-raio-base.png" alt="Construção geométrica de came com seguidor de face plana">
+        </a>
+        <div class="article-meta">
+          <span class="author-badge">Cames</span>
+          <time class="article-date" datetime="2026-05-04">4 maio 2026</time>
+        </div>
+        <h3>Projeto analítico de cames</h3>
+        <p>Coordenadas de perfil, raio de base, ângulo de pressão, curvatura e risco de pontas no projeto de cames com seguidores planos e de rolete.</p>
+        <a class="card-link" href="artigos/cames-projeto-analitico.html">Ler artigo</a>
+      </article>
+
+      <article class="article-card">
+        <a class="article-thumb" href="artigos/cames-curvas-deslocamento.html">
+          <img src="figs/aulas/cames-curva-deslocamento.png" alt="Curva de deslocamento de came com subida, parada e descida">
+        </a>
+        <div class="article-meta">
+          <span class="author-badge">Cames</span>
+          <time class="article-date" datetime="2026-05-04">4 maio 2026</time>
+        </div>
+        <h3>Curvas de deslocamento em cames</h3>
+        <p>Critérios de escolha entre repouso, velocidade constante, movimento cicloidal, harmônico e polinomial em leis de movimento para cames.</p>
+        <a class="card-link" href="artigos/cames-curvas-deslocamento.html">Ler artigo</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
 <section id="artigos">
   <div class="container">
     <span class="section-label">Conteúdo técnico</span>
@@ -718,7 +828,7 @@
       <article class="article-card">
         <span class="author-badge">Mapa de leitura</span>
         <h3>Todos os artigos técnicos</h3>
-        <p>O índice reúne os textos por assunto: engrenagens e trens, planetárias e diferenciais, cames e projeto. Ele ajuda a escolher entre uma revisão conceitual rápida e uma leitura mais aprofundada.</p>
+        <p>O índice reúne os textos por assunto: engrenagens e trens, planetárias, CVT, diferenciais, cames e projeto. Ele ajuda a escolher entre uma revisão conceitual rápida e uma leitura mais aprofundada.</p>
         <p>Use-o quando quiser comparar temas próximos, como trem composto e planetária composta, ou curva de deslocamento e projeto analítico de came.</p>
         <a class="card-link" href="artigos/index.html">Abrir índice de artigos</a>
       </article>
@@ -734,7 +844,7 @@
       <article class="article-card">
         <span class="author-badge">Trilha de estudo</span>
         <h3>Engrenagens planetárias e diferenciais</h3>
-        <p>Artigos sobre caso geral, valor do trem, aplicações em transmissões automáticas, redutores compactos, planetárias compostas e diferenciais.</p>
+        <p>Artigos sobre caso geral, valor do trem, aplicações em transmissões automáticas, redutores compactos, CVT, planetárias compostas e diferenciais.</p>
         <p>A trilha também se conecta ao Engrenarium, que permite visualizar como entrada, saída, elemento fixo e braço alteram a velocidade em arranjos epicicloidais.</p>
         <a class="card-link" href="artigos/engrenagens-planetarias.html">Ler sobre o caso geral</a>
       </article>
@@ -946,6 +1056,8 @@
         <ul>
           <li><a href="artigos/index.html">Índice de artigos</a></li>
           <li><a href="artigos/trens-engrenagens-simples-compostos.html">Trens de engrenagens</a></li>
+          <li><a href="artigos/planetaria-composta-engrenarium.html">Planetária composta</a></li>
+          <li><a href="artigos/transmissao-cvt-engrenarium.html">Transmissão CVT</a></li>
           <li><a href="artigos/engrenagens-planetarias.html">Engrenagens planetárias</a></li>
           <li><a href="artigos/cames.html">Cames</a></li>
           <li><a href="#faq">FAQ</a></li>

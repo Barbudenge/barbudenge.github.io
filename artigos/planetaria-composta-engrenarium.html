@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Como montar uma planetária composta no Engrenarium | Barbudenge</title>
+  <meta name="description" content="Artigo técnico sobre a montagem de uma planetária composta de dois estágios no Engrenarium, com acoplamento entre braços e planetas, equações e resultados." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Artur Henrique de Freitas Avelar" />
+  <meta name="google-adsense-account" content="ca-pub-5777194849710689" />
+  <link rel="canonical" href="https://barbudenge.github.io/artigos/planetaria-composta-engrenarium.html" />
+
+  <meta property="og:title" content="Como montar uma planetária composta no Engrenarium" />
+  <meta property="og:description" content="Exemplo de montagem de uma planetária composta de dois estágios com acoplamentos entre braços e planetas." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://barbudenge.github.io/artigos/planetaria-composta-engrenarium.html" />
+
+  <script>
+    window.MathJax = { tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] }, svg: { fontCache: 'global' } };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5777194849710689" crossorigin="anonymous"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="artigo.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container topbar">
+    <a href="../index.html" style="text-decoration:none;"><div class="brand">Barbu<span>denge</span></div></a>
+    <nav aria-label="Navegação principal">
+      <a href="../index.html">Início</a>
+      <a href="index.html">Artigos</a>
+      <a href="../engrenarium.html">Engrenarium</a>
+      <a href="../sobre.html">Sobre</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow">Artigo técnico</span>
+    <h1>Como montar uma planetária composta no Engrenarium</h1>
+    <p>Uma planetária composta exige mais do que adicionar um segundo estágio: é preciso definir quais elementos estão acoplados para que o sistema cinemático fique determinado.</p>
+    <div class="byline">
+      <span>Por Artur Henrique de Freitas Avelar</span>
+      <time datetime="2026-05-08">8 de maio de 2026</time>
+      <span>Categoria: Engrenarium e planetárias</span>
+    </div>
+  </div>
+</section>
+
+<main class="container article-layout">
+  <article class="article-body">
+    <p class="lead">Este artigo mostra como montar, no Engrenarium, uma planetária composta de dois estágios. O exemplo usa um primeiro trem planetário completo e um segundo estágio sem engrenagem solar, conectado ao primeiro por acoplamentos entre braços e entre planetas.</p>
+
+    <div class="video-embed">
+      <iframe src="https://www.youtube.com/embed/3uO4fsgI7do" title="Como montar uma planetária composta no Engrenarium" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <div class="note">O mecanismo pode ser montado no <a href="https://barbudenge.github.io/lasmeufsj/engrenarium/">Engrenarium software</a> ou no <a href="https://barbudenge.github.io/engrenarium/">Engrenarium web</a>. A ideia é usar o primeiro estágio para conduzir o segundo por meio de acoplamentos, em vez de tratar cada planetária como um sistema isolado.</div>
+
+    <h2>Primeiro estágio</h2>
+    <p>Abra um novo projeto no Engrenarium. No painel de parâmetros básicos, configure a primeira planetária com os seguintes números de dentes:</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Planetária 1</th>
+          <th>Número de dentes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Solar</td>
+          <td>20</td>
+        </tr>
+        <tr>
+          <td>Planeta</td>
+          <td>28</td>
+        </tr>
+        <tr>
+          <td>Anelar</td>
+          <td>76</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Em seguida, clique em adicionar planetária. O Engrenarium interrompe a simulação e informa que o sistema cinemático está subdeterminado. Isso é esperado: ao criar um segundo estágio, ainda faltam velocidades conhecidas ou acoplamentos suficientes para definir o movimento.</p>
+
+    <h2>Segundo estágio sem solar</h2>
+    <p>Na planetária 2, apague a engrenagem solar e configure apenas o planeta e a anelar:</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Planetária 2</th>
+          <th>Número de dentes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Planeta</td>
+          <td>30</td>
+        </tr>
+        <tr>
+          <td>Anelar</td>
+          <td>78</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Esse detalhe é importante: um estágio planetário não precisa conter todas as peças possíveis para participar do mecanismo. Neste exemplo, a segunda planetária trabalha sem solar e recebe movimento pelos acoplamentos.</p>
+
+    <h2>Velocidades e acoplamentos</h2>
+    <p>Agora imponha as velocidades angulares conhecidas na planetária 1:</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Elemento</th>
+          <th>Velocidade angular</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Planetária 1 - Solar</td>
+          <td>\(10,0\ \mathrm{rpm}\)</td>
+        </tr>
+        <tr>
+          <td>Planetária 1 - Braço</td>
+          <td>\(5,0\ \mathrm{rpm}\)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Depois, em acoplamentos, conecte os elementos correspondentes entre os dois estágios:</p>
+
+    <ul>
+      <li>Planetária 1 - Braço com Planetária 2 - Braço;</li>
+      <li>Planetária 1 - Planeta com Planetária 2 - Planeta.</li>
+    </ul>
+
+    <p>Em relação de velocidades, selecione <strong>Planetária 1 - Solar</strong> como entrada e <strong>Planetária 2 - Anelar</strong> como saída.</p>
+
+    <figure class="article-figure figure-wide">
+      <img src="../figs/aulas/planetaria-composta-dois-estagios-engrenarium.png" alt="Montagem de planetária composta de dois estágios no Engrenarium">
+      <figcaption>Exemplo com dois estágios: a planetária 1 tem solar, planeta, anelar e braço; a planetária 2 trabalha sem solar e é conduzida pelos acoplamentos.</figcaption>
+    </figure>
+
+    <h2>Equações do primeiro estágio</h2>
+    <p>Na planetária 1, a relação entre solar, anelar e braço pode ser escrita pelas velocidades relativas ao braço:</p>
+
+    <div class="equation-box">
+      \[
+      Z_{S1}(\omega_{S1}-\omega_{B1}) + Z_{A1}(\omega_{A1}-\omega_{B1}) = 0
+      \]
+      \[
+      20(10,0-5,0) + 76(\omega_{A1}-5,0) = 0
+      \]
+    </div>
+
+    <p>Daí resulta:</p>
+
+    <div class="equation-box">
+      \[
+      \omega_{A1} = 5,0 - \frac{20}{76}(10,0-5,0) \approx 3,7\ \mathrm{rpm}
+      \]
+    </div>
+
+    <p>A velocidade do planeta do primeiro estágio vem da relação de contato com a solar:</p>
+
+    <div class="equation-box">
+      \[
+      \omega_{P1} = \omega_{B1} - \frac{Z_{S1}}{Z_{P1}}(\omega_{S1}-\omega_{B1})
+      \]
+      \[
+      \omega_{P1} = 5,0 - \frac{20}{28}(10,0-5,0) \approx 1,4\ \mathrm{rpm}
+      \]
+    </div>
+
+    <h2>Equações do segundo estágio</h2>
+    <p>Os dois acoplamentos transferem velocidades para o segundo estágio:</p>
+
+    <div class="equation-box">
+      \[
+      \omega_{B2} = \omega_{B1} = 5,0\ \mathrm{rpm}
+      \]
+      \[
+      \omega_{P2} = \omega_{P1} \approx 1,4\ \mathrm{rpm}
+      \]
+    </div>
+
+    <p>Como a planetária 2 não possui solar, a velocidade da anelar pode ser obtida pela relação entre planeta, anelar e braço:</p>
+
+    <div class="equation-box">
+      \[
+      \omega_{P2} = \omega_{B2} + \frac{Z_{A2}}{Z_{P2}}(\omega_{A2}-\omega_{B2})
+      \]
+      \[
+      \omega_{A2} = \omega_{B2} + \frac{Z_{P2}}{Z_{A2}}(\omega_{P2}-\omega_{B2})
+      \]
+      \[
+      \omega_{A2} = 5,0 + \frac{30}{78}(1,4-5,0) \approx 3,6\ \mathrm{rpm}
+      \]
+    </div>
+
+    <p>Com entrada na solar da planetária 1 e saída na anelar da planetária 2, a relação indicada pelo Engrenarium é:</p>
+
+    <div class="equation-box">
+      \[
+      i = \frac{\omega_{S1}}{\omega_{A2}} = \frac{10,0}{3,6} \approx 2,8
+      \]
+    </div>
+
+    <h2>Resultados esperados</h2>
+    <p>O painel de resultados deve mostrar a relação <strong>Planetária 1 - Solar / Planetária 2 - Anelar</strong> igual a aproximadamente \(2,8\).</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Elemento</th>
+          <th>Velocidade angular</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Planetária 1 - Solar</td>
+          <td>\(10,0\ \mathrm{rpm}\)</td>
+        </tr>
+        <tr>
+          <td>Planetária 1 - Planeta</td>
+          <td>\(1,4\ \mathrm{rpm}\)</td>
+        </tr>
+        <tr>
+          <td>Planetária 1 - Anelar</td>
+          <td>\(3,7\ \mathrm{rpm}\)</td>
+        </tr>
+        <tr>
+          <td>Planetária 1 - Braço</td>
+          <td>\(5,0\ \mathrm{rpm}\)</td>
+        </tr>
+        <tr>
+          <td>Planetária 2 - Planeta</td>
+          <td>\(1,4\ \mathrm{rpm}\)</td>
+        </tr>
+        <tr>
+          <td>Planetária 2 - Anelar</td>
+          <td>\(3,6\ \mathrm{rpm}\)</td>
+        </tr>
+        <tr>
+          <td>Planetária 2 - Braço</td>
+          <td>\(5,0\ \mathrm{rpm}\)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Por que os dois acoplamentos são necessários</h2>
+    <p>Acoplar apenas os braços não basta. Fisicamente, os braços dos dois estágios poderiam girar juntos enquanto os planetas de cada estágio girariam com velocidades diferentes. Por isso, o acoplamento entre planetas também é essencial para transformar os dois estágios em uma planetária composta com movimento determinado.</p>
+
+    <figure class="article-figure">
+      <img src="../figs/aulas/planetaria-composta-braco-estendido-engrenarium.png" alt="Braço da planetária 1 com eixos estendidos para acoplar os dois estágios">
+      <figcaption>Com o acoplamento entre braços, o Engrenarium estende os eixos do braço da planetária 1 para encaixar os planetas dos dois estágios.</figcaption>
+    </figure>
+
+    <p>Esse comportamento também explica por que a renderização do segundo braço desaparece. O modelo passa a representar um braço comum, ajustado para sustentar os planetas dos dois estágios e manter as restrições cinemáticas corretas.</p>
+  </article>
+
+  <aside>
+    <div class="sidebar-card">
+      <h3>Resumo da página</h3>
+      <ul class="meta-list">
+        <li>Data: 8 de maio de 2026.</li>
+        <li>Entrada: solar da planetária 1.</li>
+        <li>Saída: anelar da planetária 2.</li>
+        <li>Acoplamentos: braços e planetas.</li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h3>Abrir no Engrenarium</h3>
+      <ul>
+        <li><a href="https://barbudenge.github.io/lasmeufsj/engrenarium/">Engrenarium software</a></li>
+        <li><a href="https://barbudenge.github.io/engrenarium/">Engrenarium web</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h3>Continuar estudando</h3>
+      <ul>
+        <li><a href="transmissao-cvt-engrenarium.html">Transmissão CVT no Engrenarium</a></li>
+        <li><a href="engrenagens-planetarias.html">Caso geral das planetárias</a></li>
+        <li><a href="planetarias-compostas-diferenciais.html">Planetárias compostas e diferenciais</a></li>
+        <li><a href="index.html">Índice de artigos</a></li>
+      </ul>
+    </div>
+  </aside>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Barbudenge · <a href="../index.html">Página inicial</a> · <a href="../sobre.html">Sobre</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
