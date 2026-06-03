@@ -154,6 +154,12 @@ p { color: var(--muted); margin-bottom: 14px; }
 ul, ol { color: var(--muted); padding-left: 22px; margin-bottom: 14px; }
 li + li { margin-top: 7px; }
 
+.article-body p,
+.article-body li,
+.article-body figcaption {
+  text-align: justify;
+}
+
 .article-figure {
   max-width: 520px;
   margin: 22px auto 26px;
@@ -184,6 +190,23 @@ li + li { margin-top: 7px; }
 
 .article-figure.figure-half {
   max-width: 260px;
+}
+
+.article-figure.figure-placeholder {
+  max-width: 760px;
+}
+
+.figure-placeholder-box {
+  min-height: 220px;
+  display: grid;
+  place-items: center;
+  background:
+    linear-gradient(135deg, #f8fafc 0%, #eef2f7 100%);
+  color: #5b6774;
+  font-family: var(--serif);
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .figure-grid {
