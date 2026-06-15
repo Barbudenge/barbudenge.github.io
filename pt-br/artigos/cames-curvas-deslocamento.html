@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Curvas de deslocamento em cames | Barbudenge</title>
+  <meta name="description" content="Artigo sobre curvas de deslocamento em cames: repouso, velocidade constante, movimento cicloidal, harmônico, polinomial e continuidade de velocidade e aceleração." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Artur Henrique de Freitas Avelar" />
+  <meta name="google-adsense-account" content="ca-pub-5777194849710689" />
+  <link rel="canonical" href="https://barbudenge.github.io/pt-br/artigos/cames-curvas-deslocamento.html" />
+
+  <meta property="og:title" content="Curvas de deslocamento em cames" />
+  <meta property="og:description" content="Como escolher leis de movimento para subida, retorno, repouso e trechos de velocidade constante em cames." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://barbudenge.github.io/pt-br/artigos/cames-curvas-deslocamento.html" />
+
+  <script>
+    window.MathJax = { tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] }, svg: { fontCache: 'global' } };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5777194849710689" crossorigin="anonymous"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="artigo.css" />
+  <link rel="alternate" hreflang="en" href="https://barbudenge.github.io/artigos/cames-curvas-deslocamento.html" />
+  <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/cames-curvas-deslocamento.html" />
+  <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/cames-curvas-deslocamento.html" />
+  <link rel="stylesheet" href="../../language-switch.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container topbar">
+    <a href="../index.html" style="text-decoration:none;"><div class="brand">Barbu<span>denge</span></div></a>
+    <nav aria-label="Navegação principal">
+      <a href="../index.html">Início</a>
+      <a href="index.html">Artigos</a>
+      <a href="../engrenarium.html">Engrenarium</a>
+      <a href="../sobre.html">Sobre</a>
+    </nav>
+    <div class="language-switch" role="group" aria-label="Idioma">
+      <a class="language-switch__option is-active" href="/pt-br/artigos/cames-curvas-deslocamento.html" lang="pt-BR" hreflang="pt-BR" aria-current="page">PT</a>
+      <a class="language-switch__option" href="/artigos/cames-curvas-deslocamento.html" lang="en" hreflang="en">EN</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow">Artigo técnico</span>
+    <h1>Curvas de deslocamento em cames</h1>
+    <p>A curva de deslocamento é a especificação do movimento que o came deve impor. Ela define não apenas posição, mas também velocidade, aceleração e suavidade do ciclo.</p>
+    <div class="byline">
+      <span>Por Artur Henrique de Freitas Avelar</span>
+      <span>Atualizado em maio de 2026</span>
+      <span>Categoria: cames</span>
+    </div>
+  </div>
+</section>
+
+<main class="container article-layout">
+  <article class="article-body">
+    <p class="lead">Em síntese de cames, o contorno físico é construído a partir de uma curva de movimento. Essa curva informa quanto o seguidor se desloca para cada ângulo do came, e suas derivadas informam velocidade, aceleração e trancos associados.</p>
+
+    <h2>Deslocamento, velocidade e aceleração</h2>
+    <p>Se \(S(\theta)\) é o deslocamento do seguidor, a velocidade relativa ao giro do came depende de \(dS/d\theta\), e a aceleração depende de \(d^2S/d\theta^2\). Em uma máquina real, essas derivadas importam porque forças inerciais, vibração e contato são afetados diretamente pela forma da curva.</p>
+
+    <div class="equation-box">
+      \[
+      S(\theta) \quad \rightarrow \quad \frac{dS}{d\theta} \quad \rightarrow \quad \frac{d^2S}{d\theta^2}
+      \]
+    </div>
+
+    <p>Uma curva que parece aceitável no gráfico de deslocamento pode gerar mudanças bruscas de velocidade ou aceleração. Por isso os métodos de projeto verificam o conjunto deslocamento, velocidade, aceleração e, em aplicações mais exigentes, jerk.</p>
+
+    <h2>Repouso e velocidade constante</h2>
+    <p>Trechos de repouso têm deslocamento constante, velocidade nula e aceleração nula. Eles são úteis quando a máquina precisa aguardar uma operação: enchimento, prensagem, corte, inspeção ou transferência.</p>
+
+    <p>Trechos de velocidade constante parecem simples, mas não podem ser conectados diretamente a repousos sem transição. Sair de velocidade zero para velocidade constante instantaneamente implicaria aceleração infinita no modelo ideal. Na prática, é necessário usar curvas de transição antes e depois.</p>
+
+    <figure class="article-figure">
+      <img src="../../figs/aulas/cames-curva-deslocamento.png" alt="Curva de deslocamento de came com subida, parada e descida">
+      <figcaption>Uma curva de deslocamento completa combina trechos de subida, repouso e retorno. Cada trecho precisa se conectar ao próximo com condições coerentes.</figcaption>
+    </figure>
+
+    <h2>Movimento cicloidal</h2>
+    <p>O movimento cicloidal é muito usado porque pode iniciar e terminar com velocidade e aceleração nulas em um trecho completo. Isso facilita a ligação com repousos e reduz descontinuidades severas. Ele é especialmente útil em ciclos com subida, parada, descida e nova parada.</p>
+
+    <p>Quando o projeto exige uma transição suave entre repouso e movimento, curvas cicloidais completas ou parciais costumam ser boas candidatas. A escolha depende do trecho anterior e posterior.</p>
+
+    <figure class="article-figure">
+      <img src="../../figs/aulas/cames-svaj-cicloidal.png" alt="Gráficos de deslocamento, velocidade, aceleração e jerk para movimento cicloidal de came">
+      <figcaption>A leitura SVAJ mostra por que a escolha da curva não deve considerar apenas o deslocamento. Velocidade, aceleração e jerk revelam a suavidade do ciclo.</figcaption>
+    </figure>
+
+    <h2>Movimento harmônico</h2>
+    <p>O movimento harmônico simples também aparece com frequência em cursos introdutórios. Ele tem interpretação geométrica clara e permite construir trechos de subida ou descida com equações compactas. Em algumas conexões, porém, a aceleração no início ou fim pode não casar com o trecho vizinho.</p>
+
+    <p>Por isso, não basta escolher "harmônico" porque a curva é conhecida. É preciso verificar se as condições de velocidade e aceleração nos pontos de ligação são compatíveis com o restante do ciclo.</p>
+
+    <h2>Polinomial de oitavo grau</h2>
+    <p>Curvas polinomiais de ordem alta permitem controlar mais condições de contorno. O polinômio de oitavo grau aparece como alternativa quando se deseja ajustar deslocamento, velocidade e aceleração em pontos específicos, inclusive com comportamento assimétrico.</p>
+
+    <p>A vantagem é flexibilidade. A desvantagem é que o resultado pode perder intuição geométrica e precisa ser verificado com cuidado, especialmente em aceleração e curvatura.</p>
+
+    <div class="note">A curva de deslocamento aceitável é aquela que se conecta bem ao que vem antes e depois. O trecho isolado pode ser bonito e ainda assim ser inadequado para o ciclo completo.</div>
+
+    <h2>Exemplo conceitual: espera dupla</h2>
+    <p>Considere um mecanismo de preenchimento em que uma lata deve aguardar, avançar até a posição de enchimento, permanecer parada durante o processo e retornar. Esse ciclo naturalmente pede duas esperas e dois trechos de movimento. Uma tentativa linear pura gera transições abruptas. Uma solução mais adequada usa curvas suaves para avançar e retornar, intercaladas por repousos.</p>
+
+    <p>Esse exemplo mostra a função da síntese: transformar uma sequência operacional em uma curva \(S(\theta)\) que respeite deslocamento, tempo, suavidade e viabilidade geométrica.</p>
+
+    <h2>Critérios práticos de seleção</h2>
+    <ul>
+      <li>use repouso quando a máquina precisa manter o seguidor parado;</li>
+      <li>evite ligar velocidade constante diretamente a repouso;</li>
+      <li>prefira curvas com velocidade e aceleração compatíveis nos pontos de junção;</li>
+      <li>verifique se os picos de velocidade e aceleração são aceitáveis;</li>
+      <li>avalie depois o ângulo de pressão e a curvatura do perfil resultante.</li>
+    </ul>
+  </article>
+
+  <aside>
+    <div class="sidebar-card">
+      <h3>Resumo da página</h3>
+      <ul class="meta-list">
+        <li>A curva de deslocamento define posição, velocidade e aceleração.</li>
+        <li>Repouso e velocidade constante exigem transições compatíveis.</li>
+        <li>Cicloidal, harmônica e polinomial atendem condições diferentes.</li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h3>Continuar estudando</h3>
+      <ul>
+        <li><a href="cames-nomenclatura-seguidores.html">Nomenclatura e seguidores</a></li>
+        <li><a href="cames-projeto-analitico.html">Projeto analítico</a></li>
+        <li><a href="cames.html">Fundamentos de cames</a></li>
+      </ul>
+    </div>
+  </aside>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Barbudenge · <a href="../index.html">Página inicial</a> · <a href="../sobre.html">Sobre</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

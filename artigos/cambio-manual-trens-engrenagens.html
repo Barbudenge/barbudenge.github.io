@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Câmbio manual como trem de engrenagens | Barbudenge</title>
-  <meta name="description" content="Leitura didática do câmbio manual como trem de engrenagens com eixo primário, contraeixo, eixo de saída, marchas selecionadas, marcha direta e ré." />
+  <title>Manual transmission as a gear train | Barbudenge</title>
+  <meta name="description" content="Didactic reading of manual transmission as gear train with primary shaft, countershaft, output shaft, selected gears, direct gear and reverse." />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Artur Henrique de Freitas Avelar" />
   <meta name="google-adsense-account" content="ca-pub-5777194849710689" />
   <link rel="canonical" href="https://barbudenge.github.io/artigos/cambio-manual-trens-engrenagens.html" />
 
-  <meta property="og:title" content="Câmbio manual como trem de engrenagens" />
-  <meta property="og:description" content="Como marchas diferentes selecionam caminhos diferentes de potência em uma transmissão manual." />
+  <meta property="og:title" content="Manual transmission as a gear train" />
+  <meta property="og:description" content="How different gears select different power paths in a manual transmission." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://barbudenge.github.io/artigos/cambio-manual-trens-engrenagens.html" />
 
@@ -25,96 +25,104 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="artigo.css" />
+  <link rel="alternate" hreflang="en" href="https://barbudenge.github.io/artigos/cambio-manual-trens-engrenagens.html" />
+  <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/cambio-manual-trens-engrenagens.html" />
+  <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/cambio-manual-trens-engrenagens.html" />
+  <link rel="stylesheet" href="../language-switch.css" />
 </head>
 <body>
 
 <header class="site-header">
   <div class="container topbar">
     <a href="../index.html" style="text-decoration:none;"><div class="brand">Barbu<span>denge</span></div></a>
-    <nav aria-label="Navegação principal">
-      <a href="../index.html">Início</a>
-      <a href="index.html">Artigos</a>
+    <nav aria-label="Main navigation">
+      <a href="../index.html">Home</a>
+      <a href="index.html">Articles</a>
       <a href="../engrenarium.html">Engrenarium</a>
-      <a href="../sobre.html">Sobre</a>
+      <a href="../sobre.html">About</a>
     </nav>
+    <div class="language-switch" role="group" aria-label="Language">
+      <a class="language-switch__option" href="/pt-br/artigos/cambio-manual-trens-engrenagens.html" lang="pt-BR" hreflang="pt-BR">PT</a>
+      <a class="language-switch__option is-active" href="/artigos/cambio-manual-trens-engrenagens.html" lang="en" hreflang="en" aria-current="page">EN</a>
+    </div>
   </div>
 </header>
 
 <section class="hero">
   <div class="container">
-    <span class="eyebrow">Artigo técnico</span>
-    <h1>Câmbio manual como trem de engrenagens</h1>
-    <p>Uma caixa de marchas manual é um excelente exemplo de trem de engrenagens porque mostra, em um mesmo sistema, redução, marcha direta, ponto morto e inversão de sentido.</p>
+    <span class="eyebrow">Technical article</span>
+    <h1>Manual transmission as a gear train</h1>
+    <p>A manual gearbox is an excellent example of a gear train because it shows, in the same system, reduction, direct gear, neutral and reversing direction.</p>
     <div class="byline">
-      <span>Por Artur Henrique de Freitas Avelar</span>
-      <span>Atualizado em maio de 2026</span>
-      <span>Categoria: transmissões</span>
+      <span>By Artur Henrique de Freitas Avelar</span>
+      <span>Updated May 2026</span>
+      <span>Category: transmissions</span>
     </div>
   </div>
 </section>
 
 <main class="container article-layout">
   <article class="article-body">
-    <p class="lead">O câmbio manual transforma a análise de engrenagens em um problema de seleção de caminho. As engrenagens podem estar fisicamente presentes e girando, mas apenas algumas participam da transmissão efetiva de torque em cada marcha.</p>
+    <p class="lead">A manual transmission turns gear analysis into a path selection problem. Gears may be physically present and rotating, but only a few participate in the effective transmission of torque in each gear.</p>
 
-    <h2>Arquitetura básica</h2>
-    <p>Em uma transmissão manual típica, há um eixo de entrada ligado ao motor, um contraeixo e um eixo de saída. Um par inicial costuma transferir movimento do eixo de entrada para o contraeixo. Depois, cada marcha seleciona um par específico entre contraeixo e eixo de saída.</p>
+    <h2>Basic architecture</h2>
+    <p>In a typical manual transmission, there is an input shaft connected to the engine, a countershaft, and an output shaft. A starting pair usually transfers motion from the input shaft to the countershaft. Then, each gear selects a specific pair between countershaft and output shaft.</p>
 
-    <p>Essa descrição já separa duas coisas: engrenagens que estão permanentemente engrenadas e engrenagens que estão efetivamente travadas ao eixo de saída naquele instante. O sincronizador não cria uma nova relação geométrica; ele escolhe qual engrenagem passa a girar solidária ao eixo.</p>
+    <p>This description already separates two things: gears that are permanently in mesh and gears that are effectively locked to the output shaft at that moment. The synchronizer does not create a new geometric relationship; it chooses which gear starts to rotate in conjunction with the shaft.</p>
 
-    <h2>Marchas baixas</h2>
-    <p>Nas marchas baixas, a relação de transmissão produz grande redução de velocidade e maior torque disponível nas rodas. Isso é útil na arrancada, em aclives ou em situações de carga. A consequência é que o motor gira mais vezes para cada volta da saída.</p>
+    <h2>Low gears</h2>
+    <p>In low gears, the gear ratio produces a large reduction in speed and greater torque available at the wheels. This is useful when starting off, on inclines or in load situations. The consequence is that the engine rotates more times for each turn of the output.</p>
 
     <div class="equation-box">
       \[
-      i = \frac{\omega_{entrada}}{\omega_{saida}}
+      i = \frac{\omega_{in}}{\omega_{out}}
       \]
     </div>
 
-    <p>Quando \(i\) é alto, a saída gira mais devagar que a entrada. A potência não aumenta idealmente; o sistema troca rotação por torque. Essa leitura ajuda a entender por que uma primeira marcha é forte, mas limitada em velocidade.</p>
+    <p>When \(i\) is high, the output rotates slower than the input. Power does not increase ideally; the system exchanges rotation for torque. This reading helps you understand why a first gear is strong but limited in speed.</p>
 
-    <h2>Marcha direta</h2>
-    <p>Em muitas caixas, uma das marchas aproxima ou iguala a velocidade de entrada e saída. Essa é a ideia da marcha direta: a transmissão deixa de usar uma grande redução intermediária e passa a transmitir com relação próxima de 1:1. O resultado é menor multiplicação de torque, mas melhor adequação para velocidade constante.</p>
+    <h2>Direct drive</h2>
+    <p>In many gearboxes, one of the gears approaches or equals the input and output speeds. This is the idea of ​​direct gear: the transmission stops using a large intermediate reduction and starts transmitting with a ratio close to 1:1. The result is lower torque multiplication, but better suitability for constant speed.</p>
 
-    <p>Do ponto de vista de análise, a marcha direta ensina uma lição importante: nem toda transmissão trabalha sempre como uma cascata longa de pares. O caminho de potência muda conforme a marcha selecionada.</p>
+    <p>From an analysis point of view, direct gearing teaches an important lesson: not every transmission always works as a long cascade of pairs. The power path changes depending on the gear selected.</p>
 
-    <h2>Marcha a ré</h2>
-    <p>A ré exige inverter o sentido de rotação da saída em relação ao avanço. Para isso, usa-se uma engrenagem intermediária adicional. A função dessa engrenagem é mudar o sentido final, não necessariamente alterar de forma dominante a magnitude da relação.</p>
+    <h2>Reverse</h2>
+    <p>Reverse requires reversing the direction of rotation of the output relative to forward motion. For this, an additional idler gear is used. The function of this gear is to change the final direction, not necessarily to change the magnitude of the relationship in a dominant way.</p>
 
-    <div class="note">Em um trem simples, a engrenagem intermediária pode não mudar a razão final de velocidades, mas muda o sentido. Na marcha a ré, essa diferença de sentido é exatamente a função desejada.</div>
+    <div class="note">In a simple train, the intermediate gear may not change the final speed ratio, but it does change the direction. In reverse gear, this difference in direction is exactly the desired function.</div>
 
-    <h2>Ponto morto e engrenagens girando sem transmitir torque</h2>
-    <p>Um aspecto didático importante é o ponto morto. Algumas engrenagens podem continuar girando por estarem em contato com outras, mas nenhuma delas está travada de modo a conduzir torque até a saída. O mecanismo existe, mas o caminho de potência não está fechado.</p>
+    <h2>Neutral and gears rotating without transmitting torque</h2>
+    <p>An important didactic aspect is the neutral point. Some gears may continue to rotate because they are in contact with others, but none of them are locked in order to conduct torque to the output. The mechanism exists, but the power path is not closed.</p>
 
-    <p>Isso mostra por que a análise de uma caixa de câmbio não deve se limitar ao desenho dos dentes. É necessário saber quais elementos estão solidários aos eixos, quais estão livres e qual acoplamento está selecionado.</p>
+    <p>This shows why the analysis of a gearbox should not be limited to the design of the teeth. It is necessary to know which elements are attached to the shafts, which are free and which coupling is selected.</p>
 
-    <h2>Como analisar uma marcha</h2>
+    <h2>How to analyze a gear</h2>
     <ol>
-      <li>identifique a entrada, o contraeixo e a saída;</li>
-      <li>marque o par inicial que aciona o contraeixo;</li>
-      <li>descubra qual engrenagem está acoplada ao eixo de saída;</li>
-      <li>multiplique apenas as relações dos pares que pertencem ao caminho ativo;</li>
-      <li>verifique o sentido final, especialmente na ré.</li>
+      <li>identify the input, countershaft and output;</li>
+      <li>mark the initial pair that drives the countershaft;</li>
+      <li>find out which gear is coupled to the output shaft;</li>
+      <li>multiply only the relations of the pairs that belong to the active path;</li>
+      <li>check the final direction, especially in reverse.</li>
     </ol>
 
-    <p>Com essa sequência, o câmbio deixa de parecer um conjunto confuso de rodas dentadas e passa a ser uma escolha controlada de trens de engrenagens.</p>
+    <p>With this sequence, the gear shift stops looking like a confusing set of cogwheels and becomes a controlled choice of gear trains.</p>
   </article>
 
   <aside>
     <div class="sidebar-card">
-      <h3>Resumo da página</h3>
+      <h3>Page summary</h3>
       <ul class="meta-list">
-        <li>Cada marcha seleciona um caminho de potência.</li>
-        <li>Marchas baixas aumentam torque por redução de velocidade.</li>
-        <li>A ré usa inversão de sentido por engrenagem intermediária.</li>
+        <li>Each gear selects a power path.</li>
+        <li>Low gears increase torque by reducing speed.</li>
+        <li>Reverse uses direction reversal via intermediate gear.</li>
       </ul>
     </div>
     <div class="sidebar-card">
-      <h3>Continuar estudando</h3>
+      <h3>Continue studying</h3>
       <ul>
-        <li><a href="trens-engrenagens-simples-compostos.html">Trens simples e compostos</a></li>
-        <li><a href="aplicacoes-engrenagens-planetarias.html">Aplicações planetárias</a></li>
-        <li><a href="index.html">Índice de artigos</a></li>
+        <li><a href="trens-engrenagens-simples-compostos.html">Simple and compound trains</a></li>
+        <li><a href="aplicacoes-engrenagens-planetarias.html">Planetary applications</a></li>
+        <li><a href="index.html">Article index</a></li>
       </ul>
     </div>
   </aside>
@@ -122,7 +130,7 @@
 
 <footer>
   <div class="container">
-    <p>© 2026 Barbudenge · <a href="../index.html">Página inicial</a> · <a href="../sobre.html">Sobre</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
+    <p>© 2026 Barbudenge · <a href="../index.html">Home page</a> · <a href="../sobre.html">About</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
   </div>
 </footer>
 

@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cames: fundamentos de síntese e análise | Barbudenge</title>
-  <meta name="description" content="Artigo técnico sobre o papel dos cames, leis de movimento, ângulo de pressão e critérios de análise em mecanismos comandados por perfil." />
+  <title>Cams: fundamentals of synthesis and analysis | Barbudenge</title>
+  <meta name="description" content="Technical article on the role of cams, laws of motion, pressure angle and analysis criteria in profile-driven mechanisms." />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Artur Henrique de Freitas Avelar" />
   <meta name="google-adsense-account" content="ca-pub-5777194849710689" />
   <link rel="canonical" href="https://barbudenge.github.io/artigos/cames.html" />
 
-  <meta property="og:title" content="Cames: fundamentos de síntese e análise" />
-  <meta property="og:description" content="Texto técnico sobre síntese de movimento, ângulo de pressão e escolhas de projeto em mecanismos de came." />
+  <meta property="og:title" content="Cams: fundamentals of synthesis and analysis" />
+  <meta property="og:description" content="Technical text on motion synthesis, pressure angle and design choices in cam mechanisms." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://barbudenge.github.io/artigos/cames.html" />
 
@@ -180,58 +180,66 @@
       article { padding: 24px 20px; }
     }
   </style>
+  <link rel="alternate" hreflang="en" href="https://barbudenge.github.io/artigos/cames.html" />
+  <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/cames.html" />
+  <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/cames.html" />
+  <link rel="stylesheet" href="../language-switch.css" />
 </head>
 <body>
 
 <header>
   <div class="container topbar">
     <a href="../index.html" style="text-decoration:none;"><div class="brand">Barbu<span>denge</span></div></a>
-    <nav aria-label="Navegação principal">
-      <a href="../index.html">Início</a>
-      <a href="index.html">Artigos</a>
-      <a href="../sobre.html">Sobre</a>
+    <nav aria-label="Main navigation">
+      <a href="../index.html">Home</a>
+      <a href="index.html">Articles</a>
+      <a href="../sobre.html">About</a>
       <a href="../engrenarium.html">Engrenarium</a>
-      <a href="../privacy.html">Privacidade</a>
+      <a href="../privacy.html">Privacy</a>
     </nav>
+    <div class="language-switch" role="group" aria-label="Language">
+      <a class="language-switch__option" href="/pt-br/artigos/cames.html" lang="pt-BR" hreflang="pt-BR">PT</a>
+      <a class="language-switch__option is-active" href="/artigos/cames.html" lang="en" hreflang="en" aria-current="page">EN</a>
+    </div>
   </div>
 </header>
 
 <section class="hero">
   <div class="container">
-    <span class="eyebrow">Artigo técnico</span>
-    <h1>Cames: fundamentos de síntese, movimento e análise de mecanismos</h1>
-    <p>O came é um elemento de máquina projetado para impor ao seguidor um movimento específico. Seu interesse técnico está na liberdade de definir deslocamento, velocidade e aceleração por meio do perfil, o que o torna especialmente útil em mecanismos de comando e sincronização.</p>
+    <span class="eyebrow">Technical article</span>
+    <h1>Cams: fundamentals of synthesis, movement and analysis of mechanisms</h1>
+    <p>The cam is a machine element designed to impose a specific movement on the follower. Its technical interest lies in the freedom to define displacement, velocity, and acceleration through the profile, which makes it especially useful in control and synchronization mechanisms.</p>
     <div class="byline">
-      <span>Por Artur Henrique de Freitas Avelar</span>
-      <span>Atualizado em abril de 2026</span>
-      <span>Categoria: mecanismos</span>
+      <span>By Artur Henrique de Freitas Avelar</span>
+      <span>Updated April 2026</span>
+      <span>Category: mechanisms</span>
     </div>
   </div>
 </section>
 
 <main class="container article-layout">
   <article>
-    <h2>Por que o estudo de cames continua relevante</h2>
-    <p>Mesmo em contextos com acionamentos eletrônicos e sistemas de controle mais sofisticados, mecanismos por came continuam sendo exemplos clássicos de síntese de movimento. Eles mostram com clareza como a geometria pode ser usada para impor leis de deslocamento previamente definidas, transformando rotação em movimento prescrito do seguidor.</p>
-    <p>Do ponto de vista didático, o came é um tema particularmente rico porque reúne geometria, cinemática, critérios funcionais e consequências dinâmicas num mesmo problema. Alterar a curva de movimento ou o raio de base, por exemplo, muda diretamente o comportamento do sistema.</p>
+    <h2>Why the study of cams remains relevant</h2>
+    <p>Even in contexts with more sophisticated electronic drives and control systems, mechanisms by cam remain classic examples of motion synthesis. They clearly show how geometry can be used to impose previously defined displacement laws, transforming rotation into follower prescribed movement.</p>
+    <p>From a didactic point of view, cam is a particularly rich topic because it brings together geometry, kinematics, functional criteria and dynamic consequences in the same problem. Changing the motion curve or the base radius, for example, directly changes the system's behavior.</p>
 
     <div class="figure-single">
-      <img src="../figs/came.png" alt="Esquema geométrico de came com indicação do ângulo de pressão alfa">
+      <img src="../figs/came.png" alt="Geometric scheme of cam with indication of alpha pressure angle">
     </div>
 
-    <h2>O que torna um came versátil</h2>
-    <p>Diferentemente de mecanismos de relação geométrica fixa, o came permite prescrever o deslocamento do seguidor ao longo da rotação do elemento motriz. Isso abre espaço para obter avanços, retornos, repousos e transições suaves conforme a necessidade do projeto.</p>
-    <p>Na prática, essa versatilidade é importante em máquinas que exigem ciclos repetitivos, sincronização entre etapas e controle geométrico do movimento. Sistemas de válvulas, mecanismos de alimentação, máquinas de embalagem e dispositivos automáticos são exemplos típicos.</p>
+    <h2>What makes a cam versatile</h2>
+    <p>Unlike mechanisms with a fixed geometric relationship, the cam allows you to prescribe the displacement of the follower along the rotation of the driving element. This leaves room for smooth advances, returns, rests, and transitions as required by the design.</p>
+    <p>In practice, this versatility is important in machines that require repetitive cycles, synchronization between steps and geometric control of movement. Valve systems, feeding mechanisms, packaging machines and automatic devices are typical examples.</p>
 
-    <h2>Curva de movimento e comportamento do mecanismo</h2>
-    <p>A escolha da lei de movimento não é detalhe secundário. Ela determina não apenas o deslocamento, mas também os perfis de velocidade e aceleração do seguidor. Em muitos casos, o problema real de projeto não é simplesmente fazer o seguidor subir e descer, mas fazê-lo com níveis aceitáveis de suavidade, esforço e estabilidade.</p>
-    <p>Curvas como a harmônica e a cicloidal aparecem com frequência porque oferecem referências didáticas claras para comparar transições mais suaves ou mais severas. Em contexto de ensino, esse ponto é importante: o perfil do came não é desenhado de forma arbitrária; ele traduz uma decisão sobre o movimento desejado.</p>
+    <h2>Motion curve and mechanism behavior</h2>
+    <p>The choice of the law of motion is not a secondary detail. It determines not only the displacement, but also the velocity and acceleration profiles of the follower. In many cases, the real design problem is not simply getting the follower up and down, but doing so with acceptable levels of smoothness, effort, and stability.</p>
+    <p>Curves such as harmonic and cycloidal appear frequently because they offer clear didactic references to compare softer or more severe transitions. In a teaching context, this point is important: the cam profile is not designed arbitrarily; it translates a decision about the desired movement.</p>
 
-    <div class="note">Em mecanismos de came, a geometria do perfil deve ser lida como consequência de uma lei de movimento escolhida, e não como mero contorno gráfico.</div>
+    <div class="note">In cam mechanisms, the profile geometry must be read as a consequence of a chosen law of motion, and not as a mere graphic contour.</div>
 
-    <h2>Ângulo de pressão</h2>
-    <p>O ângulo de pressão é um dos critérios mais importantes na análise do mecanismo. Ele influencia forças laterais, exigência sobre guias, contato entre os elementos e eficiência funcional do conjunto. Um perfil que gera ângulo de pressão excessivo pode conduzir a esforço lateral elevado e comportamento menos favorável do seguidor.</p>
-    <p>Uma expressão recorrente para esse critério é:</p>
+    <h2>Pressure angle</h2>
+    <p>The pressure angle is one of the most important criteria in analyzing the mechanism. It influences lateral forces, requirements on guides, contact between elements and the functional efficiency of the assembly. A profile that generates excessive pressure angle can lead to high lateral effort and less favorable behavior of the follower.</p>
+    <p>A recurring expression for this criterion is:</p>
 
     <div class="equation-box">
       \[
@@ -239,41 +247,41 @@
       \]
     </div>
 
-    <p>Nessa forma, \(dS/d\theta\) representa a taxa de variação do deslocamento do seguidor em relação ao ângulo do came, \(e\) é a excentricidade do seguidor, \(R_b\) é o raio de base e \(S\) é o deslocamento instantâneo. A equação mostra que o ângulo de pressão não depende de um único parâmetro isolado, mas do acoplamento entre geometria e lei de movimento.</p>
+    <p>In this form, \(dS/d\theta\) represents the rate of change of the displacement of the follower in relation to the angle of the cam, \(e\) is the eccentricity of the follower, \(R_b\) is the base radius and \(S\) is the instantaneous displacement. The equation shows that pressure angle does not depend on a single isolated parameter, but on the coupling between geometry and the law of motion.</p>
 
-    <h2>Uma sequência útil para análise</h2>
+    <h2>A useful sequence for analysis</h2>
     <ol>
-      <li>definir o ciclo desejado do seguidor, incluindo elevação, repouso e retorno;</li>
-      <li>escolher a lei de movimento compatível com a aplicação;</li>
-      <li>avaliar a influência de raio de base, excentricidade e curso sobre o ângulo de pressão;</li>
-      <li>verificar se o perfil resultante é coerente com a fabricação, o contato e o uso pretendido.</li>
+      <li>define the desired cycle of the follower, including rise, dwell, and return;</li>
+      <li>choose the motion law compatible with the application;</li>
+      <li>evaluate the influence of base radius, offset and stroke on the pressure angle;</li>
+      <li>check whether the resulting profile is consistent with the manufacturing, contact and intended use.</li>
     </ol>
-    <p>Essa ordem é valiosa porque evita tratar o problema apenas como desenho geométrico. A síntese do came nasce da função desejada e depois se converte em perfil.</p>
+    <p>This order is valuable because it avoids treating the problem solely as a geometric drawing. The cam synthesis is born from the desired function and then converted into a profile.</p>
 
-    <h2>Aplicação didática</h2>
-    <p>No ensino de mecanismos, o came tem um papel especial: ele mostra que projetar não é apenas selecionar componentes, mas especificar comportamento. Quando o aluno percebe que o perfil do came codifica uma decisão de movimento, passa a enxergar com mais clareza a relação entre requisito funcional e solução geométrica.</p>
-    <p>Por isso, esse tema costuma funcionar muito bem em disciplinas de mecanismos, elementos de máquinas e projeto mecânico. Ele conecta análise cinemática, critérios funcionais e leitura física do problema de forma bastante direta.</p>
+    <h2>Didactic application</h2>
+    <p>In teaching mechanisms, cam has a special role: it shows that designing is not just about selecting components, but specifying behavior. When the student realizes that the cam profile encodes a movement decision, they begin to see more clearly the relationship between functional requirement and geometric solution.</p>
+    <p>Therefore, this theme tends to work very well in the disciplines of mechanisms, machine elements and mechanical design. It connects kinematic analysis, functional criteria and physical reading of the problem in a very direct way.</p>
   </article>
 
   <aside>
     <div class="card">
-      <h3>Resumo da página</h3>
+      <h3>Page summary</h3>
       <ul class="meta-list">
-        <li>Explica por que o came é um mecanismo de síntese de movimento.</li>
-        <li>Discute leis de movimento, ângulo de pressão e critérios de análise.</li>
-        <li>Relaciona o tema ao ensino de mecanismos e projeto mecânico.</li>
+        <li>Explains why cam is a motion synthesis engine.</li>
+        <li>Discusses laws of motion, pressure angle, and analysis criteria.</li>
+        <li>Relates the topic to the teaching of mechanisms and mechanical design.</li>
       </ul>
     </div>
 
     <div class="card">
-      <h3>Leituras relacionadas</h3>
+      <h3>Related reading</h3>
       <ul class="meta-list">
-        <li><a href="cames-nomenclatura-seguidores.html">Cames: nomenclatura, seguidores e roteiro de projeto</a></li>
-        <li><a href="cames-curvas-deslocamento.html">Curvas de deslocamento em cames</a></li>
-        <li><a href="cames-projeto-analitico.html">Projeto analítico de cames</a></li>
-        <li><a href="index.html">Índice de artigos técnicos</a></li>
-        <li><a href="../sobre.html">Sobre o portal</a></li>
-        <li><a href="../privacy.html">Política de Privacidade</a></li>
+        <li><a href="cames-nomenclatura-seguidores.html">Cams: nomenclature, followers and design workflow</a></li>
+        <li><a href="cames-curvas-deslocamento.html">Displacement curves in cams</a></li>
+        <li><a href="cames-projeto-analitico.html">Analytical design of cams</a></li>
+        <li><a href="index.html">Technical article index</a></li>
+        <li><a href="../sobre.html">About the portal</a></li>
+        <li><a href="../privacy.html">Privacy Policy</a></li>
       </ul>
     </div>
   </aside>
@@ -281,7 +289,7 @@
 
 <footer>
   <div class="container">
-    <p>© 2026 Barbudenge · <a href="../index.html">Página inicial</a> · <a href="../sobre.html">Sobre</a> · <a href="../privacy.html">Privacidade</a></p>
+    <p>© 2026 Barbudenge · <a href="../index.html">Home page</a> · <a href="../sobre.html">About</a> · <a href="../privacy.html">Privacy</a></p>
   </div>
 </footer>
 

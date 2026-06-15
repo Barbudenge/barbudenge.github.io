@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projeto analítico de cames | Barbudenge</title>
-  <meta name="description" content="Artigo sobre projeto analítico de cames com seguidor plano e de rolete, raio de base, ângulo de pressão, curvatura e risco de pontas." />
+  <title>Analytical design of cams | Barbudenge</title>
+  <meta name="description" content="Article on analytical design of cams with flat and roller follower, base radius, pressure angle, curvature and edge risk." />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Artur Henrique de Freitas Avelar" />
   <meta name="google-adsense-account" content="ca-pub-5777194849710689" />
   <link rel="canonical" href="https://barbudenge.github.io/artigos/cames-projeto-analitico.html" />
 
-  <meta property="og:title" content="Projeto analítico de cames" />
-  <meta property="og:description" content="Como raio de base, ângulo de pressão e curvatura entram no dimensionamento analítico de cames." />
+  <meta property="og:title" content="Analytical design of cams" />
+  <meta property="og:description" content="Because base radius, pressure angle, and curvature enter the analytical dimensioning of cams." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://barbudenge.github.io/artigos/cames-projeto-analitico.html" />
 
@@ -25,55 +25,63 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="artigo.css" />
+  <link rel="alternate" hreflang="en" href="https://barbudenge.github.io/artigos/cames-projeto-analitico.html" />
+  <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/cames-projeto-analitico.html" />
+  <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/cames-projeto-analitico.html" />
+  <link rel="stylesheet" href="../language-switch.css" />
 </head>
 <body>
 
 <header class="site-header">
   <div class="container topbar">
     <a href="../index.html" style="text-decoration:none;"><div class="brand">Barbu<span>denge</span></div></a>
-    <nav aria-label="Navegação principal">
-      <a href="../index.html">Início</a>
-      <a href="index.html">Artigos</a>
+    <nav aria-label="Main navigation">
+      <a href="../index.html">Home</a>
+      <a href="index.html">Articles</a>
       <a href="../engrenarium.html">Engrenarium</a>
-      <a href="../sobre.html">Sobre</a>
+      <a href="../sobre.html">About</a>
     </nav>
+    <div class="language-switch" role="group" aria-label="Language">
+      <a class="language-switch__option" href="/pt-br/artigos/cames-projeto-analitico.html" lang="pt-BR" hreflang="pt-BR">PT</a>
+      <a class="language-switch__option is-active" href="/artigos/cames-projeto-analitico.html" lang="en" hreflang="en" aria-current="page">EN</a>
+    </div>
   </div>
 </header>
 
 <section class="hero">
   <div class="container">
-    <span class="eyebrow">Artigo técnico</span>
-    <h1>Projeto analítico de cames: raio de base, pressão e curvatura</h1>
-    <p>Depois de escolher a curva de deslocamento, o projeto analítico verifica se o perfil pode ser construído com dimensões aceitáveis, sem ângulo de pressão excessivo e sem formação de pontas.</p>
+    <span class="eyebrow">Technical article</span>
+    <h1>Analytical design of cams: base radius, pressure and curvature</h1>
+    <p>After choosing the displacement curve, the analytical design checks whether the profile can be built with acceptable dimensions, without excessive pressure angle and without the formation of cusps.</p>
     <div class="byline">
-      <span>Por Artur Henrique de Freitas Avelar</span>
-      <span>Atualizado em maio de 2026</span>
-      <span>Categoria: projeto de cames</span>
+      <span>By Artur Henrique de Freitas Avelar</span>
+      <span>Updated May 2026</span>
+      <span>Category: cam design</span>
     </div>
   </div>
 </section>
 
 <main class="container article-layout">
   <article class="article-body">
-    <p class="lead">O projeto analítico de cames transforma a lei de movimento em geometria. A pergunta deixa de ser apenas qual deslocamento se deseja e passa a incluir: qual raio de base é necessário, qual será o ângulo de pressão e se o perfil resultante é fisicamente fabricável.</p>
+    <p class="lead">Analytical cam design transforms the law of motion into geometry. The question stops being just which displacement is desired and starts to include: which base radius is needed, what the pressure angle will be and whether the resulting profile is physically manufacturable.</p>
 
-    <h2>Seguidor plano</h2>
-    <p>No came com seguidor de face plana, o contato ocorre em uma superfície plana do seguidor. A geometria pode ser construída a partir do deslocamento prescrito, mas é preciso garantir que o perfil não gere pontas e que a largura do seguidor seja suficiente para manter contato durante todo o ciclo.</p>
+    <h2>Flat-faced follower</h2>
+    <p>In a cam with a flat-faced follower, contact occurs on a flat surface of the follower. The geometry can be constructed based on the prescribed displacement, but it is necessary to ensure that the profile does not generate cusps and that the follower width is sufficient to maintain contact throughout the cycle.</p>
 
-    <p>Quando o raio de base é pequeno em relação ao curso e à variação da curva, o came pode desenvolver regiões agudas. Essas regiões são indesejáveis porque dificultam fabricação, concentram tensão e prejudicam o contato.</p>
+    <p>When base radius is small in relation to the stroke and variation of the curve, cam may develop sharp regions. These regions are undesirable because they make manufacturing difficult, concentrate stress and impair contact.</p>
 
     <figure class="article-figure">
-      <img src="../figs/aulas/cames-seguidor-plano-raio-base.png" alt="Construção geométrica de came com seguidor de face plana">
-      <figcaption>Para seguidor de face plana, a construção geométrica relaciona o raio de base, a posição angular e a reta de contato do seguidor.</figcaption>
+      <img src="../figs/aulas/cames-seguidor-plano-raio-base.png" alt="Geometric construction of cam with flat-faced follower">
+      <figcaption>For a flat-faced follower, the geometric construction relates the base radius, the angular position and the contact line of the follower.</figcaption>
     </figure>
 
-    <h2>Seguidor de rolete</h2>
-    <p>No seguidor de rolete, costuma-se trabalhar primeiro com a curva primitiva, que representa o caminho do centro do rolete. O perfil real do came é obtido deslocando essa curva pela geometria do rolete. Isso melhora o contato, mas adiciona a restrição de que o raio do rolete não pode ser escolhido sem verificar curvatura.</p>
+    <h2>Roller follower</h2>
+    <p>In the roller follower, it is customary to work first with the pitch curve, which represents the path of the roller center. The real profile of the cam is obtained by offsetting this curve by the roller radius. This improves contact, but adds the restriction that the roller radius cannot be chosen without checking for curvature.</p>
 
-    <p>Se o rolete for grande demais para a curvatura local da curva primitiva, o perfil pode sofrer interferência ou gerar contornos inviáveis. Por isso a escolha de \(R_r\) depende da lei de movimento e do raio primitivo, não apenas de disponibilidade de componente.</p>
+    <p>If the roller is too large for the local curvature of the pitch curve, the profile may suffer interference or generate unfeasible contours. Therefore, the choice of \(R_r\) depends on the law of motion and the primitive radius, not just component availability.</p>
 
-    <h2>Ângulo de pressão</h2>
-    <p>O ângulo de pressão mede o desvio entre a direção de transmissão da força e a direção de movimento desejada do seguidor. Valores altos aumentam componentes laterais, atrito, carregamento em guias e risco de funcionamento ruim. Em muitos projetos didáticos, usa-se como referência manter o ângulo máximo abaixo de cerca de 30 graus.</p>
+    <h2>Pressure angle</h2>
+    <p>The pressure angle measures the deviation between the direction of force transmission and the desired direction of movement of the follower. High values ​​increase lateral components, friction, loading on guides and risk of poor operation. In many teaching projects, it is used as a reference to keep the maximum angle below around 30 degrees.</p>
 
     <div class="equation-box">
       \[
@@ -81,51 +89,51 @@
       \]
     </div>
 
-    <p>A expressão mostra duas formas gerais de reduzir o ângulo: aumentar dimensões como o raio de base ou alterar a curva de deslocamento para reduzir picos de \(dS/d\theta\). A excentricidade \(e\) também pode ser usada como recurso de projeto, mas precisa ser avaliada nos dois sentidos de movimento.</p>
+    <p>The expression shows two general ways to reduce the angle: increase dimensions such as base radius or change displacement curve to reduce peaks of \(dS/d\theta\). The eccentricity \(e\) can also be used as a design feature, but it needs to be evaluated in both directions of movement.</p>
 
-    <h2>Raio de base</h2>
-    <p>Aumentar o raio de base tende a reduzir o ângulo de pressão e suavizar o perfil, mas aumenta o tamanho do mecanismo. Diminuir o raio compacta o came, porém pode gerar pressão elevada e curvatura desfavorável. O projeto é, portanto, um compromisso entre espaço, contato, forças e fabricação.</p>
+    <h2>Base radius</h2>
+    <p>Increasing the base radius tends to reduce the pressure angle and smooth the profile, but increases the size of the mechanism. Decreasing the radius compacts the cam, but can generate high pressure and unfavorable curvature. The design is therefore, a compromise between space, contact, forces and manufacturing.</p>
 
-    <div class="note">Um came pequeno pode parecer atraente no layout, mas o perfil só é aceitável se o seguidor conseguir acompanhar a curva sem esforço lateral excessivo e sem perda de contato.</div>
+    <div class="note">A small cam may look attractive on layout, but the profile is only acceptable if the follower can follow the curve without excessive lateral effort and without loss of contact.</div>
 
-    <h2>Curvatura e risco de pontas</h2>
-    <p>A curvatura indica quão rapidamente a direção da curva muda. Em regiões de curvatura severa, o perfil pode ficar pontudo ou incompatível com o rolete. A verificação de raio de curvatura mínimo é uma etapa essencial depois de escolher \(S(\theta)\), \(R_0\) e \(R_r\).</p>
+    <h2>Curvature and cusp risk</h2>
+    <p>The curvature indicates how quickly the direction of the curve changes. In regions of severe curvature, the profile may become sharp or incompatible with the roller. Checking minimum radius of curvature is an essential step after choosing \(S(\theta)\), \(R_0\) and \(R_r\).</p>
 
-    <p>Para o seguidor de rolete, a ideia central é comparar a curvatura da curva primitiva com o raio do rolete. Se a superfície real do came exigir uma curvatura menor do que a permitida pelo rolete, haverá problema geométrico.</p>
+    <p>For the roller follower, the central idea is to compare the curvature of the pitch curve with the radius of the roller. If the actual surface of the cam requires a curvature smaller than that allowed by the roller, there will be a geometric problem.</p>
 
     <figure class="article-figure">
-      <img src="../figs/aulas/cames-curvatura-rolete.png" alt="Comparação entre raio de curvatura da curva primitiva e raio do seguidor de rolete">
-      <figcaption>Quando o raio de curvatura da curva primitiva fica incompatível com o rolete, o perfil pode gerar vértices ou material faltante.</figcaption>
+      <img src="../figs/aulas/cames-curvatura-rolete.png" alt="Comparison between the radius of curvature of the pitch curve and the radius of the roller follower">
+      <figcaption>When the radius of curvature of the pitch curve is incompatible with the roller, the profile may generate vertices or missing material.</figcaption>
     </figure>
 
-    <h2>Sequência de verificação</h2>
+    <h2>Verification sequence</h2>
     <ol>
-      <li>defina o ciclo e a curva de deslocamento por trechos;</li>
-      <li>calcule deslocamento e derivadas relevantes;</li>
-      <li>escolha um raio de base inicial ou raio primitivo inicial;</li>
-      <li>avalie o ângulo de pressão máximo;</li>
-      <li>verifique curvatura e risco de pontas;</li>
-      <li>ajuste raio, rolete, excentricidade ou lei de movimento se necessário.</li>
+      <li>define the cycle and displacement curve by sections;</li>
+      <li>calculate displacement and relevant derivatives;</li>
+      <li>choose an initial base radius or initial primitive radius;</li>
+      <li>evaluate the maximum pressure angle;</li>
+      <li>check curvature and cusp risk;</li>
+      <li>adjust radius, roller, eccentricity or law of motion if necessary.</li>
     </ol>
 
-    <p>O projeto analítico não substitui julgamento mecânico. Ele organiza as verificações para que a forma final do came seja consequência de requisitos mensuráveis, não apenas de uma curva desenhada visualmente.</p>
+    <p>Analytical design does not replace mechanical judgment. It organizes the checks so that the final shape of the cam is a consequence of measurable requirements, not just a visually drawn curve.</p>
   </article>
 
   <aside>
     <div class="sidebar-card">
-      <h3>Resumo da página</h3>
+      <h3>Page summary</h3>
       <ul class="meta-list">
-        <li>O projeto analítico converte \(S(\theta)\) em geometria verificável.</li>
-        <li>Raio de base influencia pressão, tamanho e curvatura.</li>
-        <li>Rolete e curvatura precisam ser compatíveis para evitar pontas.</li>
+        <li>Analytical design converts \(S(\theta)\) into verifiable geometry.</li>
+        <li>Base radius influences pressure, size and curvature.</li>
+        <li>Roller radius and curvature must be compatible to avoid cusps.</li>
       </ul>
     </div>
     <div class="sidebar-card">
-      <h3>Continuar estudando</h3>
+      <h3>Continue studying</h3>
       <ul>
-        <li><a href="cames-curvas-deslocamento.html">Curvas de deslocamento</a></li>
-        <li><a href="cames-nomenclatura-seguidores.html">Nomenclatura e seguidores</a></li>
-        <li><a href="cames.html">Fundamentos de cames</a></li>
+        <li><a href="cames-curvas-deslocamento.html">Displacement curves</a></li>
+        <li><a href="cames-nomenclatura-seguidores.html">Nomenclature and followers</a></li>
+        <li><a href="cames.html">Fundamentals of cams</a></li>
       </ul>
     </div>
   </aside>
@@ -133,7 +141,7 @@
 
 <footer>
   <div class="container">
-    <p>© 2026 Barbudenge · <a href="../index.html">Página inicial</a> · <a href="../sobre.html">Sobre</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
+    <p>© 2026 Barbudenge · <a href="../index.html">Home page</a> · <a href="../sobre.html">About</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
   </div>
 </footer>
 

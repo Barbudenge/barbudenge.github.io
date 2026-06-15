@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Planetárias compostas e diferenciais | Barbudenge</title>
-  <meta name="description" content="Artigo sobre engrenagens planetárias compostas, acoplamentos, graus de liberdade e leitura cinemática de diferenciais automotivos." />
+  <title>Compound planetary gear sets and differentials | Barbudenge</title>
+  <meta name="description" content="Article about planetary gears compounds, couplings, degrees of freedom and kinematic reading of automotive differentials." />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Artur Henrique de Freitas Avelar" />
   <meta name="google-adsense-account" content="ca-pub-5777194849710689" />
   <link rel="canonical" href="https://barbudenge.github.io/artigos/planetarias-compostas-diferenciais.html" />
 
-  <meta property="og:title" content="Planetárias compostas e diferenciais" />
-  <meta property="og:description" content="Como acoplamentos e graus de liberdade mudam a análise de trens planetários e diferenciais." />
+  <meta property="og:title" content="Compound planetary gear sets and differentials" />
+  <meta property="og:description" content="How couplings and degrees of freedom change the analysis of planetary gear trains and differentials." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://barbudenge.github.io/artigos/planetarias-compostas-diferenciais.html" />
 
@@ -25,64 +25,72 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="artigo.css" />
+  <link rel="alternate" hreflang="en" href="https://barbudenge.github.io/artigos/planetarias-compostas-diferenciais.html" />
+  <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/planetarias-compostas-diferenciais.html" />
+  <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/planetarias-compostas-diferenciais.html" />
+  <link rel="stylesheet" href="../language-switch.css" />
 </head>
 <body>
 
 <header class="site-header">
   <div class="container topbar">
     <a href="../index.html" style="text-decoration:none;"><div class="brand">Barbu<span>denge</span></div></a>
-    <nav aria-label="Navegação principal">
-      <a href="../index.html">Início</a>
-      <a href="index.html">Artigos</a>
+    <nav aria-label="Main navigation">
+      <a href="../index.html">Home</a>
+      <a href="index.html">Articles</a>
       <a href="../engrenarium.html">Engrenarium</a>
-      <a href="../sobre.html">Sobre</a>
+      <a href="../sobre.html">About</a>
     </nav>
+    <div class="language-switch" role="group" aria-label="Language">
+      <a class="language-switch__option" href="/pt-br/artigos/planetarias-compostas-diferenciais.html" lang="pt-BR" hreflang="pt-BR">PT</a>
+      <a class="language-switch__option is-active" href="/artigos/planetarias-compostas-diferenciais.html" lang="en" hreflang="en" aria-current="page">EN</a>
+    </div>
   </div>
 </header>
 
 <section class="hero">
   <div class="container">
-    <span class="eyebrow">Artigo técnico</span>
-    <h1>Planetárias compostas e diferenciais</h1>
-    <p>Quando vários trens planetários são acoplados, a análise passa a depender de restrições entre eixos, braços e engrenagens. O diferencial automotivo é um caso importante dessa ideia.</p>
+    <span class="eyebrow">Technical article</span>
+    <h1>Compound planetary gear sets and differentials</h1>
+    <p>When several planetary gear trains are coupled, the analysis depends on restrictions between axes, carriers and gears. The automotive differential is an important case of this idea.</p>
     <div class="byline">
-      <span>Por Artur Henrique de Freitas Avelar</span>
-      <span>Atualizado em maio de 2026</span>
-      <span>Categoria: planetárias</span>
+      <span>By Artur Henrique de Freitas Avelar</span>
+      <span>Updated May 2026</span>
+      <span>Category: planetary</span>
     </div>
   </div>
 </section>
 
 <main class="container article-layout">
   <article class="article-body">
-    <p class="lead">Uma planetária simples já exige cuidado porque o braço se move. Em planetárias compostas, esse cuidado aumenta: há mais de um trem, mais de uma relação cinemática e acoplamentos que reduzem os graus de liberdade do sistema.</p>
+    <p class="lead">A simple planetary gear set already requires care because the carrier moves. In compound planetary gear sets, this care increases: there is more than one train, more than one kinematic relationship and couplings that reduce the system's degrees of freedom.</p>
 
     <figure class="article-figure">
-      <img src="../figs/planet2.png" alt="Exemplo tridimensional de arranjo planetário composto">
-      <figcaption>Em arranjos compostos, a pergunta principal é quais elementos estão acoplados e quais relações independentes ainda restam.</figcaption>
+      <img src="../figs/planet2.png" alt="Three-dimensional example of a composite planetary arrangement">
+      <figcaption>In composite arrangements, the main question is which elements are coupled and which independent relationships remain.</figcaption>
     </figure>
 
-    <h2>Graus de liberdade</h2>
-    <p>Um trem planetário com três elementos principais pode ter dois graus de liberdade quando nenhum deles está fixo ou prescrito. Ao travar um elemento, ou ao impor uma velocidade de entrada, o comportamento do terceiro passa a ser determinado. Em conjuntos compostos, cada trem acrescenta relações, mas os acoplamentos entre eles também acrescentam restrições.</p>
+    <h2>Degrees of freedom</h2>
+    <p>A planetary gear train with three principal elements may have two degrees of freedom when neither is fixed or prescribed. When braking an element, or imposing an input speed, the behavior of the third becomes determined. In composite sets, each train adds relations, but the couplings between them also add constraints.</p>
 
-    <p>Por isso, dizer que há duas planetárias não basta. É necessário saber se as solares estão no mesmo eixo, se os braços são comuns, se uma anelar é solidária a outra engrenagem ou se algum elemento está fixado à carcaça.</p>
+    <p>Therefore, saying that there are two planetary gear sets is not enough. It is necessary to know if the sun gears are on the same axis, if the carriers are common, if a ring gear is connected to another gear or if any element is fixed to the housing.</p>
 
-    <h2>Acoplamentos entre engrenagens</h2>
-    <p>Quando duas engrenagens estão rigidamente acopladas, elas compartilham a mesma velocidade angular. Essa restrição pode permitir tratar parte do sistema com uma equação única, desde que o acoplamento pertença aos elementos corretos da relação analisada.</p>
+    <h2>Couplings between gears</h2>
+    <p>When two gears are rigidly coupled, they share the same angular velocity. This restriction may allow treating part of the system with a single equation, as long as the coupling belongs to the correct elements of the analyzed relationship.</p>
 
-    <p>Já os acoplamentos envolvendo braços exigem mais atenção. O braço não é apenas mais uma engrenagem; ele define o referencial relativo usado para calcular o valor do trem. Se dois braços são acoplados, ou se um braço é acoplado a uma engrenagem de outro trem, a escrita das equações precisa representar essa condição explicitamente.</p>
+    <p>Couplings involving carriers require more attention. The carrier is not just another gear; it defines the relative frame of reference used to calculate the train value. If two carriers are coupled, or if one carrier is coupled to a gear on another train, the writing of the equations needs to represent this condition explicitly.</p>
 
     <figure class="article-figure">
-      <img src="../figs/aulas/planetarias-compostas-analise.png" alt="Dois trens planetários acoplados por eixos comuns">
-      <figcaption>Em planetárias compostas, a saída de um trem pode alimentar outro. O desenho deve ser lido como um conjunto de relações e acoplamentos, não como uma única razão imediata.</figcaption>
+      <img src="../figs/aulas/planetarias-compostas-analise.png" alt="Two planetary gear trains coupled by common shafts">
+      <figcaption>In compound planetary gear sets, the output of one train can feed another. The design must be read as a set of relationships and couplings, not as a single immediate reason.</figcaption>
     </figure>
 
-    <div class="note">Em planetárias compostas, a dificuldade raramente está em multiplicar dentes. Ela está em escrever as restrições certas sem perder nenhum grau de liberdade.</div>
+    <div class="note">In compound planetary gear sets, the difficulty is rarely in multiplying teeth. It's about writing the right constraints without losing any degrees of freedom.</div>
 
-    <h2>Diferencial automotivo</h2>
-    <p>O diferencial permite que as rodas de um mesmo eixo girem com velocidades diferentes durante uma curva. Em linha reta, as duas rodas tendem a girar com a mesma velocidade. Em curva, a roda externa percorre caminho maior e precisa girar mais rápido que a interna.</p>
+    <h2>Automotive differential</h2>
+    <p>The differential allows the wheels on the same axle to rotate at different speeds during a curve. In a straight line, both wheels tend to rotate at the same speed. When cornering, the outer wheel travels longer and needs to turn faster than the inner wheel.</p>
 
-    <p>Em um diferencial simétrico ideal, a velocidade do porta-satélites se relaciona à média das velocidades das duas rodas. Em forma conceitual:</p>
+    <p>In an ideal symmetrical differential, the speed of the planet carrier relates to the average of the speeds of the two wheels. In conceptual form:</p>
 
     <div class="equation-box">
       \[
@@ -90,43 +98,43 @@
       \]
     </div>
 
-    <p>Essa expressão explica um comportamento conhecido: se uma roda perde totalmente resistência e gira livremente, a outra pode receber pouca capacidade de tração em um diferencial aberto. O problema não é que o mecanismo "falhou"; ele está cumprindo a relação cinemática para a qual foi construído.</p>
+    <p>This expression explains a well-known behavior: if one wheel completely loses resistance and rotates freely, the other may receive little traction capacity in an open differential. The problem is not that the mechanism "failed"; it is fulfilling the kinematic relationship it was built for.</p>
 
-    <h2>Diferencial de deslizamento limitado</h2>
-    <p>Diferenciais de deslizamento limitado surgem para reduzir esse inconveniente. Eles introduzem uma resistência à diferença excessiva de velocidade entre as rodas, por embreagens, engrenagens especiais, fluidos ou outros recursos. O objetivo é preservar a função de permitir curvas sem deixar uma roda livre dominar completamente a resposta.</p>
+    <h2>Limited slip differential</h2>
+    <p>Limited slip differentials appear to reduce this inconvenience. They introduce resistance to excessive speed differences between the wheels, through clutches, special gears, fluids or other resources. The objective is to preserve the function of allowing cornering without letting a free wheel completely dominate the response.</p>
 
-    <h2>Roteiro de análise</h2>
+    <h2>Analysis workflow</h2>
     <ol>
-      <li>divida o mecanismo em trens planetários reconhecíveis;</li>
-      <li>escreva a equação cinemática de cada trem;</li>
-      <li>liste os acoplamentos de velocidade entre engrenagens e braços;</li>
-      <li>adicione as condições de entrada, saída e elementos fixos;</li>
-      <li>resolva o sistema de equações, mantendo sinais e referências coerentes.</li>
+      <li>divide the mechanism into recognizable planetary gear trains;</li>
+      <li>write the kinematic equation for each train;</li>
+      <li>list the speed couplings between gears and carriers;</li>
+      <li>add entry, exit conditions and fixed elements;</li>
+      <li>solve the system of equations, maintaining coherent signs and references.</li>
     </ol>
 
-    <p>Essa abordagem transforma planetárias compostas em sistemas de equações organizados. A alternativa, tentar enxergar uma relação final diretamente no desenho, costuma levar a erros de referência e de sinal.</p>
+    <p>This approach transforms compound planetary gear sets into organized systems of equations. The alternative, trying to see a final relationship directly in the drawing, usually leads to reference and sign errors.</p>
 
     <figure class="article-figure">
-      <img src="../figs/aulas/planetaria-composta-exemplo.png" alt="Exemplo esquemático de planetária composta com engrenagens numeradas e braço">
-      <figcaption>Exemplo de aula: antes de resolver, é preciso identificar quais engrenagens estão no mesmo eixo e quais elementos pertencem a cada trem planetário.</figcaption>
+      <img src="../figs/aulas/planetaria-composta-exemplo.png" alt="Schematic example of compound planetary gear set with numbered gears and carrier">
+      <figcaption>Class example: before solving, you need to identify which gears are on the same axis and which elements belong to each planetary gear train.</figcaption>
     </figure>
   </article>
 
   <aside>
     <div class="sidebar-card">
-      <h3>Resumo da página</h3>
+      <h3>Page summary</h3>
       <ul class="meta-list">
-        <li>Planetárias compostas dependem de restrições entre elementos.</li>
-        <li>Acoplamentos de braço precisam ser tratados explicitamente.</li>
-        <li>O diferencial relaciona a média das velocidades das rodas ao porta-satélites.</li>
+        <li>Compound planetary gear sets depend on constraints between elements.</li>
+        <li>carrier couplings need to be handled explicitly.</li>
+        <li>The differential relates the average wheel speeds to planet carrier.</li>
       </ul>
     </div>
     <div class="sidebar-card">
-      <h3>Continuar estudando</h3>
+      <h3>Continue studying</h3>
       <ul>
-        <li><a href="engrenagens-planetarias.html">Caso geral das planetárias</a></li>
-        <li><a href="aplicacoes-engrenagens-planetarias.html">Aplicações de planetárias</a></li>
-        <li><a href="index.html">Índice de artigos</a></li>
+        <li><a href="engrenagens-planetarias.html">General case of planetary gear sets</a></li>
+        <li><a href="aplicacoes-engrenagens-planetarias.html">Planetary applications</a></li>
+        <li><a href="index.html">Article index</a></li>
       </ul>
     </div>
   </aside>
@@ -134,7 +142,7 @@
 
 <footer>
   <div class="container">
-    <p>© 2026 Barbudenge · <a href="../index.html">Página inicial</a> · <a href="../sobre.html">Sobre</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
+    <p>© 2026 Barbudenge · <a href="../index.html">Home page</a> · <a href="../sobre.html">About</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
   </div>
 </footer>
 

@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Engrenarium | Guia de uso do simulador de engrenagens planetárias</title>
-  <meta name="description" content="Entenda o que é o Engrenarium, para quem ele serve, como usar o simulador em contexto didático e quais perguntas ele ajuda a responder." />
+  <title>Engrenarium | planetary gears simulator usage guide</title>
+  <meta name="description" content="Understand what Engrenarium is, who it is for, how to use the simulator in a teaching context and what questions it helps to answer." />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Artur Henrique de Freitas Avelar" />
   <link rel="canonical" href="https://barbudenge.github.io/engrenarium.html" />
 
-  <meta property="og:title" content="Engrenarium | Guia de uso" />
-  <meta property="og:description" content="Página explicativa sobre o Engrenarium, um simulador voltado ao estudo de trens planetários." />
+  <meta property="og:title" content="Engrenarium | Usage Guide" />
+  <meta property="og:description" content="Explanatory page about Engrenarium, a simulator aimed at studying planetary gear trains." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://barbudenge.github.io/engrenarium.html" />
 
@@ -181,41 +181,49 @@
       .card { padding: 24px 20px; }
     }
   </style>
+  <link rel="alternate" hreflang="en" href="https://barbudenge.github.io/engrenarium.html" />
+  <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/engrenarium.html" />
+  <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/engrenarium.html" />
+  <link rel="stylesheet" href="language-switch.css" />
 </head>
 <body>
 
 <header>
   <div class="container topbar">
     <a href="index.html" style="text-decoration:none;"><div class="brand">Barbu<span>denge</span></div></a>
-    <nav aria-label="Navegação principal">
-      <a href="index.html">Início</a>
-      <a href="sobre.html">Sobre</a>
-      <a href="artigos/index.html">Artigos</a>
-      <a href="privacy.html">Privacidade</a>
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="sobre.html">About</a>
+      <a href="artigos/index.html">Articles</a>
+      <a href="privacy.html">Privacy</a>
     </nav>
+    <div class="language-switch" role="group" aria-label="Language">
+      <a class="language-switch__option" href="/pt-br/engrenarium.html" lang="pt-BR" hreflang="pt-BR">PT</a>
+      <a class="language-switch__option is-active" href="/engrenarium.html" lang="en" hreflang="en" aria-current="page">EN</a>
+    </div>
   </div>
 </header>
 
 <section class="hero">
   <div class="container hero-grid">
     <div>
-      <span class="eyebrow">Ferramenta didática</span>
-      <h1>Engrenarium: o que o simulador faz e como usá-lo</h1>
-      <p>O Engrenarium é um recurso voltado ao estudo de engrenagens planetárias. A proposta não é apenas mostrar animações, mas ajudar o usuário a entender relações entre entrada, saída, elemento fixo, braço e valor do trem em diferentes arranjos epicicloidais.</p>
-      <p>Esta página reúne o contexto que normalmente falta quando alguém cai diretamente no simulador: para que ele serve, para quem foi pensado e que tipo de pergunta técnica ou didática ele ajuda a responder.</p>
+      <span class="eyebrow">Didactic tool</span>
+      <h1>Engrenarium: what the simulator does and how to use it</h1>
+      <p>Engrenarium is a resource focused on the study of planetary gears. The proposal is not just to show animations, but to help the user understand relationships between input, output, fixed element, carrier and train value in different epicyclic arrangements.</p>
+      <p>This page brings together the context that is usually missing when someone falls directly into the simulator: what it is for, who it was designed for and what type of technical or didactic question it helps answer.</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="https://barbudenge.github.io/engrenarium/">Abrir o Engrenarium</a>
-        <a class="btn btn-secondary" href="artigos/engrenagens-planetarias.html">Ler o artigo sobre trens planetários</a>
+        <a class="btn btn-primary" href="https://barbudenge.github.io/engrenarium/">Open Engrenarium</a>
+        <a class="btn btn-secondary" href="artigos/engrenagens-planetarias.html">Read the article about planetary gear trains</a>
       </div>
     </div>
 
     <aside class="hero-card">
-      <h3>Resumo rápido</h3>
+      <h3>Quick summary</h3>
       <ul>
-        <li>Simulador com foco em engrenagens planetárias.</li>
-        <li>Útil em ensino, estudo individual e apoio à análise conceitual.</li>
-        <li>Complementa o artigo técnico do portal, não o substitui.</li>
-        <li>Voltado a quem precisa visualizar arranjos e discutir relações cinemáticas.</li>
+        <li>Simulator focusing on planetary gears.</li>
+        <li>Useful in teaching, individual study and supporting conceptual analysis.</li>
+        <li>It complements the portal's technical article, does not replace it.</li>
+        <li>Aimed at those who need to visualize arrangements and discuss kinematic relationships.</li>
       </ul>
     </aside>
   </div>
@@ -225,78 +233,78 @@
   <div class="container content-grid">
     <div>
       <article class="card">
-        <h2>Qual é a função do Engrenarium</h2>
-        <p>Em muitos cursos, a maior dificuldade no estudo de trens planetários não está na álgebra isoladamente, mas em relacionar a equação com a topologia do sistema. O estudante vê a fórmula, mas não consegue identificar com segurança quem é o braço, qual elemento está fixo, quais engrenagens formam o trem e como a escolha da entrada altera a interpretação do problema.</p>
-        <p>O Engrenarium foi pensado para atacar justamente esse ponto. Ele funciona como uma ponte entre a descrição geométrica do conjunto e a leitura cinemática do sistema. Em vez de tratar o trem epicicloidal apenas como um exercício simbólico, o usuário consegue observar a configuração, comparar cenários e discutir o comportamento do conjunto com mais clareza.</p>
-        <div class="callout">Valor principal: a ferramenta ajuda a transformar uma relação abstrata entre velocidades angulares em uma situação visualizável e didaticamente discutível.</div>
+        <h2>What is the function of Engrenarium</h2>
+        <p>In many courses, the greatest difficulty in studying planetary gear trains is not in the algebra alone, but in relating the equation to the topology of the system. The student sees the formula, but cannot confidently identify what the carrier is, which element is fixed, which gears form the train and how the choice of input changes the interpretation of the problem.</p>
+        <p>Engrenarium was designed to attack precisely this point. It works as a bridge between the geometric description of the set and the kinematic reading of the system. Instead of treating an epicyclic gear train as just a symbolic exercise, the user is able to observe the configuration, compare scenarios and discuss the set's behavior with more clarity.</p>
+        <div class="callout">Main value: the tool helps transform an abstract relationship between angular velocities into a visualizable and didactically debatable situation.</div>
       </article>
 
       <article class="card">
-        <h2>Para quem a ferramenta é útil</h2>
+        <h2>Who the tool is useful for</h2>
         <ul>
-          <li><strong>Estudantes</strong> que estão vendo mecanismos e elementos de máquinas pela primeira vez e ainda têm dificuldade em interpretar conjuntos planetários.</li>
-          <li><strong>Docentes</strong> que desejam usar uma visualização complementar durante aulas, monitorias, listas e demonstrações.</li>
-          <li><strong>Profissionais</strong> que precisam revisar conceitos de arranjo, leitura de movimento relativo e raciocínio cinemático antes de avançar para análises mais detalhadas.</li>
+          <li><strong>Students</strong> who are seeing mechanisms and machine elements for the first time and still have difficulty interpreting planetary gear sets.</li>
+          <li><strong>Teachers</strong> who wish to use a complementary view during classes, monitoring, lists and demonstrations.</li>
+          <li><strong>Pros</strong> who need to review arrangement concepts, reading relative motion, and kinematic reasoning before moving on to more detailed analysis.</li>
         </ul>
-        <p>Ele não substitui bibliografia técnica nem etapas posteriores de projeto. O papel do simulador é organizar o entendimento inicial e tornar as relações entre os elementos do trem mais visíveis.</p>
+        <p>It does not replace technical bibliography or subsequent project stages. The role of the simulator is to organize the initial understanding and make the relationships between the elements of the train more visible.</p>
       </article>
 
       <article class="card">
-        <h2>Como usar o Engrenarium de forma produtiva</h2>
+        <h2>How to use Engrenarium productively</h2>
         <ol>
-          <li>Identifique o arranjo do trem e os elementos principais do conjunto.</li>
-          <li>Defina mentalmente ou na aula qual componente será tratado como entrada, qual será a saída e qual estará fixo.</li>
-          <li>Observe como o braço participa do movimento relativo e compare a interpretação visual com a equação do caso geral.</li>
-          <li>Use o resultado como apoio para discutir relações de transmissão, sentidos de rotação e dependência entre velocidades.</li>
+          <li>Identify the train arrangement and the main elements of the set.</li>
+          <li>Define mentally or in class which component will be treated as input, which will be the output and which will be fixed.</li>
+          <li>Notice how the carrier participates in relative motion and compare the visual interpretation with the general case equation.</li>
+          <li>Use the result as support to discuss gear ratios, directions of rotation and dependence between speeds.</li>
         </ol>
-        <p>Esse uso orientado é importante. Quando o simulador é tratado apenas como animação, ele perde parte do valor didático. Quando é usado em conjunto com a formulação teórica, passa a funcionar como ferramenta de compreensão.</p>
+        <p>This guided use is important. When the simulator is treated only as an animation, it loses part of its didactic value. When it is used in conjunction with the theoretical formulation, it starts to function as a tool for understanding.</p>
       </article>
 
       <article class="card">
-        <h2>Perguntas que o simulador ajuda a responder</h2>
+        <h2>Questions that the simulator helps answer</h2>
         <ul>
-          <li>O que muda quando o elemento fixo deixa de ser a coroa e passa a ser o porta-satélites?</li>
-          <li>Como interpretar a velocidade relativa ao braço em um problema planetário?</li>
-          <li>Por que duas configurações visualmente parecidas podem gerar comportamentos cinemáticos diferentes?</li>
-          <li>Como explicar, em aula, a diferença entre observar o trem com braço fixo e observar o sistema em movimento real?</li>
+          <li>What changes when the fixed element changes from the ring gear to the planet carrier?</li>
+          <li>How to interpret the speed relative to the carrier in a planetary problem?</li>
+          <li>Why can two visually similar configurations generate different kinematic behaviors?</li>
+          <li>How to explain, in class, the difference between observing the train with carrier fixed and observing the system in actual motion?</li>
         </ul>
-        <p>Essas perguntas são úteis porque deslocam a ferramenta do campo do "ver funcionando" para o campo do "entender por que funciona assim".</p>
+        <p>These questions are useful because they move the tool from the field of “seeing it working” to the field of “understanding why it works that way”.</p>
       </article>
 
       <article class="card">
-        <h2>Escopo e limitações</h2>
-        <p>O Engrenarium é uma ferramenta de apoio didático e conceitual. Isso significa que o seu valor está na clareza da visualização, na interpretação do arranjo e no raciocínio sobre relações cinemáticas. Não deve ser lido como substituto universal de bibliografia, cálculo detalhado de esforços, análise estrutural ou projeto completo de transmissão.</p>
-        <p>Em termos práticos, ele é mais forte quando usado para explicar conceitos, testar leituras de configuração e apoiar discussões entre professor e aluno. Para uso profissional mais aprofundado, o simulador funciona melhor como etapa de entendimento e comunicação do problema.</p>
+        <h2>Scope and limitations</h2>
+        <p>Engrenarium is a didactic and conceptual support tool. This means that its value lies in the clarity of visualization, the interpretation of the arrangement and the reasoning about kinematic relationships. It should not be read as a universal substitute for bibliography, detailed stress calculation, structural analysis or complete transmission design.</p>
+        <p>In practical terms, it is strongest when used to explain concepts, test configuration interpretations, and support teacher-student discussions. For more in-depth professional use, the simulator works best as an initial stage for understanding and communicating the problem.</p>
       </article>
     </div>
 
     <aside>
       <div class="sidebar-card">
-        <h3>Dados da página</h3>
+        <h3>Page data</h3>
         <ul class="meta-list">
-          <li><strong>Autor:</strong> Artur Henrique de Freitas Avelar</li>
-          <li><strong>Última atualização:</strong> abril de 2026</li>
-          <li><strong>Categoria:</strong> guia de ferramenta didática</li>
-          <li><strong>Contato:</strong> <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></li>
+          <li><strong>Author:</strong> Artur Henrique de Freitas Avelar</li>
+          <li><strong>Last update:</strong> April 2026</li>
+          <li><strong>Category:</strong> teaching tool guide</li>
+          <li><strong>Contact:</strong> <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></li>
         </ul>
       </div>
 
       <div class="sidebar-card" style="margin-top:22px;">
-        <h3>Leituras relacionadas</h3>
+        <h3>Related reading</h3>
         <ul class="meta-list">
-          <li><a href="artigos/index.html">Índice de artigos técnicos</a></li>
-          <li><a href="artigos/engrenagens-planetarias.html">Engrenagens planetárias: caso geral e valor do trem</a></li>
-          <li><a href="artigos/aplicacoes-engrenagens-planetarias.html">Aplicações de engrenagens planetárias</a></li>
-          <li><a href="artigos/planetarias-compostas-diferenciais.html">Planetárias compostas e diferenciais</a></li>
-          <li><a href="sobre.html">Sobre o portal</a></li>
-          <li><a href="privacy.html">Política de Privacidade</a></li>
+          <li><a href="artigos/index.html">Technical article index</a></li>
+          <li><a href="artigos/engrenagens-planetarias.html">Planetary gears: general case and train value</a></li>
+          <li><a href="artigos/aplicacoes-engrenagens-planetarias.html">Applications of planetary gears</a></li>
+          <li><a href="artigos/planetarias-compostas-diferenciais.html">Compound planetary gear sets and differentials</a></li>
+          <li><a href="sobre.html">About the portal</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
         </ul>
       </div>
 
       <div class="sidebar-card" style="margin-top:22px;">
-        <h3>Links externos</h3>
+        <h3>External links</h3>
         <ul class="meta-list">
-          <li><a href="https://barbudenge.github.io/engrenarium/">Abrir o simulador web</a></li>
+          <li><a href="https://barbudenge.github.io/engrenarium/">Open the web simulator</a></li>
           <li><a href="https://barbudenge.github.io/lasmeufsj/">LASME/UFSJ</a></li>
           <li><a href="https://github.com/Barbudenge">GitHub</a></li>
         </ul>
@@ -307,7 +315,7 @@
 
 <footer>
   <div class="container">
-    <p>© 2026 Barbudenge · <a href="index.html">Página inicial</a> · <a href="sobre.html">Sobre</a> · <a href="privacy.html">Privacidade</a></p>
+    <p>© 2026 Barbudenge · <a href="index.html">Home page</a> · <a href="sobre.html">About</a> · <a href="privacy.html">Privacy</a></p>
   </div>
 </footer>
 

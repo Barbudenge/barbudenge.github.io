@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projeto de planetárias no Engrenarium | Barbudenge</title>
+  <meta name="description" content="Artigo técnico sobre o módulo Projeto de planetárias do Engrenarium, com projeto de planetárias simples e compostas, restrições de montagem e escolha de resultados." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Artur Henrique de Freitas Avelar" />
+  <meta name="google-adsense-account" content="ca-pub-5777194849710689" />
+  <link rel="canonical" href="https://barbudenge.github.io/pt-br/artigos/projeto-planetarias-engrenarium.html" />
+
+  <meta property="og:title" content="Projeto de planetárias no Engrenarium" />
+  <meta property="og:description" content="Como usar o novo módulo Projeto de planetárias do Engrenarium para montar sistemas simples e compostos." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://barbudenge.github.io/pt-br/artigos/projeto-planetarias-engrenarium.html" />
+
+  <script>
+    window.MathJax = { tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] }, svg: { fontCache: 'global' } };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5777194849710689" crossorigin="anonymous"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="artigo.css" />
+  <link rel="alternate" hreflang="en" href="https://barbudenge.github.io/artigos/projeto-planetarias-engrenarium.html" />
+  <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/projeto-planetarias-engrenarium.html" />
+  <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/projeto-planetarias-engrenarium.html" />
+  <link rel="stylesheet" href="../../language-switch.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container topbar">
+    <a href="../index.html" style="text-decoration:none;"><div class="brand">Barbu<span>denge</span></div></a>
+    <nav aria-label="Navegação principal">
+      <a href="../index.html">Início</a>
+      <a href="index.html">Artigos</a>
+      <a href="../engrenarium.html">Engrenarium</a>
+      <a href="../sobre.html">Sobre</a>
+    </nav>
+    <div class="language-switch" role="group" aria-label="Idioma">
+      <a class="language-switch__option is-active" href="/pt-br/artigos/projeto-planetarias-engrenarium.html" lang="pt-BR" hreflang="pt-BR" aria-current="page">PT</a>
+      <a class="language-switch__option" href="/artigos/projeto-planetarias-engrenarium.html" lang="en" hreflang="en">EN</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow">Artigo técnico</span>
+    <h1>Projeto de planetárias no Engrenarium</h1>
+    <p>O módulo Projeto de planetárias do Engrenarium automatiza a busca por combinações de dentes e restrições de montagem para sistemas planetários simples e compostos.</p>
+    <div class="byline">
+      <span>Por Artur Henrique de Freitas Avelar</span>
+      <time datetime="2026-06-03">3 de junho de 2026</time>
+      <span>Categoria: planetárias e projeto</span>
+    </div>
+  </div>
+</section>
+
+<main class="container article-layout">
+  <article class="article-body">
+    <p class="lead">Este artigo apresenta um roteiro completo para usar o módulo <em>Projeto de planetárias</em> do Engrenarium. A sequência foi escrita para que a montagem e a análise possam ser feitas apenas com o texto e com as figuras do próprio artigo.</p>
+
+    <div class="video-embed">
+      <iframe src="https://www.youtube.com/embed/OAGDHPAXPv8" title="Projeto de planetárias no Engrenarium" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <div class="note">
+      <strong>Montagem no Engrenarium:</strong> o recurso está disponível no <a href="https://barbudenge.github.io/lasmeufsj/pt-br/engrenarium/">Engrenarium software</a> e no <a href="https://barbudenge.github.io/engrenarium/">Engrenarium web</a>. O objetivo do módulo é sair de uma especificação funcional e chegar a um conjunto montado, pronto para análise.
+    </div>
+
+    <h2>O que o módulo faz</h2>
+    <p>O módulo <em>Planetary Design</em> sintetiza sistemas planetários simples e compostos a partir de uma especificação funcional. Em vez de escolher manualmente números de dentes e testar combinações por tentativa e erro, o usuário define entrada, saída, componente fixo, relação desejada e restrições de montagem. O software então lista apenas as soluções geometricamente compatíveis com essas exigências.</p>
+
+    <p>O ponto central do recurso é separar dois problemas. O primeiro é cinemático: qual relação de velocidade o conjunto precisa produzir. O segundo é geométrico: como distribuir planetas, braços e acoplamentos de modo que a montagem seja coerente e prática.</p>
+
+    <figure class="article-figure figure-wide">
+      <img src="../../figs/aulas/proj 1.png" alt="Janela do módulo Projeto de planetárias no Engrenarium">
+      <figcaption>Janela inicial do módulo Projeto de planetárias, com as opções para sistemas simples e compostos.</figcaption>
+    </figure>
+
+    <h2>Projeto de uma planetária simples</h2>
+    <p>Comece abrindo o módulo e escolhendo a opção de planetária simples. Para reproduzir o primeiro exemplo, defina a engrenagem solar como entrada, o braço como saída e a anelar como componente fixo. Em seguida, informe uma relação desejada de velocidade igual a \(4\).</p>
+
+    <p>Nesse caso, os limites mínimo e máximo de dentes já podem ser mantidos nos valores preenchidos pelo software. Execute o cálculo sem alterar esses campos. O resultado esperado é uma lista de soluções compatíveis com essa especificação; no exemplo usado aqui, o módulo retorna 7 resultados.</p>
+
+    <p>Selecione qualquer uma das soluções encontradas. O Engrenarium monta automaticamente a planetária correspondente, aplica os números de dentes escolhidos e registra a relação de projeto. Esse é o primeiro teste importante do módulo: sair de uma especificação funcional e chegar a um conjunto completamente montado.</p>
+
+    <ol>
+      <li>Escolha <em>Simple Planetary Gear System</em>.</li>
+      <li>Defina solar como entrada.</li>
+      <li>Defina braço como saída.</li>
+      <li>Defina anelar como componente fixo.</li>
+      <li>Informe relação desejada \(i=4\).</li>
+      <li>Mantenha os limites de dentes já preenchidos.</li>
+      <li>Execute o cálculo e selecione um dos resultados.</li>
+    </ol>
+
+    <figure class="article-figure figure-wide">
+      <img src="../../figs/aulas/proj 2.png" alt="Configuração de entrada, saída, componente fixo e relação no projeto de planetária simples">
+      <figcaption>Configuração do caso simples: solar como entrada, braço como saída, anelar fixa e relação desejada igual a 4.</figcaption>
+    </figure>
+
+    <h2>Resultados e restrições de montagem</h2>
+    <p>Ao executar o projeto simples pela primeira vez, observe a seção <em>Assembly Constraints</em>. A opção <em>Carriers with Equal Angles</em> fica marcada, o que obriga a distribuição angular uniforme dos planetas. Quando uma solução é escolhida com essa restrição ativa, os braços aparecem com ângulos iguais.</p>
+
+    <p>Feche a montagem, abra o módulo novamente e observe que os resultados do último projeto reaparecem. Isso permite trocar de solução sem reconstruir toda a especificação. Em seguida, volte para <em>Assembly Constraints</em>, desmarque <em>Carriers with Equal Angles</em> e rode o cálculo outra vez.</p>
+
+    <p>O comportamento esperado é um aumento no número de soluções. No caso usado aqui, o total passa de 7 para 19 resultados. A diferença é que parte dessas novas soluções deixa de respeitar o equilíbrio angular dos planetas. A montagem continua sendo possível, mas pode ficar menos adequada do ponto de vista de vibração, balanceamento e distribuição de carga.</p>
+
+    <p>Em outras palavras, o módulo não serve apenas para “encontrar dentes que fecham”. Ele permite comparar soluções tecnicamente equivalentes do ponto de vista cinemático, mas diferentes do ponto de vista construtivo.</p>
+
+    <figure class="article-figure figure-wide">
+      <img src="../../figs/aulas/proj 3.png" alt="Comparação de resultados com a restrição de ângulos iguais nos braços">
+      <figcaption>Exemplo de resultado sem restrição de ângulos iguais nos braços, criando uma distribuição angular menos equilibrada entre os planetas.</figcaption>
+    </figure>
+
+    <h2>Planetas em série</h2>
+    <p>Inicie um novo projeto e habilite a opção de planetas em série dentro da planetária simples. Depois de calcular, escolha uma solução qualquer para ver como o Engrenarium organiza os elementos. Nesse primeiro teste, o braço aparece reto, o que é aceitável, mas tende a produzir uma anelar muito larga.</p>
+
+    <p>Ao voltar para <em>Assembly Constraints</em>, surge a opção <em>Straight Carrier Only</em>. Com ela marcada, o projeto fica restrito a braços retos. Desmarque essa opção e execute o cálculo novamente. O espaço de busca cresce muito e o número de resultados passa a ser da ordem de milhares; no caso usado aqui, aparecem mais de 2.000 soluções, distribuídas em páginas de até 100 resultados.</p>
+
+    <p>Escolha uma das novas soluções. A diferença principal é geométrica: o conjunto fica mais compacto, porque o braço deixa de ser reto. Mesmo assim, o espaçamento entre planetas permanece em \(120^\circ\). Isso significa que o software muda a forma local do braço sem perder a distribuição global necessária para a montagem.</p>
+
+    <ol>
+      <li>Inicie um novo projeto simples.</li>
+      <li>Habilite planetas em série.</li>
+      <li>Calcule e examine um resultado com braço reto.</li>
+      <li>Desmarque <em>Straight Carrier Only</em>.</li>
+      <li>Calcule novamente.</li>
+      <li>Compare largura da anelar, forma do braço e compacidade geral.</li>
+    </ol>
+
+    <figure class="article-figure figure-wide">
+      <img src="../../figs/aulas/proj 4.png" alt="Projeto com planetas em série e braço reto">
+      <figcaption>Projeto com planetas em série e braço reto, uma solução válida, mas que pode exigir anelar mais larga.</figcaption>
+    </figure>
+
+    <figure class="article-figure figure-wide">
+      <img src="../../figs/aulas/proj 5.png" alt="Projeto com planetas em série e braço não reto">
+      <figcaption>Projeto com planetas em série após liberar o braço não reto, resultando em uma geometria mais compacta.</figcaption>
+    </figure>
+
+    <p>Mesmo quando o braço deixa de ser reto, há um detalhe importante: os valores angulares locais do braço mudam, mas o espaçamento entre os planetas continua sendo de \(120^\circ\). Ou seja, o módulo ainda preserva a distribuição geral necessária para a montagem.</p>
+
+    <h2>Projeto de planetárias compostas</h2>
+    <p>O mesmo módulo também sintetiza planetárias compostas de 2 e 3 estágios. Para uso prático, vale começar pelos casos de 2 estágios, porque projetos com 3 estágios tendem a gerar muitas combinações e podem exigir tempos de cálculo bem maiores.</p>
+
+    <p>Abra um novo projeto composto de 2 estágios e mantenha entrada e saída nos valores padrão do módulo. Nesse modo, o Engrenarium exige 3 condições de contorno. A velocidade de entrada é fixada automaticamente em \(10\,\text{rpm}\), e o usuário precisa definir um componente fixo e dois acoplamentos entre os sistemas planetários. Esses vínculos podem ser modificados conforme o arranjo desejado.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Tipo de projeto</th>
+          <th>Dados de entrada usados no roteiro</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Planetária simples</td>
+          <td>Entrada, saída, componente fixo, relação desejada e limites de dentes.</td>
+        </tr>
+        <tr>
+          <td>Planetária simples com planetas em série</td>
+          <td>Mesmo fluxo anterior, com restrições adicionais para geometria do braço.</td>
+        </tr>
+        <tr>
+          <td>Planetária composta de 2 estágios</td>
+          <td>Velocidade de entrada automática de \(10\,\text{rpm}\), 1 componente fixo e 2 acoplamentos entre estágios.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <figure class="article-figure figure-wide">
+      <img src="../../figs/aulas/proj 6.png" alt="Configuração de contorno para o projeto de planetária composta de dois estágios">
+      <figcaption>Configuração de contorno do projeto composto de 2 estágios, com componente fixo e dois acoplamentos entre os sistemas planetários.</figcaption>
+    </figure>
+
+    <h2>Planetas coaxiais forçados</h2>
+    <p>No projeto composto aparece uma restrição adicional chamada <em>Force Coaxial Planets</em>. Quando essa opção está ativa, o software ajusta os módulos das planetárias, ou os <em>diametral pitches</em>, para que a distância entre o centro do sistema e os eixos dos planetas seja a mesma em todos os estágios.</p>
+
+    <p>O resultado prático é que planetas de estágios diferentes podem ser acoplados fisicamente e renderizados como uma única peça, mesmo quando seus números de dentes não são iguais. Essa restrição não altera o objetivo cinemático do projeto; ela atua na compatibilidade geométrica necessária para uma montagem coaxial coerente.</p>
+
+    <p>Depois de calcular o caso composto, escolha uma das soluções e confira duas coisas. Primeiro, observe visualmente se os planetas aparecem acoplados como um conjunto único. Segundo, abra os dados das engrenagens e verifique se o módulo de algum estágio foi ajustado para viabilizar essa coaxialidade. No exemplo usado aqui, o primeiro estágio é modificado para satisfazer essa condição.</p>
+
+    <figure class="article-figure figure-wide">
+      <img src="../../figs/aulas/proj 7.png" alt="Resultado do projeto composto com planetas coaxiais forçados">
+      <figcaption>Resultado composto com <em>Force Coaxial Planets</em>, em que os planetas de estágios diferentes passam a ser acoplados como uma única peça.</figcaption>
+    </figure>
+
+    <h2>Como usar o recurso com critério</h2>
+    <p>O uso correto do módulo segue uma lógica simples. Primeiro define-se o comportamento cinemático desejado. Depois, observam-se as restrições de montagem para decidir qual resultado é mais adequado do ponto de vista geométrico. A melhor solução nem sempre é a primeira da lista, nem a que tem mais simetria aparente; ela é a que concilia relação correta, montagem coerente e geometria praticável.</p>
+
+    <p>Por isso, o procedimento mais seguro é tratar o módulo como ferramenta de comparação, não apenas como gerador automático de uma resposta única.</p>
+
+    <ol>
+      <li>Defina primeiro o comportamento cinemático desejado: entrada, saída, componente fixo e relação.</li>
+      <li>Execute o cálculo e observe quantos resultados atendem a essa especificação.</li>
+      <li>Ative ou desative restrições de montagem para comparar simetria, largura e compacidade do conjunto.</li>
+      <li>Nos casos compostos, confira se a coaxialidade forçada alterou módulos ou proporções entre os estágios.</li>
+      <li>Escolha o resultado final com base tanto na relação quanto na qualidade geométrica da montagem.</li>
+    </ol>
+  </article>
+
+  <aside>
+    <div class="sidebar-card">
+      <h3>Resumo da página</h3>
+      <ul class="meta-list">
+        <li>Data: 3 de junho de 2026.</li>
+        <li>Projeto de planetárias simples e compostas.</li>
+        <li>Relação exemplo: solar de entrada, braço de saída e anelar fixa.</li>
+        <li>Restrições destacadas: ângulos iguais, braço reto e planetas coaxiais.</li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h3>Abrir no Engrenarium</h3>
+      <ul>
+        <li><a href="https://barbudenge.github.io/lasmeufsj/pt-br/engrenarium/">Engrenarium software</a></li>
+        <li><a href="https://barbudenge.github.io/engrenarium/">Engrenarium web</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h3>Pontos principais</h3>
+      <ul class="meta-list">
+        <li>7 resultados no exemplo inicial com restrição angular ativada.</li>
+        <li>19 resultados quando os ângulos iguais são liberados.</li>
+        <li>Mais de 2.000 resultados nos casos com maior liberdade geométrica.</li>
+        <li>Entrada automática de \(10\,\text{rpm}\) no exemplo composto.</li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h3>Continuar estudando</h3>
+      <ul>
+        <li><a href="engrenagens-planetarias.html">Caso geral das planetárias</a></li>
+        <li><a href="paradoxo-mecanico-ferguson.html">Paradoxo mecânico de Ferguson</a></li>
+        <li><a href="planetaria-composta-engrenarium.html">Planetária composta no Engrenarium</a></li>
+        <li><a href="index.html">Índice de artigos</a></li>
+      </ul>
+    </div>
+  </aside>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Barbudenge · <a href="../index.html">Página inicial</a> · <a href="../sobre.html">Sobre</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Engrenagens planetárias: caso geral e valor do trem | Barbudenge</title>
-  <meta name="description" content="Artigo técnico sobre a formulação geral de trens epicicloidais, interpretação do valor do trem e leitura didática de velocidades relativas em engrenagens planetárias." />
+  <title>Planetary gears: general case and train value | Barbudenge</title>
+  <meta name="description" content="Technical article on the general formulation of epicyclic gear trains, interpretation of train value and didactic reading of relative speeds in planetary gears." />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Artur Henrique de Freitas Avelar" />
   <meta name="google-adsense-account" content="ca-pub-5777194849710689" />
   <link rel="canonical" href="https://barbudenge.github.io/artigos/engrenagens-planetarias.html" />
 
-  <meta property="og:title" content="Engrenagens planetárias: caso geral e valor do trem" />
-  <meta property="og:description" content="Texto técnico sobre velocidades relativas, braço e valor do trem em sistemas planetários." />
+  <meta property="og:title" content="Planetary gears: general case and train value" />
+  <meta property="og:description" content="Technical text on relative speeds, carrier and train value in planetary systems." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://barbudenge.github.io/artigos/engrenagens-planetarias.html" />
 
@@ -213,52 +213,60 @@
       .figure-equal { width: 100%; max-width: 320px; }
     }
   </style>
+  <link rel="alternate" hreflang="en" href="https://barbudenge.github.io/artigos/engrenagens-planetarias.html" />
+  <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/engrenagens-planetarias.html" />
+  <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/engrenagens-planetarias.html" />
+  <link rel="stylesheet" href="../language-switch.css" />
 </head>
 <body>
 
 <header>
   <div class="container topbar">
     <a href="../index.html" style="text-decoration:none;"><div class="brand">Barbu<span>denge</span></div></a>
-    <nav aria-label="Navegação principal">
-      <a href="../index.html">Início</a>
-      <a href="index.html">Artigos</a>
-      <a href="../sobre.html">Sobre</a>
+    <nav aria-label="Main navigation">
+      <a href="../index.html">Home</a>
+      <a href="index.html">Articles</a>
+      <a href="../sobre.html">About</a>
       <a href="../engrenarium.html">Engrenarium</a>
-      <a href="../privacy.html">Privacidade</a>
+      <a href="../privacy.html">Privacy</a>
     </nav>
+    <div class="language-switch" role="group" aria-label="Language">
+      <a class="language-switch__option" href="/pt-br/artigos/engrenagens-planetarias.html" lang="pt-BR" hreflang="pt-BR">PT</a>
+      <a class="language-switch__option is-active" href="/artigos/engrenagens-planetarias.html" lang="en" hreflang="en" aria-current="page">EN</a>
+    </div>
   </div>
 </header>
 
 <section class="hero">
   <div class="container">
-    <span class="eyebrow">Artigo técnico</span>
-    <h1>Engrenagens planetárias: caso geral e interpretação do valor do trem</h1>
-    <p>Uma formulação útil para analisar trens epicicloidais é a do caso geral, em que as velocidades da primeira engrenagem, da última engrenagem e do braço são relacionadas numa mesma expressão. Essa forma evita confundir casos particulares com a estrutura cinemática do problema.</p>
+    <span class="eyebrow">Technical article</span>
+    <h1>Planetary gears: general case and interpretation of train value</h1>
+    <p>A useful formulation to analyze epicyclic gear trains is the general case, in which the speeds of the first gear, the last gear and the carrier are related in the same expression. This form avoids confusing particular cases with the kinematic structure of the problem.</p>
     <div class="byline">
-      <span>Por Artur Henrique de Freitas Avelar</span>
-      <span>Atualizado em abril de 2026</span>
-      <span>Categoria: engrenagens e mecanismos</span>
+      <span>By Artur Henrique de Freitas Avelar</span>
+      <span>Updated April 2026</span>
+      <span>Category: gears and mechanisms</span>
     </div>
   </div>
 </section>
 
 <main class="container article-layout">
   <article>
-    <h2>Por que vale a pena começar pelo caso geral</h2>
-    <p>Em exercícios introdutórios, é comum resolver cada arranjo planetário como um caso isolado: um problema com coroa fixa, outro com braço fixo, outro com entrada na solar, e assim por diante. Isso funciona em situações simples, mas frequentemente atrapalha a formação do raciocínio. O estudante aprende procedimentos separados e depois encontra dificuldade quando precisa interpretar um trem menos familiar.</p>
-    <p>A formulação geral é mais útil porque obriga a olhar primeiro para a estrutura do conjunto. Antes de decidir qual elemento está travado ou qual velocidade é conhecida, descreve-se o trem como sistema cinemático. Essa mudança de perspectiva costuma tornar o problema mais claro, especialmente em aulas e em situações com múltiplos engrenamentos.</p>
+    <h2>Why is it worth starting with the general case</h2>
+    <p>In introductory exercises, it is common to solve each planetary arrangement as an isolated case: one problem with a fixed ring gear, another with a fixed carrier, another with an input at the sun gear, and so on. This works in simple situations, but often hinders the development of conceptual understanding. The student learns separate procedures and then encounters difficulty when interpreting a less familiar train.</p>
+    <p>The general formulation is more useful because it forces you to look first at the structure of the set. Before deciding which element is locked or which speed is known, the train is described as a kinematic system. This change of perspective usually makes the problem clearer, especially in classes and in situations with multiple gear meshes.</p>
 
     <div class="figure-row">
       <div class="figure-equal">
-        <img src="../figs/planet1.png" alt="Exemplo de trem planetário simples em vista isométrica">
+        <img src="../figs/planet1.png" alt="Example of simple planetary gear train in isometric view">
       </div>
       <div class="figure-equal">
-        <img src="../figs/planet2.png" alt="Exemplo de trem planetário com dois conjuntos em vista isométrica">
+        <img src="../figs/planet2.png" alt="Example of planetary gear train with two sets in isometric view">
       </div>
     </div>
 
-    <h2>Equação geral</h2>
-    <p>Para um trem epicicloidal qualquer, pode-se escrever a relação:</p>
+    <h2>General equation</h2>
+    <p>For any epicyclic gear train, the relation can be written:</p>
 
     <div class="equation-box">
       \[
@@ -268,28 +276,28 @@
       =
       e
       \]
-      <p class="equation-caption">O parâmetro \(e\) representa o valor do trem calculado com o braço fixo.</p>
+      <p class="equation-caption">The \(e\) parameter represents the train value calculated with the carrier fixed.</p>
     </div>
 
     <ul>
-      <li>\(\omega_u\): velocidade angular da última engrenagem do trem;</li>
-      <li>\(\omega_p\): velocidade angular da primeira engrenagem do trem;</li>
-      <li>\(\omega_b\): velocidade angular do braço.</li>
+      <li>\(\omega_u\): angular velocity of the last gear of the train;</li>
+      <li>\(\omega_p\): angular velocity of the train's first gear;</li>
+      <li>\(\omega_b\): angular velocity of the carrier.</li>
     </ul>
 
-    <p>O ponto decisivo aqui é que a equação não descreve um caso especial. Ela descreve o comportamento relativo do trem em relação ao braço. Depois que isso é entendido, as condições particulares entram apenas como restrições adicionais.</p>
+    <p>The decisive point here is that the equation does not describe a special case. It describes the relative behavior of the train relative to the carrier. Once this is understood, the particular conditions come in only as additional constraints.</p>
 
-    <h2>O que significa o valor do trem</h2>
-    <p>O valor do trem \(e\) é obtido considerando a cadeia de engrenamentos com o braço fixo. Em termos didáticos, isso equivale a “desligar” momentaneamente o movimento do porta-satélites para calcular como a sequência de engrenamentos transforma rotação entre o primeiro e o último elemento do trem.</p>
-    <p>Esse número depende da topologia do conjunto, dos números de dentes e do tipo de contato entre as engrenagens, externo ou interno. Uma vez obtido, ele passa a condensar a estrutura do problema numa constante que pode ser usada na equação geral.</p>
+    <h2>What does train value mean?</h2>
+    <p>The train value \(e\) is obtained considering the gear chain with carrier fixed. In didactic terms, this is equivalent to momentarily “turning off” the movement of the planet carrier to calculate how the sequence of gears transforms rotation between the first and last element of the train.</p>
+    <p>This number depends on the topology of the set, the tooth counts and the type of contact between the gears, external or internal. Once obtained, it starts to condense the structure of the problem into a constant that can be used in the general equation.</p>
 
-    <div class="note">Separar a análise em duas etapas costuma evitar erro conceitual: primeiro calcula-se o valor do trem com o braço fixo; depois aplica-se a relação geral às condições reais de movimento do conjunto.</div>
+    <div class="note">Separating the analysis into two stages usually avoids conceptual error: first, the train value is calculated with the carrier fixed; then the general relationship is applied to the real conditions of movement of the set.</div>
 
-    <h2>Exemplo simples: trem 1-2-3</h2>
+    <h2>Simple example: 1-2-3 train</h2>
     <div class="figure-single">
-      <img src="../figs/exemplo-plan.png" alt="Exemplo esquemático de trem planetário 1-2-3 com braço B">
+      <img src="../figs/exemplo-plan.png" alt="Schematic example of planetary gear train 1-2-3 with carrier B">
     </div>
-    <p>Para um trem formado pelas engrenagens 1, 2 e 3, com o braço indicado por \(B\), pode-se escrever:</p>
+    <p>For a train formed by gears 1, 2 and 3, with carrier indicated by \(B\), one can write:</p>
 
     <div class="equation-box">
       \[
@@ -304,46 +312,46 @@
       \]
     </div>
 
-    <p>Nessa expressão, \(N_1\), \(N_2\) e \(N_3\) são os números de dentes das engrenagens envolvidas. O sinal de cada parcela depende do tipo de engrenamento ao longo da cadeia. O produto final fornece o valor do trem, que depois pode ser usado em qualquer situação operacional coerente com o mesmo arranjo geométrico.</p>
+    <p>In this expression, \(N_1\), \(N_2\) and \(N_3\) are the tooth counts of the gears involved. The sign of each factor depends on the type of gearing along the chain. The final product provides train value, which can then be used in any coherent operational situation with the same geometric arrangement.</p>
 
-    <h2>Como interpretar a fórmula sem cair em automatismos</h2>
-    <p>Um erro frequente é tentar “encaixar” a equação em tabelas decoradas sem pensar no significado físico de cada termo. Em trens planetários, isso costuma gerar trocas entre braço e elemento fixo, ou confusão entre a observação do sistema em movimento real e a observação do conjunto com braço fixo.</p>
-    <p>Uma leitura mais robusta é seguir esta sequência:</p>
+    <h2>How to interpret the formula without relying on rote procedures</h2>
+    <p>A common mistake is trying to “fit” the equation into decorated tables without thinking about the physical meaning of each term. In planetary gear trains, this often leads to changes between carrier and a fixed element, or confusion between observing the system in real motion and observing the set with the carrier fixed.</p>
+    <p>A more robust reading is to follow this sequence:</p>
     <ol>
-      <li>identificar qual cadeia de engrenamentos define o trem;</li>
-      <li>calcular o valor \(e\) com o braço fixo;</li>
-      <li>definir entrada, saída e elemento fixo no problema real;</li>
-      <li>substituir as condições conhecidas na relação geral.</li>
+      <li>identify which chain of gears defines the train;</li>
+      <li>calculate the value \(e\) with the carrier fixed;</li>
+      <li>define input, output and fixed element in the real problem;</li>
+      <li>replace known conditions in the general relationship.</li>
     </ol>
-    <p>Essa ordem reduz o número de atalhos mentais e torna mais fácil explicar o raciocínio em sala de aula ou em relatório técnico.</p>
+    <p>This order reduces the number of mental shortcuts and makes it easier to explain reasoning in class or in a technical report.</p>
 
-    <h2>Onde essa formulação é mais útil</h2>
-    <p>A forma geral é particularmente vantajosa quando o arranjo deixa de ser elementar. Em sistemas compostos, em cadeias com vários engrenamentos ou em problemas em que se deseja comparar diferentes escolhas de entrada e saída, a formulação ajuda a manter a coerência do raciocínio. Em vez de reconstruir tudo do zero para cada cenário, trabalha-se sobre uma mesma base cinemática.</p>
-    <p>Por isso, ela também conversa bem com ferramentas visuais como o Engrenarium. O simulador pode ajudar a enxergar o arranjo; a formulação geral ajuda a organizar a interpretação matemática do que está sendo observado.</p>
+    <h2>Where this formulation is most useful</h2>
+    <p>The general form is particularly advantageous when the arrangement is no longer elementary. In composite systems, in chains with several gears or in problems where you want to compare different input and output choices, the formulation helps maintain coherence of reasoning. Instead of rebuilding everything from scratch for each scenario, we work on the same kinematic basis.</p>
+    <p>Therefore, it also works well with visual tools like Engrenarium. The simulator can help you see the arrangement; the general formulation helps organize the mathematical interpretation of what is being observed.</p>
 
-    <p style="margin-top:18px; font-weight:700;"><a href="../engrenarium.html">Leia também: guia do Engrenarium e aplicações didáticas do simulador →</a></p>
+    <p style="margin-top:18px; font-weight:700;"><a href="../engrenarium.html">Read also: Engrenarium guide and educational applications of the simulator →</a></p>
   </article>
 
   <aside>
     <div class="card">
-      <h3>Resumo da página</h3>
+      <h3>Page summary</h3>
       <ul class="meta-list">
-        <li>Explica a equação geral de trens epicicloidais.</li>
-        <li>Define o papel do braço e do valor do trem.</li>
-        <li>Mostra por que separar estrutura e condição de operação ajuda na análise.</li>
+        <li>Explains the general equation of epicyclic gear trains.</li>
+        <li>Defines the role of carrier and train value.</li>
+        <li>Shows why separating structure and operating condition helps in analysis.</li>
       </ul>
     </div>
 
     <div class="card">
-      <h3>Leituras relacionadas</h3>
+      <h3>Related reading</h3>
       <ul class="meta-list">
-        <li><a href="aplicacoes-engrenagens-planetarias.html">Aplicações de engrenagens planetárias</a></li>
-        <li><a href="planetarias-compostas-diferenciais.html">Planetárias compostas e diferenciais</a></li>
-        <li><a href="trens-engrenagens-simples-compostos.html">Trens de engrenagens simples e compostos</a></li>
-        <li><a href="index.html">Índice de artigos técnicos</a></li>
-        <li><a href="../engrenarium.html">Guia do Engrenarium</a></li>
-        <li><a href="../sobre.html">Sobre o portal</a></li>
-        <li><a href="../privacy.html">Política de Privacidade</a></li>
+        <li><a href="aplicacoes-engrenagens-planetarias.html">Applications of planetary gears</a></li>
+        <li><a href="planetarias-compostas-diferenciais.html">Compound planetary gear sets and differentials</a></li>
+        <li><a href="trens-engrenagens-simples-compostos.html">Simple and compound gear trains</a></li>
+        <li><a href="index.html">Technical article index</a></li>
+        <li><a href="../engrenarium.html">Engrenarium Guide</a></li>
+        <li><a href="../sobre.html">About the portal</a></li>
+        <li><a href="../privacy.html">Privacy Policy</a></li>
       </ul>
     </div>
   </aside>
@@ -351,7 +359,7 @@
 
 <footer>
   <div class="container">
-    <p>© 2026 Barbudenge · <a href="../index.html">Página inicial</a> · <a href="../sobre.html">Sobre</a> · <a href="../privacy.html">Privacidade</a></p>
+    <p>© 2026 Barbudenge · <a href="../index.html">Home page</a> · <a href="../sobre.html">About</a> · <a href="../privacy.html">Privacy</a></p>
   </div>
 </footer>
 

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Como montar uma transmissão CVT no Engrenarium | Barbudenge</title>
+  <meta name="description" content="Artigo técnico sobre a montagem de um mecanismo didático de transmissão CVT no Engrenarium, com trem planetário, relação solar/braço, marcha para frente e marcha ré." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Artur Henrique de Freitas Avelar" />
+  <meta name="google-adsense-account" content="ca-pub-5777194849710689" />
+  <link rel="canonical" href="https://barbudenge.github.io/pt-br/artigos/transmissao-cvt-engrenarium.html" />
+
+  <meta property="og:title" content="Como montar uma transmissão CVT no Engrenarium" />
+  <meta property="og:description" content="Exemplo de montagem de um mecanismo CVT com solar, anelar, planetas e saída pelo braço." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://barbudenge.github.io/pt-br/artigos/transmissao-cvt-engrenarium.html" />
+
+  <script>
+    window.MathJax = { tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] }, svg: { fontCache: 'global' } };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5777194849710689" crossorigin="anonymous"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="artigo.css" />
+  <link rel="alternate" hreflang="en" href="https://barbudenge.github.io/artigos/transmissao-cvt-engrenarium.html" />
+  <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/transmissao-cvt-engrenarium.html" />
+  <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/transmissao-cvt-engrenarium.html" />
+  <link rel="stylesheet" href="../../language-switch.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container topbar">
+    <a href="../index.html" style="text-decoration:none;"><div class="brand">Barbu<span>denge</span></div></a>
+    <nav aria-label="Navegação principal">
+      <a href="../index.html">Início</a>
+      <a href="index.html">Artigos</a>
+      <a href="../engrenarium.html">Engrenarium</a>
+      <a href="../sobre.html">Sobre</a>
+    </nav>
+    <div class="language-switch" role="group" aria-label="Idioma">
+      <a class="language-switch__option is-active" href="/pt-br/artigos/transmissao-cvt-engrenarium.html" lang="pt-BR" hreflang="pt-BR" aria-current="page">PT</a>
+      <a class="language-switch__option" href="/artigos/transmissao-cvt-engrenarium.html" lang="en" hreflang="en">EN</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow">Artigo técnico</span>
+    <h1>Como montar uma transmissão CVT no Engrenarium</h1>
+    <p>Um trem planetário pode ser usado como modelo didático de transmissão continuamente variável quando uma das velocidades impostas passa a controlar a velocidade de saída.</p>
+    <div class="byline">
+      <span>Por Artur Henrique de Freitas Avelar</span>
+      <time datetime="2026-05-07">7 de maio de 2026</time>
+      <span>Categoria: Engrenarium e transmissões</span>
+    </div>
+  </div>
+</section>
+
+<main class="container article-layout">
+  <article class="article-body">
+    <p class="lead">Este artigo mostra como montar, no Engrenarium, um mecanismo de funcionamento de uma transmissão CVT usando um conjunto planetário de um estágio. O exemplo demonstra duas condições: marcha para frente e marcha ré.</p>
+
+    <div class="video-embed">
+      <iframe src="https://www.youtube.com/embed/W4GOKG90FyY" title="Como montar o mecanismo CVT no Engrenarium" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <div class="note">O mecanismo pode ser montado no <a href="https://barbudenge.github.io/lasmeufsj/pt-br/engrenarium/">Engrenarium software</a> ou no <a href="https://barbudenge.github.io/engrenarium/">Engrenarium web</a>. A montagem abaixo usa a solar como entrada, a anelar como condição controlada e o braço como saída.</div>
+
+    <h2>Dados de montagem</h2>
+    <p>Abra um novo projeto no Engrenarium. No painel de parâmetros, adicione mais uma engrenagem planeta e configure a geometria do conjunto com os seguintes números de dentes:</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Elemento</th>
+          <th>Número de dentes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Solar</td>
+          <td>40</td>
+        </tr>
+        <tr>
+          <td>Planeta 1</td>
+          <td>15</td>
+        </tr>
+        <tr>
+          <td>Planeta 2</td>
+          <td>15</td>
+        </tr>
+        <tr>
+          <td>Anelar</td>
+          <td>100</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Em velocidades angulares, coloque \(10,0\ \mathrm{rpm}\) na solar e \(10,0\ \mathrm{rpm}\) na anelar. Em relação de velocidades, selecione solar como entrada e braço como saída.</p>
+
+    <figure class="article-figure figure-wide">
+      <img src="../../figs/aulas/cvt-marcha-frente-engrenarium.png" alt="Montagem da transmissão CVT no Engrenarium com solar e anelar a 10 rpm">
+      <figcaption>Primeira condição do mecanismo: solar e anelar giram a \(10,0\ \mathrm{rpm}\), resultando em braço a \(10,0\ \mathrm{rpm}\).</figcaption>
+    </figure>
+
+    <h2>Marcha para frente</h2>
+    <p>Nessa primeira condição, o painel de resultados mostra a relação solar/braço igual a \(1,0\). Como a solar e a anelar estão com a mesma velocidade angular, todo o trem acompanha esse movimento: solar, planeta 1, planeta 2, anelar e braço ficam com \(10,0\ \mathrm{rpm}\).</p>
+
+    <div class="equation-box">
+      \[
+      \frac{\omega_S}{\omega_B} = \frac{10,0}{10,0} = 1,0
+      \]
+    </div>
+
+    <p>Depois de conferir o resultado, clique em salvar dados. No painel salvo, renomeie o título para <strong>Câmbio CVT</strong> e a primeira relação para <strong>Marcha para frente</strong>.</p>
+
+    <figure class="article-figure figure-half">
+      <img src="../../figs/aulas/cvt-dados-salvos-engrenarium.png" alt="Painel de dados salvos com o título Câmbio CVT e a relação Marcha para frente">
+      <figcaption>O painel de dados salvos permite guardar as condições de contorno e retornar a elas durante a simulação.</figcaption>
+    </figure>
+
+    <h2>Equação do mecanismo</h2>
+    <p>Para esta montagem, a leitura cinemática pode ser escrita em termos das velocidades relativas ao braço. Usando \(S\) para solar, \(A\) para anelar e \(B\) para braço:</p>
+
+    <div class="equation-box">
+      \[
+      Z_S(\omega_S - \omega_B) = Z_A(\omega_A - \omega_B)
+      \]
+      \[
+      40(\omega_S - \omega_B) = 100(\omega_A - \omega_B)
+      \]
+    </div>
+
+    <p>Quando há movimento relativo entre anelar e braço, a mesma expressão também pode ser lida como:</p>
+
+    <div class="equation-box">
+      \[
+      \frac{\omega_S - \omega_B}{\omega_A - \omega_B}
+      =
+      \frac{100}{40}
+      =
+      2,5
+      \]
+    </div>
+
+    <p>Isolando a velocidade do braço, obtém-se:</p>
+
+    <div class="equation-box">
+      \[
+      \omega_B = \frac{2,5\,\omega_A - \omega_S}{2,5 - 1}
+      \]
+    </div>
+
+    <p>Com \(\omega_S = 10,0\ \mathrm{rpm}\), a anelar passa a funcionar como variável de controle. Se \(\omega_A\) for reduzida continuamente, a velocidade do braço também muda continuamente. Nesse sentido, o exemplo representa o princípio de uma transmissão CVT: a relação de saída não é escolhida apenas por uma engrenagem fixa, mas pela condição de contorno aplicada ao conjunto.</p>
+
+    <h2>Marcha ré</h2>
+    <p>Para montar a segunda condição, mantenha a solar em \(10,0\ \mathrm{rpm}\) e altere a velocidade da anelar para \(0,0\ \mathrm{rpm}\). O Engrenarium passa a mostrar a relação solar/braço igual a aproximadamente \(-1,5\).</p>
+
+    <div class="equation-box">
+      \[
+      \omega_B = \frac{2,5\cdot 0 - 10,0}{1,5} \approx -6,7\ \mathrm{rpm}
+      \]
+      \[
+      \frac{\omega_S}{\omega_B} = \frac{10,0}{-6,7} \approx -1,5
+      \]
+    </div>
+
+    <p>O sinal negativo indica que o braço gira no sentido oposto ao da solar. Os resultados do exemplo são: solar \(10,0\ \mathrm{rpm}\), planeta 1 \(-51,1\ \mathrm{rpm}\), planeta 2 \(37,8\ \mathrm{rpm}\), anelar \(0,0\ \mathrm{rpm}\) e braço \(-6,7\ \mathrm{rpm}\).</p>
+
+    <p>As velocidades dos planetas vêm das relações de contato com a solar e com a anelar:</p>
+
+    <div class="equation-box">
+      \[
+      \omega_{P1} = \omega_B - \frac{Z_S}{Z_{P1}}(\omega_S-\omega_B)
+      \]
+      \[
+      \omega_{P2} = \omega_B + \frac{Z_A}{Z_{P2}}(\omega_A-\omega_B)
+      \]
+    </div>
+
+    <figure class="article-figure figure-wide">
+      <img src="../../figs/aulas/cvt-marcha-re-engrenarium.png" alt="Montagem da transmissão CVT no Engrenarium com anelar travada e braço girando em sentido oposto">
+      <figcaption>Segunda condição do mecanismo: com a anelar em \(0,0\ \mathrm{rpm}\), a saída pelo braço fica negativa, caracterizando a marcha ré.</figcaption>
+    </figure>
+
+    <p>Salve essa segunda condição e renomeie a relação para <strong>Marcha ré</strong>. Ao clicar em <strong>Marcha para frente</strong> ou <strong>Marcha ré</strong>, o Engrenarium restaura as respectivas condições de contorno do mecanismo.</p>
+
+    <h2>Por que o exemplo representa uma CVT</h2>
+    <p>O ponto central não é apenas obter duas marchas. A anelar pode assumir valores intermediários, e cada valor altera a velocidade do braço. Mantendo a solar em \(10,0\ \mathrm{rpm}\), por exemplo, a saída fica nula quando:</p>
+
+    <div class="equation-box">
+      \[
+      0 = \frac{2,5\,\omega_A - 10,0}{1,5}
+      \quad \Rightarrow \quad
+      \omega_A = 4,0\ \mathrm{rpm}
+      \]
+    </div>
+
+    <p>Acima desse valor, o braço gira no mesmo sentido da solar; abaixo dele, gira no sentido oposto. O mecanismo, portanto, permite visualizar transição contínua entre avanço, parada e ré por meio da velocidade imposta à anelar.</p>
+  </article>
+
+  <aside>
+    <div class="sidebar-card">
+      <h3>Resumo da página</h3>
+      <ul class="meta-list">
+        <li>Data: 7 de maio de 2026.</li>
+        <li>Entrada: solar.</li>
+        <li>Saída: braço.</li>
+        <li>Controle: velocidade da anelar.</li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h3>Abrir no Engrenarium</h3>
+      <ul>
+        <li><a href="https://barbudenge.github.io/lasmeufsj/pt-br/engrenarium/">Engrenarium software</a></li>
+        <li><a href="https://barbudenge.github.io/engrenarium/">Engrenarium web</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h3>Continuar estudando</h3>
+      <ul>
+        <li><a href="engrenagens-planetarias.html">Caso geral das planetárias</a></li>
+        <li><a href="aplicacoes-engrenagens-planetarias.html">Aplicações de engrenagens planetárias</a></li>
+        <li><a href="index.html">Índice de artigos</a></li>
+      </ul>
+    </div>
+  </aside>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Barbudenge · <a href="../index.html">Página inicial</a> · <a href="../sobre.html">Sobre</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
