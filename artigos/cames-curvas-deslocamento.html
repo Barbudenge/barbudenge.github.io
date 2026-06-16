@@ -3,17 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Displacement curves in cams | Barbudenge</title>
-  <meta name="description" content="Article about displacement curves in cams: rest, constant speed, cycloidal, harmonic, polynomial movement and continuity of speed and acceleration." />
+  <title>Displacement curves for cam design | Barbudenge</title>
+  <meta name="description" content="Article on displacement curves for cam design: SVAJ, dwell, constant velocity, cycloidal motion, harmonic motion and eighth-degree polynomial motion." />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Artur Henrique de Freitas Avelar" />
   <meta name="google-adsense-account" content="ca-pub-5777194849710689" />
   <link rel="canonical" href="https://barbudenge.github.io/artigos/cames-curvas-deslocamento.html" />
 
-  <meta property="og:title" content="Displacement curves in cams" />
-  <meta property="og:description" content="How to choose laws of motion for ascent, return, rest and constant speed sections in cams." />
+  <meta property="og:title" content="Displacement curves for cam design" />
+  <meta property="og:description" content="How to specify the follower SVAJ curve before generating the physical cam profile." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://barbudenge.github.io/artigos/cames-curvas-deslocamento.html" />
+  <meta property="article:published_time" content="2026-06-16" />
+  <meta property="article:modified_time" content="2026-06-16" />
 
   <script>
     window.MathJax = { tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] }, svg: { fontCache: 'global' } };
@@ -51,11 +53,11 @@
 <section class="hero">
   <div class="container">
     <span class="eyebrow">Technical article</span>
-    <h1>Displacement curves in cams</h1>
-    <p>The displacement curve is the specification of the movement that the cam should impose. It defines not only position, but also speed, acceleration and smoothness of the cycle.</p>
+    <h1>Displacement curves for cam design</h1>
+    <p>Before drawing the physical cam profile, the designer must define the follower motion law. The displacement curve is that specification: it organizes rise, dwell, return and dynamic smoothness over the cycle.</p>
     <div class="byline">
       <span>By Artur Henrique de Freitas Avelar</span>
-      <span>Updated May 2026</span>
+      <time datetime="2026-06-16">Published June 16, 2026</time>
       <span>Category: cams</span>
     </div>
   </div>
@@ -63,73 +65,130 @@
 
 <main class="container article-layout">
   <article class="article-body">
-    <p class="lead">In cam synthesis, the physical contour is constructed from a movement curve. This curve informs how much the follower moves for each angle of the cam, and its derivatives inform the speed, acceleration and associated jerks.</p>
+    <p class="lead">In cam synthesis, the initial question is not what the cam radius will be, but what motion the follower must execute during rotation. The answer appears in the curve \(S(\theta)\), which gives follower displacement as a function of cam angle and makes it possible to calculate velocity, acceleration and jerk.</p>
 
-    <h2>Displacement, speed and acceleration</h2>
-    <p>If \(S(\theta)\) is the displacement of the follower, the speed relative to the rotation of the cam depends on \(dS/d\theta\), and the acceleration depends on \(d^2S/d\theta^2\). In a real machine, these derivatives matter because inertial forces, vibration, and contact are directly affected by the shape of the curve.</p>
+    <h2>From machine operation to \(S(\theta)\)</h2>
+    <p>A cam usually has to transform continuous rotation into a sequence of actions: lifting a part, holding a position, returning, actuating a tool or synchronizing a transfer. That sequence is translated into motion intervals. Each interval occupies an angular span \(\beta\), moves the follower by a lift \(L\), and must connect correctly to the preceding and following intervals.</p>
+
+    <figure class="article-figure figure-wide">
+      <img src="../figs/aulas/cames-curva-deslocamento.png" alt="Cam displacement curve with rise, dwell and return">
+      <figcaption>Example of a displacement curve with rise, dwell and return. The horizontal axis represents cam angle, and the vertical axis represents follower displacement.</figcaption>
+    </figure>
+
+    <p>After the displacement curve is selected, its derivatives indicate the dynamic quality of the motion. For constant cam angular velocity, the real follower velocity is proportional to \(dS/d\theta\), and the real follower acceleration is proportional to \(d^2S/d\theta^2\).</p>
 
     <div class="equation-box">
       \[
-      S(\theta) \quad \rightarrow \quad \frac{dS}{d\theta} \quad \rightarrow \quad \frac{d^2S}{d\theta^2}
+      v_\theta=\frac{dS}{d\theta}, \qquad
+      a_\theta=\frac{d^2S}{d\theta^2}, \qquad
+      j_\theta=\frac{d^3S}{d\theta^3}
       \]
     </div>
 
-    <p>A curve that appears acceptable on the displacement graph may produce sudden changes in speed or acceleration. That's why the design methods check the combination of displacement, speed, acceleration and, in more demanding applications, jerk.</p>
+    <p>For this reason, acceptable displacement curves are evaluated as SVAJ functions, or EVAP in some Portuguese references: displacement, velocity, acceleration and jerk. It is not enough for \(S(\theta)\) to look smooth. Velocity and acceleration must also be compatible at the junction points.</p>
+
+    <h2>Boundary conditions</h2>
+    <p>The reference slides emphasize an important design rule: match velocity and acceleration at the beginning and end of each interval. This avoids jumps between consecutive motions. When the follower leaves a dwell, for example, the next interval should begin with \(v=0\) and, in smoother designs, also with \(a=0\).</p>
+
+    <p>The same care applies during return. If a descending curve ends in a dwell, the final velocity must be zero. If acceleration is incompatible, the cam may still impose an abrupt force change, causing vibration, noise, loss of contact or wear.</p>
+
+    <div class="note">The curve is chosen for the complete cycle, not for an isolated interval. A motion can be mathematically correct and still be unsuitable if it does not match what comes before and after it.</div>
 
     <h2>Dwell and constant velocity</h2>
-    <p>Dwell intervals have constant displacement, zero speed and zero acceleration. They are useful when the machine needs to wait for an operation: filling, pressing, cutting, inspection or transfer.</p>
+    <p>A dwell interval keeps the follower at a fixed position for part of the rotation. It is used when the machine must wait for an operation: pressing, cutting, filling, inspection, closing or transfer. In the simplest case, displacement is constant and its derivatives are zero.</p>
 
-    <p>Constant speed sections seem simple, but they cannot be connected directly to dwells without transition. Going from zero speed to constant speed would instantly imply infinite acceleration in the ideal model. In practice, it is necessary to use transition curves before and after them.</p>
+    <div class="equation-box">
+      \[
+      \text{dwell:}\quad S=S_0,\qquad \frac{dS}{d\theta}=0,\qquad \frac{d^2S}{d\theta^2}=0
+      \]
+      \[
+      \text{constant velocity:}\quad S=S_0+\frac{L}{\beta}(\theta-\theta_0),\qquad
+      \frac{dS}{d\theta}=\frac{L}{\beta},\qquad
+      \frac{d^2S}{d\theta^2}=0
+      \]
+    </div>
 
-    <figure class="article-figure">
-      <img src="../figs/aulas/cames-curva-deslocamento.png" alt="Displacement curve from cam with ascent, stop and descent">
-      <figcaption>A complete displacement curve combines rise, dwell, and return sections. Each section needs to connect to the next with coherent conditions.</figcaption>
+    <figure class="article-figure figure-wide">
+      <img src="../figs/aulas/cames-parada-velocidade-constante.png" alt="SVA diagrams for dwell and constant velocity in cams">
+      <figcaption>SVA representation of dwell and constant velocity. A direct connection between these cases is not smooth because velocity jumps from zero to a finite value.</figcaption>
     </figure>
 
-    <h2>Cycloidal motion</h2>
-    <p>Cycloidal movement is widely used because it can start and end with zero speed and acceleration over a complete stretch. This facilitates connecting with dwells and reduces severe discontinuities. It is especially useful in cycles with rise, dwell, return, and dwell again.</p>
+    <p>Constant velocity is useful when uniform advance is desired, but it should not be connected directly to a dwell. The instantaneous jump from \(v=0\) to \(v=L/\beta\) would correspond, in the ideal model, to infinite acceleration. In practice, a transition curve is used before and after the linear interval.</p>
 
-    <p>When the design requires a smooth transition between dwell and motion, full or partial cycloidal curves are often good candidates. The choice depends on the previous and subsequent section.</p>
+    <h2>Cycloidal motion and half-cycloid</h2>
+    <p>Cycloidal motion is one of the classic choices for connecting dwell and motion with good smoothness. For a full rise of height \(L\) over the angle \(\beta\), using \(u=\theta/\beta\), a common expression is:</p>
 
-    <figure class="article-figure">
-      <img src="../figs/aulas/cames-svaj-cicloidal.png" alt="Displacement, velocity, acceleration and jerk graphs for cycloidal motion of cam">
-      <figcaption>The SVAJ reading shows why the choice of curve should not only consider displacement. Speed, acceleration and jerk reveal the smoothness of the cycle.</figcaption>
+    <div class="equation-box">
+      \[
+      S=L\left(u-\frac{\sin 2\pi u}{2\pi}\right),\qquad
+      \frac{dS}{d\theta}=\frac{L}{\beta}(1-\cos 2\pi u),\qquad
+      \frac{d^2S}{d\theta^2}=\frac{2\pi L}{\beta^2}\sin 2\pi u
+      \]
+    </div>
+
+    <p>This law starts and ends with zero velocity and zero acceleration, which makes it easy to connect to dwells. Half-cycloid variants are useful when the interval only needs to start or only needs to end with selected velocity and acceleration conditions.</p>
+
+    <figure class="article-figure figure-wide">
+      <img src="../figs/aulas/cames-familia-cicloidal.png" alt="Family of cycloidal curves for displacement, velocity and acceleration in cams">
+      <figcaption>Family of cycloidal intervals from the slides: different combinations of rise, return and half-cycloid used to adjust boundary conditions.</figcaption>
     </figure>
 
-    <h2>Harmonic movement</h2>
-    <p>Simple harmonic motion also appears frequently in introductory courses. It has a clear geometric interpretation and allows you to construct rise or return sections with compact equations. In some connections, however, the acceleration at the beginning or end may not match the neighboring section.</p>
+    <h2>Simple harmonic motion</h2>
+    <p>Simple harmonic motion is also common in introductory cam design because it has a simple geometric construction and compact equations. For a rise from \(0\) to \(L\), a usual expression is:</p>
 
-    <p>Therefore, it is not enough to choose "harmonic" because the curve is known. It is necessary to check whether the speed and acceleration conditions at the connection points are compatible with the remainder of the cycle.</p>
+    <div class="equation-box">
+      \[
+      S=\frac{L}{2}(1-\cos \pi u),\qquad
+      \frac{dS}{d\theta}=\frac{\pi L}{2\beta}\sin \pi u,\qquad
+      \frac{d^2S}{d\theta^2}=\frac{\pi^2 L}{2\beta^2}\cos \pi u
+      \]
+    </div>
+
+    <p>Velocity is zero at the endpoints, but acceleration is not zero at the beginning and end of the full rise. This does not make the motion useless, but it requires attention: it can be adequate when the neighboring curve accepts that acceleration, or when half-harmonic intervals are used to control the transition.</p>
+
+    <figure class="article-figure figure-wide">
+      <img src="../figs/aulas/cames-familia-harmonica.png" alt="Family of harmonic curves for displacement, velocity and acceleration in cams">
+      <figcaption>Simple harmonic and half-harmonic intervals. The selection depends on the velocity and acceleration conditions required at each endpoint.</figcaption>
+    </figure>
 
     <h2>Eighth-degree polynomial</h2>
-    <p>Higher-order polynomial curves allow you to control more boundary conditions. The eighth degree polynomial appears as an alternative when you want to adjust displacement, speed and acceleration at specific points, including with asymmetric behavior.</p>
+    <p>Polynomial curves are used when the designer needs to impose several boundary conditions. In normalized form, one may write:</p>
 
-    <p>The advantage is flexibility. The disadvantage is that the result may lose geometric intuition and needs to be checked carefully, especially on acceleration and curvature.</p>
+    <div class="equation-box">
+      \[
+      S=L(a_0+a_1u+a_2u^2+\cdots+a_8u^8), \qquad 0\le u\le 1
+      \]
+    </div>
 
-    <div class="note">An acceptable displacement curve is one that connects well to what comes before and after. The isolated section can be beautiful and still be unsuitable for the complete cycle.</div>
+    <p>The coefficients \(a_i\) are obtained from the desired displacement, velocity, acceleration and, when needed, additional constraints. The advantage of the eighth degree is flexibility. The disadvantage is that the result must be checked carefully, because the curve may produce acceleration or curvature peaks that are not intuitive.</p>
 
-    <h2>Conceptual example: double dwell</h2>
-    <p>Consider a filling mechanism in which a can must wait, advance to the filling position, remain stationary during the process, and return. This cycle naturally calls for two dwells and two motion intervals. A pure linear trial generates abrupt transitions. A better solution uses gentle curves to move forward and return, interspersed with dwell intervals.</p>
-
-    <p>This example shows the function of synthesis: transforming an operational sequence into a \(S(\theta)\) curve that respects displacement, time, smoothness and geometric feasibility.</p>
+    <figure class="article-figure figure-wide">
+      <img src="../figs/aulas/cames-polinomial-8-grau.png" alt="Eighth-degree polynomial curves for cam rise and return">
+      <figcaption>Examples of eighth-degree polynomial intervals for rise and return. The polynomial can fit more conditions, but it requires later verification.</figcaption>
+    </figure>
 
     <h2>Practical selection criteria</h2>
+    <p>In practice, the motion law must be chosen before calculating the cam profile, but already with the resulting profile in mind. A curve with large slopes increases follower velocity and may increase pressure angle. Acceleration peaks increase inertial force. Poorly connected transitions increase jerk and vibration.</p>
+
     <ul>
-      <li>use dwell when the machine needs to keep follower stopped;</li>
-      <li>avoid connecting a constant-velocity segment directly to a dwell;</li>
-      <li>prefer curves with compatible speed and acceleration at the junction points;</li>
-      <li>check whether speed and acceleration peaks are acceptable;</li>
-      <li>then evaluate the pressure angle and the resulting profile curvature.</li>
+      <li>first organize the cycle into intervals: rise, dwell, return and additional dwells;</li>
+      <li>assign each interval its angular span \(\beta\) and lift \(L\);</li>
+      <li>choose a motion law compatible with the start and end conditions;</li>
+      <li>check velocity, acceleration and jerk, not only displacement;</li>
+      <li>only then evaluate base radius, pressure angle, curvature and cusp risk in the profile.</li>
     </ul>
+
+    <p>Thus, the displacement curve works as a motion contract. The physical cam only materializes that contract as manufacturable geometry.</p>
   </article>
 
   <aside>
     <div class="sidebar-card">
       <h3>Page summary</h3>
       <ul class="meta-list">
-        <li>The displacement curve defines position, velocity and acceleration.</li>
-        <li>Dwell and constant velocity require compatible transitions.</li>
-        <li>Cycloidal, harmonic and polynomial meet different conditions.</li>
+        <li>Published June 16, 2026.</li>
+        <li>Based on slides 31 to 36 from the introductory cam lecture.</li>
+        <li>Compares dwell, constant velocity, cycloidal, harmonic and eighth-degree polynomial motion.</li>
+        <li>Shows why velocity and acceleration must be compatible at junctions.</li>
       </ul>
     </div>
     <div class="sidebar-card">
