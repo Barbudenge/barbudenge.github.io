@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Powertrain: new LASME teaching tool | Barbudenge</title>
+  <meta name="description" content="Technical article introducing Interactive Powertrain, a LASME teaching tool for visualizing engine, gearbox, differential and wheel speeds, with a worked example in straight-line motion and in a turn." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Artur Henrique de Freitas Avelar" />
+  <meta name="google-adsense-account" content="ca-pub-5777194849710689" />
+  <link rel="canonical" href="https://barbudenge.github.io/artigos/powertrain-interativo.html" />
+
+  <meta property="og:title" content="Interactive Powertrain: new LASME teaching tool" />
+  <meta property="og:description" content="A worked example showing how Interactive Powertrain relates vehicle speed, engine speed, gearbox reduction, differential reduction and wheel speeds." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://barbudenge.github.io/artigos/powertrain-interativo.html" />
+
+  <script>
+    window.MathJax = { tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] }, svg: { fontCache: 'global' } };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5777194849710689" crossorigin="anonymous"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="artigo.css" />
+  <link rel="alternate" hreflang="en" href="https://barbudenge.github.io/artigos/powertrain-interativo.html" />
+  <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/powertrain-interativo.html" />
+  <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/powertrain-interativo.html" />
+  <link rel="stylesheet" href="../language-switch.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container topbar">
+    <a href="../index.html" style="text-decoration:none;"><div class="brand">Barbu<span>denge</span></div></a>
+    <nav aria-label="Main navigation">
+      <a href="../index.html">Home</a>
+      <a href="index.html">Articles</a>
+      <a href="../engrenarium.html">Engrenarium</a>
+      <a href="../sobre.html">About</a>
+    </nav>
+    <div class="language-switch" role="group" aria-label="Language">
+      <a class="language-switch__option" href="/pt-br/artigos/powertrain-interativo.html" lang="pt-BR" hreflang="pt-BR">PT</a>
+      <a class="language-switch__option is-active" href="/artigos/powertrain-interativo.html" lang="en" hreflang="en" aria-current="page">EN</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow">Technical article</span>
+    <h1>Interactive Powertrain: new LASME teaching tool</h1>
+    <p>The page connects the driver's panel to the mechanical path of a vehicle, showing how engine rotation passes through the gearbox, differential and wheels.</p>
+    <div class="byline">
+      <span>By Artur Henrique de Freitas Avelar</span>
+      <time datetime="2026-06-25">June 25, 2026</time>
+      <span>Category: teaching tools and transmissions</span>
+    </div>
+  </div>
+</section>
+
+<main class="container article-layout">
+  <article class="article-body">
+    <p class="lead">The Mechanical Systems Laboratory (LASME) now has a new didactic resource: <strong>Interactive Powertrain</strong>. The tool lets the user change vehicle speed, selected gear, differential ratio, wheel diameter, track width and path, then observes the resulting angular speeds along the powertrain.</p>
+
+    <figure class="article-figure figure-wide">
+      <img src="../figs/aulas/power1.png" alt="Interactive Powertrain interface with cockpit, gearbox, differential, car diagram and calculated speeds">
+      <figcaption>Interactive Powertrain presents the driver panel, the mechanical path and the calculated speeds in the same screen.</figcaption>
+    </figure>
+
+    <p>The tool can be accessed from the LASME page in two languages: <a href="https://barbudenge.github.io/lasmeufsj/powertrain/">Interactive Powertrain in English</a> and <a href="https://barbudenge.github.io/lasmeufsj/powertrain/pt-br">Powertrain Interativo in Portuguese</a>. Its main value is to make the transmission path visible: engine, gearbox, differential and wheels are shown together, while the numerical panel reports engine speed, countershaft speed, gearbox output speed, final-drive output speed and wheel speeds.</p>
+
+    <p>The following example reproduces the values shown by the page and allows the reader to verify each step by hand. The chosen configuration is the <strong>City 5-speed</strong> transmission, first gear, final-drive ratio \(2.9\), SUV wheel with diameter \(72\ \mathrm{cm}\), track width \(L = 1.3\ \mathrm{m}\), vehicle speed \(20.0\ \mathrm{km/h}\) and straight-line motion.</p>
+
+    <figure class="article-figure figure-half">
+      <img src="../figs/aulas/power2.png" alt="Driver panel configured with City 5-speed gearbox, first gear, SUV wheel and straight-line motion">
+      <figcaption>Initial configuration of the example: \(20.0\ \mathrm{km/h}\), first gear and \(1517\ \mathrm{rpm}\) on the tachometer.</figcaption>
+    </figure>
+
+    <h2>Gearbox calculation</h2>
+    <p>For the selected condition, the engine shaft enters the gearbox at approximately \(1517\ \mathrm{rpm}\). In first gear, the engaged path shown by the schematic is \(1 \rightarrow 8 \rightarrow 9 \rightarrow 2\). The tooth counts indicated in the figure are \(N_1 = 29\), \(N_8 = 50\), \(N_9 = 17\) and \(N_2 = 35\).</p>
+
+    <figure class="article-figure figure-wide">
+      <img src="../figs/aulas/power3.png" alt="Gearbox schematic highlighting gears 1, 8, 9 and 2 in first gear">
+      <figcaption>The first-gear path combines the fixed input pair \(1\)-\(8\) with the selected pair \(9\)-\(2\).</figcaption>
+    </figure>
+
+    <p>The gearbox reduction follows the compound gear-train relation:</p>
+
+    <div class="equation-box">
+      \[
+      i_1 =
+      \frac{\omega_{\mathrm{engine}}}{\omega_{\mathrm{gearbox}}}
+      =
+      \frac{N_8 N_2}{N_1 N_9}
+      =
+      \frac{50\cdot 35}{29\cdot 17}
+      =
+      3.55
+      \]
+    </div>
+
+    <p>The countershaft speed is negative because it rotates in the opposite direction to the engine input gear. Its magnitude is obtained from the first pair:</p>
+
+    <div class="equation-box">
+      \[
+      \omega_{\mathrm{countershaft}}
+      =
+      -1517\frac{29}{50}
+      =
+      -879.9\ \mathrm{rpm}
+      \]
+    </div>
+
+    <p>At the gearbox output, the speed is reduced by the first-gear ratio:</p>
+
+    <div class="equation-box">
+      \[
+      \omega_{\mathrm{gearbox}}
+      =
+      \frac{1517}{3.55}
+      =
+      427.4\ \mathrm{rpm}
+      \]
+    </div>
+
+    <h2>Differential and wheels</h2>
+    <p>After leaving the gearbox, the motion passes through the differential. The example uses a final-drive ratio of \(2.9\), so the average wheel speed just after this reduction is:</p>
+
+    <figure class="article-figure figure-half">
+      <img src="../figs/aulas/power4.png" alt="Differential schematic transmitting motion to the left and right rear wheels">
+      <figcaption>The differential applies the final reduction and distributes motion to the two rear wheels.</figcaption>
+    </figure>
+
+    <div class="equation-box">
+      \[
+      \omega_{\mathrm{wheel,avg}}
+      =
+      \frac{427.4}{2.9}
+      =
+      147.4\ \mathrm{rpm}
+      \]
+    </div>
+
+    <p>In straight-line motion, the left and right rear wheels have the same angular speed. Converting \(147.4\ \mathrm{rpm}\) to radians per second:</p>
+
+    <div class="equation-box">
+      \[
+      \omega_{\mathrm{wheel}}
+      =
+      147.4\frac{2\pi}{60}
+      =
+      15.44\ \mathrm{rad/s}
+      \]
+    </div>
+
+    <p>The wheel radius is \(0.72/2 = 0.36\ \mathrm{m}\). Therefore, the linear speed of the wheel, and consequently of the vehicle, is:</p>
+
+    <div class="equation-box">
+      \[
+      V
+      =
+      \omega_{\mathrm{wheel}}R_{\mathrm{wheel}}
+      =
+      15.44(0.36)
+      =
+      5.56\ \mathrm{m/s}
+      \]
+      \[
+      V
+      =
+      5.56\frac{3600}{1000}
+      =
+      20.0\ \mathrm{km/h}
+      \]
+    </div>
+
+    <figure class="article-figure figure-half">
+      <img src="../figs/aulas/power5.png" alt="Calculated speed panel showing engine at 1517 rpm, gearbox output at 427.4 rpm and both wheels at 147.4 rpm">
+      <figcaption>The values obtained by calculation match the values displayed by Interactive Powertrain for straight-line motion.</figcaption>
+    </figure>
+
+    <h2>Same vehicle in a turn</h2>
+    <p>Now keep the same vehicle speed, same gear, same wheel diameter and same final-drive ratio, but change the path to a curve with radius \(R_c = 25\ \mathrm{m}\). For a left turn, the left wheel is the inner wheel and the right wheel is the outer wheel.</p>
+
+    <figure class="article-figure figure-half">
+      <img src="../figs/aulas/power6.png" alt="Top view of the vehicle following a curved path with track width L">
+      <figcaption>In a turn, the two rear wheels travel along paths with different radii.</figcaption>
+    </figure>
+
+    <p>The angular speed of the vehicle around the center of the curve is:</p>
+
+    <div class="equation-box">
+      \[
+      \Omega_{\mathrm{vehicle}}
+      =
+      \frac{V}{R_c}
+      =
+      \frac{V}{25}
+      =
+      0.04V
+      \]
+    </div>
+
+    <p>With \(L = 1.3\ \mathrm{m}\), the distances from the curve center to the left and right wheels are:</p>
+
+    <div class="equation-box">
+      \[
+      R_L = 25-\frac{1.3}{2} = 24.35\ \mathrm{m}
+      \]
+      \[
+      R_R = 25+\frac{1.3}{2} = 25.65\ \mathrm{m}
+      \]
+    </div>
+
+    <p>The linear speeds of the two wheels are therefore proportional to the radius of each path:</p>
+
+    <div class="equation-box">
+      \[
+      V_L
+      =
+      \Omega_{\mathrm{vehicle}}R_L
+      =
+      0.04V(24.35)
+      =
+      0.974V
+      \]
+      \[
+      V_R
+      =
+      \Omega_{\mathrm{vehicle}}R_R
+      =
+      0.04V(25.65)
+      =
+      1.026V
+      \]
+    </div>
+
+    <p>Dividing each linear speed by the wheel radius gives the angular speed of each rear wheel:</p>
+
+    <div class="equation-box">
+      \[
+      \omega_L
+      =
+      \frac{V_L}{R_{\mathrm{wheel}}}
+      =
+      \frac{0.974V}{0.36}
+      =
+      2.706V
+      \]
+      \[
+      \omega_R
+      =
+      \frac{V_R}{R_{\mathrm{wheel}}}
+      =
+      \frac{1.026V}{0.36}
+      =
+      2.850V
+      \]
+    </div>
+
+    <p>The differential receives the average angular speed of the two rear wheels. From the straight-line calculation, the average is already known: \(147.4\ \mathrm{rpm} = 15.44\ \mathrm{rad/s}\). Thus:</p>
+
+    <div class="equation-box">
+      \[
+      15.44
+      =
+      \frac{\omega_L+\omega_R}{2}
+      =
+      \frac{2.706V+2.850V}{2}
+      \]
+      \[
+      V = 5.56\ \mathrm{m/s}
+      =
+      20.0\ \mathrm{km/h}
+      \]
+    </div>
+
+    <p>With the vehicle speed known, the wheel speeds can be checked:</p>
+
+    <div class="equation-box">
+      \[
+      \omega_L = 2.706(5.56) = 15.04\ \mathrm{rad/s} \approx 143.5\ \mathrm{rpm}
+      \]
+      \[
+      \omega_R = 2.850(5.56) = 15.85\ \mathrm{rad/s} \approx 151.2\ \mathrm{rpm}
+      \]
+    </div>
+
+    <figure class="article-figure figure-half">
+      <img src="../figs/aulas/power7.png" alt="Calculated speed panel in a turn showing left wheel at 143.5 rpm and right wheel at 151.2 rpm">
+      <figcaption>In the turn, the differential keeps the average wheel speed while allowing different speeds at the left and right wheels.</figcaption>
+    </figure>
+
+    <p>The example shows how Interactive Powertrain can be used as a bridge between the visual simulator and the equations of mechanical transmissions. The page does not only report a final vehicle speed; it exposes the intermediate speeds that explain how the result is formed from the engine to the ground contact.</p>
+  </article>
+
+  <aside>
+    <div class="sidebar-card">
+      <h3>Page summary</h3>
+      <ul class="meta-list">
+        <li>Date: June 25, 2026.</li>
+        <li>Tool: Interactive Powertrain.</li>
+        <li>Example: City 5-speed, first gear.</li>
+        <li>Wheel: SUV, \(72\ \mathrm{cm}\) diameter.</li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h3>Open the tool</h3>
+      <ul>
+        <li><a href="https://barbudenge.github.io/lasmeufsj/powertrain/">Interactive Powertrain</a></li>
+        <li><a href="https://barbudenge.github.io/lasmeufsj/powertrain/pt-br">Portuguese version</a></li>
+        <li><a href="https://barbudenge.github.io/lasmeufsj/">LASME/UFSJ</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h3>Continue studying</h3>
+      <ul>
+        <li><a href="cambio-manual-trens-engrenagens.html">Manual transmission as a gear train</a></li>
+        <li><a href="trens-engrenagens-simples-compostos.html">Simple and compound gear trains</a></li>
+        <li><a href="planetarias-compostas-diferenciais.html">Compound planetary gear sets and differentials</a></li>
+        <li><a href="index.html">Article index</a></li>
+      </ul>
+    </div>
+  </aside>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Barbudenge · <a href="../index.html">Home page</a> · <a href="../sobre.html">About</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

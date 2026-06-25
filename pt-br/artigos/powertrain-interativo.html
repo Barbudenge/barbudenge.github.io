@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Powertrain Interativo: nova ferramenta didática do LASME | Barbudenge</title>
+  <meta name="description" content="Artigo técnico apresentando o Powertrain Interativo, ferramenta didática do LASME para visualizar velocidades no motor, câmbio, diferencial e rodas, com exemplo em reta e em curva." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Artur Henrique de Freitas Avelar" />
+  <meta name="google-adsense-account" content="ca-pub-5777194849710689" />
+  <link rel="canonical" href="https://barbudenge.github.io/pt-br/artigos/powertrain-interativo.html" />
+
+  <meta property="og:title" content="Powertrain Interativo: nova ferramenta didática do LASME" />
+  <meta property="og:description" content="Exemplo calculado mostrando como o Powertrain Interativo relaciona velocidade do veículo, rotação do motor, redução do câmbio, diferencial e rodas." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://barbudenge.github.io/pt-br/artigos/powertrain-interativo.html" />
+
+  <script>
+    window.MathJax = { tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] }, svg: { fontCache: 'global' } };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5777194849710689" crossorigin="anonymous"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="artigo.css" />
+  <link rel="alternate" hreflang="en" href="https://barbudenge.github.io/artigos/powertrain-interativo.html" />
+  <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/powertrain-interativo.html" />
+  <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/powertrain-interativo.html" />
+  <link rel="stylesheet" href="../../language-switch.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container topbar">
+    <a href="../index.html" style="text-decoration:none;"><div class="brand">Barbu<span>denge</span></div></a>
+    <nav aria-label="Navegação principal">
+      <a href="../index.html">Início</a>
+      <a href="index.html">Artigos</a>
+      <a href="../engrenarium.html">Engrenarium</a>
+      <a href="../sobre.html">Sobre</a>
+    </nav>
+    <div class="language-switch" role="group" aria-label="Idioma">
+      <a class="language-switch__option is-active" href="/pt-br/artigos/powertrain-interativo.html" lang="pt-BR" hreflang="pt-BR" aria-current="page">PT</a>
+      <a class="language-switch__option" href="/artigos/powertrain-interativo.html" lang="en" hreflang="en">EN</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow">Artigo técnico</span>
+    <h1>Powertrain Interativo: nova ferramenta didática do LASME</h1>
+    <p>A página conecta o painel do motorista ao caminho mecânico de um veículo, mostrando como a rotação do motor passa pelo câmbio, diferencial e rodas.</p>
+    <div class="byline">
+      <span>Por Artur Henrique de Freitas Avelar</span>
+      <time datetime="2026-06-25">25 de junho de 2026</time>
+      <span>Categoria: ferramentas didáticas e transmissões</span>
+    </div>
+  </div>
+</section>
+
+<main class="container article-layout">
+  <article class="article-body">
+    <p class="lead">O Laboratório de Sistemas Mecânicos (LASME) possui agora um novo recurso didático: o <strong>Powertrain Interativo</strong>. A ferramenta permite alterar a velocidade do veículo, a marcha selecionada, a relação do diferencial, o diâmetro da roda, a bitola e a trajetória, observando as velocidades angulares resultantes ao longo do sistema de transmissão.</p>
+
+    <figure class="article-figure figure-wide">
+      <img src="../../figs/aulas/power1.png" alt="Interface do Powertrain Interativo com painel, câmbio, diferencial, carro e velocidades calculadas">
+      <figcaption>O Powertrain Interativo apresenta, na mesma tela, o painel do motorista, o caminho mecânico e as velocidades calculadas.</figcaption>
+    </figure>
+
+    <p>A ferramenta pode ser acessada pela página do LASME em dois idiomas: <a href="https://barbudenge.github.io/lasmeufsj/powertrain/">Interactive Powertrain em inglês</a> e <a href="https://barbudenge.github.io/lasmeufsj/powertrain/pt-br">Powertrain Interativo em português</a>. Seu principal valor é tornar visível o caminho da transmissão: motor, câmbio, diferencial e rodas aparecem em conjunto, enquanto o painel numérico informa rotação do motor, rotação do eixo intermediário, saída do câmbio, saída após o diferencial e velocidade de cada roda.</p>
+
+    <p>O exemplo a seguir reproduz os valores mostrados pela página e permite que o leitor verifique cada etapa manualmente. A configuração escolhida é o câmbio <strong>Urbano 5 marchas</strong>, primeira marcha, relação do diferencial \(2{,}9\), roda SUV com diâmetro \(72\ \mathrm{cm}\), bitola \(L = 1{,}3\ \mathrm{m}\), velocidade do veículo \(20{,}0\ \mathrm{km/h}\) e movimento em linha reta.</p>
+
+    <figure class="article-figure figure-half">
+      <img src="../../figs/aulas/power2.png" alt="Painel do motorista configurado com câmbio Urbano 5 marchas, primeira marcha, roda SUV e trajetória reta">
+      <figcaption>Configuração inicial do exemplo: \(20{,}0\ \mathrm{km/h}\), primeira marcha e \(1517\ \mathrm{rpm}\) no tacômetro.</figcaption>
+    </figure>
+
+    <h2>Cálculo no câmbio</h2>
+    <p>Para a condição selecionada, o eixo do motor entra no câmbio com aproximadamente \(1517\ \mathrm{rpm}\). Na primeira marcha, o caminho engrenado mostrado pelo esquema é \(1 \rightarrow 8 \rightarrow 9 \rightarrow 2\). Os números de dentes indicados na figura são \(N_1 = 29\), \(N_8 = 50\), \(N_9 = 17\) e \(N_2 = 35\).</p>
+
+    <figure class="article-figure figure-wide">
+      <img src="../../figs/aulas/power3.png" alt="Esquema do câmbio destacando as engrenagens 1, 8, 9 e 2 na primeira marcha">
+      <figcaption>O caminho da primeira marcha combina o par fixo de entrada \(1\)-\(8\) com o par selecionado \(9\)-\(2\).</figcaption>
+    </figure>
+
+    <p>A redução do câmbio segue a relação de um trem de engrenagens composto:</p>
+
+    <div class="equation-box">
+      \[
+      i_1 =
+      \frac{\omega_{\mathrm{motor}}}{\omega_{\mathrm{cambio}}}
+      =
+      \frac{N_8 N_2}{N_1 N_9}
+      =
+      \frac{50\cdot 35}{29\cdot 17}
+      =
+      3{,}55
+      \]
+    </div>
+
+    <p>A rotação do eixo intermediário é negativa porque ele gira no sentido oposto ao da engrenagem de entrada do motor. Seu valor vem do primeiro par:</p>
+
+    <div class="equation-box">
+      \[
+      \omega_{\mathrm{intermediario}}
+      =
+      -1517\frac{29}{50}
+      =
+      -879{,}9\ \mathrm{rpm}
+      \]
+    </div>
+
+    <p>Na saída do câmbio, a velocidade é reduzida pela relação da primeira marcha:</p>
+
+    <div class="equation-box">
+      \[
+      \omega_{\mathrm{cambio}}
+      =
+      \frac{1517}{3{,}55}
+      =
+      427{,}4\ \mathrm{rpm}
+      \]
+    </div>
+
+    <h2>Diferencial e rodas</h2>
+    <p>Depois de sair do câmbio, o movimento segue para o diferencial. O exemplo usa uma relação final de \(2{,}9\), logo a velocidade média das rodas, após essa redução, é:</p>
+
+    <figure class="article-figure figure-half">
+      <img src="../../figs/aulas/power4.png" alt="Esquema do diferencial transmitindo movimento para as rodas traseiras esquerda e direita">
+      <figcaption>O diferencial aplica a redução final e distribui o movimento para as duas rodas traseiras.</figcaption>
+    </figure>
+
+    <div class="equation-box">
+      \[
+      \omega_{\mathrm{roda,med}}
+      =
+      \frac{427{,}4}{2{,}9}
+      =
+      147{,}4\ \mathrm{rpm}
+      \]
+    </div>
+
+    <p>Em linha reta, as rodas traseiras esquerda e direita têm a mesma velocidade angular. Convertendo \(147{,}4\ \mathrm{rpm}\) para radianos por segundo:</p>
+
+    <div class="equation-box">
+      \[
+      \omega_{\mathrm{roda}}
+      =
+      147{,}4\frac{2\pi}{60}
+      =
+      15{,}44\ \mathrm{rad/s}
+      \]
+    </div>
+
+    <p>O raio da roda vale \(0{,}72/2 = 0{,}36\ \mathrm{m}\). Portanto, a velocidade linear da roda, e consequentemente do veículo, é:</p>
+
+    <div class="equation-box">
+      \[
+      V
+      =
+      \omega_{\mathrm{roda}}R_{\mathrm{roda}}
+      =
+      15{,}44(0{,}36)
+      =
+      5{,}56\ \mathrm{m/s}
+      \]
+      \[
+      V
+      =
+      5{,}56\frac{3600}{1000}
+      =
+      20{,}0\ \mathrm{km/h}
+      \]
+    </div>
+
+    <figure class="article-figure figure-half">
+      <img src="../../figs/aulas/power5.png" alt="Painel de velocidades calculadas mostrando motor a 1517 rpm, saída do câmbio a 427,4 rpm e rodas a 147,4 rpm">
+      <figcaption>Os valores obtidos pelo cálculo coincidem com os valores mostrados pelo Powertrain Interativo para o movimento em linha reta.</figcaption>
+    </figure>
+
+    <h2>Mesmo veículo em curva</h2>
+    <p>Agora mantenha a mesma velocidade do veículo, a mesma marcha, o mesmo diâmetro de roda e a mesma relação final, mas altere a trajetória para uma curva de raio \(R_c = 25\ \mathrm{m}\). Para uma curva à esquerda, a roda esquerda é a roda interna e a roda direita é a roda externa.</p>
+
+    <figure class="article-figure figure-half">
+      <img src="../../figs/aulas/power6.png" alt="Vista superior do veículo seguindo uma trajetória curva com bitola L">
+      <figcaption>Em curva, as duas rodas traseiras percorrem trajetórias com raios diferentes.</figcaption>
+    </figure>
+
+    <p>A velocidade angular do veículo em torno do centro da curva é:</p>
+
+    <div class="equation-box">
+      \[
+      \Omega_{\mathrm{veiculo}}
+      =
+      \frac{V}{R_c}
+      =
+      \frac{V}{25}
+      =
+      0{,}04V
+      \]
+    </div>
+
+    <p>Com \(L = 1{,}3\ \mathrm{m}\), as distâncias do centro da curva até as rodas esquerda e direita são:</p>
+
+    <div class="equation-box">
+      \[
+      R_E = 25-\frac{1{,}3}{2} = 24{,}35\ \mathrm{m}
+      \]
+      \[
+      R_D = 25+\frac{1{,}3}{2} = 25{,}65\ \mathrm{m}
+      \]
+    </div>
+
+    <p>As velocidades lineares das duas rodas são, portanto, proporcionais ao raio de cada trajetória:</p>
+
+    <div class="equation-box">
+      \[
+      V_E
+      =
+      \Omega_{\mathrm{veiculo}}R_E
+      =
+      0{,}04V(24{,}35)
+      =
+      0{,}974V
+      \]
+      \[
+      V_D
+      =
+      \Omega_{\mathrm{veiculo}}R_D
+      =
+      0{,}04V(25{,}65)
+      =
+      1{,}026V
+      \]
+    </div>
+
+    <p>Dividindo cada velocidade linear pelo raio da roda, obtém-se a velocidade angular de cada roda traseira:</p>
+
+    <div class="equation-box">
+      \[
+      \omega_E
+      =
+      \frac{V_E}{R_{\mathrm{roda}}}
+      =
+      \frac{0{,}974V}{0{,}36}
+      =
+      2{,}706V
+      \]
+      \[
+      \omega_D
+      =
+      \frac{V_D}{R_{\mathrm{roda}}}
+      =
+      \frac{1{,}026V}{0{,}36}
+      =
+      2{,}850V
+      \]
+    </div>
+
+    <p>O diferencial recebe a velocidade angular média das duas rodas traseiras. Pelo cálculo em linha reta, essa média já é conhecida: \(147{,}4\ \mathrm{rpm} = 15{,}44\ \mathrm{rad/s}\). Assim:</p>
+
+    <div class="equation-box">
+      \[
+      15{,}44
+      =
+      \frac{\omega_E+\omega_D}{2}
+      =
+      \frac{2{,}706V+2{,}850V}{2}
+      \]
+      \[
+      V = 5{,}56\ \mathrm{m/s}
+      =
+      20{,}0\ \mathrm{km/h}
+      \]
+    </div>
+
+    <p>Com a velocidade do veículo conhecida, é possível conferir a velocidade de cada roda:</p>
+
+    <div class="equation-box">
+      \[
+      \omega_E = 2{,}706(5{,}56) = 15{,}04\ \mathrm{rad/s} \approx 143{,}5\ \mathrm{rpm}
+      \]
+      \[
+      \omega_D = 2{,}850(5{,}56) = 15{,}85\ \mathrm{rad/s} \approx 151{,}2\ \mathrm{rpm}
+      \]
+    </div>
+
+    <figure class="article-figure figure-half">
+      <img src="../../figs/aulas/power7.png" alt="Painel de velocidades calculadas em curva mostrando roda esquerda a 143,5 rpm e roda direita a 151,2 rpm">
+      <figcaption>Em curva, o diferencial mantém a velocidade média das rodas, permitindo velocidades diferentes nas rodas esquerda e direita.</figcaption>
+    </figure>
+
+    <p>O exemplo mostra como o Powertrain Interativo pode ser usado como ponte entre o simulador visual e as equações de transmissões mecânicas. A página não informa apenas uma velocidade final do veículo; ela expõe as velocidades intermediárias que explicam como o resultado se forma desde o motor até o contato das rodas com o solo.</p>
+  </article>
+
+  <aside>
+    <div class="sidebar-card">
+      <h3>Resumo da página</h3>
+      <ul class="meta-list">
+        <li>Data: 25 de junho de 2026.</li>
+        <li>Ferramenta: Powertrain Interativo.</li>
+        <li>Exemplo: Urbano 5 marchas, primeira marcha.</li>
+        <li>Roda: SUV, \(72\ \mathrm{cm}\) de diâmetro.</li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h3>Abrir a ferramenta</h3>
+      <ul>
+        <li><a href="https://barbudenge.github.io/lasmeufsj/powertrain/pt-br">Powertrain Interativo</a></li>
+        <li><a href="https://barbudenge.github.io/lasmeufsj/powertrain/">Versão em inglês</a></li>
+        <li><a href="https://barbudenge.github.io/lasmeufsj/pt-br/">LASME/UFSJ</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h3>Continuar estudando</h3>
+      <ul>
+        <li><a href="cambio-manual-trens-engrenagens.html">Câmbio manual como trem de engrenagens</a></li>
+        <li><a href="trens-engrenagens-simples-compostos.html">Trens de engrenagens simples e compostos</a></li>
+        <li><a href="planetarias-compostas-diferenciais.html">Planetárias compostas e diferenciais</a></li>
+        <li><a href="index.html">Índice de artigos</a></li>
+      </ul>
+    </div>
+  </aside>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Barbudenge · <a href="../index.html">Página inicial</a> · <a href="../sobre.html">Sobre</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
