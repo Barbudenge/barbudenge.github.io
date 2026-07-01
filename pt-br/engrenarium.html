@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Engrenarium | Guia de uso do simulador de engrenagens planetárias</title>
-  <meta name="description" content="Entenda o que é o Engrenarium, para quem ele serve, como usar o simulador em contexto didático e quais perguntas ele ajuda a responder." />
+  <title>Projetos | Engrenarium, Engrenarium Web e Powertrain Interativo</title>
+  <meta name="description" content="Projetos do Barbudenge e do LASME: Engrenarium software, Engrenarium Web e Powertrain Interativo para ensino de mecanismos, engrenagens e transmissões." />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Artur Henrique de Freitas Avelar" />
   <link rel="canonical" href="https://barbudenge.github.io/pt-br/engrenarium.html" />
 
-  <meta property="og:title" content="Engrenarium | Guia de uso" />
-  <meta property="og:description" content="Página explicativa sobre o Engrenarium, um simulador voltado ao estudo de trens planetários." />
-  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Projetos | Barbudenge" />
+  <meta property="og:description" content="Softwares e projetos didáticos para engrenagens planetárias, mecanismos e cinemática de powertrain." />
+  <meta property="og:type" content="website" />
   <meta property="og:url" content="https://barbudenge.github.io/pt-br/engrenarium.html" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,13 +29,13 @@
       --accent-2: #8a4d2f;
       --border: #e2e8f0;
       --shadow: 0 1px 3px rgba(0,0,0,0.08);
-      --maxw: 1000px;
+      --maxw: 1120px;
       --serif: 'Crimson Pro', Georgia, serif;
       --sans: 'Source Sans 3', Helvetica, Arial, sans-serif;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: var(--sans); color: var(--text); background: var(--bg); line-height: 1.75; }
+    body { font-family: var(--sans); color: var(--text); background: var(--bg); line-height: 1.7; }
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
     img { max-width: 100%; display: block; }
@@ -51,12 +51,7 @@
       padding: 14px 0;
       flex-wrap: wrap;
     }
-    .brand {
-      font-family: var(--serif);
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--text);
-    }
+    .brand { font-family: var(--serif); font-size: 1.5rem; font-weight: 700; color: var(--text); }
     .brand span { color: #b45309; }
     nav { display: flex; gap: 18px; flex-wrap: wrap; }
     nav a { color: var(--muted); font-weight: 600; font-size: 0.95rem; }
@@ -64,13 +59,7 @@
     .hero {
       background: #1e293b;
       color: #fff;
-      padding: 56px 0 44px;
-    }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.25fr 0.85fr;
-      gap: 28px;
-      align-items: start;
+      padding: 52px 0 46px;
     }
     .eyebrow {
       display: inline-block;
@@ -79,91 +68,120 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: #e2e8f0;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
     .hero h1 {
       font-family: var(--serif);
-      font-size: clamp(2rem, 4vw, 3rem);
-      line-height: 1.15;
-      margin-bottom: 12px;
+      font-size: clamp(2.1rem, 4vw, 3.1rem);
+      line-height: 1.12;
+      max-width: 900px;
+      margin-bottom: 14px;
     }
-    .hero p { color: #cbd5e1; margin-bottom: 12px; }
-    .hero-card {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.16);
-      border-radius: 14px;
-      padding: 22px;
-    }
-    .hero-card h3 {
-      font-family: var(--serif);
-      margin-bottom: 10px;
-      font-size: 1.15rem;
-    }
-    .hero-card ul { padding-left: 20px; color: #e2e8f0; }
-    .hero-card li + li { margin-top: 8px; }
+    .hero p { color: #cbd5e1; max-width: 820px; font-size: 1.05rem; }
 
-    .hero-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 22px;
-    }
-    .btn {
-      display: inline-block;
-      padding: 11px 18px;
-      border-radius: 8px;
-      font-weight: 700;
-      border: 1px solid transparent;
-    }
-    .btn-primary { background: #f4f6f8; color: #243243; }
-    .btn-secondary { background: transparent; color: #fff; border-color: rgba(255,255,255,0.35); }
-
-    main { padding: 44px 0 60px; }
-    .content-grid {
+    main { padding: 42px 0 62px; }
+    .intro-grid {
       display: grid;
-      grid-template-columns: 1.3fr 0.7fr;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 22px;
       align-items: start;
+      margin-bottom: 28px;
     }
-    .card,
-    .sidebar-card {
+    .intro-card,
+    .project-card,
+    .link-card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 14px;
       box-shadow: var(--shadow);
     }
-    .card { padding: 30px 32px; }
-    .sidebar-card { padding: 22px; }
-    .card + .card { margin-top: 22px; }
-
-    h2 {
+    .intro-card { padding: 26px 28px; }
+    .intro-card h2,
+    .project-copy h2,
+    .link-card h3 {
       font-family: var(--serif);
-      font-size: 1.7rem;
       color: #2f3945;
-      margin-bottom: 12px;
+      line-height: 1.2;
     }
-    h3 {
-      font-family: var(--serif);
-      font-size: 1.2rem;
-      color: #2f3945;
+    .intro-card h2 { font-size: 1.65rem; margin-bottom: 10px; }
+    .intro-card p,
+    .project-copy p,
+    .link-card p,
+    .project-copy li { color: var(--muted); }
+    .intro-card p,
+    .project-copy p,
+    .link-card p { margin-bottom: 12px; }
+    .status-list { list-style: none; padding-left: 0; margin-top: 6px; }
+    .status-list li {
+      padding: 10px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+    }
+    .status-list li:first-child { border-top: 0; }
+
+    .project-list {
+      display: grid;
+      gap: 26px;
+    }
+    .project-card {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.1fr);
+      overflow: hidden;
+    }
+    .project-media {
+      background: #eef3f8;
+      border-right: 1px solid var(--border);
+      min-height: 300px;
+    }
+    .project-media img {
+      width: 100%;
+      height: 100%;
+      min-height: 300px;
+      object-fit: cover;
+      object-position: center;
+    }
+    .project-copy { padding: 28px 30px; }
+    .project-copy h2 { font-size: 1.75rem; margin-bottom: 10px; }
+    .project-tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #7d5b2f;
       margin-bottom: 8px;
     }
-    p { color: var(--muted); margin-bottom: 14px; }
-    ul, ol { color: var(--muted); padding-left: 22px; margin-bottom: 14px; }
-    li + li { margin-top: 7px; }
-
-    .meta-list { list-style: none; padding-left: 0; margin-bottom: 0; }
-    .meta-list li { padding: 10px 0; border-top: 1px solid var(--border); color: var(--muted); }
-    .meta-list li:first-child { border-top: 0; padding-top: 0; }
-
-    .callout {
-      border-left: 4px solid var(--accent-2);
-      background: var(--surface-soft);
-      padding: 14px 16px;
-      border-radius: 10px;
-      color: #475569;
-      margin: 18px 0;
+    .project-copy ul {
+      padding-left: 20px;
+      margin: 14px 0;
     }
+    .project-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-weight: 800;
+      border: 1px solid transparent;
+    }
+    .btn-primary { background: #243243; color: #fff; }
+    .btn-primary:hover { background: #1e293b; text-decoration: none; }
+    .btn-secondary { background: #fff; color: #243243; border-color: #cbd5e1; }
+    .btn-secondary:hover { background: #f1f5f9; text-decoration: none; }
+
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 30px;
+    }
+    .link-card { padding: 22px; }
+    .link-card h3 { font-size: 1.18rem; margin-bottom: 8px; }
+    .link-card a { font-weight: 800; }
 
     footer {
       background: #12253f;
@@ -173,18 +191,22 @@
     }
     footer a { color: rgba(255,255,255,0.86); }
 
-    @media (max-width: 880px) {
-      .hero-grid,
-      .content-grid {
+    @media (max-width: 920px) {
+      .intro-grid,
+      .project-card,
+      .links-grid {
         grid-template-columns: 1fr;
       }
-      .card { padding: 24px 20px; }
+      .project-media { border-right: 0; border-bottom: 1px solid var(--border); }
+      .project-copy,
+      .intro-card { padding: 24px 20px; }
     }
   </style>
   <link rel="alternate" hreflang="en" href="https://barbudenge.github.io/engrenarium.html" />
   <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/engrenarium.html" />
   <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/engrenarium.html" />
   <link rel="stylesheet" href="../language-switch.css" />
+  <link rel="stylesheet" href="../site-sidebar.css" />
 </head>
 <body>
 
@@ -195,6 +217,7 @@
       <a href="index.html">Início</a>
       <a href="sobre.html">Sobre</a>
       <a href="artigos/index.html">Artigos</a>
+      <a href="engrenarium.html" aria-current="page">Projetos</a>
       <a href="privacy.html">Privacidade</a>
     </nav>
     <div class="language-switch" role="group" aria-label="Idioma">
@@ -205,111 +228,114 @@
 </header>
 
 <section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <span class="eyebrow">Ferramenta didática</span>
-      <h1>Engrenarium: o que o simulador faz e como usá-lo</h1>
-      <p>O Engrenarium é um recurso voltado ao estudo de engrenagens planetárias. A proposta não é apenas mostrar animações, mas ajudar o usuário a entender relações entre entrada, saída, elemento fixo, braço e valor do trem em diferentes arranjos epicicloidais.</p>
-      <p>Esta página reúne o contexto que normalmente falta quando alguém cai diretamente no simulador: para que ele serve, para quem foi pensado e que tipo de pergunta técnica ou didática ele ajuda a responder.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="https://barbudenge.github.io/engrenarium/">Abrir o Engrenarium</a>
-        <a class="btn btn-secondary" href="artigos/engrenagens-planetarias.html">Ler o artigo sobre trens planetários</a>
-      </div>
-    </div>
-
-    <aside class="hero-card">
-      <h3>Resumo rápido</h3>
-      <ul>
-        <li>Simulador com foco em engrenagens planetárias.</li>
-        <li>Útil em ensino, estudo individual e apoio à análise conceitual.</li>
-        <li>Complementa o artigo técnico do portal, não o substitui.</li>
-        <li>Voltado a quem precisa visualizar arranjos e discutir relações cinemáticas.</li>
-      </ul>
-    </aside>
+  <div class="container">
+    <span class="eyebrow">Projetos</span>
+    <h1>Softwares didáticos para mecanismos, engrenagens e análise de powertrain</h1>
+    <p>Esta página reúne projetos ligados ao Barbudenge e ao LASME. Ela começa com três ferramentas já referenciadas no portal: Engrenarium software, Engrenarium Web e Powertrain Interativo. A estrutura foi pensada para crescer conforme novos projetos forem publicados.</p>
   </div>
 </section>
 
 <main>
-  <div class="container content-grid">
-    <div>
-      <article class="card">
-        <h2>Qual é a função do Engrenarium</h2>
-        <p>Em muitos cursos, a maior dificuldade no estudo de trens planetários não está na álgebra isoladamente, mas em relacionar a equação com a topologia do sistema. O estudante vê a fórmula, mas não consegue identificar com segurança quem é o braço, qual elemento está fixo, quais engrenagens formam o trem e como a escolha da entrada altera a interpretação do problema.</p>
-        <p>O Engrenarium foi pensado para atacar justamente esse ponto. Ele funciona como uma ponte entre a descrição geométrica do conjunto e a leitura cinemática do sistema. Em vez de tratar o trem epicicloidal apenas como um exercício simbólico, o usuário consegue observar a configuração, comparar cenários e discutir o comportamento do conjunto com mais clareza.</p>
-        <div class="callout">Valor principal: a ferramenta ajuda a transformar uma relação abstrata entre velocidades angulares em uma situação visualizável e didaticamente discutível.</div>
-      </article>
+  <div class="container">
+    <div class="intro-grid">
+      <section class="intro-card">
+        <h2>Portfólio de projetos</h2>
+        <p>Os projetos abaixo foram criados para tornar sistemas mecânicos mais fáceis de visualizar, discutir e analisar. Eles complementam os artigos sobre engrenagens planetárias, trens de engrenagens, transmissões e cames ao transformar relações abstratas em situações interativas.</p>
+        <p>O objetivo comum é a clareza didática: organizar geometria, vínculos, velocidades e relações de transmissão para que estudantes e professores passem da interpretação conceitual ao cálculo com menos etapas ocultas.</p>
+      </section>
 
-      <article class="card">
-        <h2>Para quem a ferramenta é útil</h2>
-        <ul>
-          <li><strong>Estudantes</strong> que estão vendo mecanismos e elementos de máquinas pela primeira vez e ainda têm dificuldade em interpretar conjuntos planetários.</li>
-          <li><strong>Docentes</strong> que desejam usar uma visualização complementar durante aulas, monitorias, listas e demonstrações.</li>
-          <li><strong>Profissionais</strong> que precisam revisar conceitos de arranjo, leitura de movimento relativo e raciocínio cinemático antes de avançar para análises mais detalhadas.</li>
+      <section class="intro-card">
+        <h2>Escopo atual</h2>
+        <ul class="status-list">
+          <li><strong>Engrenarium software:</strong> ambiente mais completo para modelagem de engrenagens planetárias.</li>
+          <li><strong>Engrenarium Web:</strong> simulador no navegador para uso rápido e demonstrações em aula.</li>
+          <li><strong>Powertrain Interativo:</strong> calculadora didática para motor, câmbio, diferencial e velocidades nas rodas.</li>
         </ul>
-        <p>Ele não substitui bibliografia técnica nem etapas posteriores de projeto. O papel do simulador é organizar o entendimento inicial e tornar as relações entre os elementos do trem mais visíveis.</p>
+      </section>
+    </div>
+
+    <div class="project-list">
+      <article class="project-card" id="engrenarium-software">
+        <div class="project-media">
+          <img src="../figs/project-engrenarium-software.png" alt="Interface do Engrenarium software com modelo de engrenagem planetária e painéis de parâmetros">
+        </div>
+        <div class="project-copy">
+          <span class="project-tag">Software desktop</span>
+          <h2>Engrenarium software</h2>
+          <p>O Engrenarium software é o ambiente mais amplo para montar e analisar sistemas de engrenagens planetárias. Os artigos sobre projeto de planetárias, transmissões CVT, Allison 1000, Ravigneaux e Ford Modelo T usam esse projeto como apoio visual e computacional para montar conjuntos, aplicar vínculos e interpretar relações cinemáticas.</p>
+          <p>O software ajuda a transformar um arranjo geométrico em um modelo discutível em termos de entrada, saída, elemento fixo, movimento do braço e valor do trem. A função não é apenas animar engrenagens, mas apoiar o raciocínio que conecta topologia, número de dentes e velocidades angulares.</p>
+          <ul>
+            <li>Modelagem de planetárias simples e compostas.</li>
+            <li>Teste de condições de contorno e acoplamentos entre elementos.</li>
+            <li>Apoio a exemplos didáticos antes de verificações detalhadas de projeto.</li>
+          </ul>
+          <div class="project-actions">
+            <a class="btn btn-primary" href="https://barbudenge.github.io/lasmeufsj/pt-br/engrenarium/">Abrir página do projeto</a>
+            <a class="btn btn-secondary" href="artigos/projeto-planetarias-engrenarium.html">Ler artigo do módulo de projeto</a>
+          </div>
+        </div>
       </article>
 
-      <article class="card">
-        <h2>Como usar o Engrenarium de forma produtiva</h2>
-        <ol>
-          <li>Identifique o arranjo do trem e os elementos principais do conjunto.</li>
-          <li>Defina mentalmente ou na aula qual componente será tratado como entrada, qual será a saída e qual estará fixo.</li>
-          <li>Observe como o braço participa do movimento relativo e compare a interpretação visual com a equação do caso geral.</li>
-          <li>Use o resultado como apoio para discutir relações de transmissão, sentidos de rotação e dependência entre velocidades.</li>
-        </ol>
-        <p>Esse uso orientado é importante. Quando o simulador é tratado apenas como animação, ele perde parte do valor didático. Quando é usado em conjunto com a formulação teórica, passa a funcionar como ferramenta de compreensão.</p>
+      <article class="project-card" id="engrenarium-web">
+        <div class="project-media">
+          <img src="../figs/engr-web.png" alt="Interface do Engrenarium Web com parâmetros de planetária e modelo 3D de engrenagens">
+        </div>
+        <div class="project-copy">
+          <span class="project-tag">Simulador web</span>
+          <h2>Engrenarium Web</h2>
+          <p>O Engrenarium Web é a versão no navegador do simulador de engrenagens planetárias. Ele foi pensado para acesso rápido em aulas, estudos individuais e exemplos de artigos em que instalar um software criaria atrito. A versão web mantém o foco em visualizar arranjos e discutir relações de velocidade entre solar, planetas, anelar e braço.</p>
+          <p>A ferramenta é especialmente útil quando o objetivo é comparar cenários: trocar o elemento fixo, testar diferentes escolhas de entrada e saída e observar como o braço participa do movimento relativo de um trem epicicloidal.</p>
+          <ul>
+            <li>Funciona diretamente no navegador.</li>
+            <li>Útil para demonstrações e verificações conceituais rápidas.</li>
+            <li>Conecta-se aos artigos sobre planetárias e exemplos de transmissões.</li>
+          </ul>
+          <div class="project-actions">
+            <a class="btn btn-primary" href="https://barbudenge.github.io/engrenarium/">Abrir o Engrenarium Web</a>
+            <a class="btn btn-secondary" href="artigos/engrenagens-planetarias.html">Ler artigo sobre planetárias</a>
+          </div>
+        </div>
       </article>
 
-      <article class="card">
-        <h2>Perguntas que o simulador ajuda a responder</h2>
-        <ul>
-          <li>O que muda quando o elemento fixo deixa de ser a coroa e passa a ser o porta-satélites?</li>
-          <li>Como interpretar a velocidade relativa ao braço em um problema planetário?</li>
-          <li>Por que duas configurações visualmente parecidas podem gerar comportamentos cinemáticos diferentes?</li>
-          <li>Como explicar, em aula, a diferença entre observar o trem com braço fixo e observar o sistema em movimento real?</li>
-        </ul>
-        <p>Essas perguntas são úteis porque deslocam a ferramenta do campo do "ver funcionando" para o campo do "entender por que funciona assim".</p>
-      </article>
-
-      <article class="card">
-        <h2>Escopo e limitações</h2>
-        <p>O Engrenarium é uma ferramenta de apoio didático e conceitual. Isso significa que o seu valor está na clareza da visualização, na interpretação do arranjo e no raciocínio sobre relações cinemáticas. Não deve ser lido como substituto universal de bibliografia, cálculo detalhado de esforços, análise estrutural ou projeto completo de transmissão.</p>
-        <p>Em termos práticos, ele é mais forte quando usado para explicar conceitos, testar leituras de configuração e apoiar discussões entre professor e aluno. Para uso profissional mais aprofundado, o simulador funciona melhor como etapa de entendimento e comunicação do problema.</p>
+      <article class="project-card" id="powertrain-interativo">
+        <div class="project-media">
+          <img src="../figs/project-powertrain.png" alt="Interface do Powertrain Interativo com painel do motorista, diagrama de câmbio e velocidades calculadas">
+        </div>
+        <div class="project-copy">
+          <span class="project-tag">Calculadora didática</span>
+          <h2>Powertrain Interativo</h2>
+          <p>O Powertrain Interativo é uma ferramenta didática do LASME que relaciona rotação do motor, redução do câmbio, redução do diferencial e velocidades nas rodas. O projeto foi construído como um exemplo visual trabalhado para entender como um powertrain transforma rotação do motor em movimento nas rodas.</p>
+          <p>A ferramenta combina painel do motorista, diagrama de câmbio, representação do diferencial e cartões com velocidades calculadas. Ela permite comparar movimento em reta e em curva, deixando explícito por que as rodas esquerda e direita podem ter velocidades diferentes mesmo com o mesmo motor e a mesma marcha.</p>
+          <ul>
+            <li>Relaciona rotação do motor com câmbio, diferencial e rodas.</li>
+            <li>Mostra condições em reta e em curva.</li>
+            <li>Complementa os artigos sobre trens de engrenagens e transmissões mecânicas.</li>
+          </ul>
+          <div class="project-actions">
+            <a class="btn btn-primary" href="artigos/powertrain-interativo.html">Abrir artigo do projeto</a>
+            <a class="btn btn-secondary" href="artigos/cambio-manual-trens-engrenagens.html">Ler artigo sobre câmbio manual</a>
+          </div>
+        </div>
       </article>
     </div>
 
-    <aside>
-      <div class="sidebar-card">
-        <h3>Dados da página</h3>
-        <ul class="meta-list">
-          <li><strong>Autor:</strong> Artur Henrique de Freitas Avelar</li>
-          <li><strong>Última atualização:</strong> abril de 2026</li>
-          <li><strong>Categoria:</strong> guia de ferramenta didática</li>
-          <li><strong>Contato:</strong> <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></li>
-        </ul>
-      </div>
-
-      <div class="sidebar-card" style="margin-top:22px;">
-        <h3>Leituras relacionadas</h3>
-        <ul class="meta-list">
-          <li><a href="artigos/index.html">Índice de artigos técnicos</a></li>
-          <li><a href="artigos/engrenagens-planetarias.html">Engrenagens planetárias: caso geral e valor do trem</a></li>
-          <li><a href="artigos/aplicacoes-engrenagens-planetarias.html">Aplicações de engrenagens planetárias</a></li>
-          <li><a href="artigos/planetarias-compostas-diferenciais.html">Planetárias compostas e diferenciais</a></li>
-          <li><a href="sobre.html">Sobre o portal</a></li>
-          <li><a href="privacy.html">Política de Privacidade</a></li>
-        </ul>
-      </div>
-
-      <div class="sidebar-card" style="margin-top:22px;">
-        <h3>Links externos</h3>
-        <ul class="meta-list">
-          <li><a href="https://barbudenge.github.io/engrenarium/">Abrir o simulador web</a></li>
-          <li><a href="https://barbudenge.github.io/lasmeufsj/pt-br/">LASME/UFSJ</a></li>
-          <li><a href="https://github.com/Barbudenge">GitHub</a></li>
-        </ul>
-      </div>
-    </aside>
+    <div class="links-grid">
+      <section class="link-card">
+        <h3>Artigos técnicos</h3>
+        <p>Use o índice de artigos para conectar cada projeto à sua base teórica.</p>
+        <a href="artigos/index.html">Abrir índice de artigos</a>
+      </section>
+      <section class="link-card">
+        <h3>LASME</h3>
+        <p>Veja o contexto do laboratório para atividades de ensino, pesquisa e desenvolvimento.</p>
+        <a href="https://barbudenge.github.io/lasmeufsj/pt-br/">Acessar LASME/UFSJ</a>
+      </section>
+      <section class="link-card">
+        <h3>Contato</h3>
+        <p>Para dúvidas sobre projetos, mecanismos e materiais didáticos.</p>
+        <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a>
+      </section>
+    </div>
   </div>
 </main>
 
@@ -319,5 +345,6 @@
   </div>
 </footer>
 
+  <script src="../site-sidebar.js"></script>
 </body>
 </html>

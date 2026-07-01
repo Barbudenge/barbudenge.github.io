@@ -113,14 +113,33 @@
       background: #1e293b;
       color: #ffffff;
       border-bottom: 1px solid var(--border);
+      padding-top: 0;
+    }
+
+    .hero-band {
+      display: block;
+      width: 100%;
+      height: clamp(150px, 22vw, 250px);
+      overflow: hidden;
+      background: #dbe6f0;
+      border-bottom: 0;
+      margin: 0;
+      line-height: 0;
+    }
+
+    .hero-band img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
     }
 
     .hero-inner {
       display: grid;
       grid-template-columns: 1.35fr 0.85fr;
-      gap: 32px;
+      gap: 28px;
       align-items: start;
-      padding: 56px 0 48px;
+      padding: 30px 0 34px;
     }
 
     .hero-label,
@@ -138,23 +157,24 @@
 
     .hero h1 {
       font-family: var(--serif);
-      font-size: clamp(2.1rem, 4vw, 3.15rem);
-      line-height: 1.15;
-      margin-bottom: 18px;
+      font-size: clamp(1.95rem, 3.25vw, 2.8rem);
+      line-height: 1.1;
+      margin-bottom: 14px;
       color: #f8fafc;
     }
 
     .hero p {
       color: #cbd5e1;
-      font-size: 1.05rem;
-      margin-bottom: 12px;
+      font-size: 1rem;
+      line-height: 1.55;
+      margin-bottom: 9px;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 24px;
+      margin-top: 16px;
     }
 
     .btn {
@@ -188,141 +208,103 @@
       text-decoration: none;
     }
 
-    .article-nav-toggle {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      z-index: 40;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      border: 1px solid rgba(255,255,255,0.28);
-      background: #243243;
-      color: #fff;
-      border-radius: 999px;
-      padding: 10px 15px;
-      box-shadow: 0 10px 24px rgba(15,23,42,0.2);
-      font: inherit;
-      font-weight: 700;
-      cursor: pointer;
+    .site-layout {
+      display: grid;
+      grid-template-columns: 300px minmax(0, 1fr);
+      align-items: start;
+      width: 100%;
     }
 
-    .article-nav-toggle:hover { background: #1e293b; }
-
-    .article-nav-toggle .icon {
-      font-size: 1.05rem;
-      line-height: 1;
-    }
-
-    .article-sidebar-backdrop {
-      position: fixed;
-      inset: 0;
-      z-index: 48;
-      background: rgba(15,23,42,0.36);
-    }
+    .site-content { min-width: 0; }
 
     .article-sidebar {
-      position: fixed;
+      position: sticky;
       top: 0;
-      right: 0;
-      z-index: 49;
-      width: min(420px, 100%);
+      z-index: 20;
+      width: 100%;
       height: 100vh;
-      background: var(--surface);
-      border-left: 1px solid var(--border);
-      box-shadow: -18px 0 42px rgba(15,23,42,0.24);
-      transform: translateX(100%);
-      transition: transform 0.2s ease;
+      background: #f7f9fc;
+      border-right: 1px solid var(--border);
       overflow-y: auto;
-      visibility: hidden;
-      pointer-events: none;
-    }
-
-    .article-sidebar.is-open {
-      transform: translateX(0);
-      visibility: visible;
-      pointer-events: auto;
     }
 
     .article-sidebar-header {
       position: sticky;
       top: 0;
-      background: var(--surface);
+      z-index: 1;
+      background: rgba(247,249,252,0.96);
       border-bottom: 1px solid var(--border);
-      padding: 18px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 16px;
+      padding: 22px 20px 18px;
+      backdrop-filter: blur(10px);
     }
 
     .article-sidebar-header h2 {
-      font-size: 1.32rem;
-      margin-bottom: 4px;
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      color: #273444;
+      line-height: 1.15;
+      margin-bottom: 6px;
     }
 
     .article-sidebar-header p {
       color: var(--muted);
-      font-size: 0.94rem;
+      font-size: 0.9rem;
       line-height: 1.45;
     }
 
-    .article-sidebar-close {
-      border: 1px solid var(--border);
-      background: var(--surface-2);
-      color: var(--text);
-      width: 34px;
-      height: 34px;
-      border-radius: 999px;
-      font: inherit;
-      font-weight: 700;
-      cursor: pointer;
-      flex-shrink: 0;
-    }
-
-    .article-sidebar-close:hover { background: #e2e8f0; }
-
-    .article-sidebar-content { padding: 18px 20px 26px; }
+    .article-sidebar-content { padding: 18px 16px 28px; }
 
     .article-group + .article-group {
-      margin-top: 20px;
-      padding-top: 18px;
+      margin-top: 18px;
+      padding-top: 16px;
       border-top: 1px solid var(--border);
     }
 
     .article-group h3 {
       font-family: var(--sans);
-      font-size: 0.82rem;
+      font-size: 0.76rem;
+      font-weight: 800;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--accent-2);
+      color: #7d5b2f;
       margin-bottom: 10px;
     }
 
     .article-sidebar-list {
       list-style: none;
       display: grid;
-      gap: 8px;
+      gap: 6px;
     }
 
     .article-sidebar-list a {
       display: block;
-      padding: 10px 12px;
-      border: 1px solid var(--border);
+      padding: 9px 10px;
+      border: 1px solid transparent;
       border-radius: 8px;
-      color: #334155;
-      font-weight: 700;
+      color: #2f3b4a;
       line-height: 1.35;
-      background: #fbfdff;
+      background: transparent;
     }
 
     .article-sidebar-list a:hover {
       text-decoration: none;
-      border-color: #cbd5e1;
-      background: var(--surface-soft);
+      border-color: #d7dee8;
+      background: #ffffff;
     }
 
-    body.sidebar-open { overflow: hidden; }
+    .sidebar-link-title {
+      display: block;
+      font-weight: 800;
+      font-size: 0.94rem;
+    }
+
+    .sidebar-link-note {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.35;
+      margin-top: 2px;
+    }
 
     .hero-card,
     .portal-box,
@@ -616,6 +598,31 @@
 
     .footer-bottom a { color: rgba(255,255,255,0.78); }
 
+    @media (max-width: 1080px) {
+      .site-layout { grid-template-columns: 1fr; }
+
+      .article-sidebar {
+        position: relative;
+        height: auto;
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .article-sidebar-header { position: static; }
+
+      .article-sidebar-content {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .article-group + .article-group {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: 0;
+      }
+    }
+
     @media (max-width: 860px) {
       .hero-inner,
       .portal-box,
@@ -630,14 +637,37 @@
 
       .book-card { flex-direction: column; }
       .book-cover-img { width: 140px; }
-      .article-nav-toggle { right: 14px; bottom: 14px; }
-      .article-sidebar { width: 100%; }
+    }
+
+    @media (max-width: 640px) {
+      .article-sidebar-header { padding: 16px 16px 12px; }
+
+      .article-sidebar-content {
+        display: flex;
+        gap: 12px;
+        overflow-x: auto;
+        padding: 14px 16px 18px;
+        scroll-snap-type: x proximity;
+      }
+
+      .article-group {
+        flex: 0 0 min(280px, calc(100vw - 48px));
+        scroll-snap-align: start;
+      }
+
+      .article-sidebar-list a {
+        background: #ffffff;
+        border-color: #e5eaf1;
+      }
+
+      .sidebar-link-note { display: none; }
     }
   </style>
   <link rel="alternate" hreflang="en" href="https://barbudenge.github.io/" />
   <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/" />
   <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/" />
   <link rel="stylesheet" href="language-switch.css" />
+  <link rel="stylesheet" href="site-sidebar.css" />
 </head>
 <body>
 
@@ -646,7 +676,7 @@
     <div class="brand">Barbu<span>denge</span></div>
     <nav aria-label="Main navigation">
       <a href="#artigos">Articles</a>
-      <a href="engrenarium.html">Engrenarium</a>
+      <a href="#projetos">Projects</a>
       <a href="#faq">FAQ</a>
       <a href="#glossario">Glossary</a>
       <a href="sobre.html">About</a>
@@ -659,63 +689,62 @@
   </div>
 </header>
 
-<button class="article-nav-toggle" type="button" aria-expanded="false" aria-controls="article-sidebar">
-  <span class="icon" aria-hidden="true">☰</span>
-  <span>Articles</span>
-</button>
-
-<div class="article-sidebar-backdrop" hidden></div>
-
-<aside class="article-sidebar" id="article-sidebar" aria-label="All articles" aria-hidden="true">
+<div class="site-layout">
+<aside class="article-sidebar" id="article-sidebar" aria-label="Portal navigation">
   <div class="article-sidebar-header">
-    <div>
-      <h2>All articles</h2>
-      <p>Use the list to jump straight to gears, planetary, CVT, differentials or cams.</p>
-    </div>
-    <button class="article-sidebar-close" type="button" aria-label="Close list of articles">×</button>
+    <h2>Barbudenge</h2>
+    <p>Mechanical engineering, machine elements, teaching tools and LASME projects.</p>
   </div>
 
   <div class="article-sidebar-content">
     <div class="article-group">
-      <h3>Gears and trains</h3>
+      <h3>Portal</h3>
       <ul class="article-sidebar-list">
-        <li><a href="artigos/engrenagens-funcoes-perfil-nomenclatura.html">Gears: functions, profile and nomenclature</a></li>
-        <li><a href="artigos/trens-engrenagens-simples-compostos.html">Simple and compound gear trains</a></li>
-        <li><a href="artigos/cambio-manual-trens-engrenagens.html">Manual transmission as a gear train</a></li>
-        <li><a href="artigos/powertrain-interativo.html">Interactive Powertrain</a></li>
-        <li><a href="artigos/transmissao-ford-modelo-t.html">Ford Model T Transmission</a></li>
-        <li><a href="artigos/engrenagens-conicas-helicoidais-sem-fim.html">Bevel, helical, and worm gears</a></li>
+        <li><a href="#portal"><span class="sidebar-link-title">Overview</span><span class="sidebar-link-note">Study path and purpose of the portal</span></a></li>
+        <li><a href="#recentes"><span class="sidebar-link-title">Recent publications</span><span class="sidebar-link-note">Newest articles and updates</span></a></li>
+        <li><a href="#artigos"><span class="sidebar-link-title">Technical content</span><span class="sidebar-link-note">Main reading tracks</span></a></li>
+        <li><a href="#contato"><span class="sidebar-link-title">Contact</span><span class="sidebar-link-note">Authorship and institutional links</span></a></li>
       </ul>
     </div>
 
     <div class="article-group">
-      <h3>Planetary gears and differentials</h3>
+      <h3>Projects</h3>
       <ul class="article-sidebar-list">
-        <li><a href="artigos/engrenagens-planetarias.html">Planetary gears: general case and train value</a></li>
-        <li><a href="artigos/aplicacoes-engrenagens-planetarias.html">Applications of planetary gears</a></li>
-        <li><a href="artigos/projeto-planetarias-engrenarium.html">Planetary Gear Design in Engrenarium</a></li>
-        <li><a href="artigos/paradoxo-mecanico-ferguson.html">Ferguson's mechanical paradox</a></li>
-        <li><a href="artigos/transmissao-allison-1000.html">Allison 1000 Transmission</a></li>
-        <li><a href="artigos/transmissao-ravigneaux.html">Ravigneaux Transmission</a></li>
-        <li><a href="artigos/planetaria-composta-engrenarium.html">How to assemble a compound planetary gear set in Engrenarium</a></li>
-        <li><a href="artigos/transmissao-cvt-engrenarium.html">How to assemble a CVT transmission in Engrenarium</a></li>
-        <li><a href="artigos/planetarias-compostas-diferenciais.html">Compound planetary gear sets and differentials</a></li>
+        <li><a href="engrenarium.html"><span class="sidebar-link-title">Projects</span><span class="sidebar-link-note">Portfolio page for all projects</span></a></li>
+        <li><a href="https://barbudenge.github.io/lasmeufsj/engrenarium/" target="_blank" rel="noopener"><span class="sidebar-link-title">Engrenarium software</span><span class="sidebar-link-note">Full software page for planetary gears</span></a></li>
+        <li><a href="https://barbudenge.github.io/engrenarium/" target="_blank" rel="noopener"><span class="sidebar-link-title">Engrenarium Web</span><span class="sidebar-link-note">Open the browser simulator</span></a></li>
+        <li><a href="artigos/powertrain-interativo.html" target="_blank" rel="noopener"><span class="sidebar-link-title">Interactive Powertrain</span><span class="sidebar-link-note">Engine, gearbox, differential and wheel speeds</span></a></li>
       </ul>
     </div>
 
     <div class="article-group">
-      <h3>Cams</h3>
+      <h3>LASME</h3>
       <ul class="article-sidebar-list">
-        <li><a href="artigos/cames.html">Cams: fundamentals of synthesis and analysis</a></li>
-        <li><a href="artigos/cames-nomenclatura-seguidores.html">Cams: nomenclature, followers and design workflow</a></li>
-        <li><a href="artigos/cames-curvas-deslocamento.html">Displacement curves for cam design</a></li>
-        <li><a href="artigos/cames-projeto-analitico.html">Analytical design of cams</a></li>
+        <li><a href="https://barbudenge.github.io/lasmeufsj/"><span class="sidebar-link-title">LASME/UFSJ</span><span class="sidebar-link-note">Mechanical Systems Laboratory</span></a></li>
+        <li><a href="sobre.html"><span class="sidebar-link-title">About the portal</span><span class="sidebar-link-note">Academic context and authorship</span></a></li>
+      </ul>
+    </div>
+
+    <div class="article-group">
+      <h3>Articles</h3>
+      <ul class="article-sidebar-list">
+        <li><a href="artigos/index.html#artigos-recentes"><span class="sidebar-link-title">Recent articles</span><span class="sidebar-link-note">Powertrain, cams and transmissions</span></a></li>
+        <li><a href="artigos/index.html#fundamentos-engrenagens"><span class="sidebar-link-title">Gears and trains</span><span class="sidebar-link-note">Profiles, ratios and gear train analysis</span></a></li>
+        <li><a href="artigos/engrenagens-planetarias.html"><span class="sidebar-link-title">Planetary gears</span><span class="sidebar-link-note">General case, applications and differentials</span></a></li>
+        <li><a href="artigos/cames.html"><span class="sidebar-link-title">Cams and motion</span><span class="sidebar-link-note">Followers, curves and analytical design</span></a></li>
+        <li><a href="artigos/index.html#indice-completo"><span class="sidebar-link-title">Complete index</span><span class="sidebar-link-note">All technical articles by theme</span></a></li>
       </ul>
     </div>
   </div>
 </aside>
 
+  <div class="site-content">
+
 <section class="hero">
+  <figure class="hero-band">
+    <img src="figs/mechanical-elements-banner.jpg" alt="Mechanical elements with gears, shaft, bearings and technical drawings" width="1920" height="640" fetchpriority="high" />
+  </figure>
+
   <div class="container hero-inner">
     <div>
       <span class="hero-label">UFSJ · LASME · Mechanical Engineering</span>
@@ -725,27 +754,17 @@
       <div class="hero-actions">
         <a class="btn btn-primary" href="#artigos">Read articles</a>
         <a class="btn btn-secondary" href="artigos/index.html">See all articles</a>
-        <a class="btn btn-secondary" href="engrenarium.html">Discover Engrenarium</a>
+        <a class="btn btn-secondary" href="engrenarium.html">View projects</a>
       </div>
     </div>
 
     <aside class="hero-card">
-      <h3>On this page</h3>
+      <h3>Start here</h3>
       <ul>
-        <li><a href="artigos/index.html">Technical article index</a></li>
+        <li><a href="#recentes">Recent publications</a></li>
+        <li><a href="https://barbudenge.github.io/engrenarium/">Open Engrenarium</a></li>
         <li><a href="artigos/powertrain-interativo.html">Interactive Powertrain</a></li>
-        <li><a href="artigos/projeto-planetarias-engrenarium.html">planetary gear design</a></li>
-        <li><a href="artigos/paradoxo-mecanico-ferguson.html">Ferguson's mechanical paradox</a></li>
-        <li><a href="artigos/transmissao-allison-1000.html">Allison 1000 Transmission</a></li>
-        <li><a href="artigos/transmissao-ravigneaux.html">Ravigneaux Transmission</a></li>
-        <li><a href="artigos/transmissao-ford-modelo-t.html">Ford Model T Transmission</a></li>
-        <li><a href="artigos/planetaria-composta-engrenarium.html">Compound planetary gear set at Engrenarium</a></li>
-        <li><a href="artigos/transmissao-cvt-engrenarium.html">CVT transmission in Engrenarium</a></li>
-        <li><a href="artigos/trens-engrenagens-simples-compostos.html">Simple and compound gear trains</a></li>
-        <li><a href="artigos/engrenagens-planetarias.html">General case of planetary gears</a></li>
-        <li><a href="artigos/cames-projeto-analitico.html">Analytical design of cams</a></li>
-        <li><a href="engrenarium.html">Engrenarium Guide</a></li>
-        <li><a href="sobre.html">Authorship and contact</a></li>
+        <li><a href="https://barbudenge.github.io/lasmeufsj/">LASME/UFSJ</a></li>
       </ul>
     </aside>
   </div>
@@ -923,10 +942,10 @@
 
     <div class="projects-grid">
       <article class="project-card">
-        <span class="project-tag">Internal guide + simulator</span>
-        <h3>Engrenarium</h3>
-        <p>Tool aimed at studying planetary gears. On the portal, it is presented by a page that explains who the simulator is for, how to use it didactically and which technical questions it helps to answer.</p>
-        <p><a class="project-link" href="engrenarium.html">Read Engrenarium guide</a></p>
+        <span class="project-tag">Software + simulators</span>
+        <h3>Projects</h3>
+        <p>Page that gathers the Engrenarium software, Engrenarium Web and Interactive Powertrain, with links, project context and related technical articles.</p>
+        <p><a class="project-link" href="engrenarium.html">Open projects</a></p>
       </article>
 
       <article class="project-card">
@@ -946,14 +965,14 @@
   <div class="container">
     <span class="section-label">Frequently asked questions</span>
     <h2>FAQ — questions about Engrenarium</h2>
-    <p class="lead">Short answers to common questions, accompanied by a specific page with more complete explanations about the simulator.</p>
+    <p class="lead">Short answers to common questions, accompanied by the projects page with links to the simulator, software and related teaching tools.</p>
 
     <div class="faq-list">
       <details>
         <summary>What is Engrenarium and what is it for?</summary>
         <div class="faq-body">
           <p>Engrenarium is a planetary gears web simulator with educational and technical purposes. It helps visualize epicyclic arrangements and discuss kinematic relationships between input, output, and carrier.</p>
-          <p><a href="engrenarium.html">Read the complete Engrenarium guide</a>.</p>
+          <p><a href="engrenarium.html">Open the projects page</a>.</p>
         </div>
       </details>
 
@@ -1090,7 +1109,7 @@
       <div class="contact-card">
         <h3>Useful links</h3>
         <p><a href="sobre.html">About the portal</a></p>
-        <p><a href="engrenarium.html">Engrenarium Guide</a></p>
+        <p><a href="engrenarium.html">Projects</a></p>
         <p><a href="https://barbudenge.github.io/lasmeufsj/">LASME/UFSJ</a></p>
         <p><a href="https://github.com/Barbudenge">GitHub</a></p>
         <p><a href="privacy.html">Privacy Policy</a></p>
@@ -1116,7 +1135,7 @@
         <h4>Main pages</h4>
         <ul>
           <li><a href="sobre.html">About</a></li>
-          <li><a href="engrenarium.html">Engrenarium Guide</a></li>
+          <li><a href="engrenarium.html">Projects</a></li>
           <li><a href="privacy.html">Privacy Policy</a></li>
         </ul>
       </div>
@@ -1148,34 +1167,9 @@
     </div>
   </div>
 </footer>
+  </div>
+</div>
 
-<script>
-  const articleToggle = document.querySelector('.article-nav-toggle');
-  const articleSidebar = document.querySelector('#article-sidebar');
-  const articleBackdrop = document.querySelector('.article-sidebar-backdrop');
-  const articleClose = document.querySelector('.article-sidebar-close');
-  const articleLinks = document.querySelectorAll('.article-sidebar-list a');
-
-  function setArticleSidebar(open) {
-    articleSidebar.classList.toggle('is-open', open);
-    articleSidebar.setAttribute('aria-hidden', String(!open));
-    articleToggle.setAttribute('aria-expanded', String(open));
-    articleBackdrop.hidden = !open;
-    document.body.classList.toggle('sidebar-open', open);
-  }
-
-  articleToggle.addEventListener('click', () => {
-    setArticleSidebar(!articleSidebar.classList.contains('is-open'));
-  });
-
-  articleClose.addEventListener('click', () => setArticleSidebar(false));
-  articleBackdrop.addEventListener('click', () => setArticleSidebar(false));
-  articleLinks.forEach((link) => link.addEventListener('click', () => setArticleSidebar(false)));
-
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') setArticleSidebar(false);
-  });
-</script>
-
+  <script src="site-sidebar.js"></script>
 </body>
 </html>
