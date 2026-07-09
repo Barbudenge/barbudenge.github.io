@@ -2,5 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://barbudenge.github.io/sitemap.xml
+Sitemap: https://barbudenge.github.io/sitemap.xml?google=please
 Sitemap: https://barbudenge.github.io/sitemap.txt
 Sitemap: https://barbudenge.github.io/engrenarium/sitemap.xml
