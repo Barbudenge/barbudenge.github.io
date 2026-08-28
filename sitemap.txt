@@ -48,3 +48,5 @@ https://barbudenge.github.io/artigos/trens-engrenagens-simples-compostos.html
 https://barbudenge.github.io/pt-br/artigos/trens-engrenagens-simples-compostos.html
 https://barbudenge.github.io/engrenarium/
 https://barbudenge.github.io/engrenarium/pt-br/
+https://barbudenge.github.io/camforge/
+https://barbudenge.github.io/lasmeufsj/camforge/pt-br/
