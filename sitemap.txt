@@ -1,5 +1,5 @@
-https://barbudenge.github.io/engrenarium.html
-https://barbudenge.github.io/pt-br/engrenarium.html
+https://barbudenge.github.io/projects
+https://barbudenge.github.io/projects/pt-br
 https://barbudenge.github.io/
 https://barbudenge.github.io/pt-br/
 https://barbudenge.github.io/privacy.html

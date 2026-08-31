@@ -22,6 +22,7 @@
     engrenariumSoftware: ['Engrenarium software', 'Página do software completo para planetárias'],
     engrenariumWeb: ['Engrenarium Web', 'Abrir o simulador no navegador'],
     powertrain: ['Powertrain Interativo', 'Motor, câmbio, diferencial e velocidades nas rodas'],
+    camforge: ['CamForge', 'Projeto e visualização de perfis de cames'],
     lasmeGroup: 'LASME',
     lasme: ['LASME/UFSJ', 'Laboratório de Sistemas Mecânicos'],
     about: ['Sobre o portal', 'Contexto acadêmico e autoria'],
@@ -44,6 +45,7 @@
     engrenariumSoftware: ['Engrenarium software', 'Full software page for planetary gears'],
     engrenariumWeb: ['Engrenarium Web', 'Open the browser simulator'],
     powertrain: ['Interactive Powertrain', 'Engine, gearbox, differential and wheel speeds'],
+    camforge: ['CamForge', 'Cam profile design and visualization'],
     lasmeGroup: 'LASME',
     lasme: ['LASME/UFSJ', 'Mechanical Systems Laboratory'],
     about: ['About the portal', 'Academic context and authorship'],
@@ -89,10 +91,11 @@
         item(`${home}#contato`, labels.contact)
       ])}
       ${group(labels.projects, [
-        item(page(`${languageRoot}engrenarium.html`), labels.engrenarium),
+        item(page(isPt ? 'projects/pt-br' : 'projects'), labels.engrenarium),
         item(isPt ? 'https://barbudenge.github.io/lasmeufsj/pt-br/engrenarium/' : 'https://barbudenge.github.io/lasmeufsj/engrenarium/', labels.engrenariumSoftware, ' target="_blank" rel="noopener"'),
         item('https://barbudenge.github.io/engrenarium/', labels.engrenariumWeb, ' target="_blank" rel="noopener"'),
-        item(page(`${articlesRoot}powertrain-interativo.html`), labels.powertrain, ' target="_blank" rel="noopener"')
+        item(page(`${articlesRoot}powertrain-interativo.html`), labels.powertrain, ' target="_blank" rel="noopener"'),
+        item('https://barbudenge.github.io/lasmeufsj/camforge/', labels.camforge, ' target="_blank" rel="noopener"')
       ])}
       ${group(labels.lasmeGroup, [
         item(isPt ? 'https://barbudenge.github.io/lasmeufsj/pt-br/' : 'https://barbudenge.github.io/lasmeufsj/', labels.lasme),
