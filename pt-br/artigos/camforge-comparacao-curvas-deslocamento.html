@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comparação de curvas de deslocamento no CamForge | Barbudenge</title>
+  <meta name="description" content="Comparação técnica das curvas de deslocamento disponíveis no CamForge, com fatores normalizados de velocidade, aceleração e jerk, continuidade e aplicações recomendadas." />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="author" content="Artur Henrique de Freitas Avelar" />
+  <meta name="google-adsense-account" content="ca-pub-5777194849710689" />
+  <link rel="canonical" href="https://barbudenge.github.io/pt-br/artigos/camforge-comparacao-curvas-deslocamento.html" />
+
+  <meta property="og:title" content="Comparação de curvas de deslocamento no CamForge" />
+  <meta property="og:description" content="Como velocidade, aceleração, jerk e continuidade orientam a escolha entre as leis de movimento implementadas no CamForge." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://barbudenge.github.io/pt-br/artigos/camforge-comparacao-curvas-deslocamento.html" />
+  <meta property="og:image" content="https://barbudenge.github.io/figs/aulas/cames-curva-deslocamento.png" />
+
+  <script>
+    window.MathJax = { tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] }, svg: { fontCache: 'global' } };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5777194849710689" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../artigos/artigo.css" />
+  <link rel="alternate" hreflang="en" href="https://barbudenge.github.io/artigos/camforge-comparacao-curvas-deslocamento.html" />
+  <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/camforge-comparacao-curvas-deslocamento.html" />
+  <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/camforge-comparacao-curvas-deslocamento.html" />
+  <link rel="stylesheet" href="../../language-switch.css" />
+  <link rel="stylesheet" href="../../site-sidebar.css" />
+  <script type="application/ld+json" data-seo="article">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://barbudenge.github.io/pt-br/artigos/camforge-comparacao-curvas-deslocamento.html#article",
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://barbudenge.github.io/pt-br/artigos/camforge-comparacao-curvas-deslocamento.html" },
+        "headline": "Comparação de curvas de deslocamento no CamForge",
+        "description": "Comparação técnica das curvas de deslocamento disponíveis no CamForge, com fatores normalizados de velocidade, aceleração e jerk, continuidade e aplicações recomendadas.",
+        "url": "https://barbudenge.github.io/pt-br/artigos/camforge-comparacao-curvas-deslocamento.html",
+        "inLanguage": "pt-BR",
+        "datePublished": "2026-08-31",
+        "dateModified": "2026-08-31",
+        "author": { "@type": "Person", "name": "Artur Henrique de Freitas Avelar", "url": "https://barbudenge.github.io/pt-br/sobre.html" },
+        "publisher": { "@type": "Organization", "name": "Barbudenge", "url": "https://barbudenge.github.io/" },
+        "isPartOf": { "@id": "https://barbudenge.github.io/pt-br/artigos/#collection" },
+        "image": ["https://barbudenge.github.io/figs/aulas/cames-curva-deslocamento.png"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://barbudenge.github.io/pt-br/artigos/camforge-comparacao-curvas-deslocamento.html#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://barbudenge.github.io/pt-br/" },
+          { "@type": "ListItem", "position": 2, "name": "Artigos", "item": "https://barbudenge.github.io/pt-br/artigos/" },
+          { "@type": "ListItem", "position": 3, "name": "Comparação de curvas de deslocamento no CamForge", "item": "https://barbudenge.github.io/pt-br/artigos/camforge-comparacao-curvas-deslocamento.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container topbar">
+    <a href="../index.html" style="text-decoration:none;"><div class="brand">Barbu<span>denge</span></div></a>
+    <nav aria-label="Navegação principal">
+      <a href="../index.html">Início</a>
+      <a href="index.html">Artigos</a>
+      <a href="/projects/pt-br">Projetos</a>
+      <a href="../sobre.html">Sobre</a>
+    </nav>
+    <div class="language-switch" role="group" aria-label="Idioma">
+      <a class="language-switch__option is-active" href="/pt-br/artigos/camforge-comparacao-curvas-deslocamento.html" lang="pt-BR" hreflang="pt-BR" aria-current="page">PT</a>
+      <a class="language-switch__option" href="/artigos/camforge-comparacao-curvas-deslocamento.html" lang="en" hreflang="en">EN</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow">Projeto de cames</span>
+    <h1>Comparação de curvas de deslocamento no CamForge</h1>
+    <p>Um guia técnico para escolher leis de movimento a partir da velocidade, aceleração, jerk, continuidade e das exigências reais do mecanismo.</p>
+    <div class="byline">
+      <span>Por Artur Henrique de Freitas Avelar</span>
+      <time datetime="2026-08-31">31 de agosto de 2026</time>
+      <span>Categoria: projeto de cames e leis de movimento</span>
+    </div>
+  </div>
+</section>
+
+<main class="container article-layout">
+  <article class="article-body">
+    <p class="lead">A seleção da curva de deslocamento é uma das decisões que mais influenciam o comportamento dinâmico de um came. Duas leis podem produzir subidas praticamente iguais no diagrama de deslocamento e, ainda assim, impor ao mecanismo velocidades máximas, acelerações, níveis de jerk e forças muito diferentes. Este artigo compara somente as leis de movimento disponíveis atualmente no <strong>CamForge</strong>, utilizando os critérios apresentados por Jensen, Rothbart e Norton.</p>
+
+    <figure class="article-figure figure-wide">
+      <img src="../../figs/aulas/cames-curva-deslocamento.png" alt="Diagrama de deslocamento de came com trechos de subida, parada e retorno">
+      <figcaption>O diagrama de deslocamento prescreve o movimento do seguidor, mas as derivadas da lei escolhida determinam grande parte do desempenho dinâmico do came.</figcaption>
+    </figure>
+
+    <h2>Por que a comparação precisa de tabela e interpretação técnica</h2>
+    <p>A tabela é útil para a triagem inicial porque coloca lado a lado os principais fatores normalizados. Ela não é suficiente para a escolha final. Como destaca Norton, as curvas de deslocamento tornam-se visualmente muito semelhantes depois das integrações que as produzem; as diferenças decisivas aparecem com maior clareza nos diagramas de aceleração e jerk e nas junções entre segmentos. Rothbart também distingue as curvas básicas, adequadas a uma escolha inicial em baixa ou média velocidade, das leis modificadas, combinadas e polinomiais destinadas a melhorar o comportamento dinâmico.</p>
+
+    <p>Para uma subida de altura (h) durante um ângulo de came β, os fatores normalizados máximos escalam as derivadas aproximadamente como</p>
+
+    <p>\[v_{max}=C_v\frac{h}{\beta},\qquad a_{max}=C_a\frac{h}{\beta^2},\qquad j_{max}=C_j\frac{h}{\beta^3}.\]</p>
+
+    <p>A comparação seguinte considera β em radianos. Fatores menores podem ser vantajosos, mas precisam ser avaliados juntamente com a continuidade. Uma aceleração teoricamente baixa não representa benefício se a lei introduzir um salto brusco ao encontrar uma parada ou excitar a estrutura por um padrão desfavorável de jerk.</p>
+
+    <h2>Comparação direta das principais leis entre paradas</h2>
+    <div class="table-scroll" role="region" aria-label="Comparação dos fatores normalizados" tabindex="0">
+    <table class="data-table">
+      <thead>
+        <tr><th>Lei no CamForge</th><th>(C_v)</th><th>(C_a)</th><th>(C_j)</th><th>Interpretação de projeto</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Parabólica (PAR)</td><td>2,000</td><td>4,000</td><td>Infinito nos saltos de aceleração</td><td>Baixa aceleração nominal, porém inadequada para serviço exigente em alta velocidade sem transições.</td></tr>
+        <tr><td>Harmônica simples (H5/H6)</td><td>1,571</td><td>4,935</td><td>Infinito junto a uma parada</td><td>Menor velocidade máxima do grupo; a aceleração não nula nas extremidades dificulta a união direta com uma parada.</td></tr>
+        <tr><td>Trapezoidal modificada (MT)</td><td>2,000</td><td>4,888</td><td>61,4</td><td>Menor aceleração nominal finita da tabela, embora o jerk relativamente irregular possa ampliar a vibração.</td></tr>
+        <tr><td>Aceleração trapezoidal (TA)</td><td>2,000</td><td>5,333</td><td>42,7</td><td>Picos moderados, mas em geral superada pelas leis modificadas mais suaves.</td></tr>
+        <tr><td>Senoidal modificada (MS)</td><td>1,760</td><td>5,528</td><td>69,5</td><td>Baixo fator de velocidade; útil quando o ângulo de pressão ou o tamanho do came é restrito.</td></tr>
+        <tr><td>Polinomial 3-4-5 (P45)</td><td>1,875</td><td>5,774</td><td>60,0</td><td>Solução equilibrada de uso geral, com velocidade e aceleração nulas nas extremidades.</td></tr>
+        <tr><td>Cicloidal (C5/C6)</td><td>2,000</td><td>6,283</td><td>39,5</td><td>Aceleração contínua e baixo fator de jerk; escolha forte para alta velocidade e baixa vibração.</td></tr>
+        <tr><td>Polinomial 4-5-6-7 (P67)</td><td>2,188</td><td>7,513</td><td>52,5</td><td>Jerk contínuo nas fronteiras, com velocidade e aceleração nominais mais altas.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p>Os valores calculados pelas equações do CamForge são muito próximos dos apresentados nas tabelas clássicas; pequenas diferenças decorrem do arredondamento dos coeficientes e da avaliação numérica. A principal conclusão não é uma classificação da menor para a maior aceleração. A lei parabólica, por exemplo, possui (C_a) baixo, mas as mudanças abruptas de aceleração tornam o jerk teoricamente infinito. Em sentido oposto, as leis cicloidal e 4-5-6-7 aceitam aceleração nominal maior em troca de continuidade substancialmente melhor.</p>
+
+    <h2>Todas as famílias de curvas disponíveis no CamForge</h2>
+    <p>O CamForge possui variantes direcionais e meias-curvas que não podem ser todas avaliadas como subidas completas entre paradas. A tabela a seguir agrupa, portanto, as 65 opções selecionáveis nos 40 modelos de leis de movimento implementados pelo programa e identifica a função de projeto de cada família.</p>
+
+    <div class="table-scroll" role="region" aria-label="Comparação das famílias de curvas do CamForge" tabindex="0">
+    <table class="data-table">
+      <thead>
+        <tr><th>Família e códigos</th><th>Principal vantagem</th><th>Principal limitação</th><th>Uso recomendado</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Parada (W/DW)</td><td>Mantém constante a posição do seguidor.</td><td>Exige derivadas nulas e compatíveis nos segmentos vizinhos.</td><td>Intervalos estacionários do processo.</td></tr>
+        <tr><td>Velocidade constante (VC)</td><td>Baixo fator de velocidade e trecho direto de movimento uniforme.</td><td>Não pode se ligar diretamente a uma parada; necessita transições de entrada e saída.</td><td>Trechos longos de movimento uniforme combinados com curvas de transição.</td></tr>
+        <tr><td>Cicloidais (C1–C6)</td><td>Aceleração suave, jerk favorável, baixa vibração e desgaste.</td><td>Aceleração máxima um pouco maior e maior sensibilidade a erros de fabricação.</td><td>Movimento em alta velocidade e meias-curvas entre repouso e velocidade constante.</td></tr>
+        <tr><td>Harmônicas (H1–H6)</td><td>Baixa velocidade máxima, came compacto e menor empuxo lateral.</td><td>A lei completa tem aceleração não nula nas extremidades quando ligada a uma parada.</td><td>Segmentos compostos compatíveis e meias-curvas de transição, e não uma lei isolada entre paradas em alta velocidade.</td></tr>
+        <tr><td>Parabólica (PAR)</td><td>Formulação simples e baixa aceleração teórica.</td><td>Saltos de aceleração produzem jerk teoricamente infinito.</td><td>Aplicações de baixa velocidade ou estudos preliminares.</td></tr>
+        <tr><td>Harmônica dupla (DH)</td><td>Assimetria útil em um movimento com uma única parada.</td><td>Alta aceleração negativa e condições de extremidade inadequadas para ciclos com duas paradas.</td><td>Sistemas de parada única com intervalos adjacentes compatíveis.</td></tr>
+        <tr><td>Cúbicas n.º 1, 2 e 3 (CB1–CB3)</td><td>Construção polinomial simples com diferentes inclinações de fronteira.</td><td>Algumas variantes mantêm saltos de aceleração ou aceleração não nula nas extremidades.</td><td>Segmentos de baixa velocidade e combinações específicas de condições de fronteira.</td></tr>
+        <tr><td>Polinomiais 3-4, 3-4-5 e 4-5-6-7 (P34, P45, P67)</td><td>Continuidade progressivamente melhor nas extremidades e uso geral flexível.</td><td>Maior continuidade pode elevar a velocidade ou a aceleração máxima.</td><td>P45 para projeto equilibrado; P67 quando transições dinâmicas mais suaves têm prioridade.</td></tr>
+        <tr><td>Transições de oitavo grau (P1/P2)</td><td>Excelente ligação entre estados prescritos de velocidade e aceleração.</td><td>Foram desenvolvidas como transições, não como leis universais de subida completa.</td><td>União de segmentos e correção da compatibilidade do movimento por trechos.</td></tr>
+        <tr><td>Polinomiais de quinto, nono e décimo primeiro graus (P5, P9, P11S, P11V)</td><td>Maior controle das condições nas extremidades e no ponto médio.</td><td>O grau mais alto pode aumentar picos, sensibilidade e complexidade numérica.</td><td>Condições de fronteira especiais, movimento simétrico ou velocidade prescrita no ponto médio.</td></tr>
+        <tr><td>Leis trapezoidais e modificadas (TA, MT, MS, MS1/MS2)</td><td>Redistribuição intencional da aceleração; MT reduz (C_a), enquanto MS reduz (C_v).</td><td>O melhor pico teórico não fornece necessariamente a menor vibração.</td><td>MT para restrições de aceleração; MS para velocidade e ângulo de pressão; meias-senoidais para transições.</td></tr>
+        <tr><td>Cicloidal modificada (MC)</td><td>Redistribui o movimento cicloidal para atender condições alternativas.</td><td>A vantagem depende da parametrização e não pode ser presumida somente pelo nome.</td><td>Solução alternativa após verificar no CamForge os picos reais de SVAJ.</td></tr>
+        <tr><td>Berzak D e E (BD/BE)</td><td>Desenvolvidas para reduzir vibração residual em determinadas faixas de operação.</td><td>O desempenho depende da razão entre a rotação do came e a frequência natural do sistema.</td><td>Mecanismos flexíveis e rápidos avaliados dinamicamente.</td></tr>
+        <tr><td>Harmônicas de Gutman, Freudenstein e Weber (G3, F13, F35, WB)</td><td>Formulações de Fourier permitem controlar o conteúdo harmônico e evitar excitações críticas.</td><td>A escolha exige conhecimento das frequências naturais do mecanismo.</td><td>Projeto de baixa vibração e aplicações sensíveis à ressonância.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>Critérios práticos de seleção</h2>
+    <p>Para uma subida geral entre paradas, Norton identifica o <strong>polinômio 3-4-5</strong> como um compromisso consistente: seus fatores máximos são moderados e a velocidade e a aceleração são nulas nas extremidades. Quando o ângulo de pressão ou o diâmetro do came é a principal restrição, a <strong>senoidal modificada</strong> torna-se atraente por seu menor fator de velocidade. A <strong>trapezoidal modificada</strong> oferece baixa aceleração máxima teórica, mas sua assinatura de jerk impede que ela seja interpretada automaticamente como a solução de menor vibração.</p>
+
+    <p>Para velocidades mais altas e maior sensibilidade à vibração residual, as leis <strong>cicloidal</strong> e <strong>4-5-6-7</strong> merecem prioridade, mesmo com fatores nominais de aceleração maiores. Rothbart apresenta a cicloidal como uma forte primeira escolha para muitas exigências de máquinas, pois evita mudanças bruscas de aceleração e tende a reduzir choque, ruído e desgaste. Os processos modernos de fabricação também diminuem parte da dificuldade tradicional de produzir esse perfil com precisão.</p>
+
+    <p>Quando o processo exige um trecho de velocidade constante, a VC deve ser tratada como o centro de um movimento composto, e não como uma lei isolada. O CamForge disponibiliza C1–C4, H1–H4, MS1/MS2 e P1/P2 justamente para formar transições compatíveis entre repouso, velocidade constante e outros estados de fronteira. Os modos de <strong>filtro automático</strong> e de <strong>correção de descontinuidades</strong> são especialmente valiosos nesse caso.</p>
+
+    <p>Por fim, as curvas de Berzak, Gutman, Freudenstein e Weber não devem ser escolhidas somente por uma tabela genérica de fatores. Sua finalidade está associada à vibração residual e à excitação harmônica; por isso, o projeto deve considerar frequências naturais, amortecimento e faixa de rotação do sistema real do seguidor. O CamForge fornece as leis cinemáticas e sua resposta SVAJ; cabe ao engenheiro relacionar essas informações ao modelo dinâmico da máquina.</p>
+
+    <h2>Conclusão</h2>
+    <p>Não existe uma curva de deslocamento universalmente superior. A melhor lei é aquela cujas condições de extremidade correspondem aos segmentos vizinhos e cujas velocidade, aceleração, jerk, ângulo de pressão, curvatura e excitação dinâmica permanecem compatíveis com a aplicação. A tabela é, portanto, o ponto de partida correto, enquanto a decisão final deve resultar da análise completa de SVAJ e da geometria.</p>
+
+    <p>No CamForge, um procedimento prático consiste em definir o movimento exigido, utilizar o filtro de curvas possíveis ou a busca automática, comparar os diagramas SVAJ das alternativas e então verificar descontinuidades, ângulo de pressão e curvatura. Se necessário, a função de correção pode redistribuir β ou ΔL antes da avaliação do perfil final.</p>
+
+    <h2>Referências técnicas</h2>
+    <ol>
+      <li>Jensen, P. W. <em>Cam Design and Manufacture</em>. 1987. Capítulo 2, especialmente a Tabela 2-1, página 19 do livro (página 40 do PDF).</li>
+      <li>Rothbart, H. A. <em>Cam Design Handbook</em>. 2004. Capítulos 2–4, incluindo a comparação de curvas básicas, modificadas e polinomiais.</li>
+      <li>Norton, R. L. <em>Cam Design and Manufacturing Handbook</em>. 2009. Capítulos 3, 11 e 18, incluindo os fatores comparativos e a discussão de vibração residual.</li>
+      <li>Norton, R. L. <em>Design of Machinery</em>. 6. ed., 2020. Capítulo 8, seções sobre funções padrão e modificadas para cames.</li>
+    </ol>
+  </article>
+
+  <aside>
+    <div class="sidebar-card">
+      <h3>Resumo da página</h3>
+      <ul class="meta-list">
+        <li>Data: 31 de agosto de 2026.</li>
+        <li>Escopo: somente curvas do CamForge.</li>
+        <li>Critérios: velocidade, aceleração, jerk e continuidade.</li>
+        <li>Método: tabela comparativa com interpretação técnica.</li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h3>Seleção rápida</h3>
+      <ul class="meta-list">
+        <li>Compromisso geral: P45.</li>
+        <li>Menor velocidade máxima: MS.</li>
+        <li>Alta velocidade e baixa vibração: C5/C6 ou P67.</li>
+        <li>Trechos de velocidade constante: VC com curvas de transição.</li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h3>Abrir o CamForge</h3>
+      <ul>
+        <li><a href="https://barbudenge.github.io/lasmeufsj/camforge/">Página do projeto CamForge</a></li>
+        <li><a href="https://barbudenge.github.io/camforge/pt-br/">Versão web em português</a></li>
+        <li><a href="https://barbudenge.github.io/camforge/">Versão web em inglês</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h3>Continue estudando</h3>
+      <ul>
+        <li><a href="camforge-exemplo-correcao-descontinuidades.html">Exemplo de correção de descontinuidades</a></li>
+        <li><a href="camforge-projeto-cames.html">Ferramenta de projeto CamForge</a></li>
+        <li><a href="cames-curvas-deslocamento.html">Curvas de deslocamento para projeto de cames</a></li>
+        <li><a href="index.html">Índice de artigos</a></li>
+      </ul>
+    </div>
+  </aside>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Barbudenge · <a href="../index.html">Página inicial</a> · <a href="../sobre.html">Sobre</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
+  </div>
+</footer>
+
+  <script src="../../site-sidebar.js"></script>
+</body>
+</html>

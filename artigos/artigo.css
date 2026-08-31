@@ -262,6 +262,17 @@ li + li { margin-top: 7px; }
   font-weight: 700;
 }
 
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  margin: 18px 0 22px;
+}
+
+.table-scroll .data-table {
+  min-width: 760px;
+  margin: 0;
+}
+
 .note,
 .equation-box {
   border-radius: 8px;

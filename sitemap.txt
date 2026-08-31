@@ -54,3 +54,5 @@ https://barbudenge.github.io/engrenarium/
 https://barbudenge.github.io/engrenarium/pt-br/
 https://barbudenge.github.io/camforge/
 https://barbudenge.github.io/camforge/pt-br/
+https://barbudenge.github.io/artigos/camforge-comparacao-curvas-deslocamento.html
+https://barbudenge.github.io/pt-br/artigos/camforge-comparacao-curvas-deslocamento.html

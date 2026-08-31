@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comparing displacement curves in CamForge | Barbudenge</title>
+  <meta name="description" content="Technical comparison of the displacement curves available in CamForge, including normalized velocity, acceleration and jerk factors, continuity and recommended applications." />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="author" content="Artur Henrique de Freitas Avelar" />
+  <meta name="google-adsense-account" content="ca-pub-5777194849710689" />
+  <link rel="canonical" href="https://barbudenge.github.io/artigos/camforge-comparacao-curvas-deslocamento.html" />
+
+  <meta property="og:title" content="Comparing displacement curves in CamForge" />
+  <meta property="og:description" content="How velocity, acceleration, jerk and continuity guide the choice among the motion laws implemented in CamForge." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://barbudenge.github.io/artigos/camforge-comparacao-curvas-deslocamento.html" />
+  <meta property="og:image" content="https://barbudenge.github.io/figs/aulas/cames-curva-deslocamento.png" />
+
+  <script>
+    window.MathJax = { tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] }, svg: { fontCache: 'global' } };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5777194849710689" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="artigo.css" />
+  <link rel="alternate" hreflang="en" href="https://barbudenge.github.io/artigos/camforge-comparacao-curvas-deslocamento.html" />
+  <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/camforge-comparacao-curvas-deslocamento.html" />
+  <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/camforge-comparacao-curvas-deslocamento.html" />
+  <link rel="stylesheet" href="../language-switch.css" />
+  <link rel="stylesheet" href="../site-sidebar.css" />
+  <script type="application/ld+json" data-seo="article">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://barbudenge.github.io/artigos/camforge-comparacao-curvas-deslocamento.html#article",
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://barbudenge.github.io/artigos/camforge-comparacao-curvas-deslocamento.html" },
+        "headline": "Comparing displacement curves in CamForge",
+        "description": "Technical comparison of the displacement curves available in CamForge, including normalized velocity, acceleration and jerk factors, continuity and recommended applications.",
+        "url": "https://barbudenge.github.io/artigos/camforge-comparacao-curvas-deslocamento.html",
+        "inLanguage": "en",
+        "datePublished": "2026-08-31",
+        "dateModified": "2026-08-31",
+        "author": { "@type": "Person", "name": "Artur Henrique de Freitas Avelar", "url": "https://barbudenge.github.io/sobre.html" },
+        "publisher": { "@type": "Organization", "name": "Barbudenge", "url": "https://barbudenge.github.io/" },
+        "isPartOf": { "@id": "https://barbudenge.github.io/artigos/#collection" },
+        "image": ["https://barbudenge.github.io/figs/aulas/cames-curva-deslocamento.png"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://barbudenge.github.io/artigos/camforge-comparacao-curvas-deslocamento.html#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://barbudenge.github.io/" },
+          { "@type": "ListItem", "position": 2, "name": "Articles", "item": "https://barbudenge.github.io/artigos/" },
+          { "@type": "ListItem", "position": 3, "name": "Comparing displacement curves in CamForge", "item": "https://barbudenge.github.io/artigos/camforge-comparacao-curvas-deslocamento.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container topbar">
+    <a href="../index.html" style="text-decoration:none;"><div class="brand">Barbu<span>denge</span></div></a>
+    <nav aria-label="Main navigation">
+      <a href="../index.html">Home</a>
+      <a href="index.html">Articles</a>
+      <a href="/projects">Projects</a>
+      <a href="../sobre.html">About</a>
+    </nav>
+    <div class="language-switch" role="group" aria-label="Language">
+      <a class="language-switch__option" href="/pt-br/artigos/camforge-comparacao-curvas-deslocamento.html" lang="pt-BR" hreflang="pt-BR">PT</a>
+      <a class="language-switch__option is-active" href="/artigos/camforge-comparacao-curvas-deslocamento.html" lang="en" hreflang="en" aria-current="page">EN</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow">Cam design</span>
+    <h1>Comparing displacement curves in CamForge</h1>
+    <p>A technical guide to choosing motion laws through velocity, acceleration, jerk, continuity and the actual requirements of the mechanism.</p>
+    <div class="byline">
+      <span>By Artur Henrique de Freitas Avelar</span>
+      <time datetime="2026-08-31">August 31, 2026</time>
+      <span>Category: cam design and motion laws</span>
+    </div>
+  </div>
+</section>
+
+<main class="container article-layout">
+  <article class="article-body">
+    <p class="lead">Selecting a displacement curve is one of the decisions that most strongly affects a cam's dynamic behavior. Two laws can produce practically the same rise on the displacement diagram and nevertheless impose very different peak velocities, accelerations, jerk levels and forces on the mechanism. This article compares only the motion laws currently available in <strong>CamForge</strong>, using the criteria presented by Jensen, Rothbart and Norton.</p>
+
+    <figure class="article-figure figure-wide">
+      <img src="../figs/aulas/cames-curva-deslocamento.png" alt="Cam displacement diagram with rise, dwell and return intervals">
+      <figcaption>The displacement diagram prescribes the follower motion, but the derivatives of the selected law determine much of the cam's dynamic performance.</figcaption>
+    </figure>
+
+    <h2>Why the comparison needs both a table and an engineering interpretation</h2>
+    <p>A table is useful for screening because it places the principal normalized factors side by side. It is not sufficient for final selection. As Norton emphasizes, displacement curves become visually very similar after the integrations that produce them; the decisive differences are clearer in the acceleration and jerk diagrams and at the junctions between segments. Rothbart likewise distinguishes basic curves, suitable for an initial choice at low or moderate speed, from modified, combined and polynomial laws intended to improve dynamic performance.</p>
+
+    <p>For a rise of height (h) over a cam angle β, the peak normalized factors scale the derivatives approximately as</p>
+
+    <p>\[v_{max}=C_v\frac{h}{\beta},\qquad a_{max}=C_a\frac{h}{\beta^2},\qquad j_{max}=C_j\frac{h}{\beta^3}.\]</p>
+
+    <p>The comparison below uses β in radians. Lower factors can be advantageous, but continuity must be examined together with them. A theoretically low acceleration is not a benefit if the law introduces an abrupt jump at a dwell or excites the structure through an unfavorable jerk pattern.</p>
+
+    <h2>Direct comparison of the main dwell-to-dwell laws</h2>
+    <div class="table-scroll" role="region" aria-label="Comparison of normalized factors" tabindex="0">
+    <table class="data-table">
+      <thead>
+        <tr><th>CamForge law</th><th>(C_v)</th><th>(C_a)</th><th>(C_j)</th><th>Engineering interpretation</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Parabolic (PAR)</td><td>2.000</td><td>4.000</td><td>Infinite at acceleration jumps</td><td>Low nominal acceleration, but unacceptable for demanding high-speed duty without transitions.</td></tr>
+        <tr><td>Simple harmonic (H5/H6)</td><td>1.571</td><td>4.935</td><td>Infinite against a dwell</td><td>Lowest peak velocity in the group; nonzero endpoint acceleration makes a direct dwell junction problematic.</td></tr>
+        <tr><td>Modified trapezoidal (MT)</td><td>2.000</td><td>4.888</td><td>61.4</td><td>Lowest finite nominal acceleration in the table, although its relatively rough jerk can increase vibration.</td></tr>
+        <tr><td>Trapezoidal acceleration (TA)</td><td>2.000</td><td>5.333</td><td>42.7</td><td>Moderate peaks, but generally superseded by smoother modified laws.</td></tr>
+        <tr><td>Modified sinusoidal (MS)</td><td>1.760</td><td>5.528</td><td>69.5</td><td>Low velocity factor and useful when pressure angle or cam size is constrained.</td></tr>
+        <tr><td>3-4-5 polynomial (P45)</td><td>1.875</td><td>5.774</td><td>60.0</td><td>Balanced general-purpose solution with zero velocity and acceleration at the ends.</td></tr>
+        <tr><td>Cycloidal (C5/C6)</td><td>2.000</td><td>6.283</td><td>39.5</td><td>Continuous acceleration and low jerk factor; a strong choice for high-speed and low-vibration operation.</td></tr>
+        <tr><td>4-5-6-7 polynomial (P67)</td><td>2.188</td><td>7.513</td><td>52.5</td><td>Continuous jerk at the boundaries, with higher nominal velocity and acceleration.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p>The values calculated from the CamForge equations agree closely with the classic comparative tables, with small differences caused by coefficient rounding and numerical evaluation. The most important conclusion is not a ranking from lowest to highest acceleration. For example, the parabolic law has a low (C_a), but its abrupt acceleration changes make the jerk theoretically infinite. Conversely, the cycloidal and 4-5-6-7 laws accept higher nominal acceleration in exchange for substantially better continuity.</p>
+
+    <h2>All curve families available in CamForge</h2>
+    <p>CamForge has directional and half-curve variants that cannot all be judged as complete dwell-to-dwell rises. The following table therefore groups the 65 selectable options into the 40 motion-law models implemented by the program and identifies the design role of each family.</p>
+
+    <div class="table-scroll" role="region" aria-label="Comparison of CamForge curve families" tabindex="0">
+    <table class="data-table">
+      <thead>
+        <tr><th>Family and codes</th><th>Main advantage</th><th>Main limitation</th><th>Recommended role</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Dwell (W/DW)</td><td>Maintains constant follower position.</td><td>Requires zero and compatible derivatives in adjoining segments.</td><td>Stationary process intervals.</td></tr>
+        <tr><td>Constant velocity (VC)</td><td>Small velocity factor and direct uniform-motion interval.</td><td>Cannot connect directly to a dwell; needs entry and exit transitions.</td><td>Long uniform-motion sections combined with blending curves.</td></tr>
+        <tr><td>Cycloidal (C1–C6)</td><td>Smooth acceleration and favorable jerk; low vibration and wear.</td><td>Slightly higher peak acceleration and greater sensitivity to manufacturing error.</td><td>High-speed motion and half-curve transitions between rest and constant velocity.</td></tr>
+        <tr><td>Harmonic (H1–H6)</td><td>Low peak velocity, compact cam and small side thrust.</td><td>The complete law has nonzero endpoint acceleration when joined to a dwell.</td><td>Matched compound segments and half-curve transitions, rather than an isolated high-speed dwell-to-dwell law.</td></tr>
+        <tr><td>Parabolic (PAR)</td><td>Simple formulation and low theoretical acceleration.</td><td>Acceleration jumps produce infinite theoretical jerk.</td><td>Low-speed or preliminary applications.</td></tr>
+        <tr><td>Double harmonic (DH)</td><td>Useful asymmetry for a single-dwell motion.</td><td>High negative acceleration and unsuitable endpoint conditions for double-dwell cycles.</td><td>Single-dwell systems with matched adjacent intervals.</td></tr>
+        <tr><td>Cubic no. 1, 2 and 3 (CB1–CB3)</td><td>Simple polynomial construction with different boundary slopes.</td><td>Some variants retain acceleration jumps or nonzero endpoint acceleration.</td><td>Low-speed segments and specific boundary-condition combinations.</td></tr>
+        <tr><td>3-4, 3-4-5 and 4-5-6-7 polynomials (P34, P45, P67)</td><td>Progressively improved endpoint continuity and flexible general use.</td><td>Higher continuity can raise peak velocity or acceleration.</td><td>P45 for a balanced design; P67 when smoother dynamic transitions are more important.</td></tr>
+        <tr><td>Eighth-degree transitions (P1/P2)</td><td>Excellent blending between prescribed velocity and acceleration states.</td><td>Designed as a transition, not as a universal full-rise law.</td><td>Joining segments and correcting piecewise-motion compatibility.</td></tr>
+        <tr><td>Fifth-, ninth- and eleventh-degree polynomials (P5, P9, P11S, P11V)</td><td>Greater control over endpoint and midpoint conditions.</td><td>Higher degree may increase peaks, sensitivity and numerical complexity.</td><td>Special boundary conditions, symmetric motion or prescribed midpoint velocity.</td></tr>
+        <tr><td>Trapezoidal and modified laws (TA, MT, MS, MS1/MS2)</td><td>Purposeful redistribution of acceleration; MT lowers (C_a), while MS lowers (C_v).</td><td>The best theoretical peak does not necessarily give the lowest vibration.</td><td>MT for acceleration constraints; MS for velocity and pressure-angle constraints; half-sine variants for transitions.</td></tr>
+        <tr><td>Modified cycloidal (MC)</td><td>Redistributes the cycloidal motion to meet alternative boundary goals.</td><td>Its advantage depends on parameterization and cannot be assumed from the name alone.</td><td>Alternative solution after checking the actual SVAJ peaks in CamForge.</td></tr>
+        <tr><td>Berzak D and E (BD/BE)</td><td>Designed to reduce residual vibration over selected operating ranges.</td><td>Performance depends on the ratio between cam speed and system natural frequency.</td><td>Flexible high-speed mechanisms evaluated dynamically.</td></tr>
+        <tr><td>Gutman, Freudenstein and Weber harmonics (G3, F13, F35, WB)</td><td>Fourier formulations can control harmonic content and avoid critical excitation.</td><td>Selection requires knowledge of the mechanism's natural frequencies.</td><td>Low-vibration design and resonance-sensitive applications.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>Practical selection criteria</h2>
+    <p>For a general dwell-to-dwell rise, Norton identifies the <strong>3-4-5 polynomial</strong> as a sound compromise: its peak factors are moderate and both velocity and acceleration vanish at the endpoints. When the pressure angle or the cam diameter is the main restriction, the <strong>modified sinusoidal</strong> law becomes attractive because of its lower velocity factor. The <strong>modified trapezoidal</strong> law offers low theoretical peak acceleration, but its jerk signature means that it should not automatically be interpreted as the lowest-vibration solution.</p>
+
+    <p>For higher speed and greater sensitivity to residual vibration, the <strong>cycloidal</strong> and <strong>4-5-6-7</strong> laws deserve priority even though their nominal acceleration factors are higher. Rothbart describes the cycloidal curve as a strong first choice for many machine requirements because it avoids abrupt acceleration changes and tends to reduce shock, noise and wear. Modern manufacturing also reduces some of the traditional difficulty in producing its profile accurately.</p>
+
+    <p>When the process demands a constant-velocity section, VC should be treated as the center of a compound motion, not as an isolated law. CamForge provides C1–C4, H1–H4, MS1/MS2 and P1/P2 precisely to form compatible transitions between rest, constant velocity and other endpoint states. The <strong>automatic filtering</strong> and <strong>discontinuity-correction</strong> modes are especially valuable in this situation.</p>
+
+    <p>Finally, Berzak, Gutman, Freudenstein and Weber curves are not best selected from a generic factor table alone. Their purpose is tied to residual vibration and harmonic excitation, so the design should include the natural frequencies, damping and operating-speed range of the real follower system. CamForge provides the kinematic laws and their SVAJ response; the engineer must still connect that information to the dynamic model of the machine.</p>
+
+    <h2>Conclusion</h2>
+    <p>There is no universally superior displacement curve. The best law is the one whose endpoint conditions match the neighboring segments and whose velocity, acceleration, jerk, pressure angle, curvature and dynamic excitation remain compatible with the application. A table is therefore the correct starting point, while the final decision must come from the complete SVAJ and geometric analysis.</p>
+
+    <p>In CamForge, a practical workflow is to define the required motion, use the possible-curve filter or automatic search, compare candidate SVAJ diagrams and then verify discontinuities, pressure angle and curvature. If necessary, the correction function can redistribute β or ΔL before the final profile is evaluated.</p>
+
+    <h2>Technical references</h2>
+    <ol>
+      <li>Jensen, P. W. <em>Cam Design and Manufacture</em>. 1987. Chapter 2, especially Table 2-1, book page 19 (PDF page 40).</li>
+      <li>Rothbart, H. A. <em>Cam Design Handbook</em>. 2004. Chapters 2–4, including the comparison of basic, modified and polynomial curves.</li>
+      <li>Norton, R. L. <em>Cam Design and Manufacturing Handbook</em>. 2009. Chapters 3, 11 and 18, including the comparative factors and residual-vibration discussion.</li>
+      <li>Norton, R. L. <em>Design of Machinery</em>. 6th ed., 2020. Chapter 8, sections on standard and modified cam functions.</li>
+    </ol>
+  </article>
+
+  <aside>
+    <div class="sidebar-card">
+      <h3>Page summary</h3>
+      <ul class="meta-list">
+        <li>Date: August 31, 2026.</li>
+        <li>Scope: CamForge curves only.</li>
+        <li>Criteria: velocity, acceleration, jerk and continuity.</li>
+        <li>Method: comparative table plus technical interpretation.</li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h3>Quick selection</h3>
+      <ul class="meta-list">
+        <li>General compromise: P45.</li>
+        <li>Lower peak velocity: MS.</li>
+        <li>High speed and low vibration: C5/C6 or P67.</li>
+        <li>Constant-velocity sections: VC with transition curves.</li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h3>Open CamForge</h3>
+      <ul>
+        <li><a href="https://barbudenge.github.io/lasmeufsj/camforge/">CamForge project page</a></li>
+        <li><a href="https://barbudenge.github.io/camforge/">CamForge web version</a></li>
+        <li><a href="https://barbudenge.github.io/camforge/pt-br/">Portuguese web version</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h3>Continue studying</h3>
+      <ul>
+        <li><a href="camforge-exemplo-correcao-descontinuidades.html">CamForge discontinuity-correction example</a></li>
+        <li><a href="camforge-projeto-cames.html">CamForge design tool</a></li>
+        <li><a href="cames-curvas-deslocamento.html">Displacement curves for cam design</a></li>
+        <li><a href="index.html">Article index</a></li>
+      </ul>
+    </div>
+  </aside>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Barbudenge · <a href="../index.html">Home page</a> · <a href="../sobre.html">About</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
+  </div>
+</footer>
+
+  <script src="../site-sidebar.js"></script>
+</body>
+</html>
