@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CamForge example: correcting discontinuities in cam design | Barbudenge</title>
+  <meta name="description" content="Complete CamForge design example: a 60 mm rise, a constant-velocity segment and automatic discontinuity correction by changing beta." />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="author" content="Artur Henrique de Freitas Avelar" />
+  <meta name="google-adsense-account" content="ca-pub-5777194849710689" />
+  <link rel="canonical" href="https://barbudenge.github.io/artigos/camforge-exemplo-correcao-descontinuidades.html" />
+
+  <meta property="og:title" content="CamForge example: correcting discontinuities in cam design" />
+  <meta property="og:description" content="A practical CamForge example that corrects velocity and acceleration discontinuities without changing follower displacements." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://barbudenge.github.io/artigos/camforge-exemplo-correcao-descontinuidades.html" />
+  <meta property="og:image" content="https://barbudenge.github.io/figs/aulas/cam%20ex%201.jpg" />
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5777194849710689" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="artigo.css" />
+  <link rel="alternate" hreflang="en" href="https://barbudenge.github.io/artigos/camforge-exemplo-correcao-descontinuidades.html" />
+  <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/camforge-exemplo-correcao-descontinuidades.html" />
+  <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/camforge-exemplo-correcao-descontinuidades.html" />
+  <link rel="stylesheet" href="../language-switch.css" />
+  <link rel="stylesheet" href="../site-sidebar.css" />
+  <script type="application/ld+json" data-seo="article">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://barbudenge.github.io/artigos/camforge-exemplo-correcao-descontinuidades.html#article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://barbudenge.github.io/artigos/camforge-exemplo-correcao-descontinuidades.html"
+        },
+        "headline": "CamForge example: correcting discontinuities in cam design",
+        "description": "Complete CamForge design example: a 60 mm rise, a constant-velocity segment and automatic discontinuity correction by changing beta.",
+        "url": "https://barbudenge.github.io/artigos/camforge-exemplo-correcao-descontinuidades.html",
+        "inLanguage": "en",
+        "datePublished": "2026-08-31",
+        "dateModified": "2026-08-31",
+        "author": {
+          "@type": "Person",
+          "name": "Artur Henrique de Freitas Avelar",
+          "url": "https://barbudenge.github.io/sobre.html"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Barbudenge",
+          "url": "https://barbudenge.github.io/"
+        },
+        "isPartOf": {
+          "@id": "https://barbudenge.github.io/artigos/#collection"
+        },
+        "image": [
+          "https://barbudenge.github.io/figs/aulas/cam%20ex%201.jpg",
+          "https://barbudenge.github.io/figs/aulas/cam%20ex%205.jpg",
+          "https://barbudenge.github.io/figs/aulas/cam%20ex%206.jpg"
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://barbudenge.github.io/artigos/camforge-exemplo-correcao-descontinuidades.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://barbudenge.github.io/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Articles",
+            "item": "https://barbudenge.github.io/artigos/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "CamForge example: correcting discontinuities in cam design",
+            "item": "https://barbudenge.github.io/artigos/camforge-exemplo-correcao-descontinuidades.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container topbar">
+    <a href="../index.html" style="text-decoration:none;"><div class="brand">Barbu<span>denge</span></div></a>
+    <nav aria-label="Main navigation">
+      <a href="../index.html">Home</a>
+      <a href="index.html">Articles</a>
+      <a href="/projects">Projects</a>
+      <a href="../sobre.html">About</a>
+    </nav>
+    <div class="language-switch" role="group" aria-label="Language">
+      <a class="language-switch__option" href="/pt-br/artigos/camforge-exemplo-correcao-descontinuidades.html" lang="pt-BR" hreflang="pt-BR">PT</a>
+      <a class="language-switch__option is-active" href="/artigos/camforge-exemplo-correcao-descontinuidades.html" lang="en" hreflang="en" aria-current="page">EN</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow">Design example</span>
+    <h1>CamForge example: correcting discontinuities in cam design</h1>
+    <p>A step-by-step study shows how to turn a motion specification into a cam profile and automatically correct the junctions between its motion laws.</p>
+    <div class="byline">
+      <span>By Artur Henrique de Freitas Avelar</span>
+      <time datetime="2026-08-31">August 31, 2026</time>
+      <span>Category: cam design and engineering tools</span>
+    </div>
+  </div>
+</section>
+
+<main class="container article-layout">
+  <article class="article-body">
+    <p class="lead">This example presents the use of <strong>CamForge</strong> to design a disk cam with a flat-faced follower. The objective is to obtain a total rise of 60 mm containing a constant-velocity interval and then apply the discontinuity-correction function so that the velocity and acceleration transitions become kinematically compatible.</p>
+
+    <h2>Motion specification</h2>
+    <p>The cam must produce a total follower rise of <strong>60 mm</strong>. Because a significant part of the stroke must occur at constant velocity, the cycle is divided into four segments: a progressive 5 mm entry, a main 50 mm constant-velocity rise, a final 5 mm transition and a 60 mm return to the initial position.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Segment</th>
+          <th>β</th>
+          <th>ΔL</th>
+          <th>Selected curve</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>60°</td><td>5 mm</td><td>C1 — cycloidal first half</td></tr>
+        <tr><td>2</td><td>180°</td><td>50 mm</td><td>VC — constant velocity</td></tr>
+        <tr><td>3</td><td>60°</td><td>5 mm</td><td>H2 — harmonic second half</td></tr>
+        <tr><td>4</td><td>60°</td><td>−60 mm</td><td>P2 — eighth-degree polynomial</td></tr>
+      </tbody>
+    </table>
+
+    <p>The selected curve sequence is therefore <strong>C1 – VC – H2 – P2</strong>. Cumulative displacement progresses from 0 to 5 mm, then to 55 mm, reaches 60 mm and finally returns to zero. The manual-selection screen gathers the input values and automatically calculates the initial and final angles and displacements of each interval.</p>
+
+    <figure class="article-figure">
+      <img src="../figs/aulas/cam%20ex%201.jpg" alt="CamForge four-segment list using C1, constant velocity, H2 and P2 curves">
+      <figcaption>Figure 1 — Initial definition of the four segments and motion laws in CamForge.</figcaption>
+    </figure>
+
+    <h2>Displacement chart and initial geometry</h2>
+    <p>After the data are entered, CamForge generates the displacement chart over the complete 360° cycle and constructs the corresponding profile. For this configuration, the program reports a <strong>minimum base radius of 228.304 mm</strong> to avoid a pointed cam profile. The example proceeds with a flat-faced follower, allowing the prescribed motion law to be related directly to the calculated cam surface.</p>
+
+    <figure class="article-figure figure-wide">
+      <img src="../figs/aulas/cam%20ex%202.jpg" alt="Displacement chart, minimum base radius and initial cam profile with a flat-faced follower">
+      <figcaption>Figure 2 — Displacement chart, geometric data and initial profile calculated for the flat-faced follower.</figcaption>
+    </figure>
+
+    <h2>Diagnosing the discontinuities</h2>
+    <p>Although the total displacement and the constant-velocity interval have been obtained, the initial design has an important problem: there are <strong>discontinuities in the velocity and acceleration curves with respect to cam rotation</strong>. The jumps occur at segment boundaries because each law has its own derivative conditions and the initially assigned angular intervals do not make those conditions compatible.</p>
+
+    <figure class="article-figure">
+      <img src="../figs/aulas/cam%20ex%203.jpg" alt="Initial CamForge SVAJ diagrams showing velocity and acceleration discontinuities">
+      <figcaption>Figure 3 — SVAJ diagrams for the initial design, showing abrupt changes at segment junctions.</figcaption>
+    </figure>
+
+    <p>Correcting these transitions is one of the most demanding parts of analytical cam design. Selecting individually suitable curves is not sufficient: the parameters that scale their derivatives must be adjusted while preserving the 360° cycle closure and the displacement required by the process. When performed manually, this procedure requires successive formulations, checks and iterations. The speed of the result depends strongly on the engineer's experience, and a prolonged adjustment can delay subsequent detailing and implementation stages.</p>
+
+    <h2>Automatic correction by changing β</h2>
+    <p>CamForge introduces the <strong>Correct discontinuities</strong> function to reduce this effort. When activated, the program diagnoses the junctions and immediately presents a solution capable of making the velocity and acceleration curves compatible. This example uses the <strong>Change beta only</strong> mode, which preserves the displacements and the four selected motion laws while changing only the angular extent of the segments.</p>
+
+    <figure class="article-figure figure-wide">
+      <img src="../figs/aulas/cam%20ex%204.jpg" alt="CamForge discontinuity-correction window with the change-beta-only option">
+      <figcaption>Figure 4 — Suggested solution in the mode that redistributes only the β intervals of the four segments.</figcaption>
+    </figure>
+
+    <p>In summary, the program evaluates the velocity and acceleration conditions at the endpoints of each law and searches for β values that equalize the derivatives of adjacent segments. During the search, the intervals continue to sum to 360°, the ΔL values remain fixed, and the C1, VC, H2 and P2 curves are not replaced. The functional stroke specification is therefore preserved while the angular time available for each step is redistributed.</p>
+
+    <h2>Corrected segments and final result</h2>
+
+    <figure class="article-figure figure-wide">
+      <img src="../figs/aulas/cam%20ex%205.jpg" alt="Corrected CamForge design with new beta values and a smoother cam profile">
+      <figcaption>Figure 5 — Design after correction, with redistributed angular intervals and preserved displacements.</figcaption>
+    </figure>
+
+    <figure class="article-figure">
+      <img src="../figs/aulas/cam%20ex%206.jpg" alt="CamForge SVAJ diagrams after correcting velocity and acceleration discontinuities">
+      <figcaption>Figure 6 — SVAJ diagrams after correction, with continuous velocity and acceleration transitions.</figcaption>
+    </figure>
+
+    <p>CamForge calculated the following corrected intervals without changing the displacement of any segment:</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Segment</th>
+          <th>Original β</th>
+          <th>Corrected β</th>
+          <th>Preserved ΔL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>60°</td><td>33.45°</td><td>5 mm</td></tr>
+        <tr><td>2</td><td>180°</td><td>167.27°</td><td>50 mm</td></tr>
+        <tr><td>3</td><td>60°</td><td>26.28°</td><td>5 mm</td></tr>
+        <tr><td>4</td><td>60°</td><td>133.00°</td><td>−60 mm</td></tr>
+      </tbody>
+    </table>
+
+    <p>The new values total 360° and fully preserve the displacement program. The redistribution produces a smoother cam surface and more regular kinematic operation, with less tendency toward impacts and unwanted excitation at segment transitions. The profile no longer reflects incompatible junctions and better represents the continuous motion expected from a real mechanism.</p>
+
+    <h2>Efficiency gain in the design process</h2>
+    <p>This example demonstrates the substantial efficiency gain provided by CamForge. With a single command, the program resolves an adjustment that would otherwise require analytical calculation, repeated trials and subsequent implementation in cam-generation software. The engineer remains responsible for defining the motion, choosing the laws and assessing geometric and dynamic criteria, but no longer needs to spend time on an iterative step that can be automated with traceability.</p>
+
+    <p>This combination of didactic clarity and practical application makes CamForge useful both for understanding the origin of discontinuities and for accelerating preliminary studies of cams intended for industrial machines and mechanisms.</p>
+  </article>
+
+  <aside>
+    <div class="sidebar-card">
+      <h3>Example summary</h3>
+      <ul class="meta-list">
+        <li>Date: August 31, 2026.</li>
+        <li>Total rise: 60 mm.</li>
+        <li>Curves: C1 – VC – H2 – P2.</li>
+        <li>Follower: flat-faced.</li>
+        <li>Correction: changing β.</li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h3>Open CamForge</h3>
+      <ul>
+        <li><a href="https://barbudenge.github.io/lasmeufsj/camforge/">CamForge project page</a></li>
+        <li><a href="https://barbudenge.github.io/camforge/">English web version</a></li>
+        <li><a href="https://barbudenge.github.io/camforge/pt-br/">Portuguese web version</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h3>Continue studying</h3>
+      <ul>
+        <li><a href="camforge-projeto-cames.html">CamForge design resources</a></li>
+        <li><a href="cames-curvas-deslocamento.html">Displacement curves for cams</a></li>
+        <li><a href="cames-projeto-analitico.html">Analytical cam design</a></li>
+        <li><a href="index.html">Article index</a></li>
+      </ul>
+    </div>
+  </aside>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Barbudenge · <a href="../index.html">Home page</a> · <a href="../sobre.html">About</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
+  </div>
+</footer>
+
+  <script src="../site-sidebar.js"></script>
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exemplo no CamForge: correção de descontinuidades no projeto de cames | Barbudenge</title>
+  <meta name="description" content="Exemplo completo de projeto no CamForge: came com subida de 60 mm, trecho de velocidade constante e correção automática de descontinuidades pela mudança de beta." />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="author" content="Artur Henrique de Freitas Avelar" />
+  <meta name="google-adsense-account" content="ca-pub-5777194849710689" />
+  <link rel="canonical" href="https://barbudenge.github.io/pt-br/artigos/camforge-exemplo-correcao-descontinuidades.html" />
+
+  <meta property="og:title" content="Exemplo no CamForge: correção de descontinuidades no projeto de cames" />
+  <meta property="og:description" content="Aplicação didática do CamForge para corrigir descontinuidades de velocidade e aceleração sem alterar os deslocamentos do seguidor." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://barbudenge.github.io/pt-br/artigos/camforge-exemplo-correcao-descontinuidades.html" />
+  <meta property="og:image" content="https://barbudenge.github.io/figs/aulas/cam%20ex%201.jpg" />
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5777194849710689" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="artigo.css" />
+  <link rel="alternate" hreflang="en" href="https://barbudenge.github.io/artigos/camforge-exemplo-correcao-descontinuidades.html" />
+  <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/camforge-exemplo-correcao-descontinuidades.html" />
+  <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/camforge-exemplo-correcao-descontinuidades.html" />
+  <link rel="stylesheet" href="../../language-switch.css" />
+  <link rel="stylesheet" href="../../site-sidebar.css" />
+  <script type="application/ld+json" data-seo="article">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://barbudenge.github.io/pt-br/artigos/camforge-exemplo-correcao-descontinuidades.html#article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://barbudenge.github.io/pt-br/artigos/camforge-exemplo-correcao-descontinuidades.html"
+        },
+        "headline": "Exemplo no CamForge: correção de descontinuidades no projeto de cames",
+        "description": "Exemplo completo de projeto no CamForge: came com subida de 60 mm, trecho de velocidade constante e correção automática de descontinuidades pela mudança de beta.",
+        "url": "https://barbudenge.github.io/pt-br/artigos/camforge-exemplo-correcao-descontinuidades.html",
+        "inLanguage": "pt-BR",
+        "datePublished": "2026-08-31",
+        "dateModified": "2026-08-31",
+        "author": {
+          "@type": "Person",
+          "name": "Artur Henrique de Freitas Avelar",
+          "url": "https://barbudenge.github.io/pt-br/sobre.html"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Barbudenge",
+          "url": "https://barbudenge.github.io/pt-br/"
+        },
+        "isPartOf": {
+          "@id": "https://barbudenge.github.io/pt-br/artigos/#collection"
+        },
+        "image": [
+          "https://barbudenge.github.io/figs/aulas/cam%20ex%201.jpg",
+          "https://barbudenge.github.io/figs/aulas/cam%20ex%205.jpg",
+          "https://barbudenge.github.io/figs/aulas/cam%20ex%206.jpg"
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://barbudenge.github.io/pt-br/artigos/camforge-exemplo-correcao-descontinuidades.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Início",
+            "item": "https://barbudenge.github.io/pt-br/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Artigos",
+            "item": "https://barbudenge.github.io/pt-br/artigos/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Exemplo no CamForge: correção de descontinuidades no projeto de cames",
+            "item": "https://barbudenge.github.io/pt-br/artigos/camforge-exemplo-correcao-descontinuidades.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container topbar">
+    <a href="../index.html" style="text-decoration:none;"><div class="brand">Barbu<span>denge</span></div></a>
+    <nav aria-label="Navegação principal">
+      <a href="../index.html">Início</a>
+      <a href="index.html">Artigos</a>
+      <a href="/projects/pt-br">Projetos</a>
+      <a href="../sobre.html">Sobre</a>
+    </nav>
+    <div class="language-switch" role="group" aria-label="Idioma">
+      <a class="language-switch__option is-active" href="/pt-br/artigos/camforge-exemplo-correcao-descontinuidades.html" lang="pt-BR" hreflang="pt-BR" aria-current="page">PT</a>
+      <a class="language-switch__option" href="/artigos/camforge-exemplo-correcao-descontinuidades.html" lang="en" hreflang="en">EN</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow">Exemplo de projeto</span>
+    <h1>Exemplo no CamForge: correção de descontinuidades no projeto de cames</h1>
+    <p>Um estudo passo a passo mostra como transformar uma especificação de movimento em um perfil de came e corrigir automaticamente as junções entre suas leis de deslocamento.</p>
+    <div class="byline">
+      <span>Por Artur Henrique de Freitas Avelar</span>
+      <time datetime="2026-08-31">31 de agosto de 2026</time>
+      <span>Categoria: projeto de cames e ferramentas de engenharia</span>
+    </div>
+  </div>
+</section>
+
+<main class="container article-layout">
+  <article class="article-body">
+    <p class="lead">Este exemplo apresenta o uso do <strong>CamForge</strong> no projeto de um came de disco com seguidor plano. O objetivo é obter uma subida total de 60 mm que contenha um trecho de velocidade constante e, em seguida, empregar a função de correção de descontinuidades para tornar as transições de velocidade e aceleração cinematicamente compatíveis.</p>
+
+    <h2>Especificação do movimento</h2>
+    <p>Deseja-se projetar um came que produza uma elevação total de <strong>60 mm</strong>. Como parte relevante do curso deve ocorrer com velocidade constante, o ciclo é dividido em quatro segmentos: uma entrada progressiva de 5 mm, uma subida principal de 50 mm em velocidade constante, uma transição final de 5 mm e um retorno de 60 mm à posição inicial.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Segmento</th>
+          <th>β</th>
+          <th>ΔL</th>
+          <th>Curva selecionada</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>60°</td><td>5 mm</td><td>C1 — primeira metade cicloidal</td></tr>
+        <tr><td>2</td><td>180°</td><td>50 mm</td><td>VC — velocidade constante</td></tr>
+        <tr><td>3</td><td>60°</td><td>5 mm</td><td>H2 — segunda metade harmônica</td></tr>
+        <tr><td>4</td><td>60°</td><td>−60 mm</td><td>P2 — polinômio de oitavo grau</td></tr>
+      </tbody>
+    </table>
+
+    <p>Portanto, a sequência de curvas escolhida é <strong>C1 – VC – H2 – P2</strong>. Os deslocamentos acumulados passam de 0 para 5 mm, depois para 55 mm, atingem 60 mm e, por fim, retornam a zero. A tela de seleção manual reúne os valores informados e calcula automaticamente os ângulos e deslocamentos inicial e final de cada trecho.</p>
+
+    <figure class="article-figure">
+      <img src="../../figs/aulas/cam%20ex%201.jpg" alt="Lista de quatro segmentos no CamForge com as curvas C1, velocidade constante, H2 e P2">
+      <figcaption>Figura 1 — Definição inicial dos quatro segmentos e das leis de movimento no CamForge.</figcaption>
+    </figure>
+
+    <h2>Gráfico de deslocamento e geometria inicial</h2>
+    <p>Depois da entrada dos dados, o CamForge gera o gráfico de deslocamento ao longo dos 360° e constrói o perfil correspondente. Para esta configuração, o programa indica um <strong>raio de base mínimo de 228,304 mm</strong> para evitar a formação de ponta no perfil. O exemplo prossegue com um seguidor plano, condição que permite relacionar diretamente a lei de movimento prescrita à superfície calculada do came.</p>
+
+    <figure class="article-figure figure-wide">
+      <img src="../../figs/aulas/cam%20ex%202.jpg" alt="Gráfico de deslocamento, raio de base mínimo e perfil inicial do came com seguidor plano">
+      <figcaption>Figura 2 — Gráfico de deslocamento, dados geométricos e perfil inicial calculado para o seguidor plano.</figcaption>
+    </figure>
+
+    <h2>Diagnóstico das descontinuidades</h2>
+    <p>Embora o deslocamento total e o trecho de velocidade constante tenham sido obtidos, o projeto inicial apresenta um problema importante: existem <strong>descontinuidades nas curvas de velocidade e aceleração em função da rotação do came</strong>. Os saltos aparecem nas fronteiras entre segmentos porque cada lei possui condições próprias de derivada, e os intervalos angulares inicialmente atribuídos não compatibilizam essas condições.</p>
+
+    <figure class="article-figure">
+      <img src="../../figs/aulas/cam%20ex%203.jpg" alt="Diagramas SVAJ iniciais do CamForge mostrando descontinuidades de velocidade e aceleração">
+      <figcaption>Figura 3 — Diagramas SVAJ do projeto inicial, nos quais se observam mudanças abruptas nas junções entre segmentos.</figcaption>
+    </figure>
+
+    <p>A correção dessas transições é um dos pontos mais trabalhosos do projeto analítico de cames. Não basta escolher curvas individualmente adequadas: é necessário ajustar os parâmetros que escalam suas derivadas, respeitar o fechamento do ciclo em 360° e preservar o deslocamento exigido pelo processo. Feito manualmente, esse procedimento demanda sucessivas formulações, verificações e iterações. A rapidez do resultado depende fortemente da experiência do engenheiro, e um ajuste prolongado pode atrasar as etapas posteriores de detalhamento e implementação.</p>
+
+    <h2>Correção automática pela modificação de β</h2>
+    <p>Para reduzir esse esforço, o CamForge introduz a função <strong>Corrigir descontinuidades</strong>. Ao acioná-la, o programa diagnostica as junções e apresenta imediatamente uma solução capaz de compatibilizar as curvas de velocidade e aceleração. Neste exemplo será utilizado o modo <strong>Modificar somente β</strong>, que mantém os deslocamentos e as quatro leis de movimento selecionadas, alterando apenas a extensão angular dos segmentos.</p>
+
+    <figure class="article-figure figure-wide">
+      <img src="../../figs/aulas/cam%20ex%204.jpg" alt="Janela de correção de descontinuidades do CamForge com a opção de modificar somente beta">
+      <figcaption>Figura 4 — Solução sugerida no modo que redistribui apenas os intervalos β dos quatro segmentos.</figcaption>
+    </figure>
+
+    <p>De forma resumida, o programa avalia as condições de velocidade e aceleração nas extremidades de cada lei e procura valores de β que tornem iguais as derivadas dos segmentos adjacentes. Durante a busca, a soma dos intervalos é mantida em 360°, os valores de ΔL permanecem fixos e as curvas C1, VC, H2 e P2 não são substituídas. Assim, a especificação funcional do curso é preservada enquanto o tempo angular disponível para cada etapa é redistribuído.</p>
+
+    <h2>Segmentos corrigidos e resultado final</h2>
+
+    <figure class="article-figure figure-wide">
+      <img src="../../figs/aulas/cam%20ex%205.jpg" alt="Projeto corrigido no CamForge com novos valores de beta e perfil de came mais suave">
+      <figcaption>Figura 5 — Projeto após a aplicação da correção, com os intervalos angulares redistribuídos e os deslocamentos preservados.</figcaption>
+    </figure>
+
+    <figure class="article-figure">
+      <img src="../../figs/aulas/cam%20ex%206.jpg" alt="Diagramas SVAJ do CamForge após a correção das descontinuidades de velocidade e aceleração">
+      <figcaption>Figura 6 — Diagramas SVAJ após a correção, com transições contínuas de velocidade e aceleração.</figcaption>
+    </figure>
+
+    <p>O CamForge calculou os seguintes intervalos corrigidos, sem alterar os deslocamentos de cada segmento:</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Segmento</th>
+          <th>β original</th>
+          <th>β corrigido</th>
+          <th>ΔL preservado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>60°</td><td>33,45°</td><td>5 mm</td></tr>
+        <tr><td>2</td><td>180°</td><td>167,27°</td><td>50 mm</td></tr>
+        <tr><td>3</td><td>60°</td><td>26,28°</td><td>5 mm</td></tr>
+        <tr><td>4</td><td>60°</td><td>133,00°</td><td>−60 mm</td></tr>
+      </tbody>
+    </table>
+
+    <p>Os novos valores totalizam 360° e conservam integralmente o programa de deslocamento. A redistribuição torna a superfície do came mais suave e produz uma operação cinemática mais regular, com menor tendência a impactos e excitações indesejadas nas mudanças de trecho. O perfil deixa de refletir junções incompatíveis e passa a representar melhor o movimento contínuo esperado de um mecanismo real.</p>
+
+    <h2>Ganho de eficiência no processo de projeto</h2>
+    <p>O exemplo demonstra o ganho expressivo de eficiência oferecido pelo CamForge. Com um único comando, o programa resolve um ajuste que exigiria cálculo analítico, repetidas tentativas e posterior implementação em um software de geração de cames. O engenheiro continua responsável por definir o movimento, escolher as leis e avaliar os critérios geométricos e dinâmicos, mas deixa de consumir tempo com uma etapa iterativa que pode ser automatizada com rastreabilidade.</p>
+
+    <p>Essa combinação de clareza didática e aplicação prática torna o CamForge útil tanto para compreender a origem das descontinuidades quanto para acelerar estudos preliminares de cames destinados a máquinas e mecanismos industriais.</p>
+  </article>
+
+  <aside>
+    <div class="sidebar-card">
+      <h3>Resumo do exemplo</h3>
+      <ul class="meta-list">
+        <li>Data: 31 de agosto de 2026.</li>
+        <li>Elevação total: 60 mm.</li>
+        <li>Curvas: C1 – VC – H2 – P2.</li>
+        <li>Seguidor: plano.</li>
+        <li>Correção: modificação de β.</li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h3>Abrir o CamForge</h3>
+      <ul>
+        <li><a href="https://barbudenge.github.io/lasmeufsj/camforge/">Página do projeto CamForge</a></li>
+        <li><a href="https://barbudenge.github.io/camforge/pt-br/">Versão web em português</a></li>
+        <li><a href="https://barbudenge.github.io/camforge/">Versão web em inglês</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h3>Continue estudando</h3>
+      <ul>
+        <li><a href="camforge-projeto-cames.html">Recursos de projeto do CamForge</a></li>
+        <li><a href="cames-curvas-deslocamento.html">Curvas de deslocamento para cames</a></li>
+        <li><a href="cames-projeto-analitico.html">Projeto analítico de cames</a></li>
+        <li><a href="index.html">Índice de artigos</a></li>
+      </ul>
+    </div>
+  </aside>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Barbudenge · <a href="../index.html">Página inicial</a> · <a href="../sobre.html">Sobre</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
+  </div>
+</footer>
+
+  <script src="../../site-sidebar.js"></script>
+</body>
+</html>
