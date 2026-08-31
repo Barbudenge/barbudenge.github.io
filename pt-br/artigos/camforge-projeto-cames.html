@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CamForge: seleção automática e correção de descontinuidades no projeto de cames | Barbudenge</title>
+  <meta name="description" content="Revisão técnica do CamForge, software do LASME para projeto industrial de cames com 65 opções de curvas, busca automática, análise SVAJ e correção de descontinuidades." />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="author" content="Artur Henrique de Freitas Avelar" />
+  <meta name="google-adsense-account" content="ca-pub-5777194849710689" />
+  <link rel="canonical" href="https://barbudenge.github.io/pt-br/artigos/camforge-projeto-cames.html" />
+
+  <meta property="og:title" content="CamForge: seleção automática e correção de descontinuidades no projeto de cames" />
+  <meta property="og:description" content="Software do LASME para cálculo de cames, seleção de leis de movimento, busca automática de soluções e correção de descontinuidades de velocidade e aceleração." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://barbudenge.github.io/pt-br/artigos/camforge-projeto-cames.html" />
+  <meta property="og:image" content="https://barbudenge.github.io/figs/aulas/projcam1.jpg" />
+
+  <script>
+    window.MathJax = { tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] }, svg: { fontCache: 'global' } };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5777194849710689" crossorigin="anonymous"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="artigo.css" />
+  <link rel="alternate" hreflang="en" href="https://barbudenge.github.io/artigos/camforge-projeto-cames.html" />
+  <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/camforge-projeto-cames.html" />
+  <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/camforge-projeto-cames.html" />
+  <link rel="stylesheet" href="../../language-switch.css" />
+  <link rel="stylesheet" href="../../site-sidebar.css" />
+  <script type="application/ld+json" data-seo="article">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://barbudenge.github.io/pt-br/artigos/camforge-projeto-cames.html#article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://barbudenge.github.io/pt-br/artigos/camforge-projeto-cames.html"
+        },
+        "headline": "CamForge: seleção automática e correção de descontinuidades no projeto de cames",
+        "description": "Revisão técnica do CamForge, software do LASME para projeto industrial de cames com 65 opções de curvas, busca automática, análise SVAJ e correção de descontinuidades.",
+        "url": "https://barbudenge.github.io/pt-br/artigos/camforge-projeto-cames.html",
+        "inLanguage": "pt-BR",
+        "datePublished": "2026-08-28",
+        "dateModified": "2026-08-28",
+        "author": {
+          "@type": "Person",
+          "name": "Artur Henrique de Freitas Avelar",
+          "url": "https://barbudenge.github.io/pt-br/sobre.html"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Barbudenge",
+          "url": "https://barbudenge.github.io/pt-br/"
+        },
+        "isPartOf": {
+          "@id": "https://barbudenge.github.io/pt-br/artigos/#collection"
+        },
+        "image": [
+          "https://barbudenge.github.io/figs/aulas/projcam1.jpg"
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://barbudenge.github.io/pt-br/artigos/camforge-projeto-cames.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Início",
+            "item": "https://barbudenge.github.io/pt-br/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Artigos",
+            "item": "https://barbudenge.github.io/pt-br/artigos/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "CamForge: seleção automática e correção de descontinuidades no projeto de cames",
+            "item": "https://barbudenge.github.io/pt-br/artigos/camforge-projeto-cames.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container topbar">
+    <a href="../index.html" style="text-decoration:none;"><div class="brand">Barbu<span>denge</span></div></a>
+    <nav aria-label="Navegação principal">
+      <a href="../index.html">Início</a>
+      <a href="index.html">Artigos</a>
+      <a href="/projects/pt-br">Projetos</a>
+      <a href="../sobre.html">Sobre</a>
+    </nav>
+    <div class="language-switch" role="group" aria-label="Idioma">
+      <a class="language-switch__option is-active" href="/pt-br/artigos/camforge-projeto-cames.html" lang="pt-BR" hreflang="pt-BR" aria-current="page">PT</a>
+      <a class="language-switch__option" href="/artigos/camforge-projeto-cames.html" lang="en" hreflang="en">EN</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow">Artigo técnico</span>
+    <h1>CamForge: seleção automática e correção de descontinuidades no projeto de cames</h1>
+    <p>A nova ferramenta do LASME reúne seleção de leis de movimento, busca automática de soluções, cálculo do perfil e correção de continuidade em um único ambiente no navegador.</p>
+    <div class="byline">
+      <span>Por Artur Henrique de Freitas Avelar</span>
+      <time datetime="2026-08-28">28 de agosto de 2026</time>
+      <span>Categoria: projeto de cames e ferramentas de engenharia</span>
+    </div>
+  </div>
+</section>
+
+<main class="container article-layout">
+  <article class="article-body">
+    <p class="lead">O <strong>CamForge</strong> é uma nova ferramenta do LASME para cálculo e projeto de cames de disco com seguidores de translação. Embora sua apresentação interativa favoreça o uso didático em engenharia, seu objetivo principal é o projeto prático: transformar um movimento prescrito em um perfil de came, avaliar a cinemática resultante e corrigir incompatibilidades entre trechos consecutivos.</p>
+
+    <figure class="article-figure figure-wide">
+      <img src="../../figs/aulas/projcam1.jpg" alt="Interface do CamForge com lista de segmentos, gráfico de deslocamento, perfil do came e diagramas SVAJ">
+      <figcaption>O CamForge reúne a definição dos segmentos, a geometria do came e os diagramas SVAJ no mesmo ambiente de projeto.</figcaption>
+    </figure>
+
+    <p>O projeto é apresentado na <a href="https://barbudenge.github.io/lasmeufsj/camforge/">página do CamForge no LASME</a>, enquanto o ambiente de cálculo funciona na <a href="https://barbudenge.github.io/camforge/pt-br/">versão web do CamForge em português</a>. Também está disponível uma <a href="https://barbudenge.github.io/camforge/">versão web em inglês</a>. Como o programa funciona no navegador, pode ser utilizado em aulas, estudos preliminares de engenharia e comparações entre leis de movimento sem instalação local.</p>
+
+    <h2>Uma ferramenta de engenharia para projeto industrial de cames</h2>
+    <p>Um came destinado à aplicação industrial precisa atender a mais do que o deslocamento exigido para o seguidor. A lei escolhida determina velocidade, aceleração e jerk; o perfil também deve ser compatível com a geometria do seguidor, os limites de ângulo de pressão e a curvatura. Esses critérios influenciam carregamento dinâmico, condições de contato, vibração, desgaste e viabilidade de fabricação do mecanismo.</p>
+
+    <p>O CamForge organiza o ciclo completo de 360° em segmentos definidos pela extensão angular (β) e pela variação de deslocamento (ΔL). A partir dessa especificação, calcula ângulos e posições iniciais e finais, gera o contorno do came e apresenta as grandezas necessárias para avaliação de engenharia. O programa trabalha com seguidores planos e de rolete, incluindo excentricidade no modelo com rolete, e fornece animação do perfil para inspeção visual do mecanismo.</p>
+
+    <h2>Biblioteca com 65 opções de curvas</h2>
+    <p>A versão revisada contém <strong>65 opções selecionáveis de curvas</strong>, correspondentes a <strong>40 modelos identificados de leis de movimento</strong> quando são agrupadas as variantes de subida, retorno, descida e parada. A biblioteca inclui parada, velocidade constante, parábola, cicloides e harmônicas; curvas cúbicas e polinômios de graus superiores; aceleração trapezoidal; harmônica dupla; formulações de Gutman, Freudenstein, Weber e Berzak; além de curvas cicloidais, senoidais e trapezoidais modificadas.</p>
+
+    <p>Essa variedade é importante porque não existe uma única lei de movimento ideal para todas as aplicações. O projetista pode priorizar menor aceleração máxima, redução de jerk, compatibilidade com segmentos vizinhos, menor ângulo de pressão ou raio de curvatura mais favorável. Por isso, o CamForge trata a escolha da curva como decisão de projeto, e não apenas como escolha gráfica.</p>
+
+    <h2>1. Seleção manual com filtro de curvas compatíveis</h2>
+    <p>No <strong>modelo de seleção manual</strong>, o projetista informa β e ΔL para cada segmento e escolhe a lei de movimento. Quando o filtro <em>Somente curvas possíveis</em> está ativo, a lista é reduzida de acordo com os sinais de velocidade e aceleração exigidos nas junções entre os segmentos. Permanecem visíveis apenas as curvas capazes de participar daquela transição local.</p>
+
+    <p>Esse filtro simplifica de maneira significativa uma tarefa normalmente trabalhosa. Em vez de examinar as 65 opções em todos os trechos, o usuário trabalha com um subconjunto tecnicamente pertinente para aquele segmento. O modelo preserva o controle do engenheiro—pois a escolha final continua sendo manual—ao mesmo tempo que reduz alternativas incompatíveis e ajuda a compreender por que determinadas curvas podem ser conectadas e outras não.</p>
+
+    <h2>2. Busca automática de soluções possíveis</h2>
+    <p>No <strong>modelo de busca automática</strong>, a entrada é reduzida aos ângulos e às variações de deslocamento dos segmentos. O CamForge calcula posições e ângulos acumulados, compara os sinais de velocidade e aceleração nas fronteiras e enumera todas as sequências de leis de movimento compatíveis encontradas para o ciclo especificado.</p>
+
+    <p>O resultado não se limita a uma recomendação opaca. O programa apresenta as soluções possíveis, identifica as curvas atribuídas a cada segmento e permite selecionar e comparar uma sequência. No exemplo revisado com três segmentos, a mesma especificação geométrica produziu centenas de combinações admissíveis, o que ilustra a rapidez com que o espaço de busca cresce quando várias leis são consideradas simultaneamente.</p>
+
+    <p>Para o projeto industrial, esse modo é especialmente útil na etapa exploratória. Ele permite gerar diversos arranjos cinematicamente plausíveis antes que o engenheiro os filtre por critérios dinâmicos, geométricos e de fabricação.</p>
+
+    <h2>3. Correção de descontinuidades de velocidade e aceleração</h2>
+    <p>O recurso mais característico do CamForge é o <strong>modo de correção de descontinuidades</strong>. O projeto de cames por trechos apresenta um gargalo recorrente: cada segmento pode ser válido isoladamente e, ainda assim, conectar-se mal ao seguinte. Uma descontinuidade de velocidade implica demanda impulsiva de aceleração, enquanto uma descontinuidade de aceleração produz salto de jerk e intensifica a excitação dinâmica. Em uma máquina real, essas incompatibilidades podem aparecer como impacto, vibração, ruído, perda de contato e desgaste acelerado.</p>
+
+    <p>A correção manual dessas junções é difícil porque as derivadas normalizadas de uma lei de movimento são escaladas tanto pelo intervalo angular quanto pelo curso. Uma alteração em β modifica o tempo angular disponível para o movimento; uma alteração em ΔL muda a escala do deslocamento. Além disso, as variáveis são limitadas pelo ciclo total do came e pelo processo que o seguidor precisa executar.</p>
+
+    <p>O CamForge foi desenvolvido para enfrentar esse gargalo por meio de dois modelos explícitos de correção:</p>
+
+    <ul>
+      <li><strong>Mudança de beta:</strong> mantém as variações de deslocamento e as curvas selecionadas, mas redistribui os intervalos angulares dos segmentos para compatibilizar as condições de velocidade e aceleração.</li>
+      <li><strong>Mudança de L (ΔL):</strong> mantém os intervalos angulares e as curvas selecionadas, mas ajusta as variações de deslocamento dos segmentos para obter condições compatíveis nas junções.</li>
+    </ul>
+
+    <p>A janela de correção diagnostica as junções, procura alternativas contínuas e mostra uma prévia do projeto corrigido antes da aplicação. Também permite limitar as variações ou bloquear determinadas variáveis por segmento. As soluções candidatas podem ser comparadas por velocidade, aceleração e jerk máximos, salto de jerk, raios mínimos de base e primitivo, ângulo de pressão máximo e raio mínimo de curvatura.</p>
+
+    <h2>Geometria, SVAJ e verificações de projeto</h2>
+    <p>Depois da seleção de uma solução, o programa relaciona a lei de movimento ao came físico. Os resultados podem ser inspecionados em tabelas ou gráficos, incluindo contorno do came, curva primitiva, diagramas SVAJ do came e do seguidor, ângulo de pressão e raio de curvatura. A animação sincroniza a posição do came com o seguidor e auxilia na verificação da relação entre as curvas analíticas e o mecanismo real.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Entrada ou verificação de projeto</th>
+          <th>Recurso do CamForge</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Movimento prescrito</td>
+          <td>Definição de segmentos por β, ΔL e lei de movimento.</td>
+        </tr>
+        <tr>
+          <td>Configuração do seguidor</td>
+          <td>Seguidor plano ou de rolete, com excentricidade no modelo com rolete.</td>
+        </tr>
+        <tr>
+          <td>Resposta cinemática</td>
+          <td>Diagramas de deslocamento, velocidade, aceleração e jerk para came e seguidor.</td>
+        </tr>
+        <tr>
+          <td>Verificação geométrica</td>
+          <td>Contorno do came, curva primitiva, ângulo de pressão e raio de curvatura.</td>
+        </tr>
+        <tr>
+          <td>Compatibilidade entre segmentos</td>
+          <td>Filtro manual, busca automática e correção de descontinuidades.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Clareza didática com objetivo industrial</h2>
+    <p>O CamForge é didático porque expõe o raciocínio que conduz ao cálculo: o usuário observa no mesmo ambiente os dados dos segmentos, as leis escolhidas, o comportamento nas fronteiras, os diagramas SVAJ e a geometria gerada. Isso o torna adequado para disciplinas de mecanismos, projeto de máquinas e sistemas mecânicos.</p>
+
+    <p>Seu alcance, contudo, vai além da demonstração. A combinação de biblioteca ampla, busca sistemática de soluções, correção de continuidade e verificações geométricas caracteriza o programa como uma ferramenta de projeto preliminar de cames para aplicações industriais. Ele ajuda o engenheiro a passar da especificação de movimento do processo para um perfil de came tecnicamente avaliável e a comparar alternativas antes das verificações detalhadas de estrutura, tribologia, tolerâncias e fabricação.</p>
+  </article>
+
+  <aside>
+    <div class="sidebar-card">
+      <h3>Resumo da página</h3>
+      <ul class="meta-list">
+        <li>Data: 28 de agosto de 2026.</li>
+        <li>Ferramenta: CamForge.</li>
+        <li>Biblioteca: 65 opções agrupadas em 40 modelos de leis de movimento.</li>
+        <li>Seguidores: plano e de rolete.</li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h3>Abrir o CamForge</h3>
+      <ul>
+        <li><a href="https://barbudenge.github.io/lasmeufsj/camforge/">Página do projeto CamForge</a></li>
+        <li><a href="https://barbudenge.github.io/camforge/pt-br/">Versão web em português</a></li>
+        <li><a href="https://barbudenge.github.io/camforge/">Versão web em inglês</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h3>Três destaques</h3>
+      <ul class="meta-list">
+        <li>Filtro de curvas compatíveis na seleção manual.</li>
+        <li>Enumeração automática das soluções possíveis.</li>
+        <li>Correção de continuidade pela mudança de β ou de L (ΔL).</li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h3>Continue estudando</h3>
+      <ul>
+        <li><a href="cames.html">Cames: conceitos e aplicações</a></li>
+        <li><a href="cames-curvas-deslocamento.html">Curvas de deslocamento para projeto de cames</a></li>
+        <li><a href="cames-projeto-analitico.html">Projeto analítico de cames</a></li>
+        <li><a href="index.html">Índice de artigos</a></li>
+      </ul>
+    </div>
+  </aside>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Barbudenge · <a href="../index.html">Página inicial</a> · <a href="../sobre.html">Sobre</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
+  </div>
+</footer>
+
+  <script src="../../site-sidebar.js"></script>
+</body>
+</html>
