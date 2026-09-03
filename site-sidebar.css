@@ -11,6 +11,7 @@
 
 .site-content {
   min-width: 0;
+  overflow-x: hidden;
 }
 
 .article-sidebar {

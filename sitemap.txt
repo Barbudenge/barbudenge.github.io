@@ -15,6 +15,7 @@ https://barbudenge.github.io/artigos/cames-nomenclatura-seguidores.html
 https://barbudenge.github.io/artigos/cames-projeto-analitico.html
 https://barbudenge.github.io/artigos/cames.html
 https://barbudenge.github.io/artigos/camforge-comparacao-curvas-deslocamento.html
+https://barbudenge.github.io/artigos/camforge-correcao-descontinuidades-curva-svaj.html
 https://barbudenge.github.io/artigos/camforge-exemplo-correcao-descontinuidades.html
 https://barbudenge.github.io/artigos/camforge-projeto-cames.html
 https://barbudenge.github.io/artigos/engrenagens-conicas-helicoidais-sem-fim.html
@@ -37,6 +38,7 @@ https://barbudenge.github.io/pt-br/artigos/cames-nomenclatura-seguidores.html
 https://barbudenge.github.io/pt-br/artigos/cames-projeto-analitico.html
 https://barbudenge.github.io/pt-br/artigos/cames.html
 https://barbudenge.github.io/pt-br/artigos/camforge-comparacao-curvas-deslocamento.html
+https://barbudenge.github.io/pt-br/artigos/camforge-correcao-descontinuidades-curva-svaj.html
 https://barbudenge.github.io/pt-br/artigos/camforge-exemplo-correcao-descontinuidades.html
 https://barbudenge.github.io/pt-br/artigos/camforge-projeto-cames.html
 https://barbudenge.github.io/pt-br/artigos/engrenagens-conicas-helicoidais-sem-fim.html

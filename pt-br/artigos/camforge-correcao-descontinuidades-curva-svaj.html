@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Como o CamForge corrige descontinuidades em curvas SVAJ | Barbudenge</title>
+  <meta name="description" content="Entenda, com equações e um exemplo completo, como o CamForge corrige descontinuidades de velocidade e aceleração alterando somente beta ou somente delta L." />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="author" content="Artur Henrique de Freitas Avelar" />
+  <meta name="google-adsense-account" content="ca-pub-5777194849710689" />
+  <link rel="canonical" href="https://barbudenge.github.io/pt-br/artigos/camforge-correcao-descontinuidades-curva-svaj.html" />
+
+  <meta property="og:title" content="Como o CamForge corrige descontinuidades em curvas SVAJ" />
+  <meta property="og:description" content="As equações das opções Alterar somente β e Alterar somente ΔL, seguidas de um exemplo completo de correção." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://barbudenge.github.io/pt-br/artigos/camforge-correcao-descontinuidades-curva-svaj.html" />
+  <meta property="og:image" content="https://barbudenge.github.io/figs/aulas/curv0.jpg" />
+  <meta property="article:published_time" content="2026-09-03" />
+  <meta property="article:modified_time" content="2026-09-03" />
+
+  <script>
+    window.MathJax = { tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] }, svg: { fontCache: 'global' } };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5777194849710689" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="artigo.css?v=20260903-4" />
+  <link rel="alternate" hreflang="en" href="https://barbudenge.github.io/artigos/camforge-correcao-descontinuidades-curva-svaj.html" />
+  <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/camforge-correcao-descontinuidades-curva-svaj.html" />
+  <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/camforge-correcao-descontinuidades-curva-svaj.html" />
+  <link rel="stylesheet" href="../../language-switch.css" />
+  <link rel="stylesheet" href="../../site-sidebar.css?v=20260903" />
+  <script type="application/ld+json" data-seo="article">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://barbudenge.github.io/pt-br/artigos/camforge-correcao-descontinuidades-curva-svaj.html#article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://barbudenge.github.io/pt-br/artigos/camforge-correcao-descontinuidades-curva-svaj.html"
+        },
+        "headline": "Como o CamForge corrige descontinuidades em curvas SVAJ",
+        "description": "Entenda, com equações e um exemplo completo, como o CamForge corrige descontinuidades de velocidade e aceleração alterando somente beta ou somente delta L.",
+        "url": "https://barbudenge.github.io/pt-br/artigos/camforge-correcao-descontinuidades-curva-svaj.html",
+        "inLanguage": "pt-BR",
+        "datePublished": "2026-09-03",
+        "dateModified": "2026-09-03",
+        "author": {
+          "@type": "Person",
+          "name": "Artur Henrique de Freitas Avelar",
+          "url": "https://barbudenge.github.io/pt-br/sobre.html"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Barbudenge",
+          "url": "https://barbudenge.github.io/pt-br/"
+        },
+        "isPartOf": { "@id": "https://barbudenge.github.io/pt-br/artigos/#collection" },
+        "image": [
+          "https://barbudenge.github.io/figs/aulas/curv0.jpg",
+          "https://barbudenge.github.io/figs/aulas/curv3.jpg"
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://barbudenge.github.io/pt-br/artigos/camforge-correcao-descontinuidades-curva-svaj.html#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://barbudenge.github.io/pt-br/" },
+          { "@type": "ListItem", "position": 2, "name": "Artigos", "item": "https://barbudenge.github.io/pt-br/artigos/" },
+          { "@type": "ListItem", "position": 3, "name": "Como o CamForge corrige descontinuidades em curvas SVAJ", "item": "https://barbudenge.github.io/pt-br/artigos/camforge-correcao-descontinuidades-curva-svaj.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container topbar">
+    <a href="../index.html" style="text-decoration:none;"><div class="brand">Barbu<span>denge</span></div></a>
+    <nav aria-label="Navegação principal">
+      <a href="../index.html">Início</a>
+      <a href="index.html">Artigos</a>
+      <a href="/projects/pt-br">Projetos</a>
+      <a href="../sobre.html">Sobre</a>
+    </nav>
+    <div class="language-switch" role="group" aria-label="Idioma">
+      <a class="language-switch__option is-active" href="/pt-br/artigos/camforge-correcao-descontinuidades-curva-svaj.html" lang="pt-BR" hreflang="pt-BR" aria-current="page">PT</a>
+      <a class="language-switch__option" href="/artigos/camforge-correcao-descontinuidades-curva-svaj.html" lang="en" hreflang="en">EN</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow">Matemática aplicada ao projeto de cames</span>
+    <h1>Como o CamForge corrige descontinuidades em curvas SVAJ de cames</h1>
+    <p>As equações de continuidade mostram por que é possível corrigir as junções alterando somente β ou somente ΔL.</p>
+    <div class="byline">
+      <span>Por Artur Henrique de Freitas Avelar</span>
+      <span>Publicado em <time datetime="2026-09-03">3 de setembro de 2026</time></span>
+      <span>Categoria: projeto de cames e cinemática</span>
+    </div>
+  </div>
+</section>
+
+<main class="container article-layout">
+  <article class="article-body">
+    <p class="lead">Um came pode ser formado por trechos individualmente corretos e, ainda assim, apresentar saltos nas junções. O CamForge corrige esse problema usando as equações de continuidade para redistribuir os intervalos angulares ou os deslocamentos, sem trocar as leis de movimento escolhidas.</p>
+
+    <h2>A equação de um trecho da curva SVAJ</h2>
+    <p>Considere o trecho \(i\), iniciado no ângulo \(\theta_i\), com extensão angular \(\beta_i\) e variação de deslocamento \(\Delta L_i\). Introduz-se uma coordenada local adimensional \(u_i\), que sempre varia de 0 a 1:</p>
+
+    <div class="equation-box">
+      \[
+      u_i=\frac{\theta-\theta_i}{\beta_i},
+      \qquad 0\leq u_i\leq1.
+      \]
+    </div>
+
+    <p>Se \(f_i(u)\) é a lei de movimento normalizada, com \(f_i(0)=0\) e \(f_i(1)=1\), o deslocamento no trecho é:</p>
+
+    <div class="equation-box">
+      \[
+      S_i(\theta)=L_i+\Delta L_i\,f_i(u_i),
+      \]
+    </div>
+
+    <p>em que \(L_i\) é o deslocamento no início do trecho. A derivação pela regra da cadeia fornece as demais curvas SVAJ:</p>
+
+    <div class="equation-box">
+      \[
+      S_i'(\theta)=\frac{\Delta L_i}{\beta_i}f_i'(u_i),
+      \qquad
+      S_i''(\theta)=\frac{\Delta L_i}{\beta_i^2}f_i''(u_i),
+      \]
+      \[
+      S_i'''(\theta)=\frac{\Delta L_i}{\beta_i^3}f_i'''(u_i).
+      \]
+    </div>
+
+    <p>A primeira, a segunda e a terceira derivadas são, respectivamente, velocidade, aceleração e jerk em relação ao ângulo. Se o came gira com velocidade angular constante \(\omega\), as grandezas no tempo são \(v=\omega S'\), \(a=\omega^2S''\) e \(j=\omega^3S'''\). Portanto, garantir continuidade em \(S'\) e \(S''\) também garante continuidade da velocidade e da aceleração reais.</p>
+
+    <h2>As condições matemáticas nas junções</h2>
+    <p>Na fronteira entre o trecho \(i\) e o trecho \(i+1\), o fim da primeira função deve coincidir com o início da seguinte. Para continuidade de deslocamento, velocidade e aceleração:</p>
+
+    <div class="equation-box">
+      \[
+      S_i(\theta_i+\beta_i)=S_{i+1}(\theta_{i+1}),
+      \]
+      \[
+      \frac{\Delta L_i}{\beta_i}f_i'(1)
+      =
+      \frac{\Delta L_{i+1}}{\beta_{i+1}}f_{i+1}'(0),
+      \]
+      \[
+      \frac{\Delta L_i}{\beta_i^2}f_i''(1)
+      =
+      \frac{\Delta L_{i+1}}{\beta_{i+1}^2}f_{i+1}''(0).
+      \]
+    </div>
+
+    <p>A primeira igualdade já é satisfeita quando os deslocamentos são acumulados, isto é, \(L_{i+1}=L_i+\Delta L_i\). As outras duas dependem da forma da curva, de \(\Delta L\) e de \(\beta\). É nelas que aparecem as descontinuidades.</p>
+
+    <p>Para encurtar a escrita, definem-se os coeficientes de extremidade:</p>
+
+    <div class="equation-box">
+      \[
+      c^V_{i,0}=f_i'(0),\quad c^V_{i,f}=f_i'(1),
+      \qquad
+      c^A_{i,0}=f_i''(0),\quad c^A_{i,f}=f_i''(1).
+      \]
+    </div>
+
+    <p>Esses coeficientes são números conhecidos para cada lei de movimento. Se uma curva exige derivada nula de um lado e a curva vizinha exige valor não nulo do outro, a igualdade não pode ser satisfeita somente pela mudança de \(\beta\) ou \(\Delta L\). Quando zeros e sinais são compatíveis, as equações determinam a correção.</p>
+
+    <h2>Correção alterando somente β</h2>
+    <p>Nesta opção, todos os \(\Delta L_i\) permanecem fixos. As incógnitas são os intervalos \(\beta_i\). A igualdade de velocidade entre dois trechos fornece diretamente:</p>
+
+    <div class="equation-box">
+      \[
+      \boxed{
+      \frac{\beta_{i+1}}{\beta_i}
+      =
+      \frac{\Delta L_{i+1}c^V_{i+1,0}}
+      {\Delta L_i c^V_{i,f}}
+      }.
+      \]
+    </div>
+
+    <p>Quando a ligação é determinada pela aceleração, os ângulos aparecem ao quadrado:</p>
+
+    <div class="equation-box">
+      \[
+      \boxed{
+      \frac{\beta_{i+1}}{\beta_i}
+      =
+      \sqrt{
+      \frac{\Delta L_{i+1}c^A_{i+1,0}}
+      {\Delta L_i c^A_{i,f}}
+      }
+      }.
+      \]
+    </div>
+
+    <p>O valor dentro da raiz deve ser positivo. Além disso, se velocidade e aceleração produzirem duas proporções para o mesmo par de trechos, elas devem ser iguais. As proporções válidas permitem escrever todos os ângulos em função de uma única incógnita, por exemplo:</p>
+
+    <div class="equation-box">
+      \[
+      \beta_2=r_2\beta_1,\qquad
+      \beta_3=r_3\beta_1,\qquad
+      \ldots,\qquad
+      \beta_n=r_n\beta_1.
+      \]
+    </div>
+
+    <p>O valor de \(\beta_1\) é obtido impondo que os trechos ocupem uma volta completa:</p>
+
+    <div class="equation-box">
+      \[
+      \sum_{i=1}^{n}\beta_i=2\pi\ \text{rad}=360^\circ
+      \quad\Longrightarrow\quad
+      \beta_1=\frac{360^\circ}{1+r_2+r_3+\cdots+r_n}.
+      \]
+    </div>
+
+    <p>Portanto, “Alterar somente β” significa resolver as proporções impostas pelas derivadas e, ao mesmo tempo, conservar a soma angular de 360°. Os cursos e as curvas não são modificados.</p>
+
+    <h2>Correção alterando somente ΔL</h2>
+    <p>Nesta opção, os ângulos \(\beta_i\) permanecem fixos e as incógnitas são os cursos \(\Delta L_i\). Como os denominadores são conhecidos, as condições de continuidade tornam-se equações lineares:</p>
+
+    <div class="equation-box">
+      \[
+      \boxed{
+      \frac{c^V_{i,f}}{\beta_i}\Delta L_i
+      -
+      \frac{c^V_{i+1,0}}{\beta_{i+1}}\Delta L_{i+1}=0
+      },
+      \]
+      \[
+      \boxed{
+      \frac{c^A_{i,f}}{\beta_i^2}\Delta L_i
+      -
+      \frac{c^A_{i+1,0}}{\beta_{i+1}^2}\Delta L_{i+1}=0
+      }.
+      \]
+    </div>
+
+    <p>Cada junção acrescenta as equações correspondentes às derivadas não nulas. O ciclo também precisa retornar à posição inicial, logo:</p>
+
+    <div class="equation-box">
+      \[
+      \boxed{\sum_{i=1}^{n}\Delta L_i=0}.
+      \]
+    </div>
+
+    <p>Em conjunto, essas igualdades formam um sistema linear homogêneo:</p>
+
+    <div class="equation-box">
+      \[
+      A\,\boldsymbol{\Delta L}=\mathbf 0,
+      \qquad
+      \boldsymbol{\Delta L}
+      =
+      \begin{bmatrix}
+      \Delta L_1 & \Delta L_2 & \cdots & \Delta L_n
+      \end{bmatrix}^{T}.
+      \]
+    </div>
+
+    <p>Uma forma equivalente, empregada pelo CamForge, usa os níveis de deslocamento \(L_i\), com \(\Delta L_i=L_{i+1}-L_i\) e \(L_n=L_0\). As equações de continuidade podem então ser reunidas como \(A\mathbf L=\mathbf b\). Como pode existir mais de uma solução, escolhe-se aquela que menos se afasta dos níveis originais \(\mathbf L^{(0)}\):</p>
+
+    <div class="equation-box">
+      \[
+      \min_{\mathbf L}\;
+      \frac{1}{2}
+      \left(\mathbf L-\mathbf L^{(0)}\right)^T
+      W
+      \left(\mathbf L-\mathbf L^{(0)}\right)
+      \qquad
+      \text{sujeito a}\qquad
+      A\mathbf L=\mathbf b.
+      \]
+    </div>
+
+    <p>A matriz diagonal \(W\) pondera as alterações para que cursos de ordens de grandeza diferentes sejam comparados de forma equilibrada. Com multiplicadores de Lagrange \(\boldsymbol{\lambda}\), as condições desse mínimo podem ser escritas em um único sistema:</p>
+
+    <div class="equation-box">
+      \[
+      \begin{bmatrix}
+      W & A^T\\
+      A & 0
+      \end{bmatrix}
+      \begin{bmatrix}
+      \mathbf L\\
+      \boldsymbol{\lambda}
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+      W\mathbf L^{(0)}\\
+      \mathbf b
+      \end{bmatrix}.
+      \]
+    </div>
+
+    <p>Os novos valores \(\Delta L_i=L_{i+1}-L_i\) resultam diretamente desses níveis corrigidos. Dessa forma, a solução satisfaz simultaneamente velocidade, aceleração e fechamento, conserva todos os \(\beta_i\) e, entre as respostas possíveis, permanece tão próxima quanto possível do movimento inicialmente especificado.</p>
+
+    <div class="note"><strong>Em resumo:</strong> alterar somente β redistribui o ângulo disponível para os mesmos cursos; alterar somente ΔL redistribui os cursos dentro dos mesmos intervalos angulares. Em ambos os casos, o ponto de partida são as mesmas equações de continuidade.</div>
+
+    <h2>Exemplo: quatro trechos incompatíveis</h2>
+    <p>Considere um came de disco com seguidor plano e os quatro trechos abaixo. Os valores de \(\Delta L\) estão em milímetros, e a soma dos ângulos já completa uma volta.</p>
+
+    <div class="table-scroll">
+    <table class="data-table">
+      <thead>
+        <tr><th>Trecho</th><th>β</th><th>ΔL</th><th>Curva</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>30°</td><td>10 mm</td><td>C1 — primeira metade cicloidal</td></tr>
+        <tr><td>2</td><td>90°</td><td>50 mm</td><td>VC — velocidade constante</td></tr>
+        <tr><td>3</td><td>30°</td><td>10 mm</td><td>H2 — segunda metade harmônica</td></tr>
+        <tr><td>4</td><td>210°</td><td>−70 mm</td><td>DH — harmônica dupla de retorno</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p>O deslocamento acumulado passa por 0, 10, 60 e 70 mm antes de retornar a zero. A posição fecha corretamente; o problema está nas derivadas. A velocidade salta nas junções C1–VC e VC–H2, enquanto a aceleração salta na ligação H2–DH.</p>
+
+    <figure class="article-figure figure-wide">
+      <img src="../../figs/aulas/curv0.jpg" alt="Perfil inicial do came e curvas de deslocamento, velocidade e aceleração com descontinuidades">
+      <figcaption>Figura 1 — Perfil inicial e diagramas SVA. O deslocamento é contínuo, mas velocidade e aceleração apresentam saltos nas fronteiras dos trechos.</figcaption>
+    </figure>
+
+    <h2>Aplicação das equações ao exemplo</h2>
+    <p>As funções normalizadas dos três primeiros trechos podem ser escritas como:</p>
+
+    <div class="equation-box">
+      \[
+      f_{\mathrm{C1}}(u)=u-\frac{\sin(\pi u)}{\pi},
+      \qquad
+      f_{\mathrm{VC}}(u)=u,
+      \qquad
+      f_{\mathrm{H2}}(u)=\sin\left(\frac{\pi u}{2}\right).
+      \]
+    </div>
+
+    <p>Os coeficientes necessários são:</p>
+
+    <div class="equation-box">
+      \[
+      f_{\mathrm{C1}}'(1)=2,\qquad
+      f_{\mathrm{VC}}'(0)=f_{\mathrm{VC}}'(1)=1,
+      \]
+      \[
+      f_{\mathrm{H2}}'(0)=\frac{\pi}{2},\qquad
+      f_{\mathrm{H2}}'(1)=0,\qquad
+      f_{\mathrm{H2}}''(1)=-\frac{\pi^2}{4}.
+      \]
+    </div>
+
+    <p>Para a harmônica dupla de retorno, os coeficientes na entrada são \(f_{\mathrm{DH}}'(0)=0\) e \(f_{\mathrm{DH}}''(0)=\pi^2\). Com \(\Delta L_4=-70\) mm, a aceleração inicial desse retorno é negativa, como a aceleração final da H2.</p>
+
+    <p>Na junção C1–VC, a igualdade de velocidade dá:</p>
+
+    <div class="equation-box">
+      \[
+      \frac{10(2)}{\beta_1}=\frac{50(1)}{\beta_2}
+      \quad\Longrightarrow\quad
+      \beta_2=2{,}5\beta_1.
+      \]
+    </div>
+
+    <p>Na junção VC–H2:</p>
+
+    <div class="equation-box">
+      \[
+      \frac{50(1)}{\beta_2}=\frac{10(\pi/2)}{\beta_3}
+      \quad\Longrightarrow\quad
+      \beta_3=\frac{\pi}{10}\beta_2=\frac{\pi}{4}\beta_1.
+      \]
+    </div>
+
+    <p>Na junção H2–DH, as velocidades são nulas dos dois lados. A igualdade de aceleração fornece:</p>
+
+    <div class="equation-box">
+      \[
+      \frac{10(-\pi^2/4)}{\beta_3^2}
+      =
+      \frac{-70(\pi^2)}{\beta_4^2}
+      \quad\Longrightarrow\quad
+      \beta_4=\sqrt{28}\,\beta_3.
+      \]
+    </div>
+
+    <p>Finalmente, usa-se o fechamento angular:</p>
+
+    <div class="equation-box">
+      \[
+      \beta_1+2{,}5\beta_1+\frac{\pi}{4}\beta_1
+      +\sqrt{28}\frac{\pi}{4}\beta_1=360^\circ.
+      \]
+    </div>
+
+    <p>A solução, arredondada para duas casas decimais, é:</p>
+
+    <div class="table-scroll">
+    <table class="data-table">
+      <thead>
+        <tr><th>Trecho</th><th>β original</th><th>β corrigido</th><th>ΔL preservado</th><th>Curva</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>30°</td><td>42,65°</td><td>10 mm</td><td>C1</td></tr>
+        <tr><td>2</td><td>90°</td><td>106,62°</td><td>50 mm</td><td>VC</td></tr>
+        <tr><td>3</td><td>30°</td><td>33,49°</td><td>10 mm</td><td>H2</td></tr>
+        <tr><td>4</td><td>210°</td><td>177,24°</td><td>−70 mm</td><td>DH</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p>Com mais casas decimais, os ângulos são aproximadamente 42,64728°, 106,61821°, 33,49509° e 177,23940°. Os pequenos desvios na soma dos valores da tabela decorrem apenas do arredondamento.</p>
+
+    <figure class="article-figure figure-wide">
+      <img src="../../figs/aulas/curv3.jpg" alt="Perfil do came e curvas de deslocamento, velocidade e aceleração após a correção dos ângulos beta">
+      <figcaption>Figura 2 — Resultado após “Alterar somente β”. Velocidade e aceleração passam de um trecho a outro sem saltos, e o perfil do came fica mais suave.</figcaption>
+    </figure>
+
+    <h2>Um gargalo resolvido em poucos instantes</h2>
+    <p>Fazer essa correção à mão exige escrever as derivadas de cada lei, avaliar suas extremidades, montar as igualdades, resolver o fechamento de 360° e então recalcular o perfil. Em ciclos com muitos trechos, essa compatibilização se torna um gargalo entre a definição do movimento e a análise geométrica do came.</p>
+
+    <p>O CamForge aplica essas equações de forma quase instantânea e apresenta diretamente uma configuração contínua. O projetista continua decidindo quais movimentos e limites fazem sentido para a máquina, mas deixa de repetir uma longa compatibilização algébrica. Assim, o caminho entre a especificação SVAJ e um perfil de came suave torna-se muito mais rápido.</p>
+  </article>
+
+  <aside>
+    <div class="sidebar-card">
+      <h3>Resumo do artigo</h3>
+      <ul class="meta-list">
+        <li>Publicado em 3 de setembro de 2026.</li>
+        <li>Continuidade exigida em deslocamento, velocidade e aceleração.</li>
+        <li>Modo β: mantém ΔL e redistribui os ângulos.</li>
+        <li>Modo ΔL: mantém β e redistribui os deslocamentos.</li>
+        <li>Exemplo: C1 – VC – H2 – DH.</li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h3>Continuar estudando</h3>
+      <ul>
+        <li><a href="https://barbudenge.github.io/camforge/pt-br/">Abrir o CamForge</a></li>
+        <li><a href="camforge-comparacao-curvas-deslocamento.html">Comparar as leis de movimento</a></li>
+        <li><a href="cames-curvas-deslocamento.html">Revisar curvas SVAJ</a></li>
+        <li><a href="cames-projeto-analitico.html">Continuar para o projeto analítico</a></li>
+      </ul>
+    </div>
+  </aside>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Barbudenge · <a href="../index.html">Página inicial</a> · <a href="../sobre.html">Sobre</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
+  </div>
+</footer>
+
+  <script src="../../site-sidebar.js"></script>
+</body>
+</html>
