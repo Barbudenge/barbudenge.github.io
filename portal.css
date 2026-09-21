@@ -3,4 +3,7 @@
 @media(max-width:850px){.intro{gap:28px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.grid>.track:last-child{grid-column:1/-1}.nav{gap:16px}.top{gap:16px}.feature{gap:24px}}
 @media(max-width:600px){body{font-size:16px}.wrap{width:calc(100% - 32px)}.top{padding:16px 0}.nav{order:3;width:100%;gap:16px;font-size:.85rem}.intro{grid-template-columns:1fr;padding:32px 0;gap:24px}.intro figure img{aspect-ratio:1.6}.grid,.feature,.author,.book-grid,.book-card{grid-template-columns:1fr}.grid>.track:last-child{grid-column:auto}.section{padding:32px 0}.section-head{align-items:start;flex-direction:column;gap:10px}.feature{padding:24px}.card-image{height:190px}.filters{padding:16px}.filters>div{width:100%}.reading{padding-top:30px}.catalog-head{padding-top:30px}}
 .card h2{font-size:1.45rem;margin:12px 0}.card h2 a{text-decoration:none;color:var(--ink)}.card h2 a:hover{text-decoration:underline}.reading h1{font-size:clamp(2.2rem,4vw,3.2rem)}
+.intro h1{font-size:clamp(2rem,3.6vw,3.1rem);line-height:1.15;text-wrap:initial}
+.intro figure img{aspect-ratio:auto;height:auto}
+@media(max-width:800px){.intro{grid-template-columns:1fr;gap:28px}.intro h1{font-size:clamp(1.85rem,5.5vw,3rem)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
