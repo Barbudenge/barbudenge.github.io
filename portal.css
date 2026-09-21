@@ -5,5 +5,7 @@
 .card h2{font-size:1.45rem;margin:12px 0}.card h2 a{text-decoration:none;color:var(--ink)}.card h2 a:hover{text-decoration:underline}.reading h1{font-size:clamp(2.2rem,4vw,3.2rem)}
 .intro h1{font-size:clamp(2rem,3.6vw,3.1rem);line-height:1.15;text-wrap:initial}
 .intro figure img{aspect-ratio:auto;height:auto}
+.reading .formula{font-family:Georgia,serif;overflow-x:auto;overflow-wrap:normal;margin:20px 0}
+.reading mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden;padding:4px 0}
 @media(max-width:800px){.intro{grid-template-columns:1fr;gap:28px}.intro h1{font-size:clamp(1.85rem,5.5vw,3rem)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

@@ -80,13 +80,56 @@ EXAMPLES = [
 '''<h2 id="exemplo-resolvido">Worked example: two 3:1 reductions</h2><p>Consider four external gears: A has 20 teeth and drives B with 60 teeth; B and C are rigidly attached to the same shaft; C has 18 teeth and drives D with 54. A rotates at +900 rpm. Define the positive direction by viewing every shaft from the same side.</p><p>The first mesh gives n<sub>B</sub> = −900 × 20/60 = −300 rpm. Because B and C share a shaft, n<sub>C</sub> = −300 rpm. The second mesh gives n<sub>D</sub> = −(−300) × 18/54 = +100 rpm. Output rotates in the same direction as input, and the total reduction is 900/100 = 9:1.</p><p>Do not multiply by 60/18 as though B and C were meshing: they share a speed, not a mesh ratio. Their tooth counts can differ without changing the equal-speed constraint on their common shaft.</p><h3>What changes in a simple train?</h3><p>Now use only A = 20, B = 60 and D = 54, each on its own shaft, with A driving B and B driving D. Output speed is (−20/60) × (−60/54) × 900 = +333.33 rpm. The intermediate gear's 60 teeth cancel from the product. The reduction is 54/20 = 2.7:1. The result differs because the transmission path changed, even though some tooth counts stayed the same.</p><h3>An independent check</h3><p>If every pair in the first example has module 2 mm and no profile shift, the A–B centre distance is 2(20 + 60)/2 = 80 mm. The C–D centre distance is 2(18 + 54)/2 = 72 mm. This geometric check complements the speed calculation but does not check strength, interference or housing feasibility.</p><p>For practice, keep the compound arrangement and replace D with a 36-tooth gear. Output becomes +150 rpm and the reduction becomes 6:1. If you obtained −150 rpm, check the two direction reversals. Continue with the <a href="conferir-resultados-planetaria.html">planetary result-checking guide</a> to see what changes when an axis travels with a carrier.</p>'''
 ]
 
+def format_equations(body):
+    """Typeset the guide using the same MathJax setup as the other articles."""
+    replacements = [
+        ('(n<sub>S</sub> − n<sub>C</sub>) / (n<sub>R</sub> − n<sub>C</sub>) = −N<sub>R</sub> / N<sub>S</sub> = −3', r'\frac{n_S-n_C}{n_R-n_C}=-\frac{N_R}{N_S}=-3'),
+        ('24n<sub>S</sub> + 72n<sub>R</sub> − 96n<sub>C</sub> = 0<br>n<sub>C</sub> = (24n<sub>S</sub> + 72n<sub>R</sub>) / 96', r'\begin{aligned}24n_S+72n_R-96n_C&=0\\[6pt]n_C&=\frac{24n_S+72n_R}{96}\end{aligned}'),
+    ]
+    for source, tex in replacements:
+        body = body.replace('<p class="formula">'+source+'</p>', '<div class="formula">\\['+tex+'\\]</div>')
+    inline = [
+        ('N<sub>R</sub> = N<sub>S</sub> + 2N<sub>P</sub>', r'N_R=N_S+2N_P'),
+        ('72 = 24 + 2 × 24', r'72=24+2\times24'),
+        ('(48 + 48)/2 = 48 mm', r'\frac{48+48}{2}=48\,\mathrm{mm}'),
+        ('(144 − 48)/2 = 48 mm', r'\frac{144-48}{2}=48\,\mathrm{mm}'),
+        ('i = n<sub>entrada</sub>/n<sub>saída</sub>', r'i=\frac{n_{\mathrm{entrada}}}{n_{\mathrm{saída}}}'),
+        ('i = n<sub>input</sub>/n<sub>output</sub>', r'i=\frac{n_{\mathrm{input}}}{n_{\mathrm{output}}}'),
+        ('n<sub>C</sub> = (24 × 600 + 72 × (−200))/96 = 0 rpm', r'n_C=\frac{24\times600+72\times(-200)}{96}=0\,\mathrm{rpm}'),
+        ('24n<sub>S</sub> + 72n<sub>R</sub> − 96n<sub>C</sub>', r'24n_S+72n_R-96n_C'),
+        ('2π/60', r'\frac{2\pi}{60}'),
+    ]
+    for thousand in ('1 200','1,200'):
+        inline += [
+            (f'(24 × {thousand})/96 = <strong>300 rpm</strong>', r'\frac{24\times1\,200}{96}=300\,\mathrm{rpm}'),
+            (f'(72 × {thousand})/96 = <strong>900 rpm</strong>', r'\frac{72\times1\,200}{96}=900\,\mathrm{rpm}'),
+            (f'({thousand} − 300)/(0 − 300) = 900/(−300) = −3', r'\frac{1\,200-300}{0-300}=\frac{900}{-300}=-3'),
+            (f'i = {thousand}/300 = 4', r'i=\frac{1\,200}{300}=4'),
+            (f'24 × {thousand} + 72n<sub>R</sub> = 0', r'24\times1\,200+72n_R=0'),
+        ]
+    for source, tex in inline:
+        body = body.replace(source, '\\('+tex+'\\)')
+    # Typeset remaining speed assignments and standalone variable references.
+    def assignment(m):
+        number=m[2].replace('−','-').replace('1 200',r'1\,200').replace('1,200',r'1\,200')
+        return r'\(n_'+m[1]+'='+number+(r'\,\mathrm{rpm}' if m[3] else '')+r'\)'
+    body = re.sub(r'n<sub>([SRC])</sub> = (?:<strong>)?(−?\d+(?:[ ,]\d{3})*)( rpm)?(?:</strong>)?',assignment,body)
+    body = re.sub(r'([nN])<sub>([SRCP])</sub>',lambda m:r'\('+m[1]+'_'+m[2]+r'\)',body)
+    return body
+
 for pt, body in [(True, PT), (False, EN)]:
+    body = format_equations(body)
     root = '/pt-br/' if pt else '/'
     slug = 'artigos/conferir-resultados-planetaria.html'
     title = 'Como conferir resultados de uma planetária: três casos resolvidos' if pt else 'How to check planetary gear results: three worked cases'
     description = 'Sol de 24 dentes e coroa de 72: calcule três configurações, confira os sinais e resolva um exercício com duas entradas.' if pt else 'A 24-tooth sun and 72-tooth ring: calculate three configurations, check signs and solve an exercise with two inputs.'
     schema = {'@context':'https://schema.org','@type':'Article','headline':title,'description':description,'datePublished':'2026-09-21','dateModified':'2026-09-21','author':{'@type':'Organization','name':'Barbudenge','url':BASE+root+'sobre.html'},'inLanguage':'pt-BR' if pt else 'en','mainEntityOfPage':BASE+root+slug}
     text = head(title, description, root+slug, ('/' if pt else '/pt-br/')+slug, pt, schema)
+    text = text.replace('</head>', r'''<script>
+window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'global'}};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>''')
     text = text.replace('property="og:type" content="website"','property="og:type" content="article"')
     text += f'<main id="main" class="wrap"><article class="reading"><p><a href="{root}artigos/">← {"Todos os artigos" if pt else "All articles"}</a></p><span class="eyebrow">{"Caderno de cálculo · Planetárias" if pt else "Calculation notebook · Planetary gears"}</span><h1>{title}</h1><p class="meta">Barbudenge · <time datetime="2026-09-21">2026-09-21</time> · {"Exemplo didático" if pt else "Worked example"}</p>'+body+'</article></main>'+footer(pt)
     (ROOT / root.strip('/') / slug).write_text(text,encoding='utf-8')
