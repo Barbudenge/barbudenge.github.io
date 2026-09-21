@@ -9,3 +9,4 @@
 .reading mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden;padding:4px 0}
 @media(max-width:800px){.intro{grid-template-columns:1fr;gap:28px}.intro h1{font-size:clamp(1.85rem,5.5vw,3rem)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.intro{grid-template-columns:1.2fr .8fr}.intro h1{max-width:14ch}
