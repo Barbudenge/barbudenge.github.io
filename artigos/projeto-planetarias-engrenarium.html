@@ -30,7 +30,6 @@
   <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/projeto-planetarias-engrenarium.html" />
   <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/projeto-planetarias-engrenarium.html" />
   <link rel="stylesheet" href="../language-switch.css" />
-  <link rel="stylesheet" href="../site-sidebar.css" />
   <script type="application/ld+json" data-seo="article">
   {
     "@context": "https://schema.org",
@@ -92,8 +91,10 @@
     ]
   }
   </script>
+<link rel="stylesheet" href="/editorial.css">
 </head>
 <body>
+<a class="editorial-skip" href="#article-content">Skip to article</a>
 
 <header class="site-header">
   <div class="container topbar">
@@ -125,7 +126,7 @@
 </section>
 
 <main class="container article-layout">
-  <article class="article-body">
+  <article id="article-content" class="article-body"><details class="article-toc"><summary>In this article</summary><nav aria-label="Article sections"><ol><li><a href="#leitura-1">What the module does</a></li><li><a href="#leitura-2">Designing a simple planetary gear set</a></li><li><a href="#leitura-3">Assembly results and constraints</a></li><li><a href="#leitura-4">Planets in series</a></li><li><a href="#leitura-5">Designing compound planetary gear sets</a></li><li><a href="#leitura-6">Forced coaxial planets</a></li><li><a href="#leitura-7">How to use the resource judiciously</a></li></ol></nav></details>
     <p class="lead">This article presents a complete roadmap for using the module <em>planetary gear set design</em> from Engrenarium. The sequence was written so that assembly and analysis can be done only with the text and figures from the article itself.</p>
 
     <div class="video-embed">
@@ -136,7 +137,7 @@
       <strong>Assembly in Engrenarium:</strong> the resource is available in <a href="https://barbudenge.github.io/lasmeufsj/engrenarium/">Engrenarium desktop software</a> and <a href="https://barbudenge.github.io/engrenarium/">Engrenarium Web</a>. The objective of the module is to go from a functional specification to an assembled set, ready for analysis.
     </div>
 
-    <h2>What the module does</h2>
+    <h2 id="leitura-1">What the module does</h2>
     <p>The module <em>Planetary Design</em> synthesizes simple and compound planetary systems from a functional specification. Instead of manually choosing tooth counts and testing combinations by trial and error, the user defines input, output, fixed component, desired gear ratio, and assembly constraints. The software then lists only those solutions that are geometrically compatible with these requirements.</p>
 
     <p>The whole point of the feature is to separate two problems. The first is kinematic: what speed ratio the set needs to produce. The second is geometric: how to distribute planets, carriers and couplings so that the assembly is coherent and practical.</p>
@@ -146,7 +147,7 @@
       <figcaption>Initial window of the Planetary Gear Design module, with options for simple and compound systems.</figcaption>
     </figure>
 
-    <h2>Designing a simple planetary gear set</h2>
+    <h2 id="leitura-2">Designing a simple planetary gear set</h2>
     <p>Start by opening the module and choosing the simple planetary option. To reproduce the first example, define the sun gear as the input, the carrier as the output and the ring as the fixed component. Then enter a desired speed ratio equal to \(4\).</p>
 
     <p>In this case, the minimum and maximum tooth limits can now be maintained at the values filled in by the software. Run the calculation without changing these fields. The expected result is a list of solutions compatible with this specification; In the example used here, the module returns 7 results.</p>
@@ -168,7 +169,7 @@
       <figcaption>Simple case configuration: sun gear as input, carrier as output, fixed ring and desired ratio equal to 4.</figcaption>
     </figure>
 
-    <h2>Assembly results and constraints</h2>
+    <h2 id="leitura-3">Assembly results and constraints</h2>
     <p>When running the simple design for the first time, observe the section <em>Assembly Constraints</em>. The option <em>Carriers with Equal Angles</em> is marked, which requires uniform angular distribution of the planets. When a solution is chosen with this constraint active, the carriers appear with equal angles.</p>
 
     <p>Close the assembly, open the module again, and notice that the results of the last design reappear. This allows you to switch solutions without rebuilding the entire specification. Then go back to <em>Assembly Constraints</em>, uncheck <em>Carriers with Equal Angles</em> and run the calculation again.</p>
@@ -182,7 +183,7 @@
       <figcaption>Example of result without restriction of equal angles in carriers, creating a less balanced angular distribution between the planets.</figcaption>
     </figure>
 
-    <h2>Planets in series</h2>
+    <h2 id="leitura-4">Planets in series</h2>
     <p>Start a new project and enable the option for planets in series for the simple planetary gear set. After calculating, choose any solution to see how Engrenarium organizes the elements. In this first test, the carrier appears straight, which is acceptable, but tends to produce a very wide ring.</p>
 
     <p>Upon returning to <em>Assembly Constraints</em>, the option appears <em>Straight Carrier Only</em>. With it checked, the design is restricted to straight carriers. Uncheck this option and run the calculation again. The search space grows a lot and the number of results becomes in the thousands; In the case used here, more than 2.000 solutions appear, distributed across pages of up to 100 results.</p>
@@ -210,12 +211,12 @@
 
     <p>Even when carrier stops being straight, there is an important detail: the local carrier-arm angles change, but the spacing between the planets remains \(120^\circ\). In other words, the module still preserves the general distribution necessary for assembly.</p>
 
-    <h2>Designing compound planetary gear sets</h2>
+    <h2 id="leitura-5">Designing compound planetary gear sets</h2>
     <p>The same module also synthesizes 2- and 3-stage compound planetary gear sets. For practical use, it is worth starting with 2-stage cases, because 3-stage designs tend to generate many combinations and may require much longer calculation times.</p>
 
     <p>Open a new 2-stage design and keep input and output at the module's default values. In this mode, Engrenarium requires 3 boundary conditions. The input speed is automatically fixed at \(10\,\text{rpm}\), and the user needs to define one fixed component and two couplings between planetary systems. These couplings can be modified according to the desired arrangement.</p>
 
-    <table class="data-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Horizontally scrollable table"><table class="data-table">
       <thead>
         <tr>
           <th>Design type</th>
@@ -236,14 +237,14 @@
           <td>Automatic input speed of \(10\,\text{rpm}\), 1 fixed component and 2 inter-stage couplings.</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
     <figure class="article-figure figure-wide">
       <img src="../figs/aulas/proj 6.png" alt="Contour configuration for two-stage compound planetary gear set design">
       <figcaption>Boundary-condition setup for the 2-stage design, with a fixed component and two couplings between the planetary systems.</figcaption>
     </figure>
 
-    <h2>Forced coaxial planets</h2>
+    <h2 id="leitura-6">Forced coaxial planets</h2>
     <p>In the composite project an additional constraint called <em>Force Coaxial Planets</em>. When this option is active, the software adjusts the planetary modules, or the <em>diametral pitches</em>, so that the distance between the center of the system and the axes of the planets is the same in all stages.</p>
 
     <p>The practical result is that planets of different stages can be physically coupled and rendered as a single piece, even when their tooth counts are not the same. This restriction does not change the kinematic objective of the design; it acts on the geometric compatibility necessary for a coherent coaxial assembly.</p>
@@ -255,7 +256,7 @@
       <figcaption>Composite result with <em>Force Coaxial Planets</em>, in which planets from different stages start to be coupled together as a single piece.</figcaption>
     </figure>
 
-    <h2>How to use the resource judiciously</h2>
+    <h2 id="leitura-7">How to use the resource judiciously</h2>
     <p>Correct use of the module follows simple logic. First, the desired kinematic behavior is defined. Then, the assembly restrictions are observed to decide which result is most suitable from a geometric point of view. The best solution is not always the first on the list, nor the one with the most apparent symmetry; it is the one that reconciles correct gear ratio, coherent assembly and practicable geometry.</p>
 
     <p>Therefore, the safest procedure is to treat the module as a comparison tool, not just as an automatic generator of a single answer.</p>
@@ -267,7 +268,7 @@
       <li>In composite cases, check whether forced coaxiality changed modules or proportions between stages.</li>
       <li>Choose the final result based on both the gear ratio and the geometric quality of the assembly.</li>
     </ol>
-  </article>
+  <div class="article-correction"><p>Questions about an equation or result? Send this page address and your calculation inputs to <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a>. · <a href="../sobre.html">About the author</a> · <a href="../privacy.html">Privacy</a></p></div></article>
 
   <aside>
     <div class="sidebar-card">
@@ -312,7 +313,5 @@
     <p>© 2026 Barbudenge · <a href="../index.html">Home page</a> · <a href="../sobre.html">About</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
   </div>
 </footer>
-
-  <script src="../site-sidebar.js"></script>
 </body>
 </html>

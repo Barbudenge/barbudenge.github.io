@@ -78,8 +78,10 @@
     ]
   }
   </script>
+<link rel="stylesheet" href="/editorial.css">
 </head>
 <body>
+<a class="editorial-skip" href="#article-content">Pular para o artigo</a>
 
 <header class="site-header">
   <div class="container topbar">
@@ -111,10 +113,10 @@
 </section>
 
 <main class="container article-layout">
-  <article class="article-body">
+  <article id="article-content" class="article-body"><details class="article-toc"><summary>Neste artigo</summary><nav aria-label="Seções do artigo"><ol><li><a href="#leitura-1">A equação de um trecho da curva SVAJ</a></li><li><a href="#leitura-2">As condições matemáticas nas junções</a></li><li><a href="#leitura-3">Correção alterando somente β</a></li><li><a href="#leitura-4">Correção alterando somente ΔL</a></li><li><a href="#leitura-5">Exemplo: quatro trechos incompatíveis</a></li><li><a href="#leitura-6">Aplicação das equações ao exemplo</a></li><li><a href="#leitura-7">Um gargalo resolvido em poucos instantes</a></li></ol></nav></details>
     <p class="lead">Um came pode ser formado por trechos individualmente corretos e, ainda assim, apresentar saltos nas junções. O CamForge corrige esse problema usando as equações de continuidade para redistribuir os intervalos angulares ou os deslocamentos, sem trocar as leis de movimento escolhidas.</p>
 
-    <h2>A equação de um trecho da curva SVAJ</h2>
+    <h2 id="leitura-1">A equação de um trecho da curva SVAJ</h2>
     <p>Considere o trecho \(i\), iniciado no ângulo \(\theta_i\), com extensão angular \(\beta_i\) e variação de deslocamento \(\Delta L_i\). Introduz-se uma coordenada local adimensional \(u_i\), que sempre varia de 0 a 1:</p>
 
     <div class="equation-box">
@@ -147,7 +149,7 @@
 
     <p>A primeira, a segunda e a terceira derivadas são, respectivamente, velocidade, aceleração e jerk em relação ao ângulo. Se o came gira com velocidade angular constante \(\omega\), as grandezas no tempo são \(v=\omega S'\), \(a=\omega^2S''\) e \(j=\omega^3S'''\). Portanto, garantir continuidade em \(S'\) e \(S''\) também garante continuidade da velocidade e da aceleração reais.</p>
 
-    <h2>As condições matemáticas nas junções</h2>
+    <h2 id="leitura-2">As condições matemáticas nas junções</h2>
     <p>Na fronteira entre o trecho \(i\) e o trecho \(i+1\), o fim da primeira função deve coincidir com o início da seguinte. Para continuidade de deslocamento, velocidade e aceleração:</p>
 
     <div class="equation-box">
@@ -180,7 +182,7 @@
 
     <p>Esses coeficientes são números conhecidos para cada lei de movimento. Se uma curva exige derivada nula de um lado e a curva vizinha exige valor não nulo do outro, a igualdade não pode ser satisfeita somente pela mudança de \(\beta\) ou \(\Delta L\). Quando zeros e sinais são compatíveis, as equações determinam a correção.</p>
 
-    <h2>Correção alterando somente β</h2>
+    <h2 id="leitura-3">Correção alterando somente β</h2>
     <p>Nesta opção, todos os \(\Delta L_i\) permanecem fixos. As incógnitas são os intervalos \(\beta_i\). A igualdade de velocidade entre dois trechos fornece diretamente:</p>
 
     <div class="equation-box">
@@ -232,7 +234,7 @@
 
     <p>Portanto, “Alterar somente β” significa resolver as proporções impostas pelas derivadas e, ao mesmo tempo, conservar a soma angular de 360°. Os cursos e as curvas não são modificados.</p>
 
-    <h2>Correção alterando somente ΔL</h2>
+    <h2 id="leitura-4">Correção alterando somente ΔL</h2>
     <p>Nesta opção, os ângulos \(\beta_i\) permanecem fixos e as incógnitas são os cursos \(\Delta L_i\). Como os denominadores são conhecidos, as condições de continuidade tornam-se equações lineares:</p>
 
     <div class="equation-box">
@@ -313,7 +315,7 @@
 
     <div class="note"><strong>Em resumo:</strong> alterar somente β redistribui o ângulo disponível para os mesmos cursos; alterar somente ΔL redistribui os cursos dentro dos mesmos intervalos angulares. Em ambos os casos, o ponto de partida são as mesmas equações de continuidade.</div>
 
-    <h2>Exemplo: quatro trechos incompatíveis</h2>
+    <h2 id="leitura-5">Exemplo: quatro trechos incompatíveis</h2>
     <p>Considere um came de disco com seguidor plano e os quatro trechos abaixo. Os valores de \(\Delta L\) estão em milímetros, e a soma dos ângulos já completa uma volta.</p>
 
     <div class="table-scroll">
@@ -337,7 +339,7 @@
       <figcaption>Figura 1 — Perfil inicial e diagramas SVA. O deslocamento é contínuo, mas velocidade e aceleração apresentam saltos nas fronteiras dos trechos.</figcaption>
     </figure>
 
-    <h2>Aplicação das equações ao exemplo</h2>
+    <h2 id="leitura-6">Aplicação das equações ao exemplo</h2>
     <p>As funções normalizadas dos três primeiros trechos podem ser escritas como:</p>
 
     <div class="equation-box">
@@ -430,11 +432,11 @@
       <figcaption>Figura 2 — Resultado após “Alterar somente β”. Velocidade e aceleração passam de um trecho a outro sem saltos, e o perfil do came fica mais suave.</figcaption>
     </figure>
 
-    <h2>Um gargalo resolvido em poucos instantes</h2>
+    <h2 id="leitura-7">Um gargalo resolvido em poucos instantes</h2>
     <p>Fazer essa correção à mão exige escrever as derivadas de cada lei, avaliar suas extremidades, montar as igualdades, resolver o fechamento de 360° e então recalcular o perfil. Em ciclos com muitos trechos, essa compatibilização se torna um gargalo entre a definição do movimento e a análise geométrica do came.</p>
 
     <p>O CamForge aplica essas equações de forma quase instantânea e apresenta diretamente uma configuração contínua. O projetista continua decidindo quais movimentos e limites fazem sentido para a máquina, mas deixa de repetir uma longa compatibilização algébrica. Assim, o caminho entre a especificação SVAJ e um perfil de came suave torna-se muito mais rápido.</p>
-  </article>
+  <div class="article-correction"><p>Dúvidas sobre uma equação ou resultado? Envie o endereço desta página e os dados do seu cálculo para <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a>. · <a href="../sobre.html">Sobre o autor</a> · <a href="../privacy.html">Privacidade</a></p></div></article>
 
   <aside>
     <div class="sidebar-card">
@@ -464,7 +466,5 @@
     <p>© 2026 Barbudenge · <a href="../index.html">Página inicial</a> · <a href="../sobre.html">Sobre</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
   </div>
 </footer>
-
-  <script src="../../site-sidebar.js"></script>
 </body>
 </html>

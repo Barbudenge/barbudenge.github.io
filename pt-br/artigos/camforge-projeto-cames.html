@@ -31,7 +31,6 @@
   <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/camforge-projeto-cames.html" />
   <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/camforge-projeto-cames.html" />
   <link rel="stylesheet" href="../../language-switch.css" />
-  <link rel="stylesheet" href="../../site-sidebar.css" />
   <script type="application/ld+json" data-seo="article">
   {
     "@context": "https://schema.org",
@@ -93,8 +92,10 @@
     ]
   }
   </script>
+<link rel="stylesheet" href="/editorial.css">
 </head>
 <body>
+<a class="editorial-skip" href="#article-content">Pular para o artigo</a>
 
 <header class="site-header">
   <div class="container topbar">
@@ -126,7 +127,7 @@
 </section>
 
 <main class="container article-layout">
-  <article class="article-body">
+  <article id="article-content" class="article-body"><details class="article-toc"><summary>Neste artigo</summary><nav aria-label="Seções do artigo"><ol><li><a href="#leitura-1">Uma ferramenta de engenharia para projeto industrial de cames</a></li><li><a href="#leitura-2">Biblioteca com 65 opções de curvas</a></li><li><a href="#leitura-3">1. Seleção manual com filtro de curvas compatíveis</a></li><li><a href="#leitura-4">2. Busca automática de soluções possíveis</a></li><li><a href="#leitura-5">3. Correção de descontinuidades de velocidade e aceleração</a></li><li><a href="#leitura-6">Geometria, SVAJ e verificações de projeto</a></li><li><a href="#leitura-7">Clareza didática com objetivo industrial</a></li></ol></nav></details>
     <p class="lead">O <strong>CamForge</strong> é uma nova ferramenta do LASME para cálculo e projeto de cames de disco com seguidores de translação. Embora sua apresentação interativa favoreça o uso didático em engenharia, seu objetivo principal é o projeto prático: transformar um movimento prescrito em um perfil de came, avaliar a cinemática resultante e corrigir incompatibilidades entre trechos consecutivos.</p>
 
     <figure class="article-figure figure-wide">
@@ -136,29 +137,29 @@
 
     <p>O projeto é apresentado na <a href="https://barbudenge.github.io/lasmeufsj/camforge/">página do CamForge no LASME</a>, enquanto o ambiente de cálculo funciona na <a href="https://barbudenge.github.io/camforge/pt-br/">versão web do CamForge em português</a>. Também está disponível uma <a href="https://barbudenge.github.io/camforge/">versão web em inglês</a>. Como o programa funciona no navegador, pode ser utilizado em aulas, estudos preliminares de engenharia e comparações entre leis de movimento sem instalação local.</p>
 
-    <h2>Uma ferramenta de engenharia para projeto industrial de cames</h2>
+    <h2 id="leitura-1">Uma ferramenta de engenharia para projeto industrial de cames</h2>
     <p>Um came destinado à aplicação industrial precisa atender a mais do que o deslocamento exigido para o seguidor. A lei escolhida determina velocidade, aceleração e jerk; o perfil também deve ser compatível com a geometria do seguidor, os limites de ângulo de pressão e a curvatura. Esses critérios influenciam carregamento dinâmico, condições de contato, vibração, desgaste e viabilidade de fabricação do mecanismo.</p>
 
     <p>O CamForge organiza o ciclo completo de 360° em segmentos definidos pela extensão angular (β) e pela variação de deslocamento (ΔL). A partir dessa especificação, calcula ângulos e posições iniciais e finais, gera o contorno do came e apresenta as grandezas necessárias para avaliação de engenharia. O programa trabalha com seguidores planos e de rolete, incluindo excentricidade no modelo com rolete, e fornece animação do perfil para inspeção visual do mecanismo.</p>
 
-    <h2>Biblioteca com 65 opções de curvas</h2>
+    <h2 id="leitura-2">Biblioteca com 65 opções de curvas</h2>
     <p>A versão revisada contém <strong>65 opções selecionáveis de curvas</strong>, correspondentes a <strong>40 modelos identificados de leis de movimento</strong> quando são agrupadas as variantes de subida, retorno, descida e parada. A biblioteca inclui parada, velocidade constante, parábola, cicloides e harmônicas; curvas cúbicas e polinômios de graus superiores; aceleração trapezoidal; harmônica dupla; formulações de Gutman, Freudenstein, Weber e Berzak; além de curvas cicloidais, senoidais e trapezoidais modificadas.</p>
 
     <p>Essa variedade é importante porque não existe uma única lei de movimento ideal para todas as aplicações. O projetista pode priorizar menor aceleração máxima, redução de jerk, compatibilidade com segmentos vizinhos, menor ângulo de pressão ou raio de curvatura mais favorável. Por isso, o CamForge trata a escolha da curva como decisão de projeto, e não apenas como escolha gráfica.</p>
 
-    <h2>1. Seleção manual com filtro de curvas compatíveis</h2>
+    <h2 id="leitura-3">1. Seleção manual com filtro de curvas compatíveis</h2>
     <p>No <strong>modelo de seleção manual</strong>, o projetista informa β e ΔL para cada segmento e escolhe a lei de movimento. Quando o filtro <em>Somente curvas possíveis</em> está ativo, a lista é reduzida de acordo com os sinais de velocidade e aceleração exigidos nas junções entre os segmentos. Permanecem visíveis apenas as curvas capazes de participar daquela transição local.</p>
 
     <p>Esse filtro simplifica de maneira significativa uma tarefa normalmente trabalhosa. Em vez de examinar as 65 opções em todos os trechos, o usuário trabalha com um subconjunto tecnicamente pertinente para aquele segmento. O modelo preserva o controle do engenheiro—pois a escolha final continua sendo manual—ao mesmo tempo que reduz alternativas incompatíveis e ajuda a compreender por que determinadas curvas podem ser conectadas e outras não.</p>
 
-    <h2>2. Busca automática de soluções possíveis</h2>
+    <h2 id="leitura-4">2. Busca automática de soluções possíveis</h2>
     <p>No <strong>modelo de busca automática</strong>, a entrada é reduzida aos ângulos e às variações de deslocamento dos segmentos. O CamForge calcula posições e ângulos acumulados, compara os sinais de velocidade e aceleração nas fronteiras e enumera todas as sequências de leis de movimento compatíveis encontradas para o ciclo especificado.</p>
 
     <p>O resultado não se limita a uma recomendação opaca. O programa apresenta as soluções possíveis, identifica as curvas atribuídas a cada segmento e permite selecionar e comparar uma sequência. No exemplo revisado com três segmentos, a mesma especificação geométrica produziu centenas de combinações admissíveis, o que ilustra a rapidez com que o espaço de busca cresce quando várias leis são consideradas simultaneamente.</p>
 
     <p>Para o projeto industrial, esse modo é especialmente útil na etapa exploratória. Ele permite gerar diversos arranjos cinematicamente plausíveis antes que o engenheiro os filtre por critérios dinâmicos, geométricos e de fabricação.</p>
 
-    <h2>3. Correção de descontinuidades de velocidade e aceleração</h2>
+    <h2 id="leitura-5">3. Correção de descontinuidades de velocidade e aceleração</h2>
     <p>O recurso mais característico do CamForge é o <strong>modo de correção de descontinuidades</strong>. O projeto de cames por trechos apresenta um gargalo recorrente: cada segmento pode ser válido isoladamente e, ainda assim, conectar-se mal ao seguinte. Uma descontinuidade de velocidade implica demanda impulsiva de aceleração, enquanto uma descontinuidade de aceleração produz salto de jerk e intensifica a excitação dinâmica. Em uma máquina real, essas incompatibilidades podem aparecer como impacto, vibração, ruído, perda de contato e desgaste acelerado.</p>
 
     <p>A correção manual dessas junções é difícil porque as derivadas normalizadas de uma lei de movimento são escaladas tanto pelo intervalo angular quanto pelo curso. Uma alteração em β modifica o tempo angular disponível para o movimento; uma alteração em ΔL muda a escala do deslocamento. Além disso, as variáveis são limitadas pelo ciclo total do came e pelo processo que o seguidor precisa executar.</p>
@@ -172,10 +173,10 @@
 
     <p>A janela de correção diagnostica as junções, procura alternativas contínuas e mostra uma prévia do projeto corrigido antes da aplicação. Também permite limitar as variações ou bloquear determinadas variáveis por segmento. As soluções candidatas podem ser comparadas por velocidade, aceleração e jerk máximos, salto de jerk, raios mínimos de base e primitivo, ângulo de pressão máximo e raio mínimo de curvatura.</p>
 
-    <h2>Geometria, SVAJ e verificações de projeto</h2>
+    <h2 id="leitura-6">Geometria, SVAJ e verificações de projeto</h2>
     <p>Depois da seleção de uma solução, o programa relaciona a lei de movimento ao came físico. Os resultados podem ser inspecionados em tabelas ou gráficos, incluindo contorno do came, curva primitiva, diagramas SVAJ do came e do seguidor, ângulo de pressão e raio de curvatura. A animação sincroniza a posição do came com o seguidor e auxilia na verificação da relação entre as curvas analíticas e o mecanismo real.</p>
 
-    <table class="data-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Tabela com rolagem horizontal"><table class="data-table">
       <thead>
         <tr>
           <th>Entrada ou verificação de projeto</th>
@@ -204,13 +205,13 @@
           <td>Filtro manual, busca automática e correção de descontinuidades.</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
-    <h2>Clareza didática com objetivo industrial</h2>
+    <h2 id="leitura-7">Clareza didática com objetivo industrial</h2>
     <p>O CamForge é didático porque expõe o raciocínio que conduz ao cálculo: o usuário observa no mesmo ambiente os dados dos segmentos, as leis escolhidas, o comportamento nas fronteiras, os diagramas SVAJ e a geometria gerada. Isso o torna adequado para disciplinas de mecanismos, projeto de máquinas e sistemas mecânicos.</p>
 
     <p>Seu alcance, contudo, vai além da demonstração. A combinação de biblioteca ampla, busca sistemática de soluções, correção de continuidade e verificações geométricas caracteriza o programa como uma ferramenta de projeto preliminar de cames para aplicações industriais. Ele ajuda o engenheiro a passar da especificação de movimento do processo para um perfil de came tecnicamente avaliável e a comparar alternativas antes das verificações detalhadas de estrutura, tribologia, tolerâncias e fabricação.</p>
-  </article>
+  <div class="article-correction"><p>Dúvidas sobre uma equação ou resultado? Envie o endereço desta página e os dados do seu cálculo para <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a>. · <a href="../sobre.html">Sobre o autor</a> · <a href="../privacy.html">Privacidade</a></p></div></article>
 
   <aside>
     <div class="sidebar-card">
@@ -257,7 +258,5 @@
     <p>© 2026 Barbudenge · <a href="../index.html">Página inicial</a> · <a href="../sobre.html">Sobre</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
   </div>
 </footer>
-
-  <script src="../../site-sidebar.js"></script>
 </body>
 </html>

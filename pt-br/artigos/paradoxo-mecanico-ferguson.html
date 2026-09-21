@@ -30,7 +30,6 @@
   <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/paradoxo-mecanico-ferguson.html" />
   <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/paradoxo-mecanico-ferguson.html" />
   <link rel="stylesheet" href="../../language-switch.css" />
-  <link rel="stylesheet" href="../../site-sidebar.css" />
   <script type="application/ld+json" data-seo="article">
   {
     "@context": "https://schema.org",
@@ -92,8 +91,10 @@
     ]
   }
   </script>
+<link rel="stylesheet" href="/editorial.css">
 </head>
 <body>
+<a class="editorial-skip" href="#article-content">Pular para o artigo</a>
 
 <header class="site-header">
   <div class="container topbar">
@@ -125,7 +126,7 @@
 </section>
 
 <main class="container article-layout">
-  <article class="article-body">
+  <article id="article-content" class="article-body"><details class="article-toc"><summary>Neste artigo</summary><nav aria-label="Seções do artigo"><ol><li><a href="#leitura-1">Origem histórica</a></li><li><a href="#leitura-2">Ideia do mecanismo</a></li><li><a href="#leitura-3">Dados para montagem</a></li><li><a href="#leitura-4">Como montar no Engrenarium</a></li><li><a href="#leitura-5">Como funciona</a></li><li><a href="#leitura-6">Por que parece paradoxal</a></li></ol></nav></details>
     <p class="lead">Este artigo resume a origem histórica do paradoxo mecânico de James Ferguson, mostra como montar o mecanismo no Engrenarium e explica por que três engrenagens, acionadas pelo mesmo conjunto, podem girar em sentidos diferentes ou até permanecer paradas.</p>
 
     <div class="video-embed">
@@ -136,14 +137,14 @@
       <strong>Montagem no Engrenarium:</strong> o mecanismo pode ser reproduzido no <a href="https://barbudenge.github.io/lasmeufsj/pt-br/engrenarium/">Engrenarium software</a> ou no <a href="https://barbudenge.github.io/engrenarium/">Engrenarium web</a>. A montagem usa três trens planetários semelhantes, com os mesmos vínculos entre solares, braços e engrenagens intermediárias.
     </div>
 
-    <h2>Origem histórica</h2>
+    <h2 id="leitura-1">Origem histórica</h2>
     <p>A descrição do vídeo informa que a conversa que originou o mecanismo foi adaptada do livro <em>Wheelwright of the Heavens: The Life and Work of James Ferguson, FRS</em>, de John R. Millburn. Segundo esse relato, Ferguson estava em uma reunião em que um relojoeiro tratou como impossível aquilo que julgava contrário à razão.</p>
 
     <p>Em vez de responder no campo abstrato da discussão, Ferguson levou o argumento para o ofício do relojoeiro: rodas dentadas. Ele propôs uma máquina em que uma roda larga acionaria três rodas finas no mesmo eixo, mas com um resultado que contrariava a intuição imediata. Uma delas giraria em um sentido, outra no sentido oposto, e a terceira não giraria.</p>
 
     <p>Para um relojoeiro, a afirmação parecia impossível, pois a experiência com pares de engrenagens sugeria que rodas engrenadas deveriam obedecer a sentidos previsíveis. Ferguson então construiu o dispositivo e o apresentou ao grupo. O efeito observado mostrou que o aparente paradoxo não estava nas engrenagens em si, mas na leitura incompleta do movimento relativo.</p>
 
-    <h2>Ideia do mecanismo</h2>
+    <h2 id="leitura-2">Ideia do mecanismo</h2>
     <p>O paradoxo usa três trens de engrenagens montados sobre um mesmo braço. Eles compartilham a mesma engrenagem de entrada e a mesma engrenagem intermediária, mas terminam em três engrenagens finais com números de dentes ligeiramente diferentes.</p>
 
     <figure class="article-figure">
@@ -153,10 +154,10 @@
 
     <p>O segredo está em alterar apenas um dente nas engrenagens finais. Com o braço fixo, todas giram no mesmo sentido, quase com a mesma velocidade. Quando a engrenagem de entrada fica fixa e o braço passa a girar, a rotação do braço subtrai uma parcela comum do movimento. Como as três velocidades eram ligeiramente diferentes, a subtração produz três resultados distintos.</p>
 
-    <h2>Dados para montagem</h2>
+    <h2 id="leitura-3">Dados para montagem</h2>
     <p>Na montagem usada no vídeo e na legenda, as engrenagens 1 e 2 têm 30 dentes. As três engrenagens finais têm 30, 31 e 29 dentes, respectivamente.</p>
 
-    <table class="data-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Tabela com rolagem horizontal"><table class="data-table">
       <thead>
         <tr>
           <th>Elemento</th>
@@ -191,14 +192,14 @@
           <td>Saída que gira no sentido anti-horário.</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
     <figure class="article-figure figure-half">
       <img src="../../figs/aulas/ferguson-paradoxo-dentes.png" alt="Números de dentes das engrenagens do paradoxo mecânico de Ferguson">
       <figcaption>Números de dentes usados no modelo didático.</figcaption>
     </figure>
 
-    <h2>Como montar no Engrenarium</h2>
+    <h2 id="leitura-4">Como montar no Engrenarium</h2>
     <p>A montagem pode ser feita como três sistemas planetários em paralelo, todos com o mesmo braço. Em cada sistema há um trem em série formado pela engrenagem 1, pela engrenagem 2 e por uma engrenagem final.</p>
 
     <ol>
@@ -213,7 +214,7 @@
 
     <p>Antes de acionar o mecanismo, alinhe visualmente as engrenagens finais. Isso facilita observar que, após o movimento do braço, uma saída não gira, uma gira no sentido horário e outra gira no sentido anti-horário.</p>
 
-    <h2>Como funciona</h2>
+    <h2 id="leitura-5">Como funciona</h2>
     <p>A equação de um trem planetário pode ser escrita usando velocidades relativas ao braço \(C\). Para cada trem \(1-2-k\), em que \(k\) pode ser 3, 4 ou 5, vale:</p>
 
     <div class="equation-box">
@@ -236,7 +237,7 @@
 
     <p>Primeiro, considere o braço fixo, com \(\omega_C=0\), e a engrenagem 1 girando a \(100\,\text{rpm}\) no sentido anti-horário. As velocidades das três saídas são:</p>
 
-    <table class="data-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Tabela com rolagem horizontal"><table class="data-table">
       <thead>
         <tr>
           <th>Saída</th>
@@ -261,13 +262,13 @@
           <td>\(103,45\,\text{rpm}\)</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
     <p>As três engrenagens giram no mesmo sentido, mas com pequenas diferenças de velocidade. A diferença de um dente já é suficiente para separar os resultados.</p>
 
     <p>No ensaio paradoxal, a engrenagem 1 fica parada, \(\omega_1=0\), e o braço gira no sentido horário, \(\omega_C=-100\,\text{rpm}\). Substituindo na mesma expressão:</p>
 
-    <table class="data-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Tabela com rolagem horizontal"><table class="data-table">
       <thead>
         <tr>
           <th>Saída</th>
@@ -292,20 +293,20 @@
           <td>Gira no sentido anti-horário.</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
     <figure class="article-figure figure-wide">
       <img src="../../figs/aulas/ferguson-paradoxo-calculo-sol-fixo.png" alt="Cálculo da engrenagem que fica parada no paradoxo mecânico de Ferguson">
       <figcaption>Exemplo de cálculo para o caso em que a engrenagem 1 está fixa e o braço gira.</figcaption>
     </figure>
 
-    <h2>Por que parece paradoxal</h2>
+    <h2 id="leitura-6">Por que parece paradoxal</h2>
     <p>A intuição inicial considera apenas a ação direta entre engrenagens. Nessa leitura, se uma roda aciona outra, espera-se uma inversão de sentido a cada engrenamento. O mecanismo de Ferguson, porém, é planetário: as velocidades absolutas são a soma entre o movimento relativo do trem e o movimento do braço.</p>
 
     <p>Quando o braço gira, ele desloca o referencial de todas as engrenagens finais. A engrenagem com 30 dentes tem sua rotação relativa exatamente cancelada. A engrenagem com 31 dentes fica ligeiramente abaixo desse cancelamento e passa a girar no sentido horário. A engrenagem com 29 dentes fica ligeiramente acima e gira no sentido anti-horário.</p>
 
     <p>O paradoxo, portanto, não viola a cinemática das engrenagens. Ele mostra que mecanismos com braço móvel exigem análise por velocidades relativas antes de qualquer conclusão sobre o movimento absoluto.</p>
-  </article>
+  <div class="article-correction"><p>Dúvidas sobre uma equação ou resultado? Envie o endereço desta página e os dados do seu cálculo para <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a>. · <a href="../sobre.html">Sobre o autor</a> · <a href="../privacy.html">Privacidade</a></p></div></article>
 
   <aside>
     <div class="sidebar-card">
@@ -350,7 +351,5 @@
     <p>© 2026 Barbudenge · <a href="../index.html">Página inicial</a> · <a href="../sobre.html">Sobre</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
   </div>
 </footer>
-
-  <script src="../../site-sidebar.js"></script>
 </body>
 </html>

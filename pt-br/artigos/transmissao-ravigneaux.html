@@ -30,7 +30,6 @@
   <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/transmissao-ravigneaux.html" />
   <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/transmissao-ravigneaux.html" />
   <link rel="stylesheet" href="../../language-switch.css" />
-  <link rel="stylesheet" href="../../site-sidebar.css" />
   <script type="application/ld+json" data-seo="article">
   {
     "@context": "https://schema.org",
@@ -92,8 +91,10 @@
     ]
   }
   </script>
+<link rel="stylesheet" href="/editorial.css">
 </head>
 <body>
+<a class="editorial-skip" href="#article-content">Pular para o artigo</a>
 
 <header class="site-header">
   <div class="container topbar">
@@ -125,7 +126,7 @@
 </section>
 
 <main class="container article-layout">
-  <article class="article-body">
+  <article id="article-content" class="article-body"><details class="article-toc"><summary>Neste artigo</summary><nav aria-label="Seções do artigo"><ol><li><a href="#leitura-1">O que é um conjunto Ravigneaux</a></li><li><a href="#leitura-2">Aplicação em transmissões Ford</a></li><li><a href="#leitura-3">Relações de marcha</a></li><li><a href="#leitura-4">Dados para montagem no Engrenarium</a></li><li><a href="#leitura-5">Montagem das marchas</a></li><li><a href="#leitura-6">1ª marcha</a></li><li><a href="#leitura-7">2ª marcha</a></li><li><a href="#leitura-8">3ª marcha</a></li><li><a href="#leitura-9">4ª marcha</a></li><li><a href="#leitura-10">Marcha ré</a></li><li><a href="#leitura-11">Como interpretar o conjunto</a></li></ol></nav></details>
     <p class="lead">Este artigo mostra como montar no Engrenarium um modelo didático de transmissão Ravigneaux e como interpretar suas relações de marcha. A leitura é focada nos dentes do conjunto, nas condições de travamento ou acoplamento e no motivo pelo qual esse arranjo é útil em transmissões automáticas compactas.</p>
 
     <div class="video-embed">
@@ -136,7 +137,7 @@
       <strong>Montagem no Engrenarium:</strong> o conjunto pode ser reproduzido no <a href="https://barbudenge.github.io/lasmeufsj/pt-br/engrenarium/">Engrenarium software</a> ou no <a href="https://barbudenge.github.io/engrenarium/">Engrenarium web</a>. Crie os dois subsistemas planetários com a mesma anelar e altere os vínculos para simular cada marcha.
     </div>
 
-    <h2>O que é um conjunto Ravigneaux</h2>
+    <h2 id="leitura-1">O que é um conjunto Ravigneaux</h2>
     <p>O conjunto planetário Ravigneaux foi patenteado em 1949 por Pol Ravigneaux. Ele reúne duas engrenagens solares, planetas longos e curtos, uma engrenagem interna e um único porta-planetas, funcionando como se dois sistemas planetários fossem combinados em uma única estrutura.</p>
 
     <figure class="article-figure figure-wide">
@@ -149,7 +150,7 @@
       <figcaption>Conjunto Ravigneaux: duas famílias de planetas trabalham com solares diferentes dentro de uma arquitetura compacta.</figcaption>
     </figure>
 
-    <h2>Aplicação em transmissões Ford</h2>
+    <h2 id="leitura-2">Aplicação em transmissões Ford</h2>
     <p>Transmissões automáticas overdrive da Ford usaram conjunto Ravigneaux. O modelo 4R70W apareceu em vários veículos, entre eles:</p>
 
     <ul>
@@ -175,10 +176,10 @@
       </figure>
     </div>
 
-    <h2>Relações de marcha</h2>
+    <h2 id="leitura-3">Relações de marcha</h2>
     <p>A transmissão 4R70W pode ser representada por cinco relações: quatro marchas à frente e uma marcha ré.</p>
 
-    <table class="data-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Tabela com rolagem horizontal"><table class="data-table">
       <thead>
         <tr>
           <th>Condição</th>
@@ -207,14 +208,14 @@
           <td>\(-2,32\)</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
     <p>As relações acima são escritas como razão entre velocidade angular de entrada e velocidade angular de saída. Relações maiores que \(1\) indicam redução; a relação \(1,0\) indica marcha direta; e a relação \(0,7\) indica overdrive, em que a saída gira mais rápido que a entrada. O sinal negativo da ré indica inversão de sentido.</p>
 
-    <h2>Dados para montagem no Engrenarium</h2>
+    <h2 id="leitura-4">Dados para montagem no Engrenarium</h2>
     <p>A descrição do vídeo informa os números de dentes usados para montar o modelo. O ponto importante é que os dois subsistemas compartilham a mesma anelar de \(88\) dentes, característica que ajuda a compactar o conjunto Ravigneaux.</p>
 
-    <table class="data-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Tabela com rolagem horizontal"><table class="data-table">
       <thead>
         <tr>
           <th>Subsistema</th>
@@ -237,7 +238,7 @@
           <td>\(N_{ring}=88\)</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
     <p>No Engrenarium, esses dados devem ser usados para criar os dois trens combinados. Depois disso, mantenha o porta-planetas comum e a anelar de saída, mudando apenas as condições de contorno de cada marcha.</p>
 
@@ -246,10 +247,10 @@
       <figcaption>Corte do conjunto: o mesmo pacote mecânico pode gerar várias relações ao mudar quais elementos são travados ou usados como entrada e saída.</figcaption>
     </figure>
 
-    <h2>Montagem das marchas</h2>
+    <h2 id="leitura-5">Montagem das marchas</h2>
     <p>Com a geometria definida, cada marcha é obtida por uma configuração de vínculos. A análise abaixo usa a mesma saída na anelar e alterna entrada, travamentos e acoplamentos para reproduzir redução, marcha direta, overdrive e ré.</p>
 
-    <h2>1ª marcha</h2>
+    <h2 id="leitura-6">1ª marcha</h2>
     <p>Na primeira marcha, configure a entrada na primeira solar e a saída na segunda anelar:</p>
 
     <div class="equation-box">
@@ -272,7 +273,7 @@
 
     <p>Com o porta-planetas parado, o conjunto trabalha como uma redução forte. Essa é a condição adequada para arrancada, quando se deseja maior multiplicação de torque e menor velocidade de saída.</p>
 
-    <h2>2ª marcha</h2>
+    <h2 id="leitura-7">2ª marcha</h2>
     <p>Na segunda marcha, a relação ainda é lida entre a primeira solar e a segunda anelar:</p>
 
     <div class="equation-box">
@@ -295,7 +296,7 @@
 
     <p>Essa alteração reduz a relação em comparação com a primeira marcha. A saída passa a girar mais rapidamente para a mesma velocidade de entrada, mas ainda com redução.</p>
 
-    <h2>3ª marcha</h2>
+    <h2 id="leitura-8">3ª marcha</h2>
     <p>A terceira marcha é a marcha direta. A mesma razão cinemática é usada, mas agora com acoplamento entre as duas solares:</p>
 
     <div class="equation-box">
@@ -313,7 +314,7 @@
 
     <p>Quando os elementos relevantes giram solidários, o trem deixa de produzir redução interna e a relação efetiva se aproxima de \(1:1\).</p>
 
-    <h2>4ª marcha</h2>
+    <h2 id="leitura-9">4ª marcha</h2>
     <p>Na quarta marcha, a entrada considerada passa pelo porta-planetas e a saída continua na anelar:</p>
 
     <div class="equation-box">
@@ -336,7 +337,7 @@
 
     <p>Como \(i_4 < 1\), esta é uma relação overdrive. A saída gira mais rápido que a entrada, condição útil para reduzir rotação do motor em velocidade de cruzeiro.</p>
 
-    <h2>Marcha ré</h2>
+    <h2 id="leitura-10">Marcha ré</h2>
     <p>Na marcha ré, a relação é escrita entre a segunda solar e a segunda anelar:</p>
 
     <div class="equation-box">
@@ -359,7 +360,7 @@
 
     <p>O sinal negativo indica inversão de sentido. Assim, a ré não é apenas uma relação de grande redução; ela é uma condição cinemática que faz a saída girar no sentido oposto.</p>
 
-    <h2>Como interpretar o conjunto</h2>
+    <h2 id="leitura-11">Como interpretar o conjunto</h2>
     <p>O Ravigneaux é eficiente como objeto de estudo porque concentra várias relações em um único pacote de engrenagens. Em cada marcha, a transmissão seleciona quais elementos ficam travados, quais são acoplados e quais servem como entrada ou saída.</p>
 
     <p>O roteiro de leitura é o mesmo usado em outros trens planetários:</p>
@@ -373,7 +374,7 @@
     </ol>
 
     <p>Essa abordagem evita tratar cada marcha como um caso isolado. O que muda de uma marcha para outra é o conjunto de restrições aplicado ao mesmo mecanismo.</p>
-  </article>
+  <div class="article-correction"><p>Dúvidas sobre uma equação ou resultado? Envie o endereço desta página e os dados do seu cálculo para <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a>. · <a href="../sobre.html">Sobre o autor</a> · <a href="../privacy.html">Privacidade</a></p></div></article>
 
   <aside>
     <div class="sidebar-card">
@@ -420,7 +421,5 @@
     <p>© 2026 Barbudenge · <a href="../index.html">Página inicial</a> · <a href="../sobre.html">Sobre</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
   </div>
 </footer>
-
-  <script src="../../site-sidebar.js"></script>
 </body>
 </html>

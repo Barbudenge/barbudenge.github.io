@@ -30,7 +30,6 @@
   <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/engrenagens-funcoes-perfil-nomenclatura.html" />
   <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/engrenagens-funcoes-perfil-nomenclatura.html" />
   <link rel="stylesheet" href="../../language-switch.css" />
-  <link rel="stylesheet" href="../../site-sidebar.css" />
   <script type="application/ld+json" data-seo="article">
   {
     "@context": "https://schema.org",
@@ -92,8 +91,10 @@
     ]
   }
   </script>
+<link rel="stylesheet" href="/editorial.css">
 </head>
 <body>
+<a class="editorial-skip" href="#article-content">Pular para o artigo</a>
 
 <header class="site-header">
   <div class="container topbar">
@@ -125,10 +126,10 @@
 </section>
 
 <main class="container article-layout">
-  <article class="article-body">
+  <article id="article-content" class="article-body"><details class="article-toc"><summary>Neste artigo</summary><nav aria-label="Seções do artigo"><ol><li><a href="#leitura-1">Função mecânica</a></li><li><a href="#leitura-2">Perfil do dente</a></li><li><a href="#leitura-3">Número de dentes, diâmetro primitivo e módulo</a></li><li><a href="#leitura-4">Engrenagem externa, interna e cremalheira</a></li><li><a href="#leitura-5">Por que a nomenclatura importa</a></li></ol></nav></details>
     <p class="lead">Engrenagens são elementos usados para transmitir potência e impor uma relação cinemática entre eixos. A mesma peça que reduz velocidade pode aumentar torque, mudar o sentido do movimento ou servir como parte de uma arquitetura mais complexa, como uma caixa de câmbio ou um trem planetário.</p>
 
-    <h2>Função mecânica</h2>
+    <h2 id="leitura-1">Função mecânica</h2>
     <p>Em uma transmissão ideal, a potência mecânica que entra no par de engrenagens é aproximadamente a potência que sai. Como potência rotativa é o produto entre torque e velocidade angular, a redução de velocidade vem acompanhada de aumento de torque, descontadas as perdas por atrito, deformação, lubrificação e contato.</p>
 
     <div class="equation-box">
@@ -139,7 +140,7 @@
 
     <p>Essa expressão simples ajuda a evitar uma interpretação incompleta: a engrenagem não "cria" potência. Ela troca velocidade por torque dentro das limitações do sistema. Por isso a relação de transmissão precisa ser lida junto com esforço, rotação admissível, montagem dos eixos e aplicação final.</p>
 
-    <h2>Perfil do dente</h2>
+    <h2 id="leitura-2">Perfil do dente</h2>
     <p>O perfil mais comum em engrenagens cilíndricas é o evolvente, também chamado de involuta. Seu uso é amplo porque permite transmitir movimento com razão de velocidades praticamente constante mesmo quando há pequenas variações na distância entre centros. Isso é essencial em máquinas reais, nas quais montagem, desgaste e fabricação nunca são perfeitamente ideais.</p>
 
     <p>Perfis cicloidais também aparecem em aplicações específicas, especialmente quando o interesse está em precisão e baixa carga, como em alguns mecanismos de relojoaria. Em máquinas industriais, porém, a robustez e a padronização do perfil evolvente tornam sua presença dominante.</p>
@@ -149,7 +150,7 @@
       <figcaption>Mesmo em conjuntos planetários, a leitura começa pela geometria básica dos dentes e pelo número de dentes de cada engrenagem.</figcaption>
     </figure>
 
-    <h2>Número de dentes, diâmetro primitivo e módulo</h2>
+    <h2 id="leitura-3">Número de dentes, diâmetro primitivo e módulo</h2>
     <p>Três grandezas aparecem o tempo todo: número de dentes \(N\), diâmetro primitivo \(D\) e módulo \(m\). O diâmetro primitivo não é a borda externa da engrenagem; ele representa a circunferência teórica usada para descrever a transmissão de movimento. O módulo relaciona essa dimensão com a quantidade de dentes:</p>
 
     <div class="equation-box">
@@ -165,18 +166,18 @@
       <figcaption>Figura de apoio das aulas: número de dentes e dimensão primitiva precisam ser lidos em conjunto, porque a padronização geométrica controla a compatibilidade entre engrenagens.</figcaption>
     </figure>
 
-    <h2>Engrenagem externa, interna e cremalheira</h2>
+    <h2 id="leitura-4">Engrenagem externa, interna e cremalheira</h2>
     <p>Em uma engrenagem externa comum, os dentes ficam voltados para fora. Quando duas engrenagens externas engrenam, seus sentidos de rotação são opostos. Na engrenagem interna, os dentes ficam voltados para dentro; nesse caso, uma engrenagem externa que engrena com ela gira no mesmo sentido. Essa diferença de sentido se torna importante ao analisar trens com vários pares.</p>
 
     <p>A cremalheira pode ser entendida como uma engrenagem de raio infinito. Ela transforma rotação em translação e aparece em direções, guias, atuadores e mecanismos em que o interesse é converter movimento angular em deslocamento linear.</p>
 
     <div class="note">Uma boa análise de engrenagens começa pela identificação dos elementos: quais dentes se tocam, quais eixos são fixos, quais engrenagens estão rigidamente acopladas e qual grandeza representa a entrada.</div>
 
-    <h2>Por que a nomenclatura importa</h2>
+    <h2 id="leitura-5">Por que a nomenclatura importa</h2>
     <p>Grande parte dos erros em exercícios de engrenagens não nasce da álgebra, mas de uma leitura inicial fraca. Confundir diâmetro externo com diâmetro primitivo, esquecer uma engrenagem intermediária ou tratar engrenagens acopladas como independentes muda todo o resultado.</p>
 
     <p>Por isso, antes de calcular uma relação de transmissão, vale registrar a topologia do mecanismo. Quem aciona quem? O par é externo ou interno? Existe eixo comum? Há uma cremalheira? Algum elemento está travado? Essas perguntas formam a ponte entre a geometria do desenho e a equação que será usada.</p>
-  </article>
+  <div class="article-correction"><p>Dúvidas sobre uma equação ou resultado? Envie o endereço desta página e os dados do seu cálculo para <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a>. · <a href="../sobre.html">Sobre o autor</a> · <a href="../privacy.html">Privacidade</a></p></div></article>
 
   <aside>
     <div class="sidebar-card">
@@ -203,7 +204,5 @@
     <p>© 2026 Barbudenge · <a href="../index.html">Página inicial</a> · <a href="../sobre.html">Sobre</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
   </div>
 </footer>
-
-  <script src="../../site-sidebar.js"></script>
 </body>
 </html>

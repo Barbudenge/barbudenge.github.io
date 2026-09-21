@@ -30,7 +30,6 @@
   <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/planetarias-compostas-diferenciais.html" />
   <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/planetarias-compostas-diferenciais.html" />
   <link rel="stylesheet" href="../../language-switch.css" />
-  <link rel="stylesheet" href="../../site-sidebar.css" />
   <script type="application/ld+json" data-seo="article">
   {
     "@context": "https://schema.org",
@@ -92,8 +91,10 @@
     ]
   }
   </script>
+<link rel="stylesheet" href="/editorial.css">
 </head>
 <body>
+<a class="editorial-skip" href="#article-content">Pular para o artigo</a>
 
 <header class="site-header">
   <div class="container topbar">
@@ -125,7 +126,7 @@
 </section>
 
 <main class="container article-layout">
-  <article class="article-body">
+  <article id="article-content" class="article-body"><details class="article-toc"><summary>Neste artigo</summary><nav aria-label="Seções do artigo"><ol><li><a href="#leitura-1">Graus de liberdade</a></li><li><a href="#leitura-2">Acoplamentos entre engrenagens</a></li><li><a href="#leitura-3">Diferencial automotivo</a></li><li><a href="#leitura-4">Diferencial de deslizamento limitado</a></li><li><a href="#leitura-5">Roteiro de análise</a></li></ol></nav></details>
     <p class="lead">Uma planetária simples já exige cuidado porque o braço se move. Em planetárias compostas, esse cuidado aumenta: há mais de um trem, mais de uma relação cinemática e acoplamentos que reduzem os graus de liberdade do sistema.</p>
 
     <figure class="article-figure">
@@ -133,12 +134,12 @@
       <figcaption>Em arranjos compostos, a pergunta principal é quais elementos estão acoplados e quais relações independentes ainda restam.</figcaption>
     </figure>
 
-    <h2>Graus de liberdade</h2>
+    <h2 id="leitura-1">Graus de liberdade</h2>
     <p>Um trem planetário com três elementos principais pode ter dois graus de liberdade quando nenhum deles está fixo ou prescrito. Ao travar um elemento, ou ao impor uma velocidade de entrada, o comportamento do terceiro passa a ser determinado. Em conjuntos compostos, cada trem acrescenta relações, mas os acoplamentos entre eles também acrescentam restrições.</p>
 
     <p>Por isso, dizer que há duas planetárias não basta. É necessário saber se as solares estão no mesmo eixo, se os braços são comuns, se uma anelar é solidária a outra engrenagem ou se algum elemento está fixado à carcaça.</p>
 
-    <h2>Acoplamentos entre engrenagens</h2>
+    <h2 id="leitura-2">Acoplamentos entre engrenagens</h2>
     <p>Quando duas engrenagens estão rigidamente acopladas, elas compartilham a mesma velocidade angular. Essa restrição pode permitir tratar parte do sistema com uma equação única, desde que o acoplamento pertença aos elementos corretos da relação analisada.</p>
 
     <p>Já os acoplamentos envolvendo braços exigem mais atenção. O braço não é apenas mais uma engrenagem; ele define o referencial relativo usado para calcular o valor do trem. Se dois braços são acoplados, ou se um braço é acoplado a uma engrenagem de outro trem, a escrita das equações precisa representar essa condição explicitamente.</p>
@@ -150,7 +151,7 @@
 
     <div class="note">Em planetárias compostas, a dificuldade raramente está em multiplicar dentes. Ela está em escrever as restrições certas sem perder nenhum grau de liberdade.</div>
 
-    <h2>Diferencial automotivo</h2>
+    <h2 id="leitura-3">Diferencial automotivo</h2>
     <p>O diferencial permite que as rodas de um mesmo eixo girem com velocidades diferentes durante uma curva. Em linha reta, as duas rodas tendem a girar com a mesma velocidade. Em curva, a roda externa percorre caminho maior e precisa girar mais rápido que a interna.</p>
 
     <p>Em um diferencial simétrico ideal, a velocidade do porta-satélites se relaciona à média das velocidades das duas rodas. Em forma conceitual:</p>
@@ -163,10 +164,10 @@
 
     <p>Essa expressão explica um comportamento conhecido: se uma roda perde totalmente resistência e gira livremente, a outra pode receber pouca capacidade de tração em um diferencial aberto. O problema não é que o mecanismo "falhou"; ele está cumprindo a relação cinemática para a qual foi construído.</p>
 
-    <h2>Diferencial de deslizamento limitado</h2>
+    <h2 id="leitura-4">Diferencial de deslizamento limitado</h2>
     <p>Diferenciais de deslizamento limitado surgem para reduzir esse inconveniente. Eles introduzem uma resistência à diferença excessiva de velocidade entre as rodas, por embreagens, engrenagens especiais, fluidos ou outros recursos. O objetivo é preservar a função de permitir curvas sem deixar uma roda livre dominar completamente a resposta.</p>
 
-    <h2>Roteiro de análise</h2>
+    <h2 id="leitura-5">Roteiro de análise</h2>
     <ol>
       <li>divida o mecanismo em trens planetários reconhecíveis;</li>
       <li>escreva a equação cinemática de cada trem;</li>
@@ -181,7 +182,7 @@
       <img src="../../figs/aulas/planetaria-composta-exemplo.png" alt="Exemplo esquemático de planetária composta com engrenagens numeradas e braço">
       <figcaption>Exemplo de aula: antes de resolver, é preciso identificar quais engrenagens estão no mesmo eixo e quais elementos pertencem a cada trem planetário.</figcaption>
     </figure>
-  </article>
+  <div class="article-correction"><p>Dúvidas sobre uma equação ou resultado? Envie o endereço desta página e os dados do seu cálculo para <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a>. · <a href="../sobre.html">Sobre o autor</a> · <a href="../privacy.html">Privacidade</a></p></div></article>
 
   <aside>
     <div class="sidebar-card">
@@ -208,7 +209,5 @@
     <p>© 2026 Barbudenge · <a href="../index.html">Página inicial</a> · <a href="../sobre.html">Sobre</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
   </div>
 </footer>
-
-  <script src="../../site-sidebar.js"></script>
 </body>
 </html>

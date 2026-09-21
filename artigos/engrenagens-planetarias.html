@@ -218,7 +218,6 @@
   <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/engrenagens-planetarias.html" />
   <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/engrenagens-planetarias.html" />
   <link rel="stylesheet" href="../language-switch.css" />
-  <link rel="stylesheet" href="../site-sidebar.css" />
   <script type="application/ld+json" data-seo="article">
   {
     "@context": "https://schema.org",
@@ -280,8 +279,10 @@
     ]
   }
   </script>
+<link rel="stylesheet" href="/editorial.css">
 </head>
 <body>
+<a class="editorial-skip" href="#article-content">Skip to article</a>
 
 <header>
   <div class="container topbar">
@@ -314,8 +315,8 @@
 </section>
 
 <main class="container article-layout">
-  <article>
-    <h2>Why is it worth starting with the general case</h2>
+  <article id="article-content"><details class="article-toc"><summary>In this article</summary><nav aria-label="Article sections"><ol><li><a href="#leitura-1">Why is it worth starting with the general case</a></li><li><a href="#leitura-2">General equation</a></li><li><a href="#leitura-3">What does train value mean?</a></li><li><a href="#leitura-4">Simple example: 1-2-3 train</a></li><li><a href="#leitura-5">How to interpret the formula without relying on rote procedures</a></li><li><a href="#leitura-6">Where this formulation is most useful</a></li></ol></nav></details>
+    <h2 id="leitura-1">Why is it worth starting with the general case</h2>
     <p>In introductory exercises, it is common to solve each planetary arrangement as an isolated case: one problem with a fixed ring gear, another with a fixed carrier, another with an input at the sun gear, and so on. This works in simple situations, but often hinders the development of conceptual understanding. The student learns separate procedures and then encounters difficulty when interpreting a less familiar train.</p>
     <p>The general formulation is more useful because it forces you to look first at the structure of the set. Before deciding which element is locked or which speed is known, the train is described as a kinematic system. This change of perspective usually makes the problem clearer, especially in classes and in situations with multiple gear meshes.</p>
 
@@ -328,7 +329,7 @@
       </div>
     </div>
 
-    <h2>General equation</h2>
+    <h2 id="leitura-2">General equation</h2>
     <p>For any epicyclic gear train, the relation can be written:</p>
 
     <div class="equation-box">
@@ -350,13 +351,13 @@
 
     <p>The decisive point here is that the equation does not describe a special case. It describes the relative behavior of the train relative to the carrier. Once this is understood, the particular conditions come in only as additional constraints.</p>
 
-    <h2>What does train value mean?</h2>
+    <h2 id="leitura-3">What does train value mean?</h2>
     <p>The train value \(e\) is obtained considering the gear chain with carrier fixed. In didactic terms, this is equivalent to momentarily “turning off” the movement of the planet carrier to calculate how the sequence of gears transforms rotation between the first and last element of the train.</p>
     <p>This number depends on the topology of the set, the tooth counts and the type of contact between the gears, external or internal. Once obtained, it starts to condense the structure of the problem into a constant that can be used in the general equation.</p>
 
     <div class="note">Separating the analysis into two stages usually avoids conceptual error: first, the train value is calculated with the carrier fixed; then the general relationship is applied to the real conditions of movement of the set.</div>
 
-    <h2>Simple example: 1-2-3 train</h2>
+    <h2 id="leitura-4">Simple example: 1-2-3 train</h2>
     <div class="figure-single">
       <img src="../figs/exemplo-plan.png" alt="Schematic example of planetary gear train 1-2-3 with carrier B">
     </div>
@@ -377,7 +378,7 @@
 
     <p>In this expression, \(N_1\), \(N_2\) and \(N_3\) are the tooth counts of the gears involved. The sign of each factor depends on the type of gearing along the chain. The final product provides train value, which can then be used in any coherent operational situation with the same geometric arrangement.</p>
 
-    <h2>How to interpret the formula without relying on rote procedures</h2>
+    <h2 id="leitura-5">How to interpret the formula without relying on rote procedures</h2>
     <p>A common mistake is trying to “fit” the equation into decorated tables without thinking about the physical meaning of each term. In planetary gear trains, this often leads to changes between carrier and a fixed element, or confusion between observing the system in real motion and observing the set with the carrier fixed.</p>
     <p>A more robust reading is to follow this sequence:</p>
     <ol>
@@ -388,12 +389,12 @@
     </ol>
     <p>This order reduces the number of mental shortcuts and makes it easier to explain reasoning in class or in a technical report.</p>
 
-    <h2>Where this formulation is most useful</h2>
+    <h2 id="leitura-6">Where this formulation is most useful</h2>
     <p>The general form is particularly advantageous when the arrangement is no longer elementary. In composite systems, in chains with several gears or in problems where you want to compare different input and output choices, the formulation helps maintain coherence of reasoning. Instead of rebuilding everything from scratch for each scenario, we work on the same kinematic basis.</p>
     <p>Therefore, it also works well with visual tools like Engrenarium. The simulator can help you see the arrangement; the general formulation helps organize the mathematical interpretation of what is being observed.</p>
 
     <p style="margin-top:18px; font-weight:700;"><a href="/projects">Read also: projects page, Engrenarium Web and educational applications →</a></p>
-  </article>
+  <div class="article-correction"><p>Questions about an equation or result? Send this page address and your calculation inputs to <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a>. · <a href="../sobre.html">About the author</a> · <a href="../privacy.html">Privacy</a></p></div></article>
 
   <aside>
     <div class="card">
@@ -425,7 +426,5 @@
     <p>© 2026 Barbudenge · <a href="../index.html">Home page</a> · <a href="../sobre.html">About</a> · <a href="../privacy.html">Privacy</a></p>
   </div>
 </footer>
-
-  <script src="../site-sidebar.js"></script>
 </body>
 </html>

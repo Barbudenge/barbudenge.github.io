@@ -30,7 +30,6 @@
   <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/cames-nomenclatura-seguidores.html" />
   <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/cames-nomenclatura-seguidores.html" />
   <link rel="stylesheet" href="../../language-switch.css" />
-  <link rel="stylesheet" href="../../site-sidebar.css" />
   <script type="application/ld+json" data-seo="article">
   {
     "@context": "https://schema.org",
@@ -92,8 +91,10 @@
     ]
   }
   </script>
+<link rel="stylesheet" href="/editorial.css">
 </head>
 <body>
+<a class="editorial-skip" href="#article-content">Pular para o artigo</a>
 
 <header class="site-header">
   <div class="container topbar">
@@ -125,7 +126,7 @@
 </section>
 
 <main class="container article-layout">
-  <article class="article-body">
+  <article id="article-content" class="article-body"><details class="article-toc"><summary>Neste artigo</summary><nav aria-label="Seções do artigo"><ol><li><a href="#leitura-1">Quando usar cames</a></li><li><a href="#leitura-2">Termos essenciais</a></li><li><a href="#leitura-3">Tipos de seguidores</a></li><li><a href="#leitura-4">Posições e percurso crítico</a></li><li><a href="#leitura-5">Roteiro inicial de projeto</a></li></ol></nav></details>
     <p class="lead">Um came é um elemento mecânico cujo perfil impõe movimento a um seguidor. Essa definição é curta, mas carrega uma ideia importante: o perfil é consequência de uma lei de movimento desejada, não um desenho arbitrário.</p>
 
     <figure class="article-figure">
@@ -133,27 +134,27 @@
       <figcaption>Em cames, o perfil deve ser lido junto com raio de base, curso, seguidor e ângulo de pressão.</figcaption>
     </figure>
 
-    <h2>Quando usar cames</h2>
+    <h2 id="leitura-1">Quando usar cames</h2>
     <p>Cames aparecem em motores, máquinas de embalagem, prensas, linhas de produção e dispositivos automáticos. Eles são úteis quando uma rotação precisa gerar uma sequência bem definida de deslocamentos, repousos e retornos.</p>
 
     <p>A vantagem é a compacidade e a liberdade de especificar movimentos diferentes. A desvantagem é que fabricação, desgaste e ruído podem afetar diretamente a resposta. Pequenas imprecisões no perfil podem alterar deslocamento, velocidade e aceleração do seguidor.</p>
 
-    <h2>Termos essenciais</h2>
+    <h2 id="leitura-2">Termos essenciais</h2>
     <p>Alguns termos aparecem em praticamente qualquer projeto de came. O raio de base \(C\) representa a menor circunferência associada ao corpo do came. O raio primitivo \(R_0\) é usado na construção do perfil primitivo, especialmente quando o seguidor possui rolete. O raio do rolete \(R_r\), o curso \(L\), o deslocamento \(S\), o ângulo de rotação \(\theta\) e o ângulo de pressão \(\alpha\) completam a leitura inicial.</p>
 
     <p>O curso não deve ser confundido com o deslocamento instantâneo. O curso é a variação total desejada; o deslocamento é o valor em cada posição angular. Essa diferença parece simples, mas é decisiva quando o movimento é dividido em trechos de subida, repouso e descida.</p>
 
-    <h2>Tipos de seguidores</h2>
+    <h2 id="leitura-3">Tipos de seguidores</h2>
     <p>Seguidores podem ser de face plana, de rolete, de ponta ou oscilantes. O seguidor de rolete reduz deslizamento no contato, mas adiciona o raio do rolete ao problema geométrico. O seguidor de face plana pode simplificar algumas construções, mas exige verificar a largura necessária e o risco de formação de pontas no perfil.</p>
 
     <p>A escolha também depende da carga, velocidade, lubrificação e precisão. Em uma aplicação didática, o tipo de seguidor muda as equações e o procedimento de desenho. Em uma aplicação real, muda desgaste, ruído, custo e robustez.</p>
 
-    <h2>Posições e percurso crítico</h2>
+    <h2 id="leitura-4">Posições e percurso crítico</h2>
     <p>Um projeto bem especificado identifica as posições extremas críticas e o percurso de movimento crítico. As posições extremas definem onde o seguidor começa e termina trechos importantes. O percurso de movimento define como ele se desloca entre essas posições: com repouso, velocidade constante, movimento cicloidal, harmônico ou outra lei.</p>
 
     <div class="note">A pergunta correta não é apenas "qual será o formato do came?", mas "qual movimento o seguidor precisa executar ao longo de uma volta?".</div>
 
-    <h2>Roteiro inicial de projeto</h2>
+    <h2 id="leitura-5">Roteiro inicial de projeto</h2>
     <ol>
       <li>defina o ciclo completo em graus ou em tempo;</li>
       <li>separe trechos de subida, repouso, descida e eventuais movimentos intermediários;</li>
@@ -163,7 +164,7 @@
     </ol>
 
     <p>Esse roteiro evita começar pela geometria final. O perfil do came deve ser o último resultado de uma cadeia de decisões: função, movimento, contato e verificação.</p>
-  </article>
+  <div class="article-correction"><p>Dúvidas sobre uma equação ou resultado? Envie o endereço desta página e os dados do seu cálculo para <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a>. · <a href="../sobre.html">Sobre o autor</a> · <a href="../privacy.html">Privacidade</a></p></div></article>
 
   <aside>
     <div class="sidebar-card">
@@ -190,7 +191,5 @@
     <p>© 2026 Barbudenge · <a href="../index.html">Página inicial</a> · <a href="../sobre.html">Sobre</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
   </div>
 </footer>
-
-  <script src="../../site-sidebar.js"></script>
 </body>
 </html>

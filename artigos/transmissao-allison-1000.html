@@ -30,7 +30,6 @@
   <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/transmissao-allison-1000.html" />
   <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/transmissao-allison-1000.html" />
   <link rel="stylesheet" href="../language-switch.css" />
-  <link rel="stylesheet" href="../site-sidebar.css" />
   <script type="application/ld+json" data-seo="article">
   {
     "@context": "https://schema.org",
@@ -92,8 +91,10 @@
     ]
   }
   </script>
+<link rel="stylesheet" href="/editorial.css">
 </head>
 <body>
+<a class="editorial-skip" href="#article-content">Skip to article</a>
 
 <header class="site-header">
   <div class="container topbar">
@@ -125,7 +126,7 @@
 </section>
 
 <main class="container article-layout">
-  <article class="article-body">
+  <article id="article-content" class="article-body"><details class="article-toc"><summary>In this article</summary><nav aria-label="Article sections"><ol><li><a href="#leitura-1">Transmission context</a></li><li><a href="#leitura-2">Architecture at Engrenarium</a></li><li><a href="#leitura-3">Engrenarium setup data</a></li><li><a href="#leitura-4">Gear ratios</a></li><li><a href="#leitura-5">Gear configurations</a></li><li><a href="#leitura-6">Didactic reading</a></li></ol></nav></details>
     <p class="lead">This article shows how to build a teaching model of the Allison 1000 transmission in Engrenarium and how to interpret its gear ratios. The focus is to organize the three planetary gear sets, apply the correct constraints and verify the six resulting gear ratios.</p>
 
     <div class="video-embed">
@@ -136,7 +137,7 @@
       <strong>Assembly in Engrenarium:</strong> model can be reproduced in <a href="https://barbudenge.github.io/lasmeufsj/engrenarium/">Engrenarium desktop software</a> or <a href="https://barbudenge.github.io/engrenarium/">Engrenarium Web</a>. Create the three planetary gear sets with the tooth counts indicated below and save a constraint configuration for each gear.
     </div>
 
-    <h2>Transmission context</h2>
+    <h2 id="leitura-1">Transmission context</h2>
     <p>The Allison 1000 automatic transmission, manufactured by Allison Transmission, is associated with larger road vehicles, such as trucks, utility vehicles and service vehicles. The assembly is interesting to study because it uses a series-connected planetary architecture, rather than treating each gear as an isolated pair of gears.</p>
 
     <figure class="article-figure figure-wide">
@@ -161,10 +162,10 @@
       </figure>
     </div>
 
-    <h2>Architecture at Engrenarium</h2>
+    <h2 id="leitura-2">Architecture at Engrenarium</h2>
     <p>The model uses three consecutive planetary systems. The planet carrier of one stage is permanently connected to the ring gear of the next stage, except in the last set, where the planet carrier is connected to the output shaft.</p>
 
-    <table class="data-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Horizontally scrollable table"><table class="data-table">
       <thead>
         <tr>
           <th>Permanent connection</th>
@@ -185,7 +186,7 @@
           <td>Defines the model's output angular velocity.</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
     <p>With this convention, the general relationship is written as the ratio of the input velocity in the first sun gear to the output velocity in the third planet carrier:</p>
 
@@ -197,10 +198,10 @@
       \]
     </div>
 
-    <h2>Engrenarium setup data</h2>
+    <h2 id="leitura-3">Engrenarium setup data</h2>
     <p>For assembly, the three planetary systems use the tooth counts below. This data geometrically closes each set by the relation \(N_{ring}=N_{sun}+2N_{planet}\).</p>
 
-    <table class="data-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Horizontally scrollable table"><table class="data-table">
       <thead>
         <tr>
           <th>Set</th>
@@ -229,14 +230,14 @@
           <td>\(N_{ring}=103\)</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
     <p>The first step in Engrenarium is to create the three sets with these teeth. Then make the permanent connections between planet carrier and ring gear and use the first sun gear as model input.</p>
 
-    <h2>Gear ratios</h2>
+    <h2 id="leitura-4">Gear ratios</h2>
     <p>The model works with six gears: five forward gears and one reverse gear. Ratios greater than \(1\) indicate reduction; fourth gear is direct; the fifth is overdrive; and the negative sign of the reverse indicates a reversal of direction.</p>
 
-    <table class="data-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Horizontally scrollable table"><table class="data-table">
       <thead>
         <tr>
           <th>Condition</th>
@@ -269,12 +270,12 @@
           <td>\(-4.49\)</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
-    <h2>Gear configurations</h2>
+    <h2 id="leitura-5">Gear configurations</h2>
     <p>After geometry, each gear is obtained by a configuration of constraints. In Engrenarium, the practical way is to maintain the basic assembly and activate the locks or couplings below for each case.</p>
 
-    <table class="data-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Horizontally scrollable table"><table class="data-table">
       <thead>
         <tr>
           <th>Gear</th>
@@ -314,11 +315,11 @@
           <td>\(\omega_{ring\,1}=0\) and \(\omega_{ring\,3}=0\)</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
     <p>First, second and third gears are successively smaller reductions. Fourth gear locks the assembly in a direct condition, while fifth uses a combination of coupling and locking to produce overdrive. In reverse, two ring locks change the kinematic path and reverse the direction of the output.</p>
 
-    <h2>Didactic reading</h2>
+    <h2 id="leitura-6">Didactic reading</h2>
     <p>The Allison 1000 is a good example for studying automatic transmissions because it shows how several gear ratios can arise from the same planetary architecture. The tooth count defines the geometry; permanent connections define the structure; and the constraints for each gear define the kinematic behavior.</p>
 
     <p>When checking the assembly, follow this order:</p>
@@ -330,7 +331,7 @@
       <li>apply one row of the constraint table for each gear;</li>
       <li>check whether the calculated gear ratio corresponds to the expected value.</li>
     </ol>
-  </article>
+  <div class="article-correction"><p>Questions about an equation or result? Send this page address and your calculation inputs to <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a>. · <a href="../sobre.html">About the author</a> · <a href="../privacy.html">Privacy</a></p></div></article>
 
   <aside>
     <div class="sidebar-card">
@@ -378,7 +379,5 @@
     <p>© 2026 Barbudenge · <a href="../index.html">Home page</a> · <a href="../sobre.html">About</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
   </div>
 </footer>
-
-  <script src="../site-sidebar.js"></script>
 </body>
 </html>

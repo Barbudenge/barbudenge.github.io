@@ -30,7 +30,6 @@
   <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/cambio-manual-trens-engrenagens.html" />
   <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/cambio-manual-trens-engrenagens.html" />
   <link rel="stylesheet" href="../language-switch.css" />
-  <link rel="stylesheet" href="../site-sidebar.css" />
   <script type="application/ld+json" data-seo="article">
   {
     "@context": "https://schema.org",
@@ -89,8 +88,10 @@
     ]
   }
   </script>
+<link rel="stylesheet" href="/editorial.css">
 </head>
 <body>
+<a class="editorial-skip" href="#article-content">Skip to article</a>
 
 <header class="site-header">
   <div class="container topbar">
@@ -122,15 +123,15 @@
 </section>
 
 <main class="container article-layout">
-  <article class="article-body">
+  <article id="article-content" class="article-body"><details class="article-toc"><summary>In this article</summary><nav aria-label="Article sections"><ol><li><a href="#leitura-1">Basic architecture</a></li><li><a href="#leitura-2">Low gears</a></li><li><a href="#leitura-3">Direct drive</a></li><li><a href="#leitura-4">Reverse</a></li><li><a href="#leitura-5">Neutral and gears rotating without transmitting torque</a></li><li><a href="#leitura-6">How to analyze a gear</a></li></ol></nav></details>
     <p class="lead">A manual transmission turns gear analysis into a path selection problem. Gears may be physically present and rotating, but only a few participate in the effective transmission of torque in each gear.</p>
 
-    <h2>Basic architecture</h2>
+    <h2 id="leitura-1">Basic architecture</h2>
     <p>In a typical manual transmission, there is an input shaft connected to the engine, a countershaft, and an output shaft. A starting pair usually transfers motion from the input shaft to the countershaft. Then, each gear selects a specific pair between countershaft and output shaft.</p>
 
     <p>This description already separates two things: gears that are permanently in mesh and gears that are effectively locked to the output shaft at that moment. The synchronizer does not create a new geometric relationship; it chooses which gear starts to rotate in conjunction with the shaft.</p>
 
-    <h2>Low gears</h2>
+    <h2 id="leitura-2">Low gears</h2>
     <p>In low gears, the gear ratio produces a large reduction in speed and greater torque available at the wheels. This is useful when starting off, on inclines or in load situations. The consequence is that the engine rotates more times for each turn of the output.</p>
 
     <div class="equation-box">
@@ -141,22 +142,22 @@
 
     <p>When \(i\) is high, the output rotates slower than the input. Power does not increase ideally; the system exchanges rotation for torque. This reading helps you understand why a first gear is strong but limited in speed.</p>
 
-    <h2>Direct drive</h2>
+    <h2 id="leitura-3">Direct drive</h2>
     <p>In many gearboxes, one of the gears approaches or equals the input and output speeds. This is the idea of ​​direct gear: the transmission stops using a large intermediate reduction and starts transmitting with a ratio close to 1:1. The result is lower torque multiplication, but better suitability for constant speed.</p>
 
     <p>From an analysis point of view, direct gearing teaches an important lesson: not every transmission always works as a long cascade of pairs. The power path changes depending on the gear selected.</p>
 
-    <h2>Reverse</h2>
+    <h2 id="leitura-4">Reverse</h2>
     <p>Reverse requires reversing the direction of rotation of the output relative to forward motion. For this, an additional idler gear is used. The function of this gear is to change the final direction, not necessarily to change the magnitude of the relationship in a dominant way.</p>
 
     <div class="note">In a simple train, the intermediate gear may not change the final speed ratio, but it does change the direction. In reverse gear, this difference in direction is exactly the desired function.</div>
 
-    <h2>Neutral and gears rotating without transmitting torque</h2>
+    <h2 id="leitura-5">Neutral and gears rotating without transmitting torque</h2>
     <p>An important didactic aspect is the neutral point. Some gears may continue to rotate because they are in contact with others, but none of them are locked in order to conduct torque to the output. The mechanism exists, but the power path is not closed.</p>
 
     <p>This shows why the analysis of a gearbox should not be limited to the design of the teeth. It is necessary to know which elements are attached to the shafts, which are free and which coupling is selected.</p>
 
-    <h2>How to analyze a gear</h2>
+    <h2 id="leitura-6">How to analyze a gear</h2>
     <ol>
       <li>identify the input, countershaft and output;</li>
       <li>mark the initial pair that drives the countershaft;</li>
@@ -166,7 +167,7 @@
     </ol>
 
     <p>With this sequence, the gear shift stops looking like a confusing set of cogwheels and becomes a controlled choice of gear trains.</p>
-  </article>
+  <div class="article-correction"><p>Questions about an equation or result? Send this page address and your calculation inputs to <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a>. · <a href="../sobre.html">About the author</a> · <a href="../privacy.html">Privacy</a></p></div></article>
 
   <aside>
     <div class="sidebar-card">
@@ -193,7 +194,5 @@
     <p>© 2026 Barbudenge · <a href="../index.html">Home page</a> · <a href="../sobre.html">About</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
   </div>
 </footer>
-
-  <script src="../site-sidebar.js"></script>
 </body>
 </html>

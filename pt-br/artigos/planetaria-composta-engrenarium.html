@@ -30,7 +30,6 @@
   <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/planetaria-composta-engrenarium.html" />
   <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/planetaria-composta-engrenarium.html" />
   <link rel="stylesheet" href="../../language-switch.css" />
-  <link rel="stylesheet" href="../../site-sidebar.css" />
   <script type="application/ld+json" data-seo="article">
   {
     "@context": "https://schema.org",
@@ -92,8 +91,10 @@
     ]
   }
   </script>
+<link rel="stylesheet" href="/editorial.css">
 </head>
 <body>
+<a class="editorial-skip" href="#article-content">Pular para o artigo</a>
 
 <header class="site-header">
   <div class="container topbar">
@@ -125,7 +126,7 @@
 </section>
 
 <main class="container article-layout">
-  <article class="article-body">
+  <article id="article-content" class="article-body"><details class="article-toc"><summary>Neste artigo</summary><nav aria-label="Seções do artigo"><ol><li><a href="#leitura-1">Primeiro estágio</a></li><li><a href="#leitura-2">Segundo estágio sem solar</a></li><li><a href="#leitura-3">Velocidades e acoplamentos</a></li><li><a href="#leitura-4">Equações do primeiro estágio</a></li><li><a href="#leitura-5">Equações do segundo estágio</a></li><li><a href="#leitura-6">Resultados esperados</a></li><li><a href="#leitura-7">Por que os dois acoplamentos são necessários</a></li></ol></nav></details>
     <p class="lead">Este artigo mostra como montar, no Engrenarium, uma planetária composta de dois estágios. O exemplo usa um primeiro trem planetário completo e um segundo estágio sem engrenagem solar, conectado ao primeiro por acoplamentos entre braços e entre planetas.</p>
 
     <div class="video-embed">
@@ -134,10 +135,10 @@
 
     <div class="note">O mecanismo pode ser montado no <a href="https://barbudenge.github.io/lasmeufsj/pt-br/engrenarium/">Engrenarium software</a> ou no <a href="https://barbudenge.github.io/engrenarium/">Engrenarium web</a>. A ideia é usar o primeiro estágio para conduzir o segundo por meio de acoplamentos, em vez de tratar cada planetária como um sistema isolado.</div>
 
-    <h2>Primeiro estágio</h2>
+    <h2 id="leitura-1">Primeiro estágio</h2>
     <p>Abra um novo projeto no Engrenarium. No painel de parâmetros básicos, configure a primeira planetária com os seguintes números de dentes:</p>
 
-    <table class="data-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Tabela com rolagem horizontal"><table class="data-table">
       <thead>
         <tr>
           <th>Planetária 1</th>
@@ -158,14 +159,14 @@
           <td>76</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
     <p>Em seguida, clique em adicionar planetária. O Engrenarium interrompe a simulação e informa que o sistema cinemático está subdeterminado. Isso é esperado: ao criar um segundo estágio, ainda faltam velocidades conhecidas ou acoplamentos suficientes para definir o movimento.</p>
 
-    <h2>Segundo estágio sem solar</h2>
+    <h2 id="leitura-2">Segundo estágio sem solar</h2>
     <p>Na planetária 2, apague a engrenagem solar e configure apenas o planeta e a anelar:</p>
 
-    <table class="data-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Tabela com rolagem horizontal"><table class="data-table">
       <thead>
         <tr>
           <th>Planetária 2</th>
@@ -182,14 +183,14 @@
           <td>78</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
     <p>Esse detalhe é importante: um estágio planetário não precisa conter todas as peças possíveis para participar do mecanismo. Neste exemplo, a segunda planetária trabalha sem solar e recebe movimento pelos acoplamentos.</p>
 
-    <h2>Velocidades e acoplamentos</h2>
+    <h2 id="leitura-3">Velocidades e acoplamentos</h2>
     <p>Agora imponha as velocidades angulares conhecidas na planetária 1:</p>
 
-    <table class="data-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Tabela com rolagem horizontal"><table class="data-table">
       <thead>
         <tr>
           <th>Elemento</th>
@@ -206,7 +207,7 @@
           <td>\(5,0\ \mathrm{rpm}\)</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
     <p>Depois, em acoplamentos, conecte os elementos correspondentes entre os dois estágios:</p>
 
@@ -222,7 +223,7 @@
       <figcaption>Exemplo com dois estágios: a planetária 1 tem solar, planeta, anelar e braço; a planetária 2 trabalha sem solar e é conduzida pelos acoplamentos.</figcaption>
     </figure>
 
-    <h2>Equações do primeiro estágio</h2>
+    <h2 id="leitura-4">Equações do primeiro estágio</h2>
     <p>Na planetária 1, a relação entre solar, anelar e braço pode ser escrita pelas velocidades relativas ao braço:</p>
 
     <div class="equation-box">
@@ -253,7 +254,7 @@
       \]
     </div>
 
-    <h2>Equações do segundo estágio</h2>
+    <h2 id="leitura-5">Equações do segundo estágio</h2>
     <p>Os dois acoplamentos transferem velocidades para o segundo estágio:</p>
 
     <div class="equation-box">
@@ -287,10 +288,10 @@
       \]
     </div>
 
-    <h2>Resultados esperados</h2>
+    <h2 id="leitura-6">Resultados esperados</h2>
     <p>O painel de resultados deve mostrar a relação <strong>Planetária 1 - Solar / Planetária 2 - Anelar</strong> igual a aproximadamente \(2,8\).</p>
 
-    <table class="data-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Tabela com rolagem horizontal"><table class="data-table">
       <thead>
         <tr>
           <th>Elemento</th>
@@ -327,9 +328,9 @@
           <td>\(5,0\ \mathrm{rpm}\)</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
-    <h2>Por que os dois acoplamentos são necessários</h2>
+    <h2 id="leitura-7">Por que os dois acoplamentos são necessários</h2>
     <p>Acoplar apenas os braços não basta. Fisicamente, os braços dos dois estágios poderiam girar juntos enquanto os planetas de cada estágio girariam com velocidades diferentes. Por isso, o acoplamento entre planetas também é essencial para transformar os dois estágios em uma planetária composta com movimento determinado.</p>
 
     <figure class="article-figure">
@@ -338,7 +339,7 @@
     </figure>
 
     <p>Esse comportamento também explica por que a renderização do segundo braço desaparece. O modelo passa a representar um braço comum, ajustado para sustentar os planetas dos dois estágios e manter as restrições cinemáticas corretas.</p>
-  </article>
+  <div class="article-correction"><p>Dúvidas sobre uma equação ou resultado? Envie o endereço desta página e os dados do seu cálculo para <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a>. · <a href="../sobre.html">Sobre o autor</a> · <a href="../privacy.html">Privacidade</a></p></div></article>
 
   <aside>
     <div class="sidebar-card">
@@ -374,7 +375,5 @@
     <p>© 2026 Barbudenge · <a href="../index.html">Página inicial</a> · <a href="../sobre.html">Sobre</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
   </div>
 </footer>
-
-  <script src="../../site-sidebar.js"></script>
 </body>
 </html>

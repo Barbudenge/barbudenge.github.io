@@ -30,7 +30,6 @@
   <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/engrenagens-funcoes-perfil-nomenclatura.html" />
   <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/engrenagens-funcoes-perfil-nomenclatura.html" />
   <link rel="stylesheet" href="../language-switch.css" />
-  <link rel="stylesheet" href="../site-sidebar.css" />
   <script type="application/ld+json" data-seo="article">
   {
     "@context": "https://schema.org",
@@ -92,8 +91,10 @@
     ]
   }
   </script>
+<link rel="stylesheet" href="/editorial.css">
 </head>
 <body>
+<a class="editorial-skip" href="#article-content">Skip to article</a>
 
 <header class="site-header">
   <div class="container topbar">
@@ -125,10 +126,10 @@
 </section>
 
 <main class="container article-layout">
-  <article class="article-body">
+  <article id="article-content" class="article-body"><details class="article-toc"><summary>In this article</summary><nav aria-label="Article sections"><ol><li><a href="#leitura-1">Mechanical function</a></li><li><a href="#leitura-2">Tooth profile</a></li><li><a href="#leitura-3">Tooth count, pitch diameter and module</a></li><li><a href="#leitura-4">External, internal and rack gear</a></li><li><a href="#leitura-5">Why nomenclature matters</a></li></ol></nav></details>
     <p class="lead">Gears are elements used to transmit power and impose a kinematic relationship between axles. The same part that reduces speed can increase torque, change the direction of movement or serve as part of a more complex architecture, such as a gearbox or a planetary gear train.</p>
 
-    <h2>Mechanical function</h2>
+    <h2 id="leitura-1">Mechanical function</h2>
     <p>In an ideal transmission, the mechanical power entering the gear pair is approximately the power output. As rotating power is the product between torque and angular velocity, the reduction in speed is accompanied by an increase in torque, discounting losses due to friction, deformation, lubrication and contact.</p>
 
     <div class="equation-box">
@@ -139,7 +140,7 @@
 
     <p>This simple expression helps avoid an incomplete interpretation: the gear does not "create" power. It trades speed for torque within the limitations of the system. Therefore, gear ratio needs to be read together with effort, allowable rotation, shaft assembly and final application.</p>
 
-    <h2>Tooth profile</h2>
+    <h2 id="leitura-2">Tooth profile</h2>
     <p>The most common profile in cylindrical gears is the involute, also called involute. Its use is widespread because it allows movement to be transmitted with a practically constant speed ratio even when there are small variations in the distance between centers. This is essential in real machines, where assembly, wear and fabrication are never perfectly ideal.</p>
 
     <p>Cycloidal profiles also appear in specific applications, especially when the interest is in precision and low load, as in some watchmaking mechanisms. In industrial machines, however, the robustness and standardization of the involute profile make its presence dominant.</p>
@@ -149,7 +150,7 @@
       <figcaption>Even in planetary assemblies, the reading begins with the basic geometry of the teeth and the tooth count of each gear.</figcaption>
     </figure>
 
-    <h2>Tooth count, pitch diameter and module</h2>
+    <h2 id="leitura-3">Tooth count, pitch diameter and module</h2>
     <p>Three quantities appear all the time: tooth count \(N\), pitch diameter \(D\) and module \(m\). The pitch diameter is not the outer edge of the gear; it represents the theoretical circumference used to describe the transmission of motion. The module relates this dimension to the number of teeth:</p>
 
     <div class="equation-box">
@@ -165,18 +166,18 @@
       <figcaption>Class support figure: tooth count and primitive dimension need to be read together, because geometric standardization controls compatibility between gears.</figcaption>
     </figure>
 
-    <h2>External, internal and rack gear</h2>
+    <h2 id="leitura-4">External, internal and rack gear</h2>
     <p>On a typical external gear, the teeth face outward. When two external gears mesh, their rotation directions are opposite. In ring gear, the teeth face inward; in this case, an external gear that meshes with it rotates in the same direction. This difference in direction becomes important when analyzing trains with multiple pairs.</p>
 
     <p>The rack can be understood as a gear with infinite radius. It transforms rotation into translation and appears in directions, guides, actuators and mechanisms in which the interest is to convert angular movement into linear displacement.</p>
 
     <div class="note">A good gear analysis begins by identifying the elements: which teeth touch, which axles are fixed, which gears are rigidly coupled and which magnitude represents the input.</div>
 
-    <h2>Why nomenclature matters</h2>
+    <h2 id="leitura-5">Why nomenclature matters</h2>
     <p>Most errors in gear exercises do not arise from algebra, but from poor initial reading. Confusing outer diameter with pitch diameter, forgetting an intermediate gear or treating coupled gears as independent changes the entire result.</p>
 
     <p>Therefore, before calculating a gear ratio, it is worth recording the topology of the mechanism. Who triggers who? Is the pair external or internal? Is there a common axis? Is there a rack? Are any elements stuck? These questions form the bridge between the geometry of the drawing and the equation that will be used.</p>
-  </article>
+  <div class="article-correction"><p>Questions about an equation or result? Send this page address and your calculation inputs to <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a>. · <a href="../sobre.html">About the author</a> · <a href="../privacy.html">Privacy</a></p></div></article>
 
   <aside>
     <div class="sidebar-card">
@@ -203,7 +204,5 @@
     <p>© 2026 Barbudenge · <a href="../index.html">Home page</a> · <a href="../sobre.html">About</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
   </div>
 </footer>
-
-  <script src="../site-sidebar.js"></script>
 </body>
 </html>

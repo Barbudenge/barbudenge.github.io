@@ -78,8 +78,10 @@
     ]
   }
   </script>
+<link rel="stylesheet" href="/editorial.css">
 </head>
 <body>
+<a class="editorial-skip" href="#article-content">Skip to article</a>
 
 <header class="site-header">
   <div class="container topbar">
@@ -111,10 +113,10 @@
 </section>
 
 <main class="container article-layout">
-  <article class="article-body">
+  <article id="article-content" class="article-body"><details class="article-toc"><summary>In this article</summary><nav aria-label="Article sections"><ol><li><a href="#leitura-1">The equation of an SVAJ segment</a></li><li><a href="#leitura-2">Mathematical conditions at a junction</a></li><li><a href="#leitura-3">Correction by changing only β</a></li><li><a href="#leitura-4">Correction by changing only ΔL</a></li><li><a href="#leitura-5">Example: four incompatible segments</a></li><li><a href="#leitura-6">Applying the equations</a></li><li><a href="#leitura-7">A bottleneck resolved in moments</a></li></ol></nav></details>
     <p class="lead">A cam may be assembled from individually valid segments and still present jumps at their junctions. CamForge corrects this problem by using continuity equations to redistribute angular intervals or displacements without replacing the selected motion laws.</p>
 
-    <h2>The equation of an SVAJ segment</h2>
+    <h2 id="leitura-1">The equation of an SVAJ segment</h2>
     <p>Consider segment \(i\), starting at \(\theta_i\), with angular interval \(\beta_i\) and displacement change \(\Delta L_i\). A local dimensionless coordinate is defined so that it always varies from 0 to 1:</p>
     <div class="equation-box">
       \[
@@ -140,7 +142,7 @@
 
     <p>These derivatives are velocity, acceleration and jerk with respect to cam angle. At constant angular speed \(\omega\), their time-domain counterparts are \(v=\omega S'\), \(a=\omega^2S''\) and \(j=\omega^3S'''\). Therefore, continuity in \(S'\) and \(S''\) also provides continuous physical velocity and acceleration.</p>
 
-    <h2>Mathematical conditions at a junction</h2>
+    <h2 id="leitura-2">Mathematical conditions at a junction</h2>
     <p>Between segments \(i\) and \(i+1\), displacement, velocity and acceleration continuity require:</p>
     <div class="equation-box">
       \[
@@ -168,7 +170,7 @@
 
     <p>These coefficients are known numbers for each motion law. If one side requires a zero derivative and the other a nonzero derivative, changing only \(\beta\) or \(\Delta L\) cannot satisfy the equation. When zeros and signs are compatible, the equations determine the correction.</p>
 
-    <h2>Correction by changing only β</h2>
+    <h2 id="leitura-3">Correction by changing only β</h2>
     <p>All \(\Delta L_i\) remain fixed and the unknowns are the angular intervals. Velocity continuity directly gives:</p>
     <div class="equation-box">
       \[
@@ -213,7 +215,7 @@
       \]
     </div>
 
-    <h2>Correction by changing only ΔL</h2>
+    <h2 id="leitura-4">Correction by changing only ΔL</h2>
     <p>The angles remain fixed and the displacement changes are the unknowns. Continuity becomes linear because every denominator is known:</p>
     <div class="equation-box">
       \[
@@ -287,7 +289,7 @@
 
     <div class="note"><strong>In short:</strong> changing only β redistributes the angle available to the same strokes; changing only ΔL redistributes the strokes within the same angular intervals. Both modes start from the same continuity equations.</div>
 
-    <h2>Example: four incompatible segments</h2>
+    <h2 id="leitura-5">Example: four incompatible segments</h2>
     <div class="table-scroll">
     <table class="data-table">
       <thead><tr><th>Segment</th><th>β</th><th>ΔL</th><th>Curve</th></tr></thead>
@@ -306,7 +308,7 @@
       <figcaption>Figure 1 — Initial profile and SVA diagrams. Displacement is continuous, but velocity and acceleration jump at segment boundaries.</figcaption>
     </figure>
 
-    <h2>Applying the equations</h2>
+    <h2 id="leitura-6">Applying the equations</h2>
     <p>The normalized equations of the first three segments are:</p>
     <div class="equation-box">
       \[
@@ -386,10 +388,10 @@
       <figcaption>Figure 2 — Result after “Change beta only.” Velocity and acceleration cross the boundaries without jumps, and the cam profile is smoother.</figcaption>
     </figure>
 
-    <h2>A bottleneck resolved in moments</h2>
+    <h2 id="leitura-7">A bottleneck resolved in moments</h2>
     <p>Doing this by hand requires differentiating every motion law, evaluating endpoints, writing the equalities, closing the 360° cycle and recalculating the profile. With many segments, this compatibility work becomes a bottleneck between motion definition and geometric cam analysis.</p>
     <p>CamForge applies these equations almost instantly and presents a continuous configuration directly. The designer still decides which motions and constraints make engineering sense, but no longer needs to repeat lengthy algebraic compatibility calculations. The path from an SVAJ specification to a smooth cam profile becomes much faster.</p>
-  </article>
+  <div class="article-correction"><p>Questions about an equation or result? Send this page address and your calculation inputs to <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a>. · <a href="../sobre.html">About the author</a> · <a href="../privacy.html">Privacy</a></p></div></article>
 
   <aside>
     <div class="sidebar-card">
@@ -419,7 +421,5 @@
     <p>© 2026 Barbudenge · <a href="../index.html">Home page</a> · <a href="../sobre.html">About</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
   </div>
 </footer>
-
-  <script src="../site-sidebar.js"></script>
 </body>
 </html>

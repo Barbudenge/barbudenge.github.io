@@ -30,7 +30,6 @@
   <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/powertrain-interativo.html" />
   <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/powertrain-interativo.html" />
   <link rel="stylesheet" href="../../language-switch.css" />
-  <link rel="stylesheet" href="../../site-sidebar.css" />
   <script type="application/ld+json" data-seo="article">
   {
     "@context": "https://schema.org",
@@ -92,8 +91,10 @@
     ]
   }
   </script>
+<link rel="stylesheet" href="/editorial.css">
 </head>
 <body>
+<a class="editorial-skip" href="#article-content">Pular para o artigo</a>
 
 <header class="site-header">
   <div class="container topbar">
@@ -125,7 +126,7 @@
 </section>
 
 <main class="container article-layout">
-  <article class="article-body">
+  <article id="article-content" class="article-body"><details class="article-toc"><summary>Neste artigo</summary><nav aria-label="Seções do artigo"><ol><li><a href="#leitura-1">Cálculo no câmbio</a></li><li><a href="#leitura-2">Diferencial e rodas</a></li><li><a href="#leitura-3">Mesmo veículo em curva</a></li></ol></nav></details>
     <p class="lead">O Laboratório de Sistemas Mecânicos (LASME) possui agora um novo recurso didático: o <strong>Powertrain Interativo</strong>. A ferramenta permite alterar a velocidade do veículo, a marcha selecionada, a relação do diferencial, o diâmetro da roda, a bitola e a trajetória, observando as velocidades angulares resultantes ao longo do sistema de transmissão.</p>
 
     <figure class="article-figure figure-wide">
@@ -142,7 +143,7 @@
       <figcaption>Configuração inicial do exemplo: \(20{,}0\ \mathrm{km/h}\), primeira marcha e \(1517\ \mathrm{rpm}\) no tacômetro.</figcaption>
     </figure>
 
-    <h2>Cálculo no câmbio</h2>
+    <h2 id="leitura-1">Cálculo no câmbio</h2>
     <p>Para a condição selecionada, o eixo do motor entra no câmbio com aproximadamente \(1517\ \mathrm{rpm}\). Na primeira marcha, o caminho engrenado mostrado pelo esquema é \(1 \rightarrow 8 \rightarrow 9 \rightarrow 2\). Os números de dentes indicados na figura são \(N_1 = 29\), \(N_8 = 50\), \(N_9 = 17\) e \(N_2 = 35\).</p>
 
     <figure class="article-figure figure-wide">
@@ -189,7 +190,7 @@
       \]
     </div>
 
-    <h2>Diferencial e rodas</h2>
+    <h2 id="leitura-2">Diferencial e rodas</h2>
     <p>Depois de sair do câmbio, o movimento segue para o diferencial. O exemplo usa uma relação final de \(2{,}9\), logo a velocidade média das rodas, após essa redução, é:</p>
 
     <figure class="article-figure figure-half">
@@ -245,7 +246,7 @@
       <figcaption>Os valores obtidos pelo cálculo coincidem com os valores mostrados pelo Powertrain Interativo para o movimento em linha reta.</figcaption>
     </figure>
 
-    <h2>Mesmo veículo em curva</h2>
+    <h2 id="leitura-3">Mesmo veículo em curva</h2>
     <p>Agora mantenha a mesma velocidade do veículo, a mesma marcha, o mesmo diâmetro de roda e a mesma relação final, mas altere a trajetória para uma curva de raio \(R_c = 25\ \mathrm{m}\). Para uma curva à esquerda, a roda esquerda é a roda interna e a roda direita é a roda externa.</p>
 
     <figure class="article-figure figure-half">
@@ -358,7 +359,7 @@
     </figure>
 
     <p>O exemplo mostra como o Powertrain Interativo pode ser usado como ponte entre o simulador visual e as equações de transmissões mecânicas. A página não informa apenas uma velocidade final do veículo; ela expõe as velocidades intermediárias que explicam como o resultado se forma desde o motor até o contato das rodas com o solo.</p>
-  </article>
+  <div class="article-correction"><p>Dúvidas sobre uma equação ou resultado? Envie o endereço desta página e os dados do seu cálculo para <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a>. · <a href="../sobre.html">Sobre o autor</a> · <a href="../privacy.html">Privacidade</a></p></div></article>
 
   <aside>
     <div class="sidebar-card">
@@ -395,7 +396,5 @@
     <p>© 2026 Barbudenge · <a href="../index.html">Página inicial</a> · <a href="../sobre.html">Sobre</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
   </div>
 </footer>
-
-  <script src="../../site-sidebar.js"></script>
 </body>
 </html>

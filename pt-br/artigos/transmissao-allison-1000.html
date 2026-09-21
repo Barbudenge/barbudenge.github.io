@@ -30,7 +30,6 @@
   <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/transmissao-allison-1000.html" />
   <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/transmissao-allison-1000.html" />
   <link rel="stylesheet" href="../../language-switch.css" />
-  <link rel="stylesheet" href="../../site-sidebar.css" />
   <script type="application/ld+json" data-seo="article">
   {
     "@context": "https://schema.org",
@@ -92,8 +91,10 @@
     ]
   }
   </script>
+<link rel="stylesheet" href="/editorial.css">
 </head>
 <body>
+<a class="editorial-skip" href="#article-content">Pular para o artigo</a>
 
 <header class="site-header">
   <div class="container topbar">
@@ -125,7 +126,7 @@
 </section>
 
 <main class="container article-layout">
-  <article class="article-body">
+  <article id="article-content" class="article-body"><details class="article-toc"><summary>Neste artigo</summary><nav aria-label="Seções do artigo"><ol><li><a href="#leitura-1">Contexto da transmissão</a></li><li><a href="#leitura-2">Arquitetura no Engrenarium</a></li><li><a href="#leitura-3">Dados para montagem no Engrenarium</a></li><li><a href="#leitura-4">Relações de marcha</a></li><li><a href="#leitura-5">Montagem das marchas</a></li><li><a href="#leitura-6">Leitura didática</a></li></ol></nav></details>
     <p class="lead">Este artigo mostra como montar no Engrenarium um modelo didático da transmissão Allison 1000 e como interpretar suas relações de marcha. O foco é organizar os três conjuntos planetários, aplicar os vínculos corretos e conferir as seis relações obtidas.</p>
 
     <div class="video-embed">
@@ -136,7 +137,7 @@
       <strong>Montagem no Engrenarium:</strong> a transmissão pode ser reproduzida no <a href="https://barbudenge.github.io/lasmeufsj/pt-br/engrenarium/">Engrenarium software</a> ou no <a href="https://barbudenge.github.io/engrenarium/">Engrenarium web</a>. Crie as três planetárias com os dentes indicados abaixo e salve uma configuração de vínculos para cada marcha.
     </div>
 
-    <h2>Contexto da transmissão</h2>
+    <h2 id="leitura-1">Contexto da transmissão</h2>
     <p>A transmissão automática Allison 1000, fabricada pela Allison Transmission, é associada a veículos rodoviários de maior porte, como caminhonetes, utilitários e veículos de serviço. O conjunto é interessante para estudo porque usa uma arquitetura planetária em série, em vez de tratar cada marcha como um par isolado de engrenagens.</p>
 
     <figure class="article-figure figure-wide">
@@ -161,10 +162,10 @@
       </figure>
     </div>
 
-    <h2>Arquitetura no Engrenarium</h2>
+    <h2 id="leitura-2">Arquitetura no Engrenarium</h2>
     <p>O modelo usa três sistemas planetários consecutivos. O porta-planetas de um estágio é conectado permanentemente à anelar do estágio seguinte, exceto no último conjunto, em que o porta-planetas é conectado ao eixo de saída.</p>
 
-    <table class="data-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Tabela com rolagem horizontal"><table class="data-table">
       <thead>
         <tr>
           <th>Conexão permanente</th>
@@ -185,7 +186,7 @@
           <td>Define a velocidade angular de saída do modelo.</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
     <p>Com essa convenção, a relação geral é escrita como a razão entre a velocidade de entrada na primeira solar e a velocidade de saída no terceiro porta-planetas:</p>
 
@@ -197,10 +198,10 @@
       \]
     </div>
 
-    <h2>Dados para montagem no Engrenarium</h2>
+    <h2 id="leitura-3">Dados para montagem no Engrenarium</h2>
     <p>Para a montagem, os três sistemas planetários usam os números de dentes abaixo. Esses dados fecham geometricamente cada conjunto pela relação \(N_{ring}=N_{sun}+2N_{planet}\).</p>
 
-    <table class="data-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Tabela com rolagem horizontal"><table class="data-table">
       <thead>
         <tr>
           <th>Conjunto</th>
@@ -229,14 +230,14 @@
           <td>\(N_{ring}=103\)</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
     <p>O primeiro passo no Engrenarium é criar os três conjuntos com esses dentes. Em seguida, faça as conexões permanentes entre porta-planetas e anelares e use a primeira solar como entrada do modelo.</p>
 
-    <h2>Relações de marcha</h2>
+    <h2 id="leitura-4">Relações de marcha</h2>
     <p>O modelo trabalha com seis relações: cinco marchas à frente e uma marcha ré. Relações maiores que \(1\) indicam redução; a quarta marcha é direta; a quinta é overdrive; e o sinal negativo da ré indica inversão de sentido.</p>
 
-    <table class="data-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Tabela com rolagem horizontal"><table class="data-table">
       <thead>
         <tr>
           <th>Condição</th>
@@ -269,12 +270,12 @@
           <td>\(-4,49\)</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
-    <h2>Montagem das marchas</h2>
+    <h2 id="leitura-5">Montagem das marchas</h2>
     <p>Depois da geometria, cada marcha é obtida por uma configuração de restrições. No Engrenarium, a forma prática é manter a montagem básica e ativar os travamentos ou acoplamentos abaixo para cada caso.</p>
 
-    <table class="data-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Tabela com rolagem horizontal"><table class="data-table">
       <thead>
         <tr>
           <th>Marcha</th>
@@ -314,11 +315,11 @@
           <td>\(\omega_{ring\,1}=0\) e \(\omega_{ring\,3}=0\)</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
     <p>A primeira, segunda e terceira marchas são reduções sucessivamente menores. A quarta marcha trava o conjunto em uma condição direta, enquanto a quinta usa a combinação de acoplamento e travamento para produzir overdrive. Na ré, dois travamentos de anelares mudam o caminho cinemático e invertem o sentido da saída.</p>
 
-    <h2>Leitura didática</h2>
+    <h2 id="leitura-6">Leitura didática</h2>
     <p>A Allison 1000 é um bom exemplo para estudar transmissões automáticas porque mostra como várias relações podem surgir de uma mesma arquitetura planetária. O número de dentes define a geometria; as conexões permanentes definem a estrutura; e os vínculos de cada marcha definem o comportamento cinemático.</p>
 
     <p>Ao conferir a montagem, siga esta ordem:</p>
@@ -330,7 +331,7 @@
       <li>aplique uma linha da tabela de vínculos para cada marcha;</li>
       <li>confira se a relação calculada corresponde ao valor esperado.</li>
     </ol>
-  </article>
+  <div class="article-correction"><p>Dúvidas sobre uma equação ou resultado? Envie o endereço desta página e os dados do seu cálculo para <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a>. · <a href="../sobre.html">Sobre o autor</a> · <a href="../privacy.html">Privacidade</a></p></div></article>
 
   <aside>
     <div class="sidebar-card">
@@ -378,7 +379,5 @@
     <p>© 2026 Barbudenge · <a href="../index.html">Página inicial</a> · <a href="../sobre.html">Sobre</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
   </div>
 </footer>
-
-  <script src="../../site-sidebar.js"></script>
 </body>
 </html>

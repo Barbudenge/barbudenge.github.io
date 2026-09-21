@@ -30,7 +30,6 @@
   <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/trens-engrenagens-simples-compostos.html" />
   <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/trens-engrenagens-simples-compostos.html" />
   <link rel="stylesheet" href="../../language-switch.css" />
-  <link rel="stylesheet" href="../../site-sidebar.css" />
   <script type="application/ld+json" data-seo="article">
   {
     "@context": "https://schema.org",
@@ -47,7 +46,7 @@
         "url": "https://barbudenge.github.io/pt-br/artigos/trens-engrenagens-simples-compostos.html",
         "inLanguage": "pt-BR",
         "datePublished": "2026-06-15",
-        "dateModified": "2026-07-06",
+        "dateModified": "2026-09-21",
         "author": {
           "@type": "Person",
           "name": "Artur Henrique de Freitas Avelar",
@@ -92,8 +91,10 @@
     ]
   }
   </script>
+<link rel="stylesheet" href="/editorial.css">
 </head>
 <body>
+<a class="editorial-skip" href="#article-content">Pular para o artigo</a>
 
 <header class="site-header">
   <div class="container topbar">
@@ -118,17 +119,17 @@
     <p>Um trem de engrenagens organiza vários pares em sequência para obter reduções, ampliações ou mudanças de sentido que seriam pouco práticas com apenas duas engrenagens.</p>
     <div class="byline">
       <span>Por Artur Henrique de Freitas Avelar</span>
-      <span>Publicado em <time datetime="2026-06-15">15 de junho de 2026</time> · Atualizado em <time datetime="2026-07-06">6 de julho de 2026</time></span>
+      <span>Publicado em <time datetime="2026-06-15">15 de junho de 2026</time> · Atualizado em <time datetime="2026-09-21">21 de setembro de 2026</time></span>
       <span>Categoria: trens de engrenagens</span>
     </div>
   </div>
 </section>
 
 <main class="container article-layout">
-  <article class="article-body">
+  <article id="article-content" class="article-body"><details class="article-toc"><summary>Neste artigo</summary><nav aria-label="Seções do artigo"><ol><li><a href="#leitura-1">Relação de um par</a></li><li><a href="#leitura-2">Trem simples</a></li><li><a href="#leitura-3">Trem composto</a></li><li><a href="#leitura-4">Valor do trem</a></li><li><a href="#leitura-5">Sequência de análise</a></li><li><a href="#exemplo-resolvido">Exemplo resolvido: duas reduções de 3:1</a></li></ol></nav></details>
     <p class="lead">Trens de engrenagens aparecem quando um único par não entrega a relação desejada, quando a distância entre eixos precisa ser vencida ou quando se quer selecionar diferentes saídas dentro de uma mesma arquitetura. O ponto central é separar duas perguntas: quais engrenagens engrenam entre si e quais engrenagens estão rigidamente presas ao mesmo eixo.</p>
 
-    <h2>Relação de um par</h2>
+    <h2 id="leitura-1">Relação de um par</h2>
     <p>Para duas engrenagens externas, a relação entre as velocidades angulares é dada pela razão inversa dos números de dentes. O sinal negativo indica que os sentidos de rotação são opostos.</p>
 
     <div class="equation-box">
@@ -139,7 +140,7 @@
 
     <p>Quando uma engrenagem externa engrena com uma interna, o sentido não se inverte e o sinal passa a ser positivo. Essa convenção é útil porque obriga a registrar a natureza de cada contato, em vez de calcular apenas módulos de velocidade.</p>
 
-    <h2>Trem simples</h2>
+    <h2 id="leitura-2">Trem simples</h2>
     <p>No trem simples, cada eixo possui uma única engrenagem relevante para a cadeia de transmissão. As engrenagens intermediárias alteram o sentido de rotação e permitem espaçar os eixos, mas não mudam o módulo da relação final entre a primeira e a última engrenagem quando todas são externas e apenas intermediárias.</p>
 
     <p>Isso costuma surpreender no começo. Se a engrenagem 1 aciona a 2, a 2 aciona a 3 e a 3 aciona a 4, os dentes das intermediárias aparecem no produto e depois se cancelam. O resultado final depende da primeira e da última, enquanto o número de engrenamentos define o sentido.</p>
@@ -151,7 +152,7 @@
 
     <div class="note">Engrenagem intermediária não é engrenagem inútil. Ela pode ser essencial para distância, layout, sentido de saída e montagem, mesmo quando não muda a magnitude da relação final.</div>
 
-    <h2>Trem composto</h2>
+    <h2 id="leitura-3">Trem composto</h2>
     <p>No trem composto, duas ou mais engrenagens giram solidárias no mesmo eixo. Nesse caso, a relação de transmissão não se reduz apenas à primeira e à última. Cada par ativo contribui para o produto total, enquanto as engrenagens acopladas compartilham a mesma velocidade angular.</p>
 
     <div class="equation-box">
@@ -165,12 +166,12 @@
 
     <p>A leitura correta é topológica. Primeiro identificam-se os pares que realmente engrenam. Depois, registram-se os eixos comuns. Só então a relação é multiplicada. Tentar começar diretamente pelos dentes, sem entender a montagem, é uma forma comum de misturar engrenagens que não pertencem ao mesmo caminho de potência.</p>
 
-    <h2>Valor do trem</h2>
+    <h2 id="leitura-4">Valor do trem</h2>
     <p>O valor do trem é uma forma compacta de representar a relação entre saída e entrada. Em muitos cursos, ele aparece como a razão entre a velocidade da última engrenagem e a velocidade da primeira, com o sinal carregando a informação de sentido. O nome é simples, mas o conceito fica poderoso quando usado com disciplina.</p>
 
     <p>Em trens comuns, o valor do trem resume uma cadeia fixa. Em trens planetários, a ideia será reaproveitada em velocidades relativas ao braço. Essa continuidade é didaticamente importante: planetárias não exigem abandonar a noção de relação de transmissão, mas aplicá-la em um referencial móvel.</p>
 
-    <h2>Sequência de análise</h2>
+    <h2 id="leitura-5">Sequência de análise</h2>
     <ol>
       <li>nomeie as engrenagens e identifique os dentes de cada uma;</li>
       <li>marque os pares em contato e indique se são externos ou internos;</li>
@@ -180,7 +181,8 @@
     </ol>
 
     <p>Essa sequência evita tratar todos os desenhos como variações de uma mesma fórmula. Em mecanismos reais, a diferença entre um trem simples e um composto está justamente na arquitetura dos eixos.</p>
-  </article>
+<h2 id="exemplo-resolvido">Exemplo resolvido: duas reduções de 3:1</h2><p>Considere quatro engrenagens externas: A com 20 dentes aciona B com 60; B e C estão rigidamente presas ao mesmo eixo; C tem 18 dentes e aciona D com 54. A gira a +900 rpm. O sinal positivo é definido observando todos os eixos do mesmo lado.</p><p>A primeira malha fornece n<sub>B</sub> = −900 × 20/60 = −300 rpm. Como B e C são solidárias, n<sub>C</sub> = −300 rpm. A segunda malha fornece n<sub>D</sub> = −(−300) × 18/54 = +100 rpm. A saída gira no mesmo sentido da entrada e a redução total é 900/100 = 9:1.</p><p>Não multiplique 60/18 como se B e C engrenassem: elas compartilham a rotação, não uma relação de contato. Os números de dentes dessas duas engrenagens podem ser diferentes sem alterar a igualdade de velocidades no eixo comum.</p><h3>O que muda se o trem for simples?</h3><p>Agora use apenas A = 20, B = 60 e D = 54, cada uma em seu eixo, com A acionando B e B acionando D. A saída será (−20/60) × (−60/54) × 900 = +333,33 rpm. Os 60 dentes da intermediária cancelam no produto. A redução é 54/20 = 2,7:1. O resultado é diferente porque o caminho de transmissão mudou, embora algumas engrenagens tenham os mesmos dentes.</p><h3>Uma verificação independente</h3><p>Se todos os pares do primeiro exemplo tiverem módulo 2 mm e não houver correção de perfil, a distância entre os eixos de A e B será 2(20 + 60)/2 = 80 mm. Entre C e D será 2(18 + 54)/2 = 72 mm. Essa conferência de geometria complementa a de velocidades, mas não verifica resistência, interferência ou viabilidade da carcaça.</p><p>Para praticar, mantenha a montagem composta e troque D por uma engrenagem de 36 dentes. A saída passa a +150 rpm e a redução a 6:1. Se você obteve −150 rpm, reveja as duas inversões de sentido. Para continuar, use o <a href="conferir-resultados-planetaria.html">guia de conferência de planetárias</a> e observe o que muda quando um eixo passa a se mover com o braço.</p>
+  <div class="article-correction"><p>Dúvidas sobre uma equação ou resultado? Envie o endereço desta página e os dados do seu cálculo para <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a>. · <a href="../sobre.html">Sobre o autor</a> · <a href="../privacy.html">Privacidade</a></p></div></article>
 
   <aside>
     <div class="sidebar-card">
@@ -207,7 +209,5 @@
     <p>© 2026 Barbudenge · <a href="../index.html">Página inicial</a> · <a href="../sobre.html">Sobre</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
   </div>
 </footer>
-
-  <script src="../../site-sidebar.js"></script>
 </body>
 </html>

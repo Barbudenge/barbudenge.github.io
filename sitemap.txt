@@ -18,6 +18,7 @@ https://barbudenge.github.io/artigos/camforge-comparacao-curvas-deslocamento.htm
 https://barbudenge.github.io/artigos/camforge-correcao-descontinuidades-curva-svaj.html
 https://barbudenge.github.io/artigos/camforge-exemplo-correcao-descontinuidades.html
 https://barbudenge.github.io/artigos/camforge-projeto-cames.html
+https://barbudenge.github.io/artigos/conferir-resultados-planetaria.html
 https://barbudenge.github.io/artigos/engrenagens-conicas-helicoidais-sem-fim.html
 https://barbudenge.github.io/artigos/engrenagens-funcoes-perfil-nomenclatura.html
 https://barbudenge.github.io/artigos/engrenagens-planetarias.html
@@ -41,6 +42,7 @@ https://barbudenge.github.io/pt-br/artigos/camforge-comparacao-curvas-deslocamen
 https://barbudenge.github.io/pt-br/artigos/camforge-correcao-descontinuidades-curva-svaj.html
 https://barbudenge.github.io/pt-br/artigos/camforge-exemplo-correcao-descontinuidades.html
 https://barbudenge.github.io/pt-br/artigos/camforge-projeto-cames.html
+https://barbudenge.github.io/pt-br/artigos/conferir-resultados-planetaria.html
 https://barbudenge.github.io/pt-br/artigos/engrenagens-conicas-helicoidais-sem-fim.html
 https://barbudenge.github.io/pt-br/artigos/engrenagens-funcoes-perfil-nomenclatura.html
 https://barbudenge.github.io/pt-br/artigos/engrenagens-planetarias.html

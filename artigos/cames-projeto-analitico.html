@@ -30,7 +30,6 @@
   <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/cames-projeto-analitico.html" />
   <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/cames-projeto-analitico.html" />
   <link rel="stylesheet" href="../language-switch.css" />
-  <link rel="stylesheet" href="../site-sidebar.css" />
   <script type="application/ld+json" data-seo="article">
   {
     "@context": "https://schema.org",
@@ -92,8 +91,10 @@
     ]
   }
   </script>
+<link rel="stylesheet" href="/editorial.css">
 </head>
 <body>
+<a class="editorial-skip" href="#article-content">Skip to article</a>
 
 <header class="site-header">
   <div class="container topbar">
@@ -125,10 +126,10 @@
 </section>
 
 <main class="container article-layout">
-  <article class="article-body">
+  <article id="article-content" class="article-body"><details class="article-toc"><summary>In this article</summary><nav aria-label="Article sections"><ol><li><a href="#leitura-1">Flat-faced follower</a></li><li><a href="#leitura-2">Roller follower</a></li><li><a href="#leitura-3">Pressure angle</a></li><li><a href="#leitura-4">Base radius</a></li><li><a href="#leitura-5">Curvature and cusp risk</a></li><li><a href="#leitura-6">Verification sequence</a></li></ol></nav></details>
     <p class="lead">Analytical cam design transforms the law of motion into geometry. The question stops being just which displacement is desired and starts to include: which base radius is needed, what the pressure angle will be and whether the resulting profile is physically manufacturable.</p>
 
-    <h2>Flat-faced follower</h2>
+    <h2 id="leitura-1">Flat-faced follower</h2>
     <p>In a cam with a flat-faced follower, contact occurs on a flat surface of the follower. The geometry can be constructed based on the prescribed displacement, but it is necessary to ensure that the profile does not generate cusps and that the follower width is sufficient to maintain contact throughout the cycle.</p>
 
     <p>When base radius is small in relation to the stroke and variation of the curve, cam may develop sharp regions. These regions are undesirable because they make manufacturing difficult, concentrate stress and impair contact.</p>
@@ -138,12 +139,12 @@
       <figcaption>For a flat-faced follower, the geometric construction relates the base radius, the angular position and the contact line of the follower.</figcaption>
     </figure>
 
-    <h2>Roller follower</h2>
+    <h2 id="leitura-2">Roller follower</h2>
     <p>In the roller follower, it is customary to work first with the pitch curve, which represents the path of the roller center. The real profile of the cam is obtained by offsetting this curve by the roller radius. This improves contact, but adds the restriction that the roller radius cannot be chosen without checking for curvature.</p>
 
     <p>If the roller is too large for the local curvature of the pitch curve, the profile may suffer interference or generate unfeasible contours. Therefore, the choice of \(R_r\) depends on the law of motion and the primitive radius, not just component availability.</p>
 
-    <h2>Pressure angle</h2>
+    <h2 id="leitura-3">Pressure angle</h2>
     <p>The pressure angle measures the deviation between the direction of force transmission and the desired direction of movement of the follower. High values ​​increase lateral components, friction, loading on guides and risk of poor operation. In many teaching projects, it is used as a reference to keep the maximum angle below around 30 degrees.</p>
 
     <div class="equation-box">
@@ -154,12 +155,12 @@
 
     <p>The expression shows two general ways to reduce the angle: increase dimensions such as base radius or change displacement curve to reduce peaks of \(dS/d\theta\). The eccentricity \(e\) can also be used as a design feature, but it needs to be evaluated in both directions of movement.</p>
 
-    <h2>Base radius</h2>
+    <h2 id="leitura-4">Base radius</h2>
     <p>Increasing the base radius tends to reduce the pressure angle and smooth the profile, but increases the size of the mechanism. Decreasing the radius compacts the cam, but can generate high pressure and unfavorable curvature. The design is therefore, a compromise between space, contact, forces and manufacturing.</p>
 
     <div class="note">A small cam may look attractive on layout, but the profile is only acceptable if the follower can follow the curve without excessive lateral effort and without loss of contact.</div>
 
-    <h2>Curvature and cusp risk</h2>
+    <h2 id="leitura-5">Curvature and cusp risk</h2>
     <p>The curvature indicates how quickly the direction of the curve changes. In regions of severe curvature, the profile may become sharp or incompatible with the roller. Checking minimum radius of curvature is an essential step after choosing \(S(\theta)\), \(R_0\) and \(R_r\).</p>
 
     <p>For the roller follower, the central idea is to compare the curvature of the pitch curve with the radius of the roller. If the actual surface of the cam requires a curvature smaller than that allowed by the roller, there will be a geometric problem.</p>
@@ -169,7 +170,7 @@
       <figcaption>When the radius of curvature of the pitch curve is incompatible with the roller, the profile may generate vertices or missing material.</figcaption>
     </figure>
 
-    <h2>Verification sequence</h2>
+    <h2 id="leitura-6">Verification sequence</h2>
     <ol>
       <li>define the cycle and displacement curve by sections;</li>
       <li>calculate displacement and relevant derivatives;</li>
@@ -180,7 +181,7 @@
     </ol>
 
     <p>Analytical design does not replace mechanical judgment. It organizes the checks so that the final shape of the cam is a consequence of measurable requirements, not just a visually drawn curve.</p>
-  </article>
+  <div class="article-correction"><p>Questions about an equation or result? Send this page address and your calculation inputs to <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a>. · <a href="../sobre.html">About the author</a> · <a href="../privacy.html">Privacy</a></p></div></article>
 
   <aside>
     <div class="sidebar-card">
@@ -207,7 +208,5 @@
     <p>© 2026 Barbudenge · <a href="../index.html">Home page</a> · <a href="../sobre.html">About</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
   </div>
 </footer>
-
-  <script src="../site-sidebar.js"></script>
 </body>
 </html>

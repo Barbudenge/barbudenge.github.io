@@ -30,7 +30,6 @@
   <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/camforge-comparacao-curvas-deslocamento.html" />
   <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/camforge-comparacao-curvas-deslocamento.html" />
   <link rel="stylesheet" href="../language-switch.css" />
-  <link rel="stylesheet" href="../site-sidebar.css" />
   <script type="application/ld+json" data-seo="article">
   {
     "@context": "https://schema.org",
@@ -62,8 +61,10 @@
     ]
   }
   </script>
+<link rel="stylesheet" href="/editorial.css">
 </head>
 <body>
+<a class="editorial-skip" href="#article-content">Skip to article</a>
 
 <header class="site-header">
   <div class="container topbar">
@@ -95,7 +96,7 @@
 </section>
 
 <main class="container article-layout">
-  <article class="article-body">
+  <article id="article-content" class="article-body"><details class="article-toc"><summary>In this article</summary><nav aria-label="Article sections"><ol><li><a href="#leitura-1">Why the comparison needs both a table and an engineering interpretation</a></li><li><a href="#leitura-2">Direct comparison of the main dwell-to-dwell laws</a></li><li><a href="#leitura-3">All curve families available in CamForge</a></li><li><a href="#leitura-4">Practical selection criteria</a></li><li><a href="#leitura-5">Conclusion</a></li><li><a href="#leitura-6">Technical references</a></li></ol></nav></details>
     <p class="lead">Selecting a displacement curve is one of the decisions that most strongly affects a cam's dynamic behavior. Two laws can produce practically the same rise on the displacement diagram and nevertheless impose very different peak velocities, accelerations, jerk levels and forces on the mechanism. This article compares only the motion laws currently available in <strong>CamForge</strong>, using the criteria presented by Jensen, Rothbart and Norton.</p>
 
     <figure class="article-figure figure-wide">
@@ -103,7 +104,7 @@
       <figcaption>The displacement diagram prescribes the follower motion, but the derivatives of the selected law determine much of the cam's dynamic performance.</figcaption>
     </figure>
 
-    <h2>Why the comparison needs both a table and an engineering interpretation</h2>
+    <h2 id="leitura-1">Why the comparison needs both a table and an engineering interpretation</h2>
     <p>A table is useful for screening because it places the principal normalized factors side by side. It is not sufficient for final selection. As Norton emphasizes, displacement curves become visually very similar after the integrations that produce them; the decisive differences are clearer in the acceleration and jerk diagrams and at the junctions between segments. Rothbart likewise distinguishes basic curves, suitable for an initial choice at low or moderate speed, from modified, combined and polynomial laws intended to improve dynamic performance.</p>
 
     <p>For a rise of height (h) over a cam angle β, the peak normalized factors scale the derivatives approximately as</p>
@@ -112,7 +113,7 @@
 
     <p>The comparison below uses β in radians. Lower factors can be advantageous, but continuity must be examined together with them. A theoretically low acceleration is not a benefit if the law introduces an abrupt jump at a dwell or excites the structure through an unfavorable jerk pattern.</p>
 
-    <h2>Direct comparison of the main dwell-to-dwell laws</h2>
+    <h2 id="leitura-2">Direct comparison of the main dwell-to-dwell laws</h2>
     <div class="table-scroll" role="region" aria-label="Comparison of normalized factors" tabindex="0">
     <table class="data-table">
       <thead>
@@ -133,7 +134,7 @@
 
     <p>The values calculated from the CamForge equations agree closely with the classic comparative tables, with small differences caused by coefficient rounding and numerical evaluation. The most important conclusion is not a ranking from lowest to highest acceleration. For example, the parabolic law has a low (C_a), but its abrupt acceleration changes make the jerk theoretically infinite. Conversely, the cycloidal and 4-5-6-7 laws accept higher nominal acceleration in exchange for substantially better continuity.</p>
 
-    <h2>All curve families available in CamForge</h2>
+    <h2 id="leitura-3">All curve families available in CamForge</h2>
     <p>CamForge has directional and half-curve variants that cannot all be judged as complete dwell-to-dwell rises. The following table therefore groups the 65 selectable options into the 40 motion-law models implemented by the program and identifies the design role of each family.</p>
 
     <div class="table-scroll" role="region" aria-label="Comparison of CamForge curve families" tabindex="0">
@@ -160,7 +161,7 @@
     </table>
     </div>
 
-    <h2>Practical selection criteria</h2>
+    <h2 id="leitura-4">Practical selection criteria</h2>
     <p>For a general dwell-to-dwell rise, Norton identifies the <strong>3-4-5 polynomial</strong> as a sound compromise: its peak factors are moderate and both velocity and acceleration vanish at the endpoints. When the pressure angle or the cam diameter is the main restriction, the <strong>modified sinusoidal</strong> law becomes attractive because of its lower velocity factor. The <strong>modified trapezoidal</strong> law offers low theoretical peak acceleration, but its jerk signature means that it should not automatically be interpreted as the lowest-vibration solution.</p>
 
     <p>For higher speed and greater sensitivity to residual vibration, the <strong>cycloidal</strong> and <strong>4-5-6-7</strong> laws deserve priority even though their nominal acceleration factors are higher. Rothbart describes the cycloidal curve as a strong first choice for many machine requirements because it avoids abrupt acceleration changes and tends to reduce shock, noise and wear. Modern manufacturing also reduces some of the traditional difficulty in producing its profile accurately.</p>
@@ -169,19 +170,19 @@
 
     <p>Finally, Berzak, Gutman, Freudenstein and Weber curves are not best selected from a generic factor table alone. Their purpose is tied to residual vibration and harmonic excitation, so the design should include the natural frequencies, damping and operating-speed range of the real follower system. CamForge provides the kinematic laws and their SVAJ response; the engineer must still connect that information to the dynamic model of the machine.</p>
 
-    <h2>Conclusion</h2>
+    <h2 id="leitura-5">Conclusion</h2>
     <p>There is no universally superior displacement curve. The best law is the one whose endpoint conditions match the neighboring segments and whose velocity, acceleration, jerk, pressure angle, curvature and dynamic excitation remain compatible with the application. A table is therefore the correct starting point, while the final decision must come from the complete SVAJ and geometric analysis.</p>
 
     <p>In CamForge, a practical workflow is to define the required motion, use the possible-curve filter or automatic search, compare candidate SVAJ diagrams and then verify discontinuities, pressure angle and curvature. If necessary, the correction function can redistribute β or ΔL before the final profile is evaluated.</p>
 
-    <h2>Technical references</h2>
+    <h2 id="leitura-6">Technical references</h2>
     <ol>
       <li>Jensen, P. W. <em>Cam Design and Manufacture</em>. 1987. Chapter 2, especially Table 2-1, book page 19 (PDF page 40).</li>
       <li>Rothbart, H. A. <em>Cam Design Handbook</em>. 2004. Chapters 2–4, including the comparison of basic, modified and polynomial curves.</li>
       <li>Norton, R. L. <em>Cam Design and Manufacturing Handbook</em>. 2009. Chapters 3, 11 and 18, including the comparative factors and residual-vibration discussion.</li>
       <li>Norton, R. L. <em>Design of Machinery</em>. 6th ed., 2020. Chapter 8, sections on standard and modified cam functions.</li>
     </ol>
-  </article>
+  <div class="article-correction"><p>Questions about an equation or result? Send this page address and your calculation inputs to <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a>. · <a href="../sobre.html">About the author</a> · <a href="../privacy.html">Privacy</a></p></div></article>
 
   <aside>
     <div class="sidebar-card">
@@ -227,7 +228,5 @@
     <p>© 2026 Barbudenge · <a href="../index.html">Home page</a> · <a href="../sobre.html">About</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
   </div>
 </footer>
-
-  <script src="../site-sidebar.js"></script>
 </body>
 </html>

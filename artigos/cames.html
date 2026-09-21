@@ -185,7 +185,6 @@
   <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/cames.html" />
   <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/cames.html" />
   <link rel="stylesheet" href="../language-switch.css" />
-  <link rel="stylesheet" href="../site-sidebar.css" />
   <script type="application/ld+json" data-seo="article">
   {
     "@context": "https://schema.org",
@@ -247,8 +246,10 @@
     ]
   }
   </script>
+<link rel="stylesheet" href="/editorial.css">
 </head>
 <body>
+<a class="editorial-skip" href="#article-content">Skip to article</a>
 
 <header>
   <div class="container topbar">
@@ -281,8 +282,8 @@
 </section>
 
 <main class="container article-layout">
-  <article>
-    <h2>Why the study of cams remains relevant</h2>
+  <article id="article-content"><details class="article-toc"><summary>In this article</summary><nav aria-label="Article sections"><ol><li><a href="#leitura-1">Why the study of cams remains relevant</a></li><li><a href="#leitura-2">What makes a cam versatile</a></li><li><a href="#leitura-3">Motion curve and mechanism behavior</a></li><li><a href="#leitura-4">Pressure angle</a></li><li><a href="#leitura-5">A useful sequence for analysis</a></li><li><a href="#leitura-6">Didactic application</a></li></ol></nav></details>
+    <h2 id="leitura-1">Why the study of cams remains relevant</h2>
     <p>Even in contexts with more sophisticated electronic drives and control systems, mechanisms by cam remain classic examples of motion synthesis. They clearly show how geometry can be used to impose previously defined displacement laws, transforming rotation into follower prescribed movement.</p>
     <p>From a didactic point of view, cam is a particularly rich topic because it brings together geometry, kinematics, functional criteria and dynamic consequences in the same problem. Changing the motion curve or the base radius, for example, directly changes the system's behavior.</p>
 
@@ -290,17 +291,17 @@
       <img src="../figs/came.png" alt="Geometric scheme of cam with indication of alpha pressure angle">
     </div>
 
-    <h2>What makes a cam versatile</h2>
+    <h2 id="leitura-2">What makes a cam versatile</h2>
     <p>Unlike mechanisms with a fixed geometric relationship, the cam allows you to prescribe the displacement of the follower along the rotation of the driving element. This leaves room for smooth advances, returns, rests, and transitions as required by the design.</p>
     <p>In practice, this versatility is important in machines that require repetitive cycles, synchronization between steps and geometric control of movement. Valve systems, feeding mechanisms, packaging machines and automatic devices are typical examples.</p>
 
-    <h2>Motion curve and mechanism behavior</h2>
+    <h2 id="leitura-3">Motion curve and mechanism behavior</h2>
     <p>The choice of the law of motion is not a secondary detail. It determines not only the displacement, but also the velocity and acceleration profiles of the follower. In many cases, the real design problem is not simply getting the follower up and down, but doing so with acceptable levels of smoothness, effort, and stability.</p>
     <p>Curves such as harmonic and cycloidal appear frequently because they offer clear didactic references to compare softer or more severe transitions. In a teaching context, this point is important: the cam profile is not designed arbitrarily; it translates a decision about the desired movement.</p>
 
     <div class="note">In cam mechanisms, the profile geometry must be read as a consequence of a chosen law of motion, and not as a mere graphic contour.</div>
 
-    <h2>Pressure angle</h2>
+    <h2 id="leitura-4">Pressure angle</h2>
     <p>The pressure angle is one of the most important criteria in analyzing the mechanism. It influences lateral forces, requirements on guides, contact between elements and the functional efficiency of the assembly. A profile that generates excessive pressure angle can lead to high lateral effort and less favorable behavior of the follower.</p>
     <p>A recurring expression for this criterion is:</p>
 
@@ -312,7 +313,7 @@
 
     <p>In this form, \(dS/d\theta\) represents the rate of change of the displacement of the follower in relation to the angle of the cam, \(e\) is the eccentricity of the follower, \(R_b\) is the base radius and \(S\) is the instantaneous displacement. The equation shows that pressure angle does not depend on a single isolated parameter, but on the coupling between geometry and the law of motion.</p>
 
-    <h2>A useful sequence for analysis</h2>
+    <h2 id="leitura-5">A useful sequence for analysis</h2>
     <ol>
       <li>define the desired cycle of the follower, including rise, dwell, and return;</li>
       <li>choose the motion law compatible with the application;</li>
@@ -321,10 +322,10 @@
     </ol>
     <p>This order is valuable because it avoids treating the problem solely as a geometric drawing. The cam synthesis is born from the desired function and then converted into a profile.</p>
 
-    <h2>Didactic application</h2>
+    <h2 id="leitura-6">Didactic application</h2>
     <p>In teaching mechanisms, cam has a special role: it shows that designing is not just about selecting components, but specifying behavior. When the student realizes that the cam profile encodes a movement decision, they begin to see more clearly the relationship between functional requirement and geometric solution.</p>
     <p>Therefore, this theme tends to work very well in the disciplines of mechanisms, machine elements and mechanical design. It connects kinematic analysis, functional criteria and physical reading of the problem in a very direct way.</p>
-  </article>
+  <div class="article-correction"><p>Questions about an equation or result? Send this page address and your calculation inputs to <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a>. · <a href="../sobre.html">About the author</a> · <a href="../privacy.html">Privacy</a></p></div></article>
 
   <aside>
     <div class="card">
@@ -355,7 +356,5 @@
     <p>© 2026 Barbudenge · <a href="../index.html">Home page</a> · <a href="../sobre.html">About</a> · <a href="../privacy.html">Privacy</a></p>
   </div>
 </footer>
-
-  <script src="../site-sidebar.js"></script>
 </body>
 </html>

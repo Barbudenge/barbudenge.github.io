@@ -185,7 +185,6 @@
   <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/cames.html" />
   <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/cames.html" />
   <link rel="stylesheet" href="../../language-switch.css" />
-  <link rel="stylesheet" href="../../site-sidebar.css" />
   <script type="application/ld+json" data-seo="article">
   {
     "@context": "https://schema.org",
@@ -247,8 +246,10 @@
     ]
   }
   </script>
+<link rel="stylesheet" href="/editorial.css">
 </head>
 <body>
+<a class="editorial-skip" href="#article-content">Pular para o artigo</a>
 
 <header>
   <div class="container topbar">
@@ -281,8 +282,8 @@
 </section>
 
 <main class="container article-layout">
-  <article>
-    <h2>Por que o estudo de cames continua relevante</h2>
+  <article id="article-content"><details class="article-toc"><summary>Neste artigo</summary><nav aria-label="Seções do artigo"><ol><li><a href="#leitura-1">Por que o estudo de cames continua relevante</a></li><li><a href="#leitura-2">O que torna um came versátil</a></li><li><a href="#leitura-3">Curva de movimento e comportamento do mecanismo</a></li><li><a href="#leitura-4">Ângulo de pressão</a></li><li><a href="#leitura-5">Uma sequência útil para análise</a></li><li><a href="#leitura-6">Aplicação didática</a></li></ol></nav></details>
+    <h2 id="leitura-1">Por que o estudo de cames continua relevante</h2>
     <p>Mesmo em contextos com acionamentos eletrônicos e sistemas de controle mais sofisticados, mecanismos por came continuam sendo exemplos clássicos de síntese de movimento. Eles mostram com clareza como a geometria pode ser usada para impor leis de deslocamento previamente definidas, transformando rotação em movimento prescrito do seguidor.</p>
     <p>Do ponto de vista didático, o came é um tema particularmente rico porque reúne geometria, cinemática, critérios funcionais e consequências dinâmicas num mesmo problema. Alterar a curva de movimento ou o raio de base, por exemplo, muda diretamente o comportamento do sistema.</p>
 
@@ -290,17 +291,17 @@
       <img src="../../figs/came.png" alt="Esquema geométrico de came com indicação do ângulo de pressão alfa">
     </div>
 
-    <h2>O que torna um came versátil</h2>
+    <h2 id="leitura-2">O que torna um came versátil</h2>
     <p>Diferentemente de mecanismos de relação geométrica fixa, o came permite prescrever o deslocamento do seguidor ao longo da rotação do elemento motriz. Isso abre espaço para obter avanços, retornos, repousos e transições suaves conforme a necessidade do projeto.</p>
     <p>Na prática, essa versatilidade é importante em máquinas que exigem ciclos repetitivos, sincronização entre etapas e controle geométrico do movimento. Sistemas de válvulas, mecanismos de alimentação, máquinas de embalagem e dispositivos automáticos são exemplos típicos.</p>
 
-    <h2>Curva de movimento e comportamento do mecanismo</h2>
+    <h2 id="leitura-3">Curva de movimento e comportamento do mecanismo</h2>
     <p>A escolha da lei de movimento não é detalhe secundário. Ela determina não apenas o deslocamento, mas também os perfis de velocidade e aceleração do seguidor. Em muitos casos, o problema real de projeto não é simplesmente fazer o seguidor subir e descer, mas fazê-lo com níveis aceitáveis de suavidade, esforço e estabilidade.</p>
     <p>Curvas como a harmônica e a cicloidal aparecem com frequência porque oferecem referências didáticas claras para comparar transições mais suaves ou mais severas. Em contexto de ensino, esse ponto é importante: o perfil do came não é desenhado de forma arbitrária; ele traduz uma decisão sobre o movimento desejado.</p>
 
     <div class="note">Em mecanismos de came, a geometria do perfil deve ser lida como consequência de uma lei de movimento escolhida, e não como mero contorno gráfico.</div>
 
-    <h2>Ângulo de pressão</h2>
+    <h2 id="leitura-4">Ângulo de pressão</h2>
     <p>O ângulo de pressão é um dos critérios mais importantes na análise do mecanismo. Ele influencia forças laterais, exigência sobre guias, contato entre os elementos e eficiência funcional do conjunto. Um perfil que gera ângulo de pressão excessivo pode conduzir a esforço lateral elevado e comportamento menos favorável do seguidor.</p>
     <p>Uma expressão recorrente para esse critério é:</p>
 
@@ -312,7 +313,7 @@
 
     <p>Nessa forma, \(dS/d\theta\) representa a taxa de variação do deslocamento do seguidor em relação ao ângulo do came, \(e\) é a excentricidade do seguidor, \(R_b\) é o raio de base e \(S\) é o deslocamento instantâneo. A equação mostra que o ângulo de pressão não depende de um único parâmetro isolado, mas do acoplamento entre geometria e lei de movimento.</p>
 
-    <h2>Uma sequência útil para análise</h2>
+    <h2 id="leitura-5">Uma sequência útil para análise</h2>
     <ol>
       <li>definir o ciclo desejado do seguidor, incluindo elevação, repouso e retorno;</li>
       <li>escolher a lei de movimento compatível com a aplicação;</li>
@@ -321,10 +322,10 @@
     </ol>
     <p>Essa ordem é valiosa porque evita tratar o problema apenas como desenho geométrico. A síntese do came nasce da função desejada e depois se converte em perfil.</p>
 
-    <h2>Aplicação didática</h2>
+    <h2 id="leitura-6">Aplicação didática</h2>
     <p>No ensino de mecanismos, o came tem um papel especial: ele mostra que projetar não é apenas selecionar componentes, mas especificar comportamento. Quando o aluno percebe que o perfil do came codifica uma decisão de movimento, passa a enxergar com mais clareza a relação entre requisito funcional e solução geométrica.</p>
     <p>Por isso, esse tema costuma funcionar muito bem em disciplinas de mecanismos, elementos de máquinas e projeto mecânico. Ele conecta análise cinemática, critérios funcionais e leitura física do problema de forma bastante direta.</p>
-  </article>
+  <div class="article-correction"><p>Dúvidas sobre uma equação ou resultado? Envie o endereço desta página e os dados do seu cálculo para <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a>. · <a href="../sobre.html">Sobre o autor</a> · <a href="../privacy.html">Privacidade</a></p></div></article>
 
   <aside>
     <div class="card">
@@ -355,7 +356,5 @@
     <p>© 2026 Barbudenge · <a href="../index.html">Página inicial</a> · <a href="../sobre.html">Sobre</a> · <a href="../privacy.html">Privacidade</a></p>
   </div>
 </footer>
-
-  <script src="../../site-sidebar.js"></script>
 </body>
 </html>

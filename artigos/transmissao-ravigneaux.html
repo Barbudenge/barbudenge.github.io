@@ -30,7 +30,6 @@
   <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/transmissao-ravigneaux.html" />
   <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/transmissao-ravigneaux.html" />
   <link rel="stylesheet" href="../language-switch.css" />
-  <link rel="stylesheet" href="../site-sidebar.css" />
   <script type="application/ld+json" data-seo="article">
   {
     "@context": "https://schema.org",
@@ -92,8 +91,10 @@
     ]
   }
   </script>
+<link rel="stylesheet" href="/editorial.css">
 </head>
 <body>
+<a class="editorial-skip" href="#article-content">Skip to article</a>
 
 <header class="site-header">
   <div class="container topbar">
@@ -125,7 +126,7 @@
 </section>
 
 <main class="container article-layout">
-  <article class="article-body">
+  <article id="article-content" class="article-body"><details class="article-toc"><summary>In this article</summary><nav aria-label="Article sections"><ol><li><a href="#leitura-1">What is a Ravigneaux set</a></li><li><a href="#leitura-2">Application in Ford transmissions</a></li><li><a href="#leitura-3">Gear ratios</a></li><li><a href="#leitura-4">Engrenarium setup data</a></li><li><a href="#leitura-5">Gear configurations</a></li><li><a href="#leitura-6">1st gear</a></li><li><a href="#leitura-7">2nd gear</a></li><li><a href="#leitura-8">3rd gear</a></li><li><a href="#leitura-9">4th gear</a></li><li><a href="#leitura-10">Reverse gear</a></li><li><a href="#leitura-11">How to interpret the set</a></li></ol></nav></details>
     <p class="lead">This article shows how to assemble a didactic Ravigneaux transmission model in Engrenarium and how to interpret its gear ratios. The reading focuses on the teeth in the assembly, the locking or coupling conditions, and why this arrangement is useful in compact automatic transmissions.</p>
 
     <div class="video-embed">
@@ -136,7 +137,7 @@
       <strong>Assembly in Engrenarium:</strong> the set can be reproduced in <a href="https://barbudenge.github.io/lasmeufsj/engrenarium/">Engrenarium desktop software</a> or <a href="https://barbudenge.github.io/engrenarium/">Engrenarium Web</a>. Create the two planetary subsystems with the same ring gear and change the constraints to simulate each gear.
     </div>
 
-    <h2>What is a Ravigneaux set</h2>
+    <h2 id="leitura-1">What is a Ravigneaux set</h2>
     <p>The Ravigneaux planetary gear set was patented in 1949 by Pol Ravigneaux. It brings together two sun gears, long and short planet gears, a ring gear and a single planet carrier, functioning as if two planetary systems were combined into a single structure.</p>
 
     <figure class="article-figure figure-wide">
@@ -149,7 +150,7 @@
       <figcaption>Ravigneaux Set: two families of planet gears work with different sun gears within a compact architecture.</figcaption>
     </figure>
 
-    <h2>Application in Ford transmissions</h2>
+    <h2 id="leitura-2">Application in Ford transmissions</h2>
     <p>Ford overdrive automatic transmissions used a Ravigneaux assembly. The 4R70W model appeared in several vehicles, including:</p>
 
     <ul>
@@ -175,10 +176,10 @@
       </figure>
     </div>
 
-    <h2>Gear ratios</h2>
+    <h2 id="leitura-3">Gear ratios</h2>
     <p>The 4R70W transmission can be represented by five ratios: four forward gears and one reverse gear.</p>
 
-    <table class="data-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Horizontally scrollable table"><table class="data-table">
       <thead>
         <tr>
           <th>Condition</th>
@@ -207,14 +208,14 @@
           <td>\(-2.32\)</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
     <p>The above ratios are written as the ratio of input angular velocity to output angular velocity. Ratios greater than \(1\) indicate reduction; the \(1.0\) ratio indicates direct gear; and the \(0.7\) ratio indicates overdrive, in which the output rotates faster than the input. The negative reverse sign indicates a reversal of direction.</p>
 
-    <h2>Engrenarium setup data</h2>
+    <h2 id="leitura-4">Engrenarium setup data</h2>
     <p>The video description informs the tooth counts used to assemble the model. The important point is that the two subsystems share the same ring gear with \(88\) teeth, a feature that helps to compact the Ravigneaux set.</p>
 
-    <table class="data-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Horizontally scrollable table"><table class="data-table">
       <thead>
         <tr>
           <th>Subsystem</th>
@@ -237,7 +238,7 @@
           <td>\(N_{ring}=88\)</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
     <p>In Engrenarium, this data must be used to create the two combined trains. After that, keep the common planet carrier and the output ring, only changing the boundary conditions of each gear.</p>
 
@@ -246,10 +247,10 @@
       <figcaption>Set cutaway: the same mechanical package can generate multiple gear ratios by changing which elements are locked or used as input and output.</figcaption>
     </figure>
 
-    <h2>Gear configurations</h2>
+    <h2 id="leitura-5">Gear configurations</h2>
     <p>With the geometry defined, each gear is obtained by a configuration of constraints. The analysis below uses the same output at the ring gear and alternates input, locks and couplings to reproduce downshift, direct gear, overdrive and reverse.</p>
 
-    <h2>1st gear</h2>
+    <h2 id="leitura-6">1st gear</h2>
     <p>In first gear, configure the input in the first sun gear and the output in the second ring gear:</p>
 
     <div class="equation-box">
@@ -272,7 +273,7 @@
 
     <p>With the planet carrier stopped, the set works as a strong reduction. This is the appropriate condition for starting, when greater torque multiplication and lower output speed are desired.</p>
 
-    <h2>2nd gear</h2>
+    <h2 id="leitura-7">2nd gear</h2>
     <p>In second gear, the ratio is still read between the first sun gear and the second ring gear:</p>
 
     <div class="equation-box">
@@ -295,7 +296,7 @@
 
     <p>This change reduces the ratio compared to first gear. The output starts to rotate faster for the same input speed, but still with reduction.</p>
 
-    <h2>3rd gear</h2>
+    <h2 id="leitura-8">3rd gear</h2>
     <p>The third gear is direct gear. The same kinematic ratio is used, but now with coupling between the two sun gears:</p>
 
     <div class="equation-box">
@@ -313,7 +314,7 @@
 
     <p>When the relevant elements rotate together, the train stops producing internal reduction and the effective ratio approaches \(1:1\).</p>
 
-    <h2>4th gear</h2>
+    <h2 id="leitura-9">4th gear</h2>
     <p>In fourth gear, the input considered passes through planet carrier and the output remains at the ring gear:</p>
 
     <div class="equation-box">
@@ -336,7 +337,7 @@
 
     <p>Since \(i_4 < 1\), this is an overdrive ratio. The output rotates faster than the input, which helps reduce engine speed while cruising.</p>
 
-    <h2>Reverse gear</h2>
+    <h2 id="leitura-10">Reverse gear</h2>
     <p>In reverse gear, the relationship is written between the second sun gear and the second ring gear:</p>
 
     <div class="equation-box">
@@ -359,7 +360,7 @@
 
     <p>The negative sign indicates a reversal of direction. Thus, reverse is not just a high reduction ratio; it is a kinematic condition that makes the output rotate in the opposite direction.</p>
 
-    <h2>How to interpret the set</h2>
+    <h2 id="leitura-11">How to interpret the set</h2>
     <p>The Ravigneaux is efficient as an object of study because it concentrates several ratios in a single gear package. In each gear, the transmission selects which elements are locked, which are coupled and which serve as input or output.</p>
 
     <p>The reading script is the same as that used in other planetary gear trains:</p>
@@ -373,7 +374,7 @@
     </ol>
 
     <p>This approach avoids treating each gear as an isolated case. What changes from one gear to another is the set of constraints applied to the same mechanism.</p>
-  </article>
+  <div class="article-correction"><p>Questions about an equation or result? Send this page address and your calculation inputs to <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a>. · <a href="../sobre.html">About the author</a> · <a href="../privacy.html">Privacy</a></p></div></article>
 
   <aside>
     <div class="sidebar-card">
@@ -420,7 +421,5 @@
     <p>© 2026 Barbudenge · <a href="../index.html">Home page</a> · <a href="../sobre.html">About</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
   </div>
 </footer>
-
-  <script src="../site-sidebar.js"></script>
 </body>
 </html>

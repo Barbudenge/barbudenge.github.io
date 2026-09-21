@@ -30,7 +30,6 @@
   <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/transmissao-cvt-engrenarium.html" />
   <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/transmissao-cvt-engrenarium.html" />
   <link rel="stylesheet" href="../language-switch.css" />
-  <link rel="stylesheet" href="../site-sidebar.css" />
   <script type="application/ld+json" data-seo="article">
   {
     "@context": "https://schema.org",
@@ -92,8 +91,10 @@
     ]
   }
   </script>
+<link rel="stylesheet" href="/editorial.css">
 </head>
 <body>
+<a class="editorial-skip" href="#article-content">Skip to article</a>
 
 <header class="site-header">
   <div class="container topbar">
@@ -125,7 +126,7 @@
 </section>
 
 <main class="container article-layout">
-  <article class="article-body">
+  <article id="article-content" class="article-body"><details class="article-toc"><summary>In this article</summary><nav aria-label="Article sections"><ol><li><a href="#leitura-1">Assembly data</a></li><li><a href="#leitura-2">Forward drive</a></li><li><a href="#leitura-3">Equation of the mechanism</a></li><li><a href="#leitura-4">Reverse gear</a></li><li><a href="#leitura-5">Why does the example represent a CVT</a></li></ol></nav></details>
     <p class="lead">This article shows how to assemble, in Engrenarium, a mechanism operating as a CVT transmission using a single-stage planetary assembly. The example demonstrates two conditions: forward and reverse.</p>
 
     <div class="video-embed">
@@ -134,10 +135,10 @@
 
     <div class="note">The mechanism can be mounted in <a href="https://barbudenge.github.io/lasmeufsj/engrenarium/">Engrenarium desktop software</a> or <a href="https://barbudenge.github.io/engrenarium/">Engrenarium Web</a>. The assembly below uses sun gear as input, the ring gear as the controlled member and the carrier as output.</div>
 
-    <h2>Assembly data</h2>
+    <h2 id="leitura-1">Assembly data</h2>
     <p>Open a new project in Engrenarium. In the parameters panel, add one more planet gear and configure the set geometry with the following tooth counts:</p>
 
-    <table class="data-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Horizontally scrollable table"><table class="data-table">
       <thead>
         <tr>
           <th>Element</th>
@@ -162,7 +163,7 @@
           <td>100</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
     <p>In the angular-velocity fields, enter \(10.0\ \mathrm{rpm}\) in the sun gear and \(10.0\ \mathrm{rpm}\) in the ring. In the ratio settings, select sun gear as input and carrier as output.</p>
 
@@ -171,7 +172,7 @@
       <figcaption>First condition of the mechanism: sun gear and ring rotate at \(10.0\ \mathrm{rpm}\), resulting in carrier at \(10.0\ \mathrm{rpm}\).</figcaption>
     </figure>
 
-    <h2>Forward drive</h2>
+    <h2 id="leitura-2">Forward drive</h2>
     <p>In this first condition, the results panel shows a sun-gear-to-carrier ratio equal to \(1.0\). As sun gear and the ring have the same angular velocity, the entire train follows this movement: sun gear, planet gear 1, planet gear 2, ring and carrier rotate at \(10.0\ \mathrm{rpm}\).</p>
 
     <div class="equation-box">
@@ -187,7 +188,7 @@
       <figcaption>The saved data panel allows you to save boundary conditions and return to them during the simulation.</figcaption>
     </figure>
 
-    <h2>Equation of the mechanism</h2>
+    <h2 id="leitura-3">Equation of the mechanism</h2>
     <p>For this assembly, the kinematic reading can be written in terms of velocities relative to the carrier. Using \(S\) for sun gear, \(A\) for ring and \(B\) for carrier:</p>
 
     <div class="equation-box">
@@ -221,7 +222,7 @@
 
     <p>With \(\omega_S = 10.0\ \mathrm{rpm}\), the ring starts to function as a control variable. If \(\omega_A\) is reduced continuously, the carrier speed also changes continuously. In this sense, the example represents the principle of a CVT transmission: the output ratio is not chosen only by a fixed gear, but by the boundary condition applied to the assembly.</p>
 
-    <h2>Reverse gear</h2>
+    <h2 id="leitura-4">Reverse gear</h2>
     <p>To assemble the second condition, keep sun gear at \(10.0\ \mathrm{rpm}\) and change the ring speed to \(0.0\ \mathrm{rpm}\). Engrenarium now shows a sun-gear-to-carrier ratio equal to approximately \(-1.5\).</p>
 
     <div class="equation-box">
@@ -253,7 +254,7 @@
 
     <p>Save this second condition and rename the saved condition to <strong>Reverse gear</strong>. When clicking <strong>Forward drive</strong> or <strong>Reverse gear</strong>, Engrenarium restores the respective boundary conditions of the mechanism.</p>
 
-    <h2>Why does the example represent a CVT</h2>
+    <h2 id="leitura-5">Why does the example represent a CVT</h2>
     <p>The whole point isn't just to get two gears. The ring can take intermediate values, and each value changes the speed of the carrier. Keeping the sun gear at \(10.0\ \mathrm{rpm}\), for example, the output is zero when:</p>
 
     <div class="equation-box">
@@ -265,7 +266,7 @@
     </div>
 
     <p>Above this value, the carrier rotates in the same direction as the sun gear; below it, it rotates in the opposite direction. The mechanism, therefore, allows you to visualize a continuous transition between forward, stop and reverse through the speed imposed on the ring.</p>
-  </article>
+  <div class="article-correction"><p>Questions about an equation or result? Send this page address and your calculation inputs to <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a>. · <a href="../sobre.html">About the author</a> · <a href="../privacy.html">Privacy</a></p></div></article>
 
   <aside>
     <div class="sidebar-card">
@@ -300,7 +301,5 @@
     <p>© 2026 Barbudenge · <a href="../index.html">Home page</a> · <a href="../sobre.html">About</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
   </div>
 </footer>
-
-  <script src="../site-sidebar.js"></script>
 </body>
 </html>

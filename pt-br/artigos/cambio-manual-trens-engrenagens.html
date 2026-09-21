@@ -30,7 +30,6 @@
   <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/cambio-manual-trens-engrenagens.html" />
   <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/cambio-manual-trens-engrenagens.html" />
   <link rel="stylesheet" href="../../language-switch.css" />
-  <link rel="stylesheet" href="../../site-sidebar.css" />
   <script type="application/ld+json" data-seo="article">
   {
     "@context": "https://schema.org",
@@ -89,8 +88,10 @@
     ]
   }
   </script>
+<link rel="stylesheet" href="/editorial.css">
 </head>
 <body>
+<a class="editorial-skip" href="#article-content">Pular para o artigo</a>
 
 <header class="site-header">
   <div class="container topbar">
@@ -122,15 +123,15 @@
 </section>
 
 <main class="container article-layout">
-  <article class="article-body">
+  <article id="article-content" class="article-body"><details class="article-toc"><summary>Neste artigo</summary><nav aria-label="Seções do artigo"><ol><li><a href="#leitura-1">Arquitetura básica</a></li><li><a href="#leitura-2">Marchas baixas</a></li><li><a href="#leitura-3">Marcha direta</a></li><li><a href="#leitura-4">Marcha a ré</a></li><li><a href="#leitura-5">Ponto morto e engrenagens girando sem transmitir torque</a></li><li><a href="#leitura-6">Como analisar uma marcha</a></li></ol></nav></details>
     <p class="lead">O câmbio manual transforma a análise de engrenagens em um problema de seleção de caminho. As engrenagens podem estar fisicamente presentes e girando, mas apenas algumas participam da transmissão efetiva de torque em cada marcha.</p>
 
-    <h2>Arquitetura básica</h2>
+    <h2 id="leitura-1">Arquitetura básica</h2>
     <p>Em uma transmissão manual típica, há um eixo de entrada ligado ao motor, um contraeixo e um eixo de saída. Um par inicial costuma transferir movimento do eixo de entrada para o contraeixo. Depois, cada marcha seleciona um par específico entre contraeixo e eixo de saída.</p>
 
     <p>Essa descrição já separa duas coisas: engrenagens que estão permanentemente engrenadas e engrenagens que estão efetivamente travadas ao eixo de saída naquele instante. O sincronizador não cria uma nova relação geométrica; ele escolhe qual engrenagem passa a girar solidária ao eixo.</p>
 
-    <h2>Marchas baixas</h2>
+    <h2 id="leitura-2">Marchas baixas</h2>
     <p>Nas marchas baixas, a relação de transmissão produz grande redução de velocidade e maior torque disponível nas rodas. Isso é útil na arrancada, em aclives ou em situações de carga. A consequência é que o motor gira mais vezes para cada volta da saída.</p>
 
     <div class="equation-box">
@@ -141,22 +142,22 @@
 
     <p>Quando \(i\) é alto, a saída gira mais devagar que a entrada. A potência não aumenta idealmente; o sistema troca rotação por torque. Essa leitura ajuda a entender por que uma primeira marcha é forte, mas limitada em velocidade.</p>
 
-    <h2>Marcha direta</h2>
+    <h2 id="leitura-3">Marcha direta</h2>
     <p>Em muitas caixas, uma das marchas aproxima ou iguala a velocidade de entrada e saída. Essa é a ideia da marcha direta: a transmissão deixa de usar uma grande redução intermediária e passa a transmitir com relação próxima de 1:1. O resultado é menor multiplicação de torque, mas melhor adequação para velocidade constante.</p>
 
     <p>Do ponto de vista de análise, a marcha direta ensina uma lição importante: nem toda transmissão trabalha sempre como uma cascata longa de pares. O caminho de potência muda conforme a marcha selecionada.</p>
 
-    <h2>Marcha a ré</h2>
+    <h2 id="leitura-4">Marcha a ré</h2>
     <p>A ré exige inverter o sentido de rotação da saída em relação ao avanço. Para isso, usa-se uma engrenagem intermediária adicional. A função dessa engrenagem é mudar o sentido final, não necessariamente alterar de forma dominante a magnitude da relação.</p>
 
     <div class="note">Em um trem simples, a engrenagem intermediária pode não mudar a razão final de velocidades, mas muda o sentido. Na marcha a ré, essa diferença de sentido é exatamente a função desejada.</div>
 
-    <h2>Ponto morto e engrenagens girando sem transmitir torque</h2>
+    <h2 id="leitura-5">Ponto morto e engrenagens girando sem transmitir torque</h2>
     <p>Um aspecto didático importante é o ponto morto. Algumas engrenagens podem continuar girando por estarem em contato com outras, mas nenhuma delas está travada de modo a conduzir torque até a saída. O mecanismo existe, mas o caminho de potência não está fechado.</p>
 
     <p>Isso mostra por que a análise de uma caixa de câmbio não deve se limitar ao desenho dos dentes. É necessário saber quais elementos estão solidários aos eixos, quais estão livres e qual acoplamento está selecionado.</p>
 
-    <h2>Como analisar uma marcha</h2>
+    <h2 id="leitura-6">Como analisar uma marcha</h2>
     <ol>
       <li>identifique a entrada, o contraeixo e a saída;</li>
       <li>marque o par inicial que aciona o contraeixo;</li>
@@ -166,7 +167,7 @@
     </ol>
 
     <p>Com essa sequência, o câmbio deixa de parecer um conjunto confuso de rodas dentadas e passa a ser uma escolha controlada de trens de engrenagens.</p>
-  </article>
+  <div class="article-correction"><p>Dúvidas sobre uma equação ou resultado? Envie o endereço desta página e os dados do seu cálculo para <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a>. · <a href="../sobre.html">Sobre o autor</a> · <a href="../privacy.html">Privacidade</a></p></div></article>
 
   <aside>
     <div class="sidebar-card">
@@ -193,7 +194,5 @@
     <p>© 2026 Barbudenge · <a href="../index.html">Página inicial</a> · <a href="../sobre.html">Sobre</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
   </div>
 </footer>
-
-  <script src="../../site-sidebar.js"></script>
 </body>
 </html>

@@ -30,7 +30,6 @@
   <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/trens-engrenagens-simples-compostos.html" />
   <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/trens-engrenagens-simples-compostos.html" />
   <link rel="stylesheet" href="../language-switch.css" />
-  <link rel="stylesheet" href="../site-sidebar.css" />
   <script type="application/ld+json" data-seo="article">
   {
     "@context": "https://schema.org",
@@ -47,7 +46,7 @@
         "url": "https://barbudenge.github.io/artigos/trens-engrenagens-simples-compostos.html",
         "inLanguage": "en",
         "datePublished": "2026-06-15",
-        "dateModified": "2026-07-06",
+        "dateModified": "2026-09-21",
         "author": {
           "@type": "Person",
           "name": "Artur Henrique de Freitas Avelar",
@@ -92,8 +91,10 @@
     ]
   }
   </script>
+<link rel="stylesheet" href="/editorial.css">
 </head>
 <body>
+<a class="editorial-skip" href="#article-content">Skip to article</a>
 
 <header class="site-header">
   <div class="container topbar">
@@ -118,17 +119,17 @@
     <p>A gear train arranges several pairs in sequence to achieve reductions, enlargements or changes of direction that would be impractical with just two gears.</p>
     <div class="byline">
       <span>By Artur Henrique de Freitas Avelar</span>
-      <span>Published <time datetime="2026-06-15">June 15, 2026</time> · Updated <time datetime="2026-07-06">July 6, 2026</time></span>
+      <span>Published <time datetime="2026-06-15">June 15, 2026</time> · Updated <time datetime="2026-09-21">September 21, 2026</time></span>
       <span>Category: gear trains</span>
     </div>
   </div>
 </section>
 
 <main class="container article-layout">
-  <article class="article-body">
+  <article id="article-content" class="article-body"><details class="article-toc"><summary>In this article</summary><nav aria-label="Article sections"><ol><li><a href="#leitura-1">Gear-pair ratio</a></li><li><a href="#leitura-2">Simple gear train</a></li><li><a href="#leitura-3">Compound gear train</a></li><li><a href="#leitura-4">Train value</a></li><li><a href="#leitura-5">Analysis sequence</a></li><li><a href="#exemplo-resolvido">Worked example: two 3:1 reductions</a></li></ol></nav></details>
     <p class="lead">Gear trains appear when a single pair does not deliver the desired ratio, when the wheelbase needs to be overcome or when you want to select different outputs within the same architecture. The central point is to separate two questions: which gears mesh with each other and which gears are rigidly attached to the same axle.</p>
 
-    <h2>Gear-pair ratio</h2>
+    <h2 id="leitura-1">Gear-pair ratio</h2>
     <p>For two external gears, the relationship between the angular velocities is given by the inverse ratio of the tooth counts. The negative sign indicates that the rotation directions are opposite.</p>
 
     <div class="equation-box">
@@ -139,7 +140,7 @@
 
     <p>When an external gear meshes with an internal one, the direction does not reverse and the signal becomes positive. This convention is useful because it forces you to record the nature of each contact, rather than just calculating velocity modules.</p>
 
-    <h2>Simple gear train</h2>
+    <h2 id="leitura-2">Simple gear train</h2>
     <p>In the simple train, each axle has a single gear relevant to the transmission chain. The intermediate gears change the direction of rotation and allow the axes to be spaced, but they do not change the modulus of the final relationship between the first and last gears when they are all external and only intermediate.</p>
 
     <p>This tends to surprise you at first. If gear 1 drives gear 2, gear 2 drives gear 3 and gear 3 drives gear 4, the intermediate teeth appear on the product and then cancel each other out. The final result depends on the first and last, while the number of gears defines the direction.</p>
@@ -151,7 +152,7 @@
 
     <div class="note">Idler gear is not useless gear. It can be essential for distance, layout, exit direction and assembly, even when it does not change the magnitude of the final relationship.</div>
 
-    <h2>Compound gear train</h2>
+    <h2 id="leitura-3">Compound gear train</h2>
     <p>In a compound train, two or more gears rotate together on the same axis. In this case, gear ratio is not just reduced to the first and last. Each active pair contributes to the total product, while the coupled gears share the same angular velocity.</p>
 
     <div class="equation-box">
@@ -165,12 +166,12 @@
 
     <p>The correct reading is topological. First, the pairs that really mesh are identified. Then, the common axes are recorded. Only then is the relationship multiplied. Trying to start directly with the teeth, without understanding the assembly, is a common way of mixing gears that do not belong to the same power path.</p>
 
-    <h2>Train value</h2>
+    <h2 id="leitura-4">Train value</h2>
     <p>Train value is a compact way of representing the relationship between output and input. In many courses, it appears as the ratio of the speed of the last gear to the speed of the first, with the signal carrying the direction information. The name is simple, but the concept becomes powerful when used with discipline.</p>
 
     <p>In ordinary trains, train value summarizes a fixed chain. In planetary gear trains, the idea will be reused with speeds relative to the carrier. This continuity is didactically important: planetary gear sets do not require abandoning the notion of gear ratio, but applying it in a mobile reference frame.</p>
 
-    <h2>Analysis sequence</h2>
+    <h2 id="leitura-5">Analysis sequence</h2>
     <ol>
       <li>name the gears and identify the teeth of each one;</li>
       <li>mark the pairs in contact and indicate whether they are external or internal;</li>
@@ -180,7 +181,8 @@
     </ol>
 
     <p>This sequence avoids treating all drawings as variations of the same formula. In real mechanisms, the difference between a simple train and a compound one lies precisely in the architecture of the axles.</p>
-  </article>
+<h2 id="exemplo-resolvido">Worked example: two 3:1 reductions</h2><p>Consider four external gears: A has 20 teeth and drives B with 60 teeth; B and C are rigidly attached to the same shaft; C has 18 teeth and drives D with 54. A rotates at +900 rpm. Define the positive direction by viewing every shaft from the same side.</p><p>The first mesh gives n<sub>B</sub> = −900 × 20/60 = −300 rpm. Because B and C share a shaft, n<sub>C</sub> = −300 rpm. The second mesh gives n<sub>D</sub> = −(−300) × 18/54 = +100 rpm. Output rotates in the same direction as input, and the total reduction is 900/100 = 9:1.</p><p>Do not multiply by 60/18 as though B and C were meshing: they share a speed, not a mesh ratio. Their tooth counts can differ without changing the equal-speed constraint on their common shaft.</p><h3>What changes in a simple train?</h3><p>Now use only A = 20, B = 60 and D = 54, each on its own shaft, with A driving B and B driving D. Output speed is (−20/60) × (−60/54) × 900 = +333.33 rpm. The intermediate gear's 60 teeth cancel from the product. The reduction is 54/20 = 2.7:1. The result differs because the transmission path changed, even though some tooth counts stayed the same.</p><h3>An independent check</h3><p>If every pair in the first example has module 2 mm and no profile shift, the A–B centre distance is 2(20 + 60)/2 = 80 mm. The C–D centre distance is 2(18 + 54)/2 = 72 mm. This geometric check complements the speed calculation but does not check strength, interference or housing feasibility.</p><p>For practice, keep the compound arrangement and replace D with a 36-tooth gear. Output becomes +150 rpm and the reduction becomes 6:1. If you obtained −150 rpm, check the two direction reversals. Continue with the <a href="conferir-resultados-planetaria.html">planetary result-checking guide</a> to see what changes when an axis travels with a carrier.</p>
+  <div class="article-correction"><p>Questions about an equation or result? Send this page address and your calculation inputs to <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a>. · <a href="../sobre.html">About the author</a> · <a href="../privacy.html">Privacy</a></p></div></article>
 
   <aside>
     <div class="sidebar-card">
@@ -207,7 +209,5 @@
     <p>© 2026 Barbudenge · <a href="../index.html">Home page</a> · <a href="../sobre.html">About</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
   </div>
 </footer>
-
-  <script src="../site-sidebar.js"></script>
 </body>
 </html>

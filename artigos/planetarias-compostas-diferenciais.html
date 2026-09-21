@@ -30,7 +30,6 @@
   <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/planetarias-compostas-diferenciais.html" />
   <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/planetarias-compostas-diferenciais.html" />
   <link rel="stylesheet" href="../language-switch.css" />
-  <link rel="stylesheet" href="../site-sidebar.css" />
   <script type="application/ld+json" data-seo="article">
   {
     "@context": "https://schema.org",
@@ -92,8 +91,10 @@
     ]
   }
   </script>
+<link rel="stylesheet" href="/editorial.css">
 </head>
 <body>
+<a class="editorial-skip" href="#article-content">Skip to article</a>
 
 <header class="site-header">
   <div class="container topbar">
@@ -125,7 +126,7 @@
 </section>
 
 <main class="container article-layout">
-  <article class="article-body">
+  <article id="article-content" class="article-body"><details class="article-toc"><summary>In this article</summary><nav aria-label="Article sections"><ol><li><a href="#leitura-1">Degrees of freedom</a></li><li><a href="#leitura-2">Couplings between gears</a></li><li><a href="#leitura-3">Automotive differential</a></li><li><a href="#leitura-4">Limited slip differential</a></li><li><a href="#leitura-5">Analysis workflow</a></li></ol></nav></details>
     <p class="lead">A simple planetary gear set already requires care because the carrier moves. In compound planetary gear sets, this care increases: there is more than one train, more than one kinematic relationship and couplings that reduce the system's degrees of freedom.</p>
 
     <figure class="article-figure">
@@ -133,12 +134,12 @@
       <figcaption>In composite arrangements, the main question is which elements are coupled and which independent relationships remain.</figcaption>
     </figure>
 
-    <h2>Degrees of freedom</h2>
+    <h2 id="leitura-1">Degrees of freedom</h2>
     <p>A planetary gear train with three principal elements may have two degrees of freedom when neither is fixed or prescribed. When braking an element, or imposing an input speed, the behavior of the third becomes determined. In composite sets, each train adds relations, but the couplings between them also add constraints.</p>
 
     <p>Therefore, saying that there are two planetary gear sets is not enough. It is necessary to know if the sun gears are on the same axis, if the carriers are common, if a ring gear is connected to another gear or if any element is fixed to the housing.</p>
 
-    <h2>Couplings between gears</h2>
+    <h2 id="leitura-2">Couplings between gears</h2>
     <p>When two gears are rigidly coupled, they share the same angular velocity. This restriction may allow treating part of the system with a single equation, as long as the coupling belongs to the correct elements of the analyzed relationship.</p>
 
     <p>Couplings involving carriers require more attention. The carrier is not just another gear; it defines the relative frame of reference used to calculate the train value. If two carriers are coupled, or if one carrier is coupled to a gear on another train, the writing of the equations needs to represent this condition explicitly.</p>
@@ -150,7 +151,7 @@
 
     <div class="note">In compound planetary gear sets, the difficulty is rarely in multiplying teeth. It's about writing the right constraints without losing any degrees of freedom.</div>
 
-    <h2>Automotive differential</h2>
+    <h2 id="leitura-3">Automotive differential</h2>
     <p>The differential allows the wheels on the same axle to rotate at different speeds during a curve. In a straight line, both wheels tend to rotate at the same speed. When cornering, the outer wheel travels longer and needs to turn faster than the inner wheel.</p>
 
     <p>In an ideal symmetrical differential, the speed of the planet carrier relates to the average of the speeds of the two wheels. In conceptual form:</p>
@@ -163,10 +164,10 @@
 
     <p>This expression explains a well-known behavior: if one wheel completely loses resistance and rotates freely, the other may receive little traction capacity in an open differential. The problem is not that the mechanism "failed"; it is fulfilling the kinematic relationship it was built for.</p>
 
-    <h2>Limited slip differential</h2>
+    <h2 id="leitura-4">Limited slip differential</h2>
     <p>Limited slip differentials appear to reduce this inconvenience. They introduce resistance to excessive speed differences between the wheels, through clutches, special gears, fluids or other resources. The objective is to preserve the function of allowing cornering without letting a free wheel completely dominate the response.</p>
 
-    <h2>Analysis workflow</h2>
+    <h2 id="leitura-5">Analysis workflow</h2>
     <ol>
       <li>divide the mechanism into recognizable planetary gear trains;</li>
       <li>write the kinematic equation for each train;</li>
@@ -181,7 +182,7 @@
       <img src="../figs/aulas/planetaria-composta-exemplo.png" alt="Schematic example of compound planetary gear set with numbered gears and carrier">
       <figcaption>Class example: before solving, you need to identify which gears are on the same axis and which elements belong to each planetary gear train.</figcaption>
     </figure>
-  </article>
+  <div class="article-correction"><p>Questions about an equation or result? Send this page address and your calculation inputs to <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a>. · <a href="../sobre.html">About the author</a> · <a href="../privacy.html">Privacy</a></p></div></article>
 
   <aside>
     <div class="sidebar-card">
@@ -208,7 +209,5 @@
     <p>© 2026 Barbudenge · <a href="../index.html">Home page</a> · <a href="../sobre.html">About</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
   </div>
 </footer>
-
-  <script src="../site-sidebar.js"></script>
 </body>
 </html>

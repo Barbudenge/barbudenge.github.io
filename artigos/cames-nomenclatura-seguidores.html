@@ -30,7 +30,6 @@
   <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/cames-nomenclatura-seguidores.html" />
   <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/cames-nomenclatura-seguidores.html" />
   <link rel="stylesheet" href="../language-switch.css" />
-  <link rel="stylesheet" href="../site-sidebar.css" />
   <script type="application/ld+json" data-seo="article">
   {
     "@context": "https://schema.org",
@@ -92,8 +91,10 @@
     ]
   }
   </script>
+<link rel="stylesheet" href="/editorial.css">
 </head>
 <body>
+<a class="editorial-skip" href="#article-content">Skip to article</a>
 
 <header class="site-header">
   <div class="container topbar">
@@ -125,7 +126,7 @@
 </section>
 
 <main class="container article-layout">
-  <article class="article-body">
+  <article id="article-content" class="article-body"><details class="article-toc"><summary>In this article</summary><nav aria-label="Article sections"><ol><li><a href="#leitura-1">When to use cams</a></li><li><a href="#leitura-2">Essential terms</a></li><li><a href="#leitura-3">Types of followers</a></li><li><a href="#leitura-4">Positions and critical path</a></li><li><a href="#leitura-5">Initial design workflow</a></li></ol></nav></details>
     <p class="lead">A cam is a mechanical element whose profile imposes movement on a follower. This definition is short, but it carries an important idea: the profile is a consequence of a desired law of movement, not an arbitrary design.</p>
 
     <figure class="article-figure">
@@ -133,27 +134,27 @@
       <figcaption>In cams, the profile should be read together with base radius, stroke, follower and pressure angle.</figcaption>
     </figure>
 
-    <h2>When to use cams</h2>
+    <h2 id="leitura-1">When to use cams</h2>
     <p>Cams appear in engines, packaging machines, presses, production lines and automatic devices. They are useful when a rotation needs to generate a well-defined sequence of displacements, dwells, and returns.</p>
 
     <p>The advantage is compactness and the freedom to specify different movements. The downside is that manufacturing, wear and noise can directly affect response. Small inaccuracies in the profile can change the displacement, speed and acceleration of the follower.</p>
 
-    <h2>Essential terms</h2>
+    <h2 id="leitura-2">Essential terms</h2>
     <p>Some terms appear in virtually any cam design. The base radius \(C\) represents the smallest circumference associated with the body of the cam. The primitive radius \(R_0\) is used in the construction of the primitive profile, especially when the follower has a roller. Roller radius \(R_r\), stroke \(L\), offset \(S\), rotation angle \(\theta\) and pressure angle \(\alpha\) complete the initial reading.</p>
 
     <p>Stroke should not be confused with instantaneous displacement. The stroke is the total desired variation; the displacement is the value at each angular position. This difference seems simple, but it is decisive when the movement is divided into rise, dwell, and return segments.</p>
 
-    <h2>Types of followers</h2>
+    <h2 id="leitura-3">Types of followers</h2>
     <p>Followers can be flat-faced, roller, knife-edge or oscillating. The roller follower reduces contact slip but adds the roller radius to the geometric problem. The flat-faced follower can simplify some constructions, but requires checking the required width and the risk of cusp formation in the profile.</p>
 
     <p>The choice also depends on load, speed, lubrication and precision. In a didactic application, the follower type changes the equations and the drawing procedure. In a real application, wear, noise, cost and robustness change.</p>
 
-    <h2>Positions and critical path</h2>
+    <h2 id="leitura-4">Positions and critical path</h2>
     <p>A well-specified design identifies critical end positions and the critical motion path. The extreme positions define where the follower begins and ends important sections. The movement path defines how it moves between these positions: with dwell, constant velocity, cycloidal, harmonic movement or another law.</p>
 
     <div class="note">The correct question is not just "what shape will the cam have?", but "what movement does follower need to make during one revolution?".</div>
 
-    <h2>Initial design workflow</h2>
+    <h2 id="leitura-5">Initial design workflow</h2>
     <ol>
       <li>define the complete cycle in degrees or time;</li>
       <li>separate rise, dwell, return segments and any intermediate movements;</li>
@@ -163,7 +164,7 @@
     </ol>
 
     <p>This workflow avoids starting with the final geometry. The cam profile must be the last result of a chain of decisions: function, movement, contact and verification.</p>
-  </article>
+  <div class="article-correction"><p>Questions about an equation or result? Send this page address and your calculation inputs to <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a>. · <a href="../sobre.html">About the author</a> · <a href="../privacy.html">Privacy</a></p></div></article>
 
   <aside>
     <div class="sidebar-card">
@@ -190,7 +191,5 @@
     <p>© 2026 Barbudenge · <a href="../index.html">Home page</a> · <a href="../sobre.html">About</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
   </div>
 </footer>
-
-  <script src="../site-sidebar.js"></script>
 </body>
 </html>

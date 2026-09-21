@@ -30,7 +30,6 @@
   <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/paradoxo-mecanico-ferguson.html" />
   <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/paradoxo-mecanico-ferguson.html" />
   <link rel="stylesheet" href="../language-switch.css" />
-  <link rel="stylesheet" href="../site-sidebar.css" />
   <script type="application/ld+json" data-seo="article">
   {
     "@context": "https://schema.org",
@@ -92,8 +91,10 @@
     ]
   }
   </script>
+<link rel="stylesheet" href="/editorial.css">
 </head>
 <body>
+<a class="editorial-skip" href="#article-content">Skip to article</a>
 
 <header class="site-header">
   <div class="container topbar">
@@ -125,7 +126,7 @@
 </section>
 
 <main class="container article-layout">
-  <article class="article-body">
+  <article id="article-content" class="article-body"><details class="article-toc"><summary>In this article</summary><nav aria-label="Article sections"><ol><li><a href="#leitura-1">Historical origin</a></li><li><a href="#leitura-2">Mechanism idea</a></li><li><a href="#leitura-3">Assembly data</a></li><li><a href="#leitura-4">How to assemble it in Engrenarium</a></li><li><a href="#leitura-5">How it works</a></li><li><a href="#leitura-6">Why does it seem paradoxical</a></li></ol></nav></details>
     <p class="lead">This article summarizes the historical origin of James Ferguson's mechanical paradox, shows how to assemble the mechanism in Engrenarium and explains why three gears, driven by the same set, can rotate in different directions or even remain stationary.</p>
 
     <div class="video-embed">
@@ -136,14 +137,14 @@
       <strong>Assembly in Engrenarium:</strong> the mechanism can be reproduced in <a href="https://barbudenge.github.io/lasmeufsj/engrenarium/">Engrenarium desktop software</a> or in <a href="https://barbudenge.github.io/engrenarium/">Engrenarium Web</a>. The assembly uses three similar planetary gear trains, with the same couplings between sun gears, carriers, and idler gears.
     </div>
 
-    <h2>Historical origin</h2>
+    <h2 id="leitura-1">Historical origin</h2>
     <p>The video description informs that the conversation that gave rise to the mechanism was adapted from the book <em>Wheelwright of the Heavens: The Life and Work of James Ferguson, FRS</em>, by John R. Millburn. According to this account, Ferguson was at a meeting in which a watchmaker treated as impossible what he considered contrary to reason.</p>
 
     <p>Instead of responding in the abstract realm of discussion, Ferguson took the argument to the watchmaker's craft: cogwheels. He proposed a machine in which a wide wheel would drive three thin wheels on the same axle, but with a result that contradicted immediate intuition. One of them would rotate in one direction, another in the opposite direction, and the third would not rotate.</p>
 
     <p>To a watchmaker, the claim seemed impossible, as experience with pairs of gears suggested that geared wheels should follow predictable directions. Ferguson then built the device and presented it to the group. The observed effect showed that the apparent paradox was not in the gears themselves, but in the incomplete reading of relative motion.</p>
 
-    <h2>Mechanism idea</h2>
+    <h2 id="leitura-2">Mechanism idea</h2>
     <p>The paradox uses three gear trains mounted on the same carrier. They share the same input gear and the same idler gear, but end in three final gears with slightly different tooth counts.</p>
 
     <figure class="article-figure">
@@ -153,10 +154,10 @@
 
     <p>The secret is to change just one tooth on the final gears. With carrier fixed, they all rotate in the same direction, at almost the same speed. When the input gear is fixed and the carrier starts to rotate, the rotation of the carrier subtracts a common portion of the movement. Because the three speeds were slightly different, subtraction produces three distinct results.</p>
 
-    <h2>Assembly data</h2>
+    <h2 id="leitura-3">Assembly data</h2>
     <p>In the assembly used in the video and caption, gears 1 and 2 have 30 teeth. The final three gears have 30, 31 and 29 teeth respectively.</p>
 
-    <table class="data-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Horizontally scrollable table"><table class="data-table">
       <thead>
         <tr>
           <th>Element</th>
@@ -191,14 +192,14 @@
           <td>Output that rotates counterclockwise.</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
     <figure class="article-figure figure-half">
       <img src="../figs/aulas/ferguson-paradoxo-dentes.png" alt="Tooth counts from the gears of Ferguson's mechanical paradox">
       <figcaption>Tooth counts used in the teaching model.</figcaption>
     </figure>
 
-    <h2>How to assemble it in Engrenarium</h2>
+    <h2 id="leitura-4">How to assemble it in Engrenarium</h2>
     <p>The assembly can be done as three planetary systems in parallel, all with the same carrier. In each system there is a series train formed by gear 1, gear 2 and a final gear.</p>
 
     <ol>
@@ -213,7 +214,7 @@
 
     <p>Before activating the mechanism, visually align the final gears. This makes it easier to observe that, after the carrier moves, one output does not rotate, one rotates clockwise and the other rotates counterclockwise.</p>
 
-    <h2>How it works</h2>
+    <h2 id="leitura-5">How it works</h2>
     <p>The equation for a planetary gear train can be written using velocities relative to the carrier \(C\). For each train \(1-2-k\), where \(k\) can be 3, 4 or 5, it is worth:</p>
 
     <div class="equation-box">
@@ -236,7 +237,7 @@
 
     <p>First, consider carrier fixed, with \(\omega_C=0\), and gear 1 rotating \(100\,\text{rpm}\) counterclockwise. The speeds of the three outputs are:</p>
 
-    <table class="data-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Horizontally scrollable table"><table class="data-table">
       <thead>
         <tr>
           <th>Exit</th>
@@ -261,13 +262,13 @@
           <td>\(103.45\,\text{rpm}\)</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
     <p>The three gears rotate in the same direction, but with small differences in speed. The difference of one tooth is enough to separate the results.</p>
 
     <p>In the paradoxical test, gear 1 remains stationary, \(\omega_1=0\), and carrier rotates clockwise, \(\omega_C=-100\,\text{rpm}\). Replacing in the same expression:</p>
 
-    <table class="data-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Horizontally scrollable table"><table class="data-table">
       <thead>
         <tr>
           <th>Exit</th>
@@ -292,20 +293,20 @@
           <td>Rotates counterclockwise.</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
     <figure class="article-figure figure-wide">
       <img src="../figs/aulas/ferguson-paradoxo-calculo-sol-fixo.png" alt="Calculation of the gear that remains stationary in Ferguson's mechanical paradox">
       <figcaption>Calculation example for the case in which gear 1 is fixed and carrier rotates.</figcaption>
     </figure>
 
-    <h2>Why does it seem paradoxical</h2>
+    <h2 id="leitura-6">Why does it seem paradoxical</h2>
     <p>The initial intuition only considers direct action between gears. In this reading, if one wheel drives another, a reversal of direction is expected with each gear. Ferguson's mechanism, however, is planetary: the absolute speeds are the sum between the relative movement of the train and the movement of the carrier.</p>
 
     <p>When the carrier rotates, it shifts the reference frame of all final gears. The gear with 30 teeth has its relative rotation exactly canceled. The gear with 31 teeth is slightly below this cancellation and starts to rotate clockwise. The gear with 29 teeth is slightly above and rotates counterclockwise.</p>
 
     <p>The paradox, therefore, does not violate the kinematics of the gears. It shows that mechanisms with moving carrier require analysis by relative speeds before any conclusion about absolute movement can be made.</p>
-  </article>
+  <div class="article-correction"><p>Questions about an equation or result? Send this page address and your calculation inputs to <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a>. · <a href="../sobre.html">About the author</a> · <a href="../privacy.html">Privacy</a></p></div></article>
 
   <aside>
     <div class="sidebar-card">
@@ -350,7 +351,5 @@
     <p>© 2026 Barbudenge · <a href="../index.html">Home page</a> · <a href="../sobre.html">About</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
   </div>
 </footer>
-
-  <script src="../site-sidebar.js"></script>
 </body>
 </html>

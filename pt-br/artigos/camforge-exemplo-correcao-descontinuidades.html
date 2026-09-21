@@ -26,7 +26,6 @@
   <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/camforge-exemplo-correcao-descontinuidades.html" />
   <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/camforge-exemplo-correcao-descontinuidades.html" />
   <link rel="stylesheet" href="../../language-switch.css" />
-  <link rel="stylesheet" href="../../site-sidebar.css" />
   <script type="application/ld+json" data-seo="article">
   {
     "@context": "https://schema.org",
@@ -90,8 +89,10 @@
     ]
   }
   </script>
+<link rel="stylesheet" href="/editorial.css">
 </head>
 <body>
+<a class="editorial-skip" href="#article-content">Pular para o artigo</a>
 
 <header class="site-header">
   <div class="container topbar">
@@ -123,13 +124,13 @@
 </section>
 
 <main class="container article-layout">
-  <article class="article-body">
+  <article id="article-content" class="article-body"><details class="article-toc"><summary>Neste artigo</summary><nav aria-label="Seções do artigo"><ol><li><a href="#leitura-1">Especificação do movimento</a></li><li><a href="#leitura-2">Gráfico de deslocamento e geometria inicial</a></li><li><a href="#leitura-3">Diagnóstico das descontinuidades</a></li><li><a href="#leitura-4">Correção automática pela modificação de β</a></li><li><a href="#leitura-5">Segmentos corrigidos e resultado final</a></li><li><a href="#leitura-6">Ganho de eficiência no processo de projeto</a></li></ol></nav></details>
     <p class="lead">Este exemplo apresenta o uso do <strong>CamForge</strong> no projeto de um came de disco com seguidor plano. O objetivo é obter uma subida total de 60 mm que contenha um trecho de velocidade constante e, em seguida, empregar a função de correção de descontinuidades para tornar as transições de velocidade e aceleração cinematicamente compatíveis.</p>
 
-    <h2>Especificação do movimento</h2>
+    <h2 id="leitura-1">Especificação do movimento</h2>
     <p>Deseja-se projetar um came que produza uma elevação total de <strong>60 mm</strong>. Como parte relevante do curso deve ocorrer com velocidade constante, o ciclo é dividido em quatro segmentos: uma entrada progressiva de 5 mm, uma subida principal de 50 mm em velocidade constante, uma transição final de 5 mm e um retorno de 60 mm à posição inicial.</p>
 
-    <table class="data-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Tabela com rolagem horizontal"><table class="data-table">
       <thead>
         <tr>
           <th>Segmento</th>
@@ -144,7 +145,7 @@
         <tr><td>3</td><td>60°</td><td>5 mm</td><td>H2 — segunda metade harmônica</td></tr>
         <tr><td>4</td><td>60°</td><td>−60 mm</td><td>P2 — polinômio de oitavo grau</td></tr>
       </tbody>
-    </table>
+    </table></div>
 
     <p>Portanto, a sequência de curvas escolhida é <strong>C1 – VC – H2 – P2</strong>. Os deslocamentos acumulados passam de 0 para 5 mm, depois para 55 mm, atingem 60 mm e, por fim, retornam a zero. Na tela de seleção manual, os ângulos β e os deslocamentos ΔL dos segmentos são inseridos diretamente pelo usuário, juntamente com a lei de movimento escolhida para cada trecho.</p>
 
@@ -153,7 +154,7 @@
       <figcaption>Figura 1 — Definição inicial dos quatro segmentos e das leis de movimento no CamForge.</figcaption>
     </figure>
 
-    <h2>Gráfico de deslocamento e geometria inicial</h2>
+    <h2 id="leitura-2">Gráfico de deslocamento e geometria inicial</h2>
     <p>Depois da entrada dos dados, o CamForge gera o gráfico de deslocamento ao longo dos 360° e constrói o perfil correspondente. Para esta configuração, o programa indica um <strong>raio de base mínimo de 228,304 mm</strong> para evitar a formação de ponta no perfil. O exemplo prossegue com um seguidor plano, condição que permite relacionar diretamente a lei de movimento prescrita à superfície calculada do came.</p>
 
     <figure class="article-figure figure-wide">
@@ -161,7 +162,7 @@
       <figcaption>Figura 2 — Gráfico de deslocamento, dados geométricos e perfil inicial calculado para o seguidor plano.</figcaption>
     </figure>
 
-    <h2>Diagnóstico das descontinuidades</h2>
+    <h2 id="leitura-3">Diagnóstico das descontinuidades</h2>
     <p>Embora o deslocamento total e o trecho de velocidade constante tenham sido obtidos, o projeto inicial apresenta um problema importante: existem <strong>descontinuidades nas curvas de velocidade e aceleração em função da rotação do came</strong>. Os saltos aparecem nas fronteiras entre segmentos porque cada lei possui condições próprias de derivada, e os intervalos angulares inicialmente atribuídos não compatibilizam essas condições.</p>
 
     <figure class="article-figure">
@@ -171,7 +172,7 @@
 
     <p>A correção dessas transições é um dos pontos mais trabalhosos do projeto analítico de cames. Não basta escolher curvas individualmente adequadas: é necessário ajustar os parâmetros que escalam suas derivadas, respeitar o fechamento do ciclo em 360° e preservar o deslocamento exigido pelo processo. Feito manualmente, esse procedimento demanda sucessivas formulações, verificações e iterações. A rapidez do resultado depende fortemente da experiência do engenheiro, e um ajuste prolongado pode atrasar as etapas posteriores de detalhamento e implementação.</p>
 
-    <h2>Correção automática pela modificação de β</h2>
+    <h2 id="leitura-4">Correção automática pela modificação de β</h2>
     <p>Para reduzir esse esforço, o CamForge introduz a função <strong>Corrigir descontinuidades</strong>. Ao acioná-la, o programa diagnostica as junções e apresenta imediatamente uma solução capaz de compatibilizar as curvas de velocidade e aceleração. Neste exemplo será utilizado o modo <strong>Modificar somente β</strong>, que mantém os deslocamentos e as quatro leis de movimento selecionadas, alterando apenas a extensão angular dos segmentos.</p>
 
     <figure class="article-figure figure-wide">
@@ -181,7 +182,7 @@
 
     <p>De forma resumida, o programa avalia as condições de velocidade e aceleração nas extremidades de cada lei e procura valores de β que tornem iguais as derivadas dos segmentos adjacentes. Durante a busca, a soma dos intervalos é mantida em 360°, os valores de ΔL permanecem fixos e as curvas C1, VC, H2 e P2 não são substituídas. Assim, a especificação funcional do curso é preservada enquanto o tempo angular disponível para cada etapa é redistribuído.</p>
 
-    <h2>Segmentos corrigidos e resultado final</h2>
+    <h2 id="leitura-5">Segmentos corrigidos e resultado final</h2>
 
     <figure class="article-figure figure-wide">
       <img src="../../figs/aulas/cam%20ex%205.jpg" alt="Projeto corrigido no CamForge com novos valores de beta e perfil de came mais suave">
@@ -195,7 +196,7 @@
 
     <p>O CamForge calculou os seguintes intervalos corrigidos, sem alterar os deslocamentos de cada segmento:</p>
 
-    <table class="data-table">
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Tabela com rolagem horizontal"><table class="data-table">
       <thead>
         <tr>
           <th>Segmento</th>
@@ -210,15 +211,15 @@
         <tr><td>3</td><td>60°</td><td>26,28°</td><td>5 mm</td></tr>
         <tr><td>4</td><td>60°</td><td>133,00°</td><td>−60 mm</td></tr>
       </tbody>
-    </table>
+    </table></div>
 
     <p>Os novos valores totalizam 360° e conservam integralmente o programa de deslocamento. A redistribuição torna a superfície do came mais suave e produz uma operação cinemática mais regular, com menor tendência a impactos e excitações indesejadas nas mudanças de trecho. O perfil deixa de refletir junções incompatíveis e passa a representar melhor o movimento contínuo esperado de um mecanismo real.</p>
 
-    <h2>Ganho de eficiência no processo de projeto</h2>
+    <h2 id="leitura-6">Ganho de eficiência no processo de projeto</h2>
     <p>O exemplo demonstra o ganho expressivo de eficiência oferecido pelo CamForge. Com um único comando, o programa resolve um ajuste que exigiria cálculo analítico, repetidas tentativas e posterior implementação em um software de geração de cames. O engenheiro continua responsável por definir o movimento, escolher as leis e avaliar os critérios geométricos e dinâmicos, mas deixa de consumir tempo com uma etapa iterativa que pode ser automatizada com rastreabilidade.</p>
 
     <p>Essa combinação de clareza didática e aplicação prática torna o CamForge útil tanto para compreender a origem das descontinuidades quanto para acelerar estudos preliminares de cames destinados a máquinas e mecanismos industriais.</p>
-  </article>
+  <div class="article-correction"><p>Dúvidas sobre uma equação ou resultado? Envie o endereço desta página e os dados do seu cálculo para <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a>. · <a href="../sobre.html">Sobre o autor</a> · <a href="../privacy.html">Privacidade</a></p></div></article>
 
   <aside>
     <div class="sidebar-card">
@@ -256,7 +257,5 @@
     <p>© 2026 Barbudenge · <a href="../index.html">Página inicial</a> · <a href="../sobre.html">Sobre</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
   </div>
 </footer>
-
-  <script src="../../site-sidebar.js"></script>
 </body>
 </html>

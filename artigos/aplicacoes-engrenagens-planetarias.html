@@ -30,7 +30,6 @@
   <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/aplicacoes-engrenagens-planetarias.html" />
   <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/aplicacoes-engrenagens-planetarias.html" />
   <link rel="stylesheet" href="../language-switch.css" />
-  <link rel="stylesheet" href="../site-sidebar.css" />
   <script type="application/ld+json" data-seo="article">
   {
     "@context": "https://schema.org",
@@ -92,8 +91,10 @@
     ]
   }
   </script>
+<link rel="stylesheet" href="/editorial.css">
 </head>
 <body>
+<a class="editorial-skip" href="#article-content">Skip to article</a>
 
 <header class="site-header">
   <div class="container topbar">
@@ -125,7 +126,7 @@
 </section>
 
 <main class="container article-layout">
-  <article class="article-body">
+  <article id="article-content" class="article-body"><details class="article-toc"><summary>In this article</summary><nav aria-label="Article sections"><ol><li><a href="#leitura-1">Compact power tools and gear reducers</a></li><li><a href="#leitura-2">Automatic transmissions</a></li><li><a href="#leitura-3">Mechanical CVTs and speed combinations</a></li><li><a href="#leitura-4">Low speed and high torque</a></li><li><a href="#leitura-5">Why planetary gear sets require a method</a></li></ol></nav></details>
     <p class="lead">The popularity of planetary gears does not come only from their compact form. Their technical value lies in the interaction among the sun gear, planet gears, carrier, and ring gear. Depending on which element is the input, output, or fixed member, the same set can produce different gear ratios.</p>
 
     <figure class="article-figure">
@@ -133,31 +134,31 @@
       <figcaption>The same planetary assembly can change its behavior depending on the fixed element and the element used as an output.</figcaption>
     </figure>
 
-    <h2>Compact power tools and gear reducers</h2>
+    <h2 id="leitura-1">Compact power tools and gear reducers</h2>
     <p>Electric screwdrivers and compact gear reducers use planetary gear sets because the load is distributed across several teeth and planet gears. This allows a significant reduction to be achieved in a small volume, with an aligned input and output shaft. For portable tools, this coaxiality is especially useful: the motor, reducer and chuck can be in the same body.</p>
 
     <p>Another point is the ability to stack stages. One planetary stage can feed another, multiplying the reduction without lengthening the set too much. Instead of a cascade of cylindrical gears occupying a large distance, the reduction is concentrated around a central axis.</p>
 
-    <h2>Automatic transmissions</h2>
+    <h2 id="leitura-2">Automatic transmissions</h2>
     <p>In automatic transmissions, planetary gear sets are used because clutches and brakes can lock or couple different elements. Fixing a ring, activating a sun gear and removing output through the carrier produces one ratio. Fixing another element or combining another train produces another gear.</p>
 
     <p>This logic explains why an automatic transmission can have several gears without sliding gear pairs as in a manual transmission. What changes is the state of the couplings: clutch and brake discs select which parts are locked, free, or connected to the engine.</p>
 
     <div class="note">For a planetary gear set, asking "which gear is the input?" is not enough. The relationship also depends on the fixed element and the element used as output.</div>
 
-    <h2>Mechanical CVTs and speed combinations</h2>
+    <h2 id="leitura-3">Mechanical CVTs and speed combinations</h2>
     <p>Some architectures use planetary gear trains to combine speeds coming from different paths. When two elements of a planetary gear set have imposed speeds, the third becomes determined by the kinematic equation of the set. This property allows you to add or subtract effects from a main transmission and a control mechanism.</p>
 
     <p>Therefore, planetary gear sets appear in discussions about mechanical CVTs, power dividers and hybrid systems. The train stops being just a reducer and starts to function as a kinematic mixing element.</p>
 
-    <h2>Low speed and high torque</h2>
+    <h2 id="leitura-4">Low speed and high torque</h2>
     <p>Another recurring application is obtaining low speed with high torque. Machines that need to move load slowly, with good effort capacity, benefit from planetary reduction. Distributed loading helps, but does not eliminate the need to check gear teeth, the carrier, bearings, lubrication, and stiffness.</p>
 
-    <h2>Why planetary gear sets require a method</h2>
+    <h2 id="leitura-5">Why planetary gear sets require a method</h2>
     <p>Versatility also brings a risk of error. On a common train, gear ratio is usually read by pairs in sequence. In a planetary frame, the carrier is a moving reference frame. The analysis should use speeds relative to the carrier and then return to absolute speeds.</p>
 
     <p>This is the reason to study the general case first. The application can be a screwdriver, an automatic transmission or an industrial reducer; the kinematic basis is the same. The mechanism only becomes mysterious when one tries to memorize each particular case.</p>
-  </article>
+  <div class="article-correction"><p>Questions about an equation or result? Send this page address and your calculation inputs to <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a>. · <a href="../sobre.html">About the author</a> · <a href="../privacy.html">Privacy</a></p></div></article>
 
   <aside>
     <div class="sidebar-card">
@@ -184,7 +185,5 @@
     <p>© 2026 Barbudenge · <a href="../index.html">Home page</a> · <a href="../sobre.html">About</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
   </div>
 </footer>
-
-  <script src="../site-sidebar.js"></script>
 </body>
 </html>

@@ -32,7 +32,6 @@
   <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/cames-curvas-deslocamento.html" />
   <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/cames-curvas-deslocamento.html" />
   <link rel="stylesheet" href="../../language-switch.css" />
-  <link rel="stylesheet" href="../../site-sidebar.css" />
   <script type="application/ld+json" data-seo="article">
   {
     "@context": "https://schema.org",
@@ -94,8 +93,10 @@
     ]
   }
   </script>
+<link rel="stylesheet" href="/editorial.css">
 </head>
 <body>
+<a class="editorial-skip" href="#article-content">Pular para o artigo</a>
 
 <header class="site-header">
   <div class="container topbar">
@@ -127,10 +128,10 @@
 </section>
 
 <main class="container article-layout">
-  <article class="article-body">
+  <article id="article-content" class="article-body"><details class="article-toc"><summary>Neste artigo</summary><nav aria-label="Seções do artigo"><ol><li><a href="#leitura-1">Da operação da máquina para a curva \(S(\theta)\)</a></li><li><a href="#leitura-2">Condições de contorno</a></li><li><a href="#leitura-3">Parada e velocidade constante</a></li><li><a href="#leitura-4">Movimento cicloidal e meia cicloide</a></li><li><a href="#leitura-5">Movimento harmônico simples</a></li><li><a href="#leitura-6">Polinomial de oitavo grau</a></li><li><a href="#leitura-7">Critérios práticos de seleção</a></li></ol></nav></details>
     <p class="lead">Em síntese de cames, a pergunta inicial não é qual será o raio do came, mas qual movimento o seguidor deve executar ao longo da rotação. A resposta aparece na curva \(S(\theta)\), que fornece o deslocamento em função do ângulo do came e permite calcular velocidade, aceleração e jerk.</p>
 
-    <h2>Da operação da máquina para a curva \(S(\theta)\)</h2>
+    <h2 id="leitura-1">Da operação da máquina para a curva \(S(\theta)\)</h2>
     <p>Um came normalmente precisa transformar uma rotação contínua em uma sequência de ações: levantar uma peça, manter uma posição, retornar, acionar uma ferramenta ou sincronizar uma transferência. Essa sequência é traduzida em trechos de movimento. Cada trecho ocupa um intervalo angular \(\beta\), desloca o seguidor de uma quantidade \(L\) e precisa se conectar corretamente ao trecho anterior e ao próximo.</p>
 
     <figure class="article-figure figure-wide">
@@ -150,14 +151,14 @@
 
     <p>Por isso, curvas de deslocamento aceitáveis são avaliadas como funções SVAJ, ou EVAP em algumas referências em português: espaço, velocidade, aceleração e pulso. Não basta que \(S(\theta)\) pareça suave. Também é necessário verificar se velocidade e aceleração são compatíveis nos pontos de junção.</p>
 
-    <h2>Condições de contorno</h2>
+    <h2 id="leitura-2">Condições de contorno</h2>
     <p>Os slides de referência destacam uma regra prática importante: deve-se igualar velocidade e aceleração no início e no fim de cada trecho. Essa condição evita saltos entre movimentos consecutivos. Quando o seguidor sai de uma parada, por exemplo, é desejável que o trecho seguinte comece com \(v=0\) e, em projetos mais suaves, também com \(a=0\).</p>
 
     <p>O mesmo cuidado vale no retorno. Se uma curva de descida termina em uma parada, a velocidade no final deve ser nula. Se a aceleração não for compatível, o came ainda pode impor uma mudança brusca de força, provocando vibração, ruído, perda de contato ou desgaste.</p>
 
     <div class="note">A curva é escolhida pelo ciclo completo, não por um trecho isolado. Um movimento pode ser matematicamente correto e ainda assim ser inadequado se não casar com o que vem antes e depois.</div>
 
-    <h2>Parada e velocidade constante</h2>
+    <h2 id="leitura-3">Parada e velocidade constante</h2>
     <p>O trecho de parada, ou repouso, mantém o seguidor em posição fixa durante parte da rotação. Ele é usado quando a máquina precisa aguardar uma operação: prensagem, corte, enchimento, inspeção, fechamento ou transferência. No caso mais simples, o deslocamento é constante e as derivadas são nulas.</p>
 
     <div class="equation-box">
@@ -178,7 +179,7 @@
 
     <p>Velocidade constante é útil quando se deseja avanço uniforme, mas não deve ser conectada diretamente a uma parada. A passagem instantânea de \(v=0\) para \(v=L/\beta\) corresponderia, no modelo ideal, a uma aceleração infinita. Na prática, usa-se uma curva de transição antes e depois do trecho linear.</p>
 
-    <h2>Movimento cicloidal e meia cicloide</h2>
+    <h2 id="leitura-4">Movimento cicloidal e meia cicloide</h2>
     <p>O movimento cicloidal é uma das escolhas clássicas para ligar parada e movimento com boa suavidade. Em uma subida completa de altura \(L\) durante o ângulo \(\beta\), usando \(u=\theta/\beta\), uma forma comum é:</p>
 
     <div class="equation-box">
@@ -196,7 +197,7 @@
       <figcaption>Família de trechos cicloidais apresentada nos slides: diferentes combinações de subida, descida e meia cicloide para ajustar as condições de contorno.</figcaption>
     </figure>
 
-    <h2>Movimento harmônico simples</h2>
+    <h2 id="leitura-5">Movimento harmônico simples</h2>
     <p>O movimento harmônico simples também é comum em introduções a cames porque tem construção geométrica simples e equações compactas. Para uma subida de \(0\) a \(L\), uma expressão usual é:</p>
 
     <div class="equation-box">
@@ -214,7 +215,7 @@
       <figcaption>Trechos harmônicos simples e de meio harmônico. A escolha depende das condições de velocidade e aceleração exigidas em cada extremidade.</figcaption>
     </figure>
 
-    <h2>Polinomial de oitavo grau</h2>
+    <h2 id="leitura-6">Polinomial de oitavo grau</h2>
     <p>Curvas polinomiais são usadas quando o projetista precisa impor várias condições de contorno. Em forma normalizada, pode-se escrever:</p>
 
     <div class="equation-box">
@@ -230,7 +231,7 @@
       <figcaption>Exemplos de trechos polinomiais de oitavo grau para subida e descida. O polinômio permite ajustar mais condições, mas exige verificação posterior.</figcaption>
     </figure>
 
-    <h2>Critérios práticos de seleção</h2>
+    <h2 id="leitura-7">Critérios práticos de seleção</h2>
     <p>Na prática, a lei de movimento deve ser escolhida antes do cálculo do perfil do came, mas já pensando no perfil resultante. Uma curva com grandes inclinações aumenta a velocidade do seguidor e pode elevar o ângulo de pressão. Picos de aceleração aumentam força inercial. Transições mal conectadas aumentam jerk e vibração.</p>
 
     <ul>
@@ -242,7 +243,7 @@
     </ul>
 
     <p>Assim, a curva de deslocamento funciona como contrato de movimento. O came físico apenas materializa esse contrato em uma geometria fabricável.</p>
-  </article>
+  <div class="article-correction"><p>Dúvidas sobre uma equação ou resultado? Envie o endereço desta página e os dados do seu cálculo para <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a>. · <a href="../sobre.html">Sobre o autor</a> · <a href="../privacy.html">Privacidade</a></p></div></article>
 
   <aside>
     <div class="sidebar-card">
@@ -271,7 +272,5 @@
     <p>© 2026 Barbudenge · <a href="../index.html">Página inicial</a> · <a href="../sobre.html">Sobre</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
   </div>
 </footer>
-
-  <script src="../../site-sidebar.js"></script>
 </body>
 </html>

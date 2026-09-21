@@ -30,7 +30,6 @@
   <link rel="alternate" hreflang="pt-BR" href="https://barbudenge.github.io/pt-br/artigos/engrenagens-conicas-helicoidais-sem-fim.html" />
   <link rel="alternate" hreflang="x-default" href="https://barbudenge.github.io/artigos/engrenagens-conicas-helicoidais-sem-fim.html" />
   <link rel="stylesheet" href="../language-switch.css" />
-  <link rel="stylesheet" href="../site-sidebar.css" />
   <script type="application/ld+json" data-seo="article">
   {
     "@context": "https://schema.org",
@@ -92,8 +91,10 @@
     ]
   }
   </script>
+<link rel="stylesheet" href="/editorial.css">
 </head>
 <body>
+<a class="editorial-skip" href="#article-content">Skip to article</a>
 
 <header class="site-header">
   <div class="container topbar">
@@ -125,15 +126,15 @@
 </section>
 
 <main class="container article-layout">
-  <article class="article-body">
+  <article id="article-content" class="article-body"><details class="article-toc"><summary>In this article</summary><nav aria-label="Article sections"><ol><li><a href="#leitura-1">Bevel gears</a></li><li><a href="#leitura-2">Helical gears</a></li><li><a href="#leitura-3">Worm and worm wheel</a></li><li><a href="#leitura-4">Direction of rotation and viewpoint</a></li><li><a href="#leitura-5">Choice criteria</a></li></ol></nav></details>
     <p class="lead">Cylindrical spur gears are the most common introductory example, but represent only one family. When the machine layout requires another position of the axes or another contact characteristic, bevel gears, helicals and worm assemblies appear.</p>
 
-    <h2>Bevel gears</h2>
+    <h2 id="leitura-1">Bevel gears</h2>
     <p>Bevel gears transmit movement between intersecting axes, that is, axes whose lines meet at one point. The most remembered case is the change of direction by 90 degrees, but the principle is not limited to that angle. The pitch geometry stops being cylindrical and becomes conical.</p>
 
     <p>In kinematic analysis, the speed ratio still depends on the equivalent geometry and teeth, but the spatial interpretation becomes more demanding. It is necessary to observe the angle between axes and the direction of rotation seen from a defined perspective. Without this reference, phrases like "clockwise" and "counterclockwise" can become ambiguous.</p>
 
-    <h2>Helical gears</h2>
+    <h2 id="leitura-2">Helical gears</h2>
     <p>Helical gears have teeth inclined to the axis. This inclination makes contact more gradual than with straight teeth, which can reduce noise and improve smoothness. In contrast, the helix introduces axial force components, requiring appropriate bearings and supports.</p>
 
     <p>When two helicals work on parallel axes, the helix angles usually have opposite signs. For crossed axes, the reading changes. Therefore, the helix angle is not just a geometric annotation: it participates in the compatibility of the gearing and the direction of the forces.</p>
@@ -145,7 +146,7 @@
 
     <div class="note">The choice of helical teeth improves certain contact characteristics, but shifts part of the problem to the supports, lubrication and axial force control.</div>
 
-    <h2>Worm and worm wheel</h2>
+    <h2 id="leitura-3">Worm and worm wheel</h2>
     <p>A worm and worm-wheel set is used when a large reduction is required in a compact space, usually between nonparallel, nonintersecting shafts. The worm has one or more starts, and the worm wheel has compatible teeth. The ideal relationship can be read in simplified form as:</p>
 
     <div class="equation-box">
@@ -161,12 +162,12 @@
       <figcaption>In the worm, the number of starts, the worm wheel, and the lead angle determine the reduction, contact and efficiency of the set.</figcaption>
     </figure>
 
-    <h2>Direction of rotation and viewpoint</h2>
+    <h2 id="leitura-4">Direction of rotation and viewpoint</h2>
     <p>In gears with non-parallel axes, the direction of rotation needs to be described carefully. At one view, the output may appear clockwise; in another, the same rotation appears counterclockwise. The solution is to declare the perspective or use angular velocity vectors.</p>
 
     <p>This care also appears in teaching examples with bevel gears and worm. Without a perspective, the numerical result may be correct, but the direction indication is poorly defined.</p>
 
-    <h2>Choice criteria</h2>
+    <h2 id="leitura-5">Choice criteria</h2>
     <ul>
       <li>Use bevel gears when the axes are concurrent and there is a need to change the direction of movement.</li>
       <li>Use helicals when smoothness, noise and load capacity justify additional axial force.</li>
@@ -174,7 +175,7 @@
     </ul>
 
     <p>The best choice depends less on the name of the gear and more on the spatial arrangement, load, rotation, expected efficiency and acceptable maintenance.</p>
-  </article>
+  <div class="article-correction"><p>Questions about an equation or result? Send this page address and your calculation inputs to <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a>. · <a href="../sobre.html">About the author</a> · <a href="../privacy.html">Privacy</a></p></div></article>
 
   <aside>
     <div class="sidebar-card">
@@ -201,7 +202,5 @@
     <p>© 2026 Barbudenge · <a href="../index.html">Home page</a> · <a href="../sobre.html">About</a> · <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a></p>
   </div>
 </footer>
-
-  <script src="../site-sidebar.js"></script>
 </body>
 </html>
