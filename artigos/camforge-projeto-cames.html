@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CamForge: automatic selection and discontinuity correction for cam design | Barbudenge</title>
-  <meta name="description" content="Technical review of CamForge, LASME software for industrial cam design with 65 curve options, automatic search, SVAJ analysis and discontinuity correction." />
+  <title>CrucibleCam: automatic selection and discontinuity correction for cam design | Barbudenge</title>
+  <meta name="description" content="Technical review of CrucibleCam, LASME software for industrial cam design with 65 curve options, automatic search, SVAJ analysis and discontinuity correction." />
   <meta name="robots" content="index, follow" />
   <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <meta name="author" content="Artur Henrique de Freitas Avelar" />
   <meta name="google-adsense-account" content="ca-pub-5777194849710689" />
   <link rel="canonical" href="https://barbudenge.github.io/artigos/camforge-projeto-cames.html" />
 
-  <meta property="og:title" content="CamForge: automatic selection and discontinuity correction for cam design" />
+  <meta property="og:title" content="CrucibleCam: automatic selection and discontinuity correction for cam design" />
   <meta property="og:description" content="LASME software for cam calculation, motion-law selection, automatic solution search and correction of velocity and acceleration discontinuities." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://barbudenge.github.io/artigos/camforge-projeto-cames.html" />
@@ -42,12 +42,12 @@
           "@type": "WebPage",
           "@id": "https://barbudenge.github.io/artigos/camforge-projeto-cames.html"
         },
-        "headline": "CamForge: automatic selection and discontinuity correction for cam design",
-        "description": "Technical review of CamForge, LASME software for industrial cam design with 65 curve options, automatic search, SVAJ analysis and discontinuity correction.",
+        "headline": "CrucibleCam: automatic selection and discontinuity correction for cam design",
+        "description": "Technical review of CrucibleCam, LASME software for industrial cam design with 65 curve options, automatic search, SVAJ analysis and discontinuity correction.",
         "url": "https://barbudenge.github.io/artigos/camforge-projeto-cames.html",
         "inLanguage": "en",
         "datePublished": "2026-08-25",
-        "dateModified": "2026-08-25",
+        "dateModified": "2026-09-22",
         "author": {
           "@type": "Person",
           "name": "Artur Henrique de Freitas Avelar",
@@ -84,7 +84,7 @@
           {
             "@type": "ListItem",
             "position": 3,
-            "name": "CamForge: automatic selection and discontinuity correction for cam design",
+            "name": "CrucibleCam: automatic selection and discontinuity correction for cam design",
             "item": "https://barbudenge.github.io/artigos/camforge-projeto-cames.html"
           }
         ]
@@ -116,7 +116,7 @@
 <section class="hero">
   <div class="container">
     <span class="eyebrow">Technical article</span>
-    <h1>CamForge: automatic selection and discontinuity correction for cam design</h1>
+    <h1>CrucibleCam: automatic selection and discontinuity correction for cam design</h1>
     <p>LASME's new engineering tool combines motion-law selection, automatic solution search, profile calculation and continuity correction in a single browser workspace.</p>
     <div class="byline">
       <span>By Artur Henrique de Freitas Avelar</span>
@@ -128,24 +128,24 @@
 
 <main class="container article-layout">
   <article id="article-content" class="article-body"><details class="article-toc"><summary>In this article</summary><nav aria-label="Article sections"><ol><li><a href="#leitura-1">An engineering tool for industrial cam design</a></li><li><a href="#leitura-2">A library with 65 curve options</a></li><li><a href="#leitura-3">1. Manual selection with compatible-curve filtering</a></li><li><a href="#leitura-4">2. Automatic search for possible solutions</a></li><li><a href="#leitura-5">3. Correction of velocity and acceleration discontinuities</a></li><li><a href="#leitura-6">Geometry, SVAJ and design checks</a></li><li><a href="#leitura-7">Didactic clarity with an industrial objective</a></li></ol></nav></details>
-    <p class="lead"><strong>CamForge</strong> is a new LASME tool for calculating and designing disk cams with translating followers. Although its interactive presentation makes it useful in engineering education, its main purpose is practical design: turning a prescribed motion into a cam profile, evaluating the resulting kinematics and correcting incompatibilities between consecutive motion segments.</p>
+    <p class="lead"><strong>CrucibleCam</strong> is a new LASME tool for calculating and designing disk cams with translating followers. Although its interactive presentation makes it useful in engineering education, its main purpose is practical design: turning a prescribed motion into a cam profile, evaluating the resulting kinematics and correcting incompatibilities between consecutive motion segments.</p>
 
     <figure class="article-figure figure-wide">
-      <img src="../figs/aulas/projcam1.jpg" alt="CamForge interface with segment list, displacement chart, cam profile and SVAJ diagrams">
-      <figcaption>CamForge brings segment definition, cam geometry and SVAJ diagrams together in one design environment.</figcaption>
+      <img src="../figs/aulas/projcam1.jpg" alt="CrucibleCam interface with segment list, displacement chart, cam profile and SVAJ diagrams">
+      <figcaption>CrucibleCam brings segment definition, cam geometry and SVAJ diagrams together in one design environment.</figcaption>
     </figure>
 
-    <p>The project is presented on the <a href="https://barbudenge.github.io/lasmeufsj/camforge/">CamForge page at LASME</a>, while the calculation environment runs in the <a href="https://barbudenge.github.io/camforge/">CamForge web version</a>. A <a href="https://barbudenge.github.io/camforge/pt-br/">Portuguese web version</a> is also available. Because the program runs in the browser, it can be used in the classroom, in preliminary engineering studies and during comparisons of motion laws without a local installation.</p>
+    <p>The project is presented on the <a href="https://barbudenge.github.io/lasmeufsj/camforge/">CrucibleCam page at LASME</a>, while the calculation environment runs in the <a href="https://barbudenge.github.io/camforge/">CrucibleCam web version</a>. A <a href="https://barbudenge.github.io/camforge/pt-br/">Portuguese web version</a> is also available. Because the program runs in the browser, it can be used in the classroom, in preliminary engineering studies and during comparisons of motion laws without a local installation.</p>
 
     <h2 id="leitura-1">An engineering tool for industrial cam design</h2>
     <p>A cam for industrial use must satisfy more than the required follower displacement. The chosen law affects velocity, acceleration and jerk; the profile must also be compatible with follower geometry, pressure-angle limits and curvature. These criteria influence dynamic loading, contact conditions, vibration, wear and the feasibility of manufacturing the mechanism.</p>
 
-    <p>CamForge organizes the complete 360° cycle into segments defined by angular extent (β) and displacement variation (ΔL). From this specification, it calculates initial and final angles and positions, generates the cam contour and presents the quantities needed for engineering assessment. The software supports flat-faced and roller followers, including roller eccentricity, and provides profile animation for visual inspection of the mechanism.</p>
+    <p>CrucibleCam organizes the complete 360° cycle into segments defined by angular extent (β) and displacement variation (ΔL). From this specification, it calculates initial and final angles and positions, generates the cam contour and presents the quantities needed for engineering assessment. The software supports flat-faced and roller followers, including roller eccentricity, and provides profile animation for visual inspection of the mechanism.</p>
 
     <h2 id="leitura-2">A library with 65 curve options</h2>
     <p>The reviewed version contains <strong>65 selectable curve options</strong>, corresponding to <strong>40 identified motion-law models</strong> when rise, return, fall and dwell variants are grouped. The library includes dwell, constant velocity, parabolic, cycloidal and harmonic laws; cubic and higher-degree polynomials; trapezoidal acceleration; double harmonic; Gutman, Freudenstein, Weber and Berzak formulations; and modified cycloidal, sinusoidal and trapezoidal curves.</p>
 
-    <p>This breadth is relevant because no single motion law is best for every application. A designer may prioritize lower peak acceleration, reduced jerk, compatibility with adjacent segments, smaller pressure angle or a more favorable curvature radius. CamForge therefore treats curve selection as a design decision, not as a purely graphical choice.</p>
+    <p>This breadth is relevant because no single motion law is best for every application. A designer may prioritize lower peak acceleration, reduced jerk, compatibility with adjacent segments, smaller pressure angle or a more favorable curvature radius. CrucibleCam therefore treats curve selection as a design decision, not as a purely graphical choice.</p>
 
     <h2 id="leitura-3">1. Manual selection with compatible-curve filtering</h2>
     <p>In the <strong>manual selection model</strong>, the designer enters β and ΔL for each segment and chooses the motion law. When the <em>Possible curves only</em> filter is active, the list is reduced according to the velocity and acceleration signs required at the segment junctions. Only curves that can participate in that local transition remain visible.</p>
@@ -153,18 +153,18 @@
     <p>This filtering substantially simplifies a task that is normally laborious. Instead of examining all 65 options at every stage, the user works with a technically relevant subset for that segment. The model preserves engineering control—because the final law is still selected manually—while reducing incompatible choices and helping the designer understand why some curves connect and others do not.</p>
 
     <h2 id="leitura-4">2. Automatic search for possible solutions</h2>
-    <p>In the <strong>automatic search model</strong>, the input is reduced to the segment angles and displacement variations. CamForge calculates the cumulative positions and angles, compares the boundary signs of velocity and acceleration and enumerates all compatible motion-law sequences found for the specified cycle.</p>
+    <p>In the <strong>automatic search model</strong>, the input is reduced to the segment angles and displacement variations. CrucibleCam calculates the cumulative positions and angles, compares the boundary signs of velocity and acceleration and enumerates all compatible motion-law sequences found for the specified cycle.</p>
 
     <p>The result is not limited to one opaque recommendation. The program presents the possible solutions, identifies the curves assigned to each segment and lets the user compare and select a sequence. In the reviewed three-segment example, the same geometric specification produced hundreds of admissible combinations, illustrating how quickly the search space grows when several motion laws are considered simultaneously.</p>
 
     <p>For industrial design, this mode is valuable in the exploratory phase. It allows multiple kinematically plausible arrangements to be generated before the engineer filters them using dynamic, geometric and manufacturing criteria.</p>
 
     <h2 id="leitura-5">3. Correction of velocity and acceleration discontinuities</h2>
-    <p>The most distinctive CamForge feature is its <strong>discontinuity correction mode</strong>. Piecewise cam design is a recurrent bottleneck: each segment may be valid in isolation and still connect poorly to the next one. A velocity discontinuity implies an impulsive acceleration demand, while an acceleration discontinuity creates a jump in jerk and intensifies dynamic excitation. In a real machine, these incompatibilities may appear as impact, vibration, noise, loss of contact and accelerated wear.</p>
+    <p>The most distinctive CrucibleCam feature is its <strong>discontinuity correction mode</strong>. Piecewise cam design is a recurrent bottleneck: each segment may be valid in isolation and still connect poorly to the next one. A velocity discontinuity implies an impulsive acceleration demand, while an acceleration discontinuity creates a jump in jerk and intensifies dynamic excitation. In a real machine, these incompatibilities may appear as impact, vibration, noise, loss of contact and accelerated wear.</p>
 
     <p>Correcting these junctions manually is difficult because the normalized derivatives of a motion law are scaled by both the angular interval and the lift. A change in β alters the time available for motion; a change in ΔL alters the displacement scale. The variables are also constrained by the total cam cycle and by the process that the follower must perform.</p>
 
-    <p>CamForge addresses this bottleneck through two explicit correction models:</p>
+    <p>CrucibleCam addresses this bottleneck through two explicit correction models:</p>
 
     <ul>
       <li><strong>Change beta:</strong> keeps the displacement variations and selected curves, but redistributes the segment angular intervals so the velocity and acceleration conditions can be reconciled.</li>
@@ -180,7 +180,7 @@
       <thead>
         <tr>
           <th>Design input or check</th>
-          <th>CamForge resource</th>
+          <th>CrucibleCam resource</th>
         </tr>
       </thead>
       <tbody>
@@ -208,7 +208,7 @@
     </table></div>
 
     <h2 id="leitura-7">Didactic clarity with an industrial objective</h2>
-    <p>CamForge is didactic because it exposes the reasoning behind the calculation: the user sees the segment data, selected laws, boundary behavior, SVAJ diagrams and generated geometry in the same workspace. This makes it suitable for courses in mechanisms, machine design and mechanical systems.</p>
+    <p>CrucibleCam is didactic because it exposes the reasoning behind the calculation: the user sees the segment data, selected laws, boundary behavior, SVAJ diagrams and generated geometry in the same workspace. This makes it suitable for courses in mechanisms, machine design and mechanical systems.</p>
 
     <p>Its scope, however, goes beyond demonstration. The combination of a broad curve library, systematic solution search, continuity correction and geometric checks makes the software a preliminary cam-design tool for industrial applications. It helps the engineer move from a process motion specification to a technically assessable cam profile and compare alternatives before detailed structural, tribological, tolerance and manufacturing verification.</p>
   <div class="article-correction"><p>Questions about an equation or result? Send this page address and your calculation inputs to <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a>. · <a href="../sobre.html">About the author</a> · <a href="../privacy.html">Privacy</a></p></div></article>
@@ -218,16 +218,16 @@
       <h3>Page summary</h3>
       <ul class="meta-list">
         <li>Date: August 25, 2026.</li>
-        <li>Tool: CamForge.</li>
+        <li>Tool: CrucibleCam.</li>
         <li>Library: 65 options grouped into 40 motion-law models.</li>
         <li>Followers: flat-faced and roller.</li>
       </ul>
     </div>
     <div class="sidebar-card">
-      <h3>Open CamForge</h3>
+      <h3>Open CrucibleCam</h3>
       <ul>
-        <li><a href="https://barbudenge.github.io/lasmeufsj/camforge/">CamForge project page</a></li>
-        <li><a href="https://barbudenge.github.io/camforge/">CamForge web version</a></li>
+        <li><a href="https://barbudenge.github.io/lasmeufsj/camforge/">CrucibleCam project page</a></li>
+        <li><a href="https://barbudenge.github.io/camforge/">CrucibleCam web version</a></li>
         <li><a href="https://barbudenge.github.io/camforge/pt-br/">Portuguese web version</a></li>
       </ul>
     </div>
@@ -242,7 +242,7 @@
     <div class="sidebar-card">
       <h3>Continue studying</h3>
       <ul>
-        <li><a href="camforge-comparacao-curvas-deslocamento.html">Comparing CamForge displacement curves</a></li>
+        <li><a href="camforge-comparacao-curvas-deslocamento.html">Comparing CrucibleCam displacement curves</a></li>
         <li><a href="camforge-exemplo-correcao-descontinuidades.html">Worked example: correcting discontinuities</a></li>
         <li><a href="cames.html">Cams: concepts and applications</a></li>
         <li><a href="cames-curvas-deslocamento.html">Displacement curves for cam design</a></li>

@@ -40,7 +40,7 @@ Abra `http://127.0.0.1:8765/pt-br/`. Teste também `/`, os filtros dos catálogo
 artigos com tabelas e fórmulas em tela pequena. Não abra apenas o HTML pelo
 explorador: os recursos usam caminhos relativos à raiz do site.
 
-Os arquivos de CamForge, LASME, Engrenarium e Powertrain e os recursos
+Os arquivos de CrucibleCam, LASME, Engrenarium e Powertrain e os recursos
 `site-sidebar.*` não são editados pelos geradores editoriais.
 
 Consulte `RELATORIO-REVISAO-ADSENSE.md` para escopo, evidências e pendências.

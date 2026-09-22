@@ -68,8 +68,8 @@ $entries = @(
   $articleEntries
   New-SitemapEntry "$baseUrl/engrenarium/" '2026-09-01'
   New-SitemapEntry "$baseUrl/engrenarium/pt-br/" '2026-09-01'
-  New-SitemapEntry "$baseUrl/camforge/" '2026-08-28'
-  New-SitemapEntry "$baseUrl/camforge/pt-br/" '2026-08-28'
+  New-SitemapEntry "$baseUrl/camforge/" '2026-09-22'
+  New-SitemapEntry "$baseUrl/camforge/pt-br/" '2026-09-22'
 )
 
 $duplicates = $entries | Group-Object Url | Where-Object Count -gt 1

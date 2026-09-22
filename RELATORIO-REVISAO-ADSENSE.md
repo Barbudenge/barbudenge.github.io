@@ -66,7 +66,7 @@ receberam navegação e ajustes de leitura, sem alterar o funcionamento dos apli
   acervo inicial de visitantes sem JavaScript.
 - Correção de extravasamento horizontal encontrada na tabela do artigo de
   correção SVAJ; largura final da página igual à largura visível no celular.
-- Destino público do CamForge em português aberto com sucesso no navegador.
+- Destino público do CrucibleCam em português aberto com sucesso no navegador.
   Engrenarium e Powertrain também foram consultados pela pesquisa web.
 
 ## Antes da próxima solicitação
@@ -84,7 +84,7 @@ solicite nova revisão. Não existe prazo de espera fixo que garanta aprovação
 
 Se houver uma revisão futura dessas áreas, eu avaliaria incluir junto a cada
 simulador um exemplo completo com entradas, resultado esperado, convenções de
-sinal/unidade, limitações e ligação ao artigo correspondente. O CamForge já tem
+sinal/unidade, limitações e ligação ao artigo correspondente. O CrucibleCam já tem
 uma explicação pública abaixo da interface; um caso reproduzível agregaria mais
 valor do que repetir a descrição da ferramenta.
 

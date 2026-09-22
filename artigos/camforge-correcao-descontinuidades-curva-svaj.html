@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How CamForge corrects discontinuities in cam SVAJ curves | Barbudenge</title>
-  <meta name="description" content="Understand, through equations and a complete example, how CamForge corrects velocity and acceleration discontinuities by changing only beta or only delta L." />
+  <title>How CrucibleCam corrects discontinuities in cam SVAJ curves | Barbudenge</title>
+  <meta name="description" content="Understand, through equations and a complete example, how CrucibleCam corrects velocity and acceleration discontinuities by changing only beta or only delta L." />
   <meta name="robots" content="index, follow" />
   <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <meta name="author" content="Artur Henrique de Freitas Avelar" />
   <meta name="google-adsense-account" content="ca-pub-5777194849710689" />
   <link rel="canonical" href="https://barbudenge.github.io/artigos/camforge-correcao-descontinuidades-curva-svaj.html" />
 
-  <meta property="og:title" content="How CamForge corrects discontinuities in cam SVAJ curves" />
+  <meta property="og:title" content="How CrucibleCam corrects discontinuities in cam SVAJ curves" />
   <meta property="og:description" content="The equations behind Change beta only and Change ΔL only, followed by a complete correction example." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://barbudenge.github.io/artigos/camforge-correcao-descontinuidades-curva-svaj.html" />
   <meta property="og:image" content="https://barbudenge.github.io/figs/aulas/curv0.jpg" />
   <meta property="article:published_time" content="2026-09-03" />
-  <meta property="article:modified_time" content="2026-09-03" />
+  <meta property="article:modified_time" content="2026-09-22" />
 
   <script>
     window.MathJax = { tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] }, svg: { fontCache: 'global' } };
@@ -44,12 +44,12 @@
           "@type": "WebPage",
           "@id": "https://barbudenge.github.io/artigos/camforge-correcao-descontinuidades-curva-svaj.html"
         },
-        "headline": "How CamForge corrects discontinuities in cam SVAJ curves",
-        "description": "Understand, through equations and a complete example, how CamForge corrects velocity and acceleration discontinuities by changing only beta or only delta L.",
+        "headline": "How CrucibleCam corrects discontinuities in cam SVAJ curves",
+        "description": "Understand, through equations and a complete example, how CrucibleCam corrects velocity and acceleration discontinuities by changing only beta or only delta L.",
         "url": "https://barbudenge.github.io/artigos/camforge-correcao-descontinuidades-curva-svaj.html",
         "inLanguage": "en",
         "datePublished": "2026-09-03",
-        "dateModified": "2026-09-03",
+        "dateModified": "2026-09-22",
         "author": {
           "@type": "Person",
           "name": "Artur Henrique de Freitas Avelar",
@@ -72,7 +72,7 @@
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://barbudenge.github.io/" },
           { "@type": "ListItem", "position": 2, "name": "Articles", "item": "https://barbudenge.github.io/artigos/" },
-          { "@type": "ListItem", "position": 3, "name": "How CamForge corrects discontinuities in cam SVAJ curves", "item": "https://barbudenge.github.io/artigos/camforge-correcao-descontinuidades-curva-svaj.html" }
+          { "@type": "ListItem", "position": 3, "name": "How CrucibleCam corrects discontinuities in cam SVAJ curves", "item": "https://barbudenge.github.io/artigos/camforge-correcao-descontinuidades-curva-svaj.html" }
         ]
       }
     ]
@@ -102,7 +102,7 @@
 <section class="hero">
   <div class="container">
     <span class="eyebrow">Mathematics applied to cam design</span>
-    <h1>How CamForge corrects discontinuities in cam SVAJ curves</h1>
+    <h1>How CrucibleCam corrects discontinuities in cam SVAJ curves</h1>
     <p>The continuity equations show why junctions can be corrected by changing only β or only ΔL.</p>
     <div class="byline">
       <span>By Artur Henrique de Freitas Avelar</span>
@@ -114,7 +114,7 @@
 
 <main class="container article-layout">
   <article id="article-content" class="article-body"><details class="article-toc"><summary>In this article</summary><nav aria-label="Article sections"><ol><li><a href="#leitura-1">The equation of an SVAJ segment</a></li><li><a href="#leitura-2">Mathematical conditions at a junction</a></li><li><a href="#leitura-3">Correction by changing only β</a></li><li><a href="#leitura-4">Correction by changing only ΔL</a></li><li><a href="#leitura-5">Example: four incompatible segments</a></li><li><a href="#leitura-6">Applying the equations</a></li><li><a href="#leitura-7">A bottleneck resolved in moments</a></li></ol></nav></details>
-    <p class="lead">A cam may be assembled from individually valid segments and still present jumps at their junctions. CamForge corrects this problem by using continuity equations to redistribute angular intervals or displacements without replacing the selected motion laws.</p>
+    <p class="lead">A cam may be assembled from individually valid segments and still present jumps at their junctions. CrucibleCam corrects this problem by using continuity equations to redistribute angular intervals or displacements without replacing the selected motion laws.</p>
 
     <h2 id="leitura-1">The equation of an SVAJ segment</h2>
     <p>Consider segment \(i\), starting at \(\theta_i\), with angular interval \(\beta_i\) and displacement change \(\Delta L_i\). A local dimensionless coordinate is defined so that it always varies from 0 to 1:</p>
@@ -250,7 +250,7 @@
       \]
     </div>
 
-    <p>An equivalent form, used by CamForge, works with displacement levels \(L_i\), where \(\Delta L_i=L_{i+1}-L_i\) and \(L_n=L_0\). The continuity equations can then be collected as \(A\mathbf L=\mathbf b\). When more than one solution exists, the one closest to the original levels \(\mathbf L^{(0)}\) is selected:</p>
+    <p>An equivalent form, used by CrucibleCam, works with displacement levels \(L_i\), where \(\Delta L_i=L_{i+1}-L_i\) and \(L_n=L_0\). The continuity equations can then be collected as \(A\mathbf L=\mathbf b\). When more than one solution exists, the one closest to the original levels \(\mathbf L^{(0)}\) is selected:</p>
 
     <div class="equation-box">
       \[
@@ -390,7 +390,7 @@
 
     <h2 id="leitura-7">A bottleneck resolved in moments</h2>
     <p>Doing this by hand requires differentiating every motion law, evaluating endpoints, writing the equalities, closing the 360° cycle and recalculating the profile. With many segments, this compatibility work becomes a bottleneck between motion definition and geometric cam analysis.</p>
-    <p>CamForge applies these equations almost instantly and presents a continuous configuration directly. The designer still decides which motions and constraints make engineering sense, but no longer needs to repeat lengthy algebraic compatibility calculations. The path from an SVAJ specification to a smooth cam profile becomes much faster.</p>
+    <p>CrucibleCam applies these equations almost instantly and presents a continuous configuration directly. The designer still decides which motions and constraints make engineering sense, but no longer needs to repeat lengthy algebraic compatibility calculations. The path from an SVAJ specification to a smooth cam profile becomes much faster.</p>
   <div class="article-correction"><p>Questions about an equation or result? Send this page address and your calculation inputs to <a href="mailto:arturavelar@ufsj.edu.br">arturavelar@ufsj.edu.br</a>. · <a href="../sobre.html">About the author</a> · <a href="../privacy.html">Privacy</a></p></div></article>
 
   <aside>
@@ -407,7 +407,7 @@
     <div class="sidebar-card">
       <h3>Continue studying</h3>
       <ul>
-        <li><a href="https://barbudenge.github.io/camforge/">Open CamForge</a></li>
+        <li><a href="https://barbudenge.github.io/camforge/">Open CrucibleCam</a></li>
         <li><a href="camforge-comparacao-curvas-deslocamento.html">Compare motion laws</a></li>
         <li><a href="cames-curvas-deslocamento.html">Review SVAJ curves</a></li>
         <li><a href="cames-projeto-analitico.html">Continue to analytical design</a></li>
