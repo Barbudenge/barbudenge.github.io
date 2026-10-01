@@ -116,7 +116,11 @@ def revision_page(pt):
 def planet_checker(pt):
     path = ROOT/('pt-br/artigos' if pt else 'artigos')/'conferir-resultados-planetaria.html'
     text = path.read_text(encoding='utf-8')
+    general = r'<div class="formula">\[n_C=\frac{N_S n_S+N_R n_R}{N_S+N_R},\qquad N_P=\frac{N_R-N_S}{2}\]</div>'
     if 'data-planet-study' in text:
+        if 'N_S n_S+N_R n_R' not in text:
+            text = text.replace('<form class="study-form" data-planet-study',general+'<form class="study-form" data-planet-study',1)
+            path.write_text(text,encoding='utf-8')
         return
     labels = ['Dentes do sol', 'Dentes da coroa', 'Rotação do sol (rpm)', 'Rotação da coroa (rpm)'] if pt else ['Sun teeth', 'Ring teeth', 'Sun speed (rpm)', 'Ring speed (rpm)']
     fields = ''
@@ -126,6 +130,7 @@ def planet_checker(pt):
     heading = 'Conferidor: duas velocidades conhecidas' if pt else 'Checker: two known speeds'
     intro = 'Use a mesma convenção de sinal para sol e coroa. O conferidor resolve a equação de uma planetária simples e verifica se o satélite teria um número inteiro positivo de dentes. O cálculo não analisa carga, interferência ou fases de montagem.' if pt else 'Use the same sign convention for sun and ring. This checker solves the equation for a simple planetary assembly and checks whether the planet would have a positive integer tooth count. It does not analyse load, interference or assembly phasing.'
     block = f'''<h2 id="conferidor">{heading}</h2><p>{intro}</p><form class="study-form" data-planet-study hidden><fieldset><legend>{'Dados para a equação do braço' if pt else 'Inputs for the carrier equation'}</legend><div class="study-inputs">{fields}</div><button type="submit" class="button">{'Calcular e interpretar' if pt else 'Calculate and interpret'}</button></fieldset><p data-planet-result role="status" aria-live="polite">{'Os dados iniciais reproduzem o caso de coroa fixa: braço a 300 rpm.' if pt else 'The initial inputs reproduce the fixed-ring case: carrier at 300 rpm.'}</p></form><noscript><p>{'Use a equação e os exemplos resolvidos acima para fazer a conferência sem JavaScript.' if pt else 'Use the equation and worked examples above to check the result without JavaScript.'}</p></noscript>'''
+    block = block.replace('<form class="study-form" data-planet-study',general+'<form class="study-form" data-planet-study',1)
     text = text.replace('<h2 id="conferencia">',block+'<h2 id="conferencia">',1)
     text = text.replace('</head>','<script defer src="/study-tools.js"></script></head>',1)
     text = text.replace('"dateModified": "2026-09-21"',f'"dateModified": "{DATE}"')
