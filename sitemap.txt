@@ -8,11 +8,14 @@ https://barbudenge.github.io/sobre.html
 https://barbudenge.github.io/pt-br/sobre.html
 https://barbudenge.github.io/artigos/
 https://barbudenge.github.io/pt-br/artigos/
+https://barbudenge.github.io/atualizacoes.html
+https://barbudenge.github.io/pt-br/atualizacoes.html
 https://barbudenge.github.io/artigos/aplicacoes-engrenagens-planetarias.html
 https://barbudenge.github.io/artigos/cambio-manual-trens-engrenagens.html
 https://barbudenge.github.io/artigos/cames-curvas-deslocamento.html
 https://barbudenge.github.io/artigos/cames-nomenclatura-seguidores.html
 https://barbudenge.github.io/artigos/cames-projeto-analitico.html
+https://barbudenge.github.io/artigos/cames-subida-cicloidal-polinomial.html
 https://barbudenge.github.io/artigos/cames.html
 https://barbudenge.github.io/artigos/camforge-comparacao-curvas-deslocamento.html
 https://barbudenge.github.io/artigos/camforge-correcao-descontinuidades-curva-svaj.html
@@ -38,6 +41,7 @@ https://barbudenge.github.io/pt-br/artigos/cambio-manual-trens-engrenagens.html
 https://barbudenge.github.io/pt-br/artigos/cames-curvas-deslocamento.html
 https://barbudenge.github.io/pt-br/artigos/cames-nomenclatura-seguidores.html
 https://barbudenge.github.io/pt-br/artigos/cames-projeto-analitico.html
+https://barbudenge.github.io/pt-br/artigos/cames-subida-cicloidal-polinomial.html
 https://barbudenge.github.io/pt-br/artigos/cames.html
 https://barbudenge.github.io/pt-br/artigos/camforge-comparacao-curvas-deslocamento.html
 https://barbudenge.github.io/pt-br/artigos/camforge-correcao-descontinuidades-curva-svaj.html

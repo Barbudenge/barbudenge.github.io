@@ -28,7 +28,7 @@ class Page(HTMLParser):
             if a.get('src'): self.links.append(a['src'])
             if a.get('rel')=='stylesheet': self.links.append(a['href'])
 
-files=[ROOT/'index.html',ROOT/'pt-br/index.html']+list((ROOT/'artigos').glob('*.html'))+list((ROOT/'pt-br/artigos').glob('*.html'))
+files=[ROOT/'index.html',ROOT/'pt-br/index.html',ROOT/'atualizacoes.html',ROOT/'pt-br/atualizacoes.html']+list((ROOT/'artigos').glob('*.html'))+list((ROOT/'pt-br/artigos').glob('*.html'))
 pages={p:Page(p.read_text(encoding='utf-8')) for p in files}
 errors=[]
 for file,page in pages.items():

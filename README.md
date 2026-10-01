@@ -23,7 +23,8 @@ node --check portal.js
 `enhance_editorial.py` insere sumários estáticos, contato para correções e
 contêineres de tabelas nos artigos existentes. `build_portal.py` reconstrói as
 duas páginas iniciais e os catálogos a partir dos artigos. O conteúdo principal
-e todos os links são HTML estático; JavaScript só acrescenta os filtros.
+e todos os links são HTML estático; JavaScript acrescenta os filtros e os
+conferidores dos cadernos de cálculo.
 
 `scripts/add-worked-examples.py` foi usado para criar o guia de conferência e
 expandir a aula de trens. Não é necessário executá-lo no fluxo normal: ele
@@ -44,3 +45,20 @@ Os arquivos de CrucibleCam, LASME, Engrenarium e Powertrain e os recursos
 `site-sidebar.*` não são editados pelos geradores editoriais.
 
 Consulte `RELATORIO-REVISAO-ADSENSE.md` para escopo, evidências e pendências.
+
+## Cadernos de cálculo e revisões
+
+`scripts/build_study_resources.py` contém o caderno bilíngue de comparação de
+cames e o registro editorial de 1 de outubro de 2026. Ele também acrescenta,
+uma única vez, o conferidor ao guia de planetárias. Para reconstruir esses
+recursos, execute-o antes de `build_portal.py` e da geração do sitemap.
+Ao revisar o caderno, atualize seu conteúdo e sua data no gerador. Ao acrescentar
+entradas ao registro, preserve as anteriores e atualize a data no sitemap.
+
+`study-tools.js` calcula somente os exemplos editoriais. As tabelas, equações,
+figuras e respostas são HTML estático. As ferramentas não transmitem os dados
+digitados nem alteram os aplicativos vinculados. Verifique também:
+
+```powershell
+node --check study-tools.js
+```

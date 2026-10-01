@@ -92,3 +92,35 @@ Também verificaria na configuração do AdSense onde os anúncios automáticos
 podem aparecer, especialmente telas apenas de controles ou sem conteúdo
 editorial. Essa avaliação exige acesso à conta e inspeção das páginas afetadas;
 não implica que ferramentas ou aplicações sejam, por si só, proibidas.
+# Revisão de 1 de outubro de 2026
+
+Após a nova recusa, foram acrescentados recursos utilizáveis no portal editorial:
+
+- Caderno bilíngue original de comparação de subida cicloidal e polinomial
+  3-4-5: hipóteses, derivadas, gráfico estático, máximos analíticos, cálculo com
+  dados variáveis e dois exercícios comentados.
+- Conferidor no guia de planetárias: rotação do braço a partir de sol e coroa,
+  velocidades relativas e rejeição de números de dentes incompatíveis com a
+  geometria de referência adotada.
+- Seção de atividades na página inicial e registro público de revisões com
+  canal de correção. As datas antigas de publicação foram preservadas.
+- Correção da cascata de estilos que mantinha duas colunas no hero móvel.
+- Classificação do artigo CrucibleCam desktop no assunto de cames.
+
+Verificação: 58 páginas editoriais e 68 URLs no sitemap, sem erros de links,
+fragmentos, imagens ou JSON-LD detectados pelo verificador. O navegador
+confirmou 17 expressões matemáticas renderizadas sem erro no novo caderno,
+valores de referência, mudança de rotação e condições inválidas de dentes.
+Prévia em 390 px sem transbordamento lateral na home e no novo artigo.
+Nenhum arquivo dos aplicativos ou do LASME foi alterado.
+
+Estas mudanças aumentam a utilidade do conteúdo; não demonstram, por si só,
+interesse sustentado do público e não garantem aprovação. Não foram inventados
+visitantes, medições, depoimentos, revisões antigas ou resultados de ensaios.
+Continua sendo necessário observar o uso real, atender dúvidas concretas e
+manter os materiais conforme novas necessidades aparecerem.
+
+Referências oficiais consultadas nesta revisão:
+- https://support.google.com/adsense/answer/7299563
+- https://support.google.com/adsense/answer/12176698
+- https://support.google.com/adsense/answer/9724

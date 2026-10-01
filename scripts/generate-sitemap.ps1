@@ -65,6 +65,8 @@ $entries = @(
   New-SitemapEntry "$baseUrl/pt-br/sobre.html" '2026-06-15'
   New-SitemapEntry "$baseUrl/artigos/" $latestArticleDate
   New-SitemapEntry "$baseUrl/pt-br/artigos/" $latestArticleDate
+  New-SitemapEntry "$baseUrl/atualizacoes.html" '2026-10-01'
+  New-SitemapEntry "$baseUrl/pt-br/atualizacoes.html" '2026-10-01'
   $articleEntries
   New-SitemapEntry "$baseUrl/engrenarium/" '2026-09-01'
   New-SitemapEntry "$baseUrl/engrenarium/pt-br/" '2026-09-01'

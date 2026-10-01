@@ -10,11 +10,11 @@
   </url>
   <url>
     <loc>https://barbudenge.github.io/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-10-01</lastmod>
   </url>
   <url>
     <loc>https://barbudenge.github.io/pt-br/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-10-01</lastmod>
   </url>
   <url>
     <loc>https://barbudenge.github.io/privacy.html</loc>
@@ -34,11 +34,19 @@
   </url>
   <url>
     <loc>https://barbudenge.github.io/artigos/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-10-01</lastmod>
   </url>
   <url>
     <loc>https://barbudenge.github.io/pt-br/artigos/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-10-01</lastmod>
+  </url>
+  <url>
+    <loc>https://barbudenge.github.io/atualizacoes.html</loc>
+    <lastmod>2026-10-01</lastmod>
+  </url>
+  <url>
+    <loc>https://barbudenge.github.io/pt-br/atualizacoes.html</loc>
+    <lastmod>2026-10-01</lastmod>
   </url>
   <url>
     <loc>https://barbudenge.github.io/artigos/aplicacoes-engrenagens-planetarias.html</loc>
@@ -59,6 +67,10 @@
   <url>
     <loc>https://barbudenge.github.io/artigos/cames-projeto-analitico.html</loc>
     <lastmod>2026-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://barbudenge.github.io/artigos/cames-subida-cicloidal-polinomial.html</loc>
+    <lastmod>2026-10-01</lastmod>
   </url>
   <url>
     <loc>https://barbudenge.github.io/artigos/cames.html</loc>
@@ -82,7 +94,7 @@
   </url>
   <url>
     <loc>https://barbudenge.github.io/artigos/conferir-resultados-planetaria.html</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-10-01</lastmod>
   </url>
   <url>
     <loc>https://barbudenge.github.io/artigos/cruciblecam-desktop-windows.html</loc>
@@ -161,6 +173,10 @@
     <lastmod>2026-09-23</lastmod>
   </url>
   <url>
+    <loc>https://barbudenge.github.io/pt-br/artigos/cames-subida-cicloidal-polinomial.html</loc>
+    <lastmod>2026-10-01</lastmod>
+  </url>
+  <url>
     <loc>https://barbudenge.github.io/pt-br/artigos/cames.html</loc>
     <lastmod>2026-09-23</lastmod>
   </url>
@@ -182,7 +198,7 @@
   </url>
   <url>
     <loc>https://barbudenge.github.io/pt-br/artigos/conferir-resultados-planetaria.html</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-10-01</lastmod>
   </url>
   <url>
     <loc>https://barbudenge.github.io/pt-br/artigos/cruciblecam-desktop-windows.html</loc>
@@ -250,10 +266,10 @@
   </url>
   <url>
     <loc>https://barbudenge.github.io/cruciblecam/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-22</lastmod>
   </url>
   <url>
     <loc>https://barbudenge.github.io/cruciblecam/pt-br/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-22</lastmod>
   </url>
 </urlset>
