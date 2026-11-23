@@ -29,6 +29,9 @@ def article_data(folder):
         image = re.search(r'<img[^>]+src="([^"]+)"[^>]+alt="([^"]*)"', text)
         image_path = '/' + (path.parent / html.unescape(image[1])).resolve().relative_to(ROOT).as_posix() if image and not image[1].startswith('http') else '/figs/planet1.png'
         topic = 'cams' if any(s in path.stem for s in ['came', 'camforge', 'cruciblecam']) else 'planetary' if any(s in path.stem for s in ['planet', 'ferguson', 'ravigneaux', 'allison', 'modelo-t', 'cvt']) else 'gears'
+        declared_topic = re.search(r'<meta name="article-topic" content="([^"]+)"', text)
+        if declared_topic and declared_topic[1] == 'books':
+            topic = 'books'
         if not image and topic == 'cams':
             image_path = '/figs/aulas/projcam1.jpg'
         result.append(dict(slug=path.name, title=title, description=description, date=date, minutes=max(1, round(words/200)), image=image_path, alt=html.unescape(image[2]) if image else title, topic=topic))
@@ -63,6 +66,7 @@ def footer(pt):
 def card(a, pt, image=True):
     prefix = '/pt-br/artigos/' if pt else '/artigos/'
     labels = {'cams':'Cames e movimento' if pt else 'Cams & motion','planetary':'Planetárias e transmissões' if pt else 'Planetary gears & transmissions','gears':'Engrenagens e fundamentos' if pt else 'Gears & fundamentals'}
+    labels['books'] = 'Livros e traduções' if pt else 'Books & translations'
     return f'''<article class="card" data-topic="{a['topic']}">{f'<img class="card-image" loading="lazy" src="{esc(a["image"])}" alt="{esc(a["alt"])}">' if image else ''}<div class="card-body"><span class="eyebrow">{labels[a['topic']]}</span><h3><a href="{prefix+a['slug']}">{esc(a['title'])}</a></h3><p>{esc(a['description'])}</p><p class="meta"><time datetime="{a['date']}">{a['date']}</time> · {a['minutes']} min {'de leitura' if pt else 'read'}</p><div class="links"><a href="{prefix+a['slug']}">{'Ler artigo' if pt else 'Read article'} →</a></div></div></article>'''
 
 def home(pt, articles):
@@ -120,6 +124,8 @@ def catalog(pt, articles):
         if a['slug'] == 'engrenagens-funcoes-perfil-nomenclatura.html':
             rendered = rendered.replace('class="card"', 'id="fundamentos-engrenagens" class="card"', 1)
         out += rendered
+    if any(a['topic'] == 'books' for a in articles):
+        out = out.replace('</select>', '<option value="books">'+('Livros e traduções' if pt else 'Books & translations')+'</option></select>', 1)
     out += '</div></div></main>'+footer(pt)
     (ROOT / root.strip('/') / 'artigos/index.html').write_text(out, encoding='utf-8')
 

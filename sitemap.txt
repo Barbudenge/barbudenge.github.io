@@ -52,6 +52,7 @@ https://barbudenge.github.io/pt-br/artigos/cruciblecam-desktop-windows.html
 https://barbudenge.github.io/pt-br/artigos/engrenagens-conicas-helicoidais-sem-fim.html
 https://barbudenge.github.io/pt-br/artigos/engrenagens-funcoes-perfil-nomenclatura.html
 https://barbudenge.github.io/pt-br/artigos/engrenagens-planetarias.html
+https://barbudenge.github.io/pt-br/artigos/nos-emendas-trabalhos-cordas-lasme.html
 https://barbudenge.github.io/pt-br/artigos/paradoxo-mecanico-ferguson.html
 https://barbudenge.github.io/pt-br/artigos/planetaria-composta-engrenarium.html
 https://barbudenge.github.io/pt-br/artigos/planetarias-compostas-diferenciais.html

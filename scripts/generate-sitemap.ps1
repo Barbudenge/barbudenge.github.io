@@ -54,17 +54,20 @@ $articleFiles = @(
 $articleEntries = @($articleFiles | ForEach-Object { Get-ArticleEntry $_ } | Sort-Object Url)
 $latestArticleDate = ($articleEntries.LastModified | Sort-Object -Descending | Select-Object -First 1)
 
+$latestEnglishDate = ($articleEntries | Where-Object Url -NotLike '*/pt-br/*' | Select-Object -ExpandProperty LastModified | Sort-Object -Descending | Select-Object -First 1)
+$latestPortugueseDate = ($articleEntries | Where-Object Url -Like '*/pt-br/*' | Select-Object -ExpandProperty LastModified | Sort-Object -Descending | Select-Object -First 1)
+
 $entries = @(
   New-SitemapEntry "$baseUrl/projects/" '2026-09-01'
   New-SitemapEntry "$baseUrl/projects/pt-br/" '2026-09-01'
-  New-SitemapEntry "$baseUrl/" $latestArticleDate
-  New-SitemapEntry "$baseUrl/pt-br/" $latestArticleDate
+  New-SitemapEntry "$baseUrl/" $latestEnglishDate
+  New-SitemapEntry "$baseUrl/pt-br/" $latestPortugueseDate
   New-SitemapEntry "$baseUrl/privacy.html" '2026-06-15'
   New-SitemapEntry "$baseUrl/pt-br/privacy.html" '2026-06-15'
   New-SitemapEntry "$baseUrl/sobre.html" '2026-06-15'
   New-SitemapEntry "$baseUrl/pt-br/sobre.html" '2026-06-15'
-  New-SitemapEntry "$baseUrl/artigos/" $latestArticleDate
-  New-SitemapEntry "$baseUrl/pt-br/artigos/" $latestArticleDate
+  New-SitemapEntry "$baseUrl/artigos/" $latestEnglishDate
+  New-SitemapEntry "$baseUrl/pt-br/artigos/" $latestPortugueseDate
   New-SitemapEntry "$baseUrl/atualizacoes.html" '2026-10-01'
   New-SitemapEntry "$baseUrl/pt-br/atualizacoes.html" '2026-10-01'
   $articleEntries
