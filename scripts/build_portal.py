@@ -27,6 +27,7 @@ def article_data(folder):
         body = re.search(r'<article\b[^>]*>(.*?)</article>', text, re.S)
         words = len(plain(body[1] if body else text).split())
         image = re.search(r'<img[^>]+src="([^"]+)"[^>]+alt="([^"]*)"', text)
+        cover = re.search(r'<meta name="article-cover" content="([^"]+)"', text)
         image_path = '/' + (path.parent / html.unescape(image[1])).resolve().relative_to(ROOT).as_posix() if image and not image[1].startswith('http') else '/figs/planet1.png'
         topic = 'cams' if any(s in path.stem for s in ['came', 'camforge', 'cruciblecam']) else 'planetary' if any(s in path.stem for s in ['planet', 'ferguson', 'ravigneaux', 'allison', 'modelo-t', 'cvt']) else 'gears'
         declared_topic = re.search(r'<meta name="article-topic" content="([^"]+)"', text)
@@ -34,7 +35,9 @@ def article_data(folder):
             topic = 'books'
         if not image and topic == 'cams':
             image_path = '/figs/aulas/projcam1.jpg'
-        result.append(dict(slug=path.name, title=title, description=description, date=date, minutes=max(1, round(words/200)), image=image_path, alt=html.unescape(image[2]) if image else title, topic=topic))
+        if cover:
+            image_path = html.unescape(cover[1])
+        result.append(dict(slug=path.name, title=title, description=description, date=date, minutes=max(1, round(words/200)), image=image_path, alt=html.unescape(image[2]) if image and not cover else title, topic=topic))
     return sorted(result, key=lambda a: (a['date'], a['slug']), reverse=True)
 
 def head(title, description, path, counterpart, pt, schema=None):
